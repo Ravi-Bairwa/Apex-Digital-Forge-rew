@@ -1,0 +1,23 @@
+{
+  "name": "apex-digital-forge",
+  "version": "1.0.0",
+  "description": "Apex Digital Forge — White-Label SEO Backlink Agency Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "seo",
+    "backlinks",
+    "link-building",
+    "guest-posts",
+    "white-label",
+    "digital-marketing"
+  ],
+  "author": "Ravi Bairwa — Apex Digital Forge",
+  "license": "ISC",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
