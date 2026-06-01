@@ -563,7 +563,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
             <tr><td>Price per DA 60+ link</td><td>$100–300</td><td class="ours">$18–40</td></tr>
             <tr><td>Free trial</td><td><span class="no">✗ Never</span></td><td class="ours"><span class="yes">✓ 20 links free</span></td></tr>
             <tr><td>Custom plans</td><td><span class="no">✗ Rigid packages</span></td><td class="ours"><span class="yes">✓ Fully customizable</span></td></tr>
-            <tr><td>Response time</td><td>24–72 hours</td><td class="ours">2 hours guaranteed</td></tr>
+            <tr><td>Response time</td><td>24–72 hours</td><td class="ours">2–5 hours guaranteed</td></tr>
           </tbody>
         </table>
       </div>
@@ -741,18 +741,18 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   <section class="section">
     <div class="sec-eyebrow">Get In Touch</div>
     <h2 class="sec-title">Start your free trial.<br>Or get a custom quote.</h2>
-    <p class="sec-sub">Fill the form and we reply within 2 hours. Every new client starts with 20 free DA 50+ guest posts. Zero cost. Zero commitment.</p>
+    <p class="sec-sub">Fill the form and we reply within 2–5 hours. Every new client starts with 20 free DA 50+ guest posts. Zero cost. Zero commitment.</p>
     <div class="contact-grid">
       <div class="contact-left">
         <h3>Apex Digital Forge</h3>
         <p>Premium white-label SEO backlink agency serving clients globally. 5,000+ publisher sites. DA 50–90 verified placements. US agency quality at honest pricing.</p>
-        <div class="contact-detail"><div class="contact-icon">📧</div><div><div class="contact-detail-text">apexdigitalforge@gmail.com</div><div class="contact-detail-sub">Email — reply within 2 hours</div></div></div>
+        <div class="contact-detail"><div class="contact-icon">📧</div><div><div class="contact-detail-text">apexdigitalforge@gmail.com</div><div class="contact-detail-sub">Email — reply within 2–5 hours</div></div></div>
         <div class="contact-detail"><div class="contact-icon">📧</div><div><div class="contact-detail-text">apexdigitalforge@outlook.com</div><div class="contact-detail-sub">Email — alternate</div></div></div>
         <div class="contact-detail"><div class="contact-icon">📱</div><div><div class="contact-detail-text">+91 82093 74032</div><div class="contact-detail-sub">WhatsApp / Call — Primary</div></div></div>
         <div class="contact-detail"><div class="contact-icon">📱</div><div><div class="contact-detail-text">+91 99280 06168</div><div class="contact-detail-sub">WhatsApp — Alternate</div></div></div>
         <div class="contact-detail"><div class="contact-icon">🌐</div><div><div class="contact-detail-text">www.apexdigitalforge.in</div><div class="contact-detail-sub">Official website</div></div></div>
         <div class="contact-detail"><div class="contact-icon">📍</div><div><div class="contact-detail-text">Jaipur, Rajasthan, India</div><div class="contact-detail-sub">Serving agencies globally</div></div></div>
-        <div class="contact-detail"><div class="contact-icon">🕐</div><div><div class="contact-detail-text">Mon–Sat, 10am–7pm IST</div><div class="contact-detail-sub">2-hour response guarantee</div></div></div>
+        <div class="contact-detail"><div class="contact-icon">🕐</div><div><div class="contact-detail-text">Mon–Sat, 10am–7pm IST</div><div class="contact-detail-sub">2–5 hour response guarantee</div></div></div>
         <div class="trial-callout">
           <h4>Free trial — for every new client</h4>
           <p>20 DA 50–90 backlinks on real publisher sites. Zero payment. Zero contract. Click any link to verify the placement yourself. We earn your trust before we ask for your money.</p>
@@ -833,7 +833,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <div class="form-success" id="formSuccess" style="display:none;background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);">
           <div style="font-size:48px;margin-bottom:16px;">✓</div>
           <h3>Message received!</h3>
-          <p>We will reply within 2 hours at your email address.</p>
+          <p>We will reply within 2–5 hours at your email address.</p>
         </div>
       </div>
     </div>
@@ -991,14 +991,14 @@ async function submitForm(e) {
         ? data.errors.map(e => e.message).join(', ')
         : 'Something went wrong. Please email us directly.';
       showAlert(errorMsg);
-      btn.textContent = 'Send Message — We Reply in 2 Hours';
+      btn.textContent = 'Send Message — We Reply in 2–5 Hours';
       btn.disabled = false;
     }
 
   } catch (err) {
     console.error('Form error:', err);
     showAlert('Connection error. Please email us directly at apexdigitalforge@gmail.com');
-    btn.textContent = 'Send Message — We Reply in 2 Hours';
+    btn.textContent = 'Send Message — We Reply in 2–5 Hours';
     btn.disabled = false;
   }
 }
