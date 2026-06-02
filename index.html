@@ -1477,28 +1477,6 @@ function closearticle() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ─── MARKDOWN TO HTML ─── */
-function markdownToHtml(md) {
-  return md
-    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-    .replace(/^# (.+)$/gm, '<h2>$1</h2>')
-    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.+?)\*/g, '<em>$1</em>')
-    .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
-    .replace(/^\d+\. (.+)$/gm, '<li>$1</li>')
-    .replace(/^[-*] (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>
-?)+/g, m => '<ul>' + m + '</ul>')
-    .replace(/
-
-/g, '</p><p>')
-    .replace(/^(?!<[h|u|o|b|l])/gm, '')
-    .replace(/^(.+)$/gm, m => m.startsWith('<') ? m : '<p>' + m + '</p>')
-    .replace(/<p><\/p>/g, '')
-    .replace(/<p>(<[huo])/g, '$1')
-    .replace(/(<\/[huo][^>]*>)<\/p>/g, '$1');
-}
 
 /* ─── ENTER KEY on generator ─── */
 document.addEventListener('DOMContentLoaded', function() {
