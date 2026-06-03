@@ -1221,18 +1221,14 @@ function markdownToHtml(text) {
   html = html.replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>');
   html = html.replace(/^[-] (.+)$/gm, '<li>$1</li>');
   html = html.replace(/^\d+\. (.+)$/gm, '<li>$1</li>');
-  var paragraphs = html.split('
-
-');
+  var paragraphs = html.split(/\n\n+/);
   html = paragraphs.map(function(p) {
     p = p.trim();
     if (!p) return '';
     if (p.startsWith('<h') || p.startsWith('<ul') || p.startsWith('<ol') || p.startsWith('<li') || p.startsWith('<blockquote')) return p;
     if (p.includes('<li>')) return '<ul>' + p + '</ul>';
-    return '<p>' + p.replace(/
-/g, ' ') + '</p>';
-  }).join('
-');
+    return '<p>' + p.replace(/\n/g, ' ') + '</p>';
+  }).join('\n');
   return html;
 }
 
