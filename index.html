@@ -934,7 +934,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <div class="section" style="padding-top:40px;">
 
       <!-- AI Generator -->
-      <div class="blog-generator">
+      <div class="blog-generator" style="display:none;" id="adminGenerator">
         <h3>Generate a custom article instantly</h3>
         <p>Enter any SEO or agency topic — our AI writes a full professional article in seconds.</p>
         <div class="gen-row">
@@ -1256,7 +1256,7 @@ async function generateArticle() {
   try {
     var response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'anthropic-dangerous-direct-browser-ipc': 'true' },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
         max_tokens: 1000,
@@ -1303,9 +1303,24 @@ function addBlogCard(slug, title, category, excerpt) {
   var card = document.createElement('div');
   card.className = 'blog-card';
   card.setAttribute('onclick', 'openArticle("' + slug + '")');
-  card.innerHTML = '<div class="blog-card-img">' + emoji + '</div><div class="blog-card-body"><div class="blog-card-cat">' + category + '</div><div class="blog-card-title">' + title + '</div><div class="blog-card-excerpt">' + excerpt + '</div><div class="blog-card-meta"><span>Apex Digital Forge · AI Generated</span><span class="blog-card-read">Read →</span></div></div>';
+  card.innerHTML = '<div class="blog-card-img">' + emoji + '</div><div class="blog-card-body"><div class="blog-card-cat">' + category + '</div><div class="blog-card-title">' + title + '</div><div class="blog-card-excerpt">' + excerpt + '</div><div class="blog-card-meta"><span>Apex Digital Forge</span><span class="blog-card-read">Read →</span></div></div>';
   grid.insertBefore(card, grid.firstChild);
 }
+
+// Static article content
+var staticContent = {
+  'what-is-white-label-link-building': '## What is White-Label Link Building?\n\nWhite-label link building is when an agency outsources its link building work to a specialist provider who delivers the work under the agency\'s brand. The end client never knows a third party was involved.\n\n## Why Agencies Use White-Label Link Building\n\nMost SEO agencies are excellent at strategy, on-page optimization, and client management. But link building is time-consuming, requires a large network of publisher relationships, and demands consistent daily execution.\n\nRather than hiring in-house — which costs ₹30,000–₹80,000/month per person — agencies partner with white-label providers to deliver the same results at a fraction of the cost.\n\n## How It Works\n\n### Step 1 — Agency Signs the Client\nThe agency closes the client and includes link building as part of the SEO package.\n\n### Step 2 — Agency Sends Targets to Provider\nThe agency forwards the client\'s target URLs, keywords, and niche details to the white-label partner.\n\n### Step 3 — Provider Builds the Links\nThe white-label provider places guest posts and backlinks on real DA 50–90 sites with verified organic traffic.\n\n### Step 4 — Report Delivered\nA clean report is delivered — branded or unbranded — which the agency sends directly to their client.\n\n## What Makes a Good White-Label Partner\n\n- Real sites with verified organic traffic (not just high DA)\n- Transparent live reporting via Google Sheets\n- 7–10 day turnaround\n- Natural anchor text distribution\n- No PBNs, no spammy networks\n\n## The Business Case\n\nAgencies charging clients ₹15,000–₹50,000/month for link building can outsource the execution for ₹6,000–₹22,000/month and keep the margin. At 10 clients that\'s ₹90,000–₹2,80,000/month in profit from link building alone.\n\nWhite-label link building is how smart agencies scale without hiring.',
+
+  'da-50-backlinks-guide': '## What is Domain Authority and Why Does It Matter?\n\nDomain Authority (DA) is a metric developed by Moz that predicts how likely a website is to rank in search engines. It scores from 1 to 100 — the higher the score, the stronger the site.\n\nA backlink from a DA 60 site passes significantly more ranking power than one from a DA 20 site. This is why serious SEO campaigns focus on DA 50+ placements.\n\n## DA 50+ vs Low-DA Links — The Real Difference\n\n### Low-DA Links (DA 1–30)\n- Fast to get, cheap to buy\n- Minimal ranking impact\n- Can look spammy in bulk\n- Often come from sites with zero organic traffic\n\n### DA 50–90 Links\n- Require real editorial relationships\n- Significant ranking signal\n- Come from sites Google already trusts\n- Real organic traffic = real authority\n\n## The Traffic Test — More Important Than DA\n\nHigh DA alone is not enough. A DA 60 site with zero organic traffic is a dead site — it passes almost no value.\n\nAlways verify that a high-DA site has real organic traffic using Ahrefs, Semrush, or Ubersuggest before accepting a placement.\n\n## How Many DA 50+ Links Do You Need?\n\nThis depends on your niche competitiveness. As a general guide:\n\n- Local business ranking: 5–15 quality links\n- National niche site: 20–50 quality links\n- Competitive national keywords: 50–100+ quality links\n\n## Building a Natural Link Profile\n\nGoogle values diversity. Mix your anchor text: 30% exact match, 30% partial match, 20% branded, 20% generic. Never over-optimize with the same keyword on every link.\n\nDA 50–90 backlinks from real editorial sites remain the single most powerful ranking lever in SEO today.',
+
+  'guest-post-vs-niche-edits': '## Two Proven Link Building Methods\n\nGuest posts and niche edits are the two most effective white-hat link building techniques. Both work. But they work differently — and knowing when to use each is what separates good SEO from great SEO.\n\n## Guest Posts — What They Are\n\nA guest post is a brand new article written and published on someone else\'s website with a link back to your target page. The article is created specifically for the placement.\n\n**Strengths:**\n- You control the content, anchor text, and context\n- New content gets crawled and indexed quickly\n- Looks natural — editorial sites publish new content daily\n\n**Weaknesses:**\n- Takes longer to produce\n- New pages take time to accumulate authority\n\n## Niche Edits — What They Are\n\nA niche edit (also called a contextual link or link insertion) places your link inside an existing article that is already indexed and ranking. You\'re adding a link to content Google already trusts.\n\n**Strengths:**\n- Faster impact — the page already has authority\n- Link sits in aged, trusted content\n- Often more cost-effective\n\n**Weaknesses:**\n- Less control over surrounding content\n- Harder to find quality placements\n\n## Which Moves Rankings Faster?\n\nFor speed: niche edits typically show results faster because the host page is already established.\n\nFor long-term authority: guest posts build cumulative domain authority over time.\n\n## The Smart Strategy — Use Both\n\nThe most effective campaigns combine both methods. Use niche edits for quick momentum on competitive keywords. Use guest posts to build sustained domain authority over months.\n\nAt Apex Digital Forge, our packages include both — because real ranking results require both speed and sustainability.',
+
+  'scale-link-building-agency': '## The 0 to ₹1L/Month Blueprint\n\nScaling a link building agency to ₹1,00,000/month is achievable within 6 months — if you focus on the right things from day one.\n\n## Month 1–2: Foundation\n\n### Get Your First 2–3 Clients at Any Cost\nOffer a free trial. Offer discounted rates. Do whatever it takes to get real clients using your service. Your only goal is proof of work and testimonials.\n\n### Build Your Reporting System\nSet up a live Google Sheet template for client reporting from day one. Transparency builds trust faster than anything else.\n\n## Month 3–4: Productize\n\n### Create Fixed Packages\nStop doing custom quotes for every client. Create 3–4 fixed packages at fixed prices. This makes sales faster and delivery more consistent.\n\n### Hire Your First Freelancer\nOnce you have 3–4 paying clients, hire a freelance link builder to handle execution. You focus on sales and client management.\n\n## Month 5–6: Scale\n\n### Add White-Label Clients\nApproach SEO agencies and offer to be their backend link building partner. One agency client can send you 5–10 client campaigns per month — more volume than 10 individual clients.\n\n### Raise Prices\nOnce you have 5+ positive client experiences, raise your prices by 20–30%. Your results justify it.\n\n## The Numbers at ₹1L/Month\n\n- 5 Indian clients at ₹12,000/month = ₹60,000\n- 2 international clients at $200/month = ₹33,000\n- Total: ₹93,000/month\n- With one freelancer at ₹15,000/month: ₹78,000 profit\n\n## The Most Important Rule\n\nDelivery consistency beats sales skill every time. One happy client who gets results refers two more. Build the delivery machine first. The revenue follows.',
+
+  'anchor-text-strategy': '## Why Anchor Text Distribution Matters\n\nAnchor text is the clickable text of a hyperlink. Google uses it as a strong signal to understand what a linked page is about. Get it right and rankings improve. Get it wrong and you risk a penalty.\n\n## The Four Anchor Text Types\n\n### 1. Exact Match\nThe anchor text is the exact keyword you want to rank for.\nExample: "link building agency India"\n\nUse sparingly — 20–30% maximum. Over-optimizing exact match anchors is one of the most common causes of Google penalties.\n\n### 2. Partial Match\nThe anchor includes the keyword but with additional words.\nExample: "best link building agency for SEO" or "professional link building services"\n\nThis is your workhorse anchor type — safe, natural, and effective. Use 25–35%.\n\n### 3. Branded\nThe anchor is your brand name.\nExample: "Apex Digital Forge" or "apexdigitalforge.in"\n\nBranded anchors signal legitimacy and are completely natural. Use 15–20%.\n\n### 4. Generic / Naked\nAnchors like "click here", "read more", "this article", or the raw URL.\n\nThese make your link profile look completely natural. Use 15–20%.\n\n## The Recommended Distribution\n\n| Anchor Type | Percentage |\n|---|---|\n| Exact match | 20–30% |\n| Partial match | 25–35% |\n| Branded | 15–20% |\n| Generic/Naked | 15–20% |\n\n## Common Mistakes to Avoid\n\n- Never use the same exact anchor on every link\n- Never stuff multiple keywords into one anchor\n- Vary your anchors even within the same type\n\nA natural-looking anchor text profile is one of the clearest signals of a legitimate, white-hat link building campaign.',
+
+  'ai-seo-2026': '## How AI is Reshaping SEO in 2026\n\nArtificial intelligence has fundamentally changed how search engines work — and how SEO agencies need to operate. Understanding these shifts is no longer optional.\n\n## Google\'s AI Overview — What Changed\n\nGoogle\'s AI Overviews now appear at the top of search results for millions of queries, answering questions directly without users clicking through to websites. This has reduced organic click-through rates on informational queries by 15–30%.\n\nThe implication: **ranking is no longer enough**. Your content needs to be cited by AI, not just ranked.\n\n## What Still Works — And Works Better\n\n### Authority Signals Are More Important Than Ever\nGoogle\'s AI models are trained to trust authoritative sources. High-DA backlinks from real editorial sites are a core authority signal. Link building has not become less important — it has become the foundation.\n\n### E-E-A-T Has Become Non-Negotiable\nExperience, Expertise, Authority, Trustworthiness. Google\'s quality raters now apply these criteria more strictly. Agencies need to ensure their clients\' sites demonstrate genuine expertise.\n\n## How Agencies Need to Adapt\n\n### 1. Focus on Transactional and Commercial Keywords\nAI Overviews dominate informational queries. But for "buy", "hire", "best [service] near me" — traditional organic results still drive clicks.\n\n### 2. Build Real Authority Through Quality Links\nThe sites Google cites in AI Overviews are the most authoritative in their niche. Quality backlinks from DA 50–90 sites remain the fastest path to that authority tier.\n\n### 3. Add AI Automation to Your Service Stack\nAgencies that can automate reporting, outreach, and content production will scale faster and at lower cost.\n\n## The Bottom Line\n\nAI has raised the bar for SEO. The agencies that invest in real authority — genuine expertise, high-quality backlinks, and consistent content — will dominate the next decade.'
+};
 
 // Open article
 function openArticle(slug) {
@@ -1315,40 +1330,24 @@ function openArticle(slug) {
   if (!listView || !articleView || !content) return;
   listView.style.display = 'none';
   articleView.classList.add('show');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo(0, 0);
   if (window.aiArticles && window.aiArticles[slug]) {
     var art = window.aiArticles[slug];
     content.innerHTML = '<div class="article-cat">' + art.category + '</div><h1 class="article-title">' + art.title + '</h1><div class="article-meta"><span>Ravi Bairwa</span><span>' + art.date + '</span><span>' + art.readTime + '</span></div><div class="article-body">' + markdownToHtml(art.content) + '</div>';
     return;
   }
   var staticArticles = {
-    'what-is-white-label-link-building': { title: 'What is White-Label Link Building and Why Every SEO Agency Needs It', category: 'Link Building' },
-    'da-50-backlinks-guide': { title: 'DA 50+ Backlinks: The Complete Guide to High-Authority Link Building in 2026', category: 'SEO Strategy' },
-    'guest-post-vs-niche-edits': { title: 'Guest Posts vs Niche Edits: Which Backlink Type Moves Rankings Faster?', category: 'Link Building' },
-    'scale-link-building-agency': { title: 'How to Scale a Link Building Agency from 0 to 1L/Month in 6 Months', category: 'Agency Growth' },
-    'anchor-text-strategy': { title: 'The Perfect Anchor Text Distribution Strategy That Google Rewards in 2026', category: 'SEO Strategy' },
-    'ai-seo-2026': { title: 'How AI is Changing SEO in 2026 and What Agencies Need to Do Now', category: 'AI & Automation' }
+    'what-is-white-label-link-building': { title: 'What is White-Label Link Building and Why Every SEO Agency Needs It', category: 'Link Building', date: '28 May 2026', readTime: '4 min read' },
+    'da-50-backlinks-guide': { title: 'DA 50+ Backlinks: The Complete Guide to High-Authority Link Building in 2026', category: 'SEO Strategy', date: '22 May 2026', readTime: '5 min read' },
+    'guest-post-vs-niche-edits': { title: 'Guest Posts vs Niche Edits: Which Backlink Type Moves Rankings Faster?', category: 'Link Building', date: '15 May 2026', readTime: '4 min read' },
+    'scale-link-building-agency': { title: 'How to Scale a Link Building Agency from 0 to 1L/Month in 6 Months', category: 'Agency Growth', date: '8 May 2026', readTime: '5 min read' },
+    'anchor-text-strategy': { title: 'The Perfect Anchor Text Distribution Strategy That Google Rewards in 2026', category: 'SEO Strategy', date: '1 May 2026', readTime: '4 min read' },
+    'ai-seo-2026': { title: 'How AI is Changing SEO in 2026 and What Agencies Need to Do Now', category: 'AI & Automation', date: '24 Apr 2026', readTime: '5 min read' }
   };
   var art = staticArticles[slug];
   if (!art) { content.innerHTML = '<p style="color:#9999aa">Article not found.</p>'; return; }
-  content.innerHTML = '<div class="article-loading"><div class="article-loading-spinner"></div><p>Generating article...</p></div>';
-  fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      messages: [{ role: 'user', content: 'Write a professional SEO blog article for Apex Digital Forge on: "' + art.title + '". 700-900 words. Use ## headings. Practical and actionable. Clean markdown.' }]
-    })
-  })
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    var text = data.content && data.content[0] ? data.content[0].text : 'Content unavailable.';
-    content.innerHTML = '<div class="article-cat">' + art.category + '</div><h1 class="article-title">' + art.title + '</h1><div class="article-meta"><span>Ravi Bairwa</span><span>Apex Digital Forge</span><span>' + Math.ceil(text.split(' ').length / 200) + ' min read</span></div><div class="article-body">' + markdownToHtml(text) + '</div>';
-  })
-  .catch(function() {
-    content.innerHTML = '<div class="article-cat">' + art.category + '</div><h1 class="article-title">' + art.title + '</h1><div class="article-body"><p style="color:#9999aa">Unable to load article. Please check your connection and try again.</p></div>';
-  });
+  var articleText = staticContent[slug] || '';
+  content.innerHTML = '<div class="article-cat">' + art.category + '</div><h1 class="article-title">' + art.title + '</h1><div class="article-meta"><span>Ravi Bairwa</span><span>' + art.date + '</span><span>' + art.readTime + '</span></div><div class="article-body">' + markdownToHtml(articleText) + '</div>';
 }
 
 // Close article view
