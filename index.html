@@ -1141,12 +1141,12 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   </div>
   <div class="footer-bottom">
     <div style="border-top:1px solid var(--border);margin-top:40px;padding-top:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:center;">
-    <a href="#page-home" onclick="showPage('home',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="home">Home</a>
-    <a href="#page-services" onclick="showPage('services',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="services">Services</a>
-    <a href="#page-pricing" onclick="showPage('pricing',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="pricing">Pricing</a>
-    <a href="#page-process" onclick="showPage('process',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="process">How It Works</a>
-    <a href="#page-contact" onclick="showPage('contact',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="contact">Contact</a>
-    <a href="#page-blog" onclick="showPage('blog',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="blog">Blog</a>
+    <a href="/" onclick="showPage('home',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="home">Home</a>
+    <a href="/services" onclick="showPage('services',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="services">Services</a>
+    <a href="/pricing" onclick="showPage('pricing',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="pricing">Pricing</a>
+    <a href="/process" onclick="showPage('process',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="process">How It Works</a>
+    <a href="/contact" onclick="showPage('contact',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="contact">Contact</a>
+    <a href="/blog" onclick="showPage('blog',event)" style="font-size:13px;color:var(--muted2);text-decoration:none;" data-page="blog">Blog</a>
     <a href="mailto:apexdigitalforge@gmail.com" style="font-size:13px;color:var(--muted2);text-decoration:none;">apexdigitalforge@gmail.com</a>
     <a href="https://www.linkedin.com/company/apex-digital-forge" target="_blank" style="font-size:13px;color:var(--muted2);text-decoration:none;">LinkedIn</a>
   </div>
@@ -1174,18 +1174,19 @@ function showPage(page, e) {
   document.querySelectorAll('nav li a, .mobile-menu a').forEach(function(a) { a.classList.remove('nav-active'); });
   var navLink = document.querySelector('[data-page="' + page + '"]');
   if (navLink) navLink.classList.add('nav-active');
-  // Push to browser history so back/forward arrows work
+  // Push clean URL — /services not /#services
   if (window.history && window.history.pushState) {
-    var currentHash = window.location.hash.replace('#', '');
-    if (currentHash !== page) {
-      window.history.pushState({ page: page }, '', '#' + page);
+    var cleanPath = page === 'home' ? '/' : '/' + page;
+    if (window.location.pathname !== cleanPath) {
+      window.history.pushState({ page: page }, '', cleanPath);
     }
   }
 }
 
 // Handle browser back/forward navigation
 window.addEventListener('popstate', function(e) {
-  var page = (e.state && e.state.page) ? e.state.page : (window.location.hash.replace('#', '') || 'home');
+  var path = window.location.pathname.replace('/', '') || 'home';
+  var page = (e.state && e.state.page) ? e.state.page : path;
   var validPages = ['home', 'services', 'pricing', 'process', 'contact', 'blog'];
   if (validPages.indexOf(page) === -1) page = 'home';
   document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
@@ -1446,15 +1447,14 @@ document.addEventListener('DOMContentLoaded', function() {
   var firstSection = document.querySelector('.psection');
   if (firstTab) firstTab.classList.add('active');
   if (firstSection) firstSection.classList.add('active');
-  // Load page from URL hash on initial visit
-  var hash = window.location.hash.replace('#', '');
+  // Load page from clean URL path on initial visit
+  var path = window.location.pathname.replace('/', '').replace('/', '') || 'home';
   var validPages = ['home', 'services', 'pricing', 'process', 'contact', 'blog'];
-  if (hash && validPages.indexOf(hash) !== -1) {
-    showPage(hash);
-    // Replace state so back arrow goes somewhere sensible
-    window.history.replaceState({ page: hash }, '', '#' + hash);
+  if (path && validPages.indexOf(path) !== -1) {
+    showPage(path);
+    window.history.replaceState({ page: path }, '', '/' + path);
   } else {
-    window.history.replaceState({ page: 'home' }, '', window.location.pathname);
+    window.history.replaceState({ page: 'home' }, '', '/');
   }
 });
 </script>
