@@ -158,7 +158,7 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .svc-card { background: var(--dark2); padding: 36px 28px; transition: background .2s; position: relative; }
 .svc-card:hover { background: var(--dark3); }
 .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); }
-.svc-num { font-family: var(--font-heading); font-size: 42px; font-weight: 800; color: rgba(255,92,53,0.1); line-height: 1; margin-bottom: 16px; }
+.svc-num { font-family: var(--font-heading); font-size: 42px; font-weight: 800; color: rgba(255,92,53,0.5); line-height: 1; margin-bottom: 16px; }
 .svc-card h3 { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
 .svc-card p { font-size: 14px; color: var(--muted2); line-height: 1.75; margin-bottom: 16px; }
 .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -220,10 +220,14 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .process-list { margin-top: 40px; }
 .process-item { display: flex; gap: 32px; padding: 36px 0; border-bottom: 1px solid var(--border); }
 .process-item:last-child { border-bottom: none; }
-.process-step-num { font-family: var(--font-heading); font-size: 52px; font-weight: 800; color: rgba(255,92,53,0.15); line-height: 1; width: 56px; flex-shrink: 0; }
+.process-step-num { font-family: var(--font-heading); font-size: 52px; font-weight: 800; color: rgba(255,92,53,0.5); line-height: 1; width: 56px; flex-shrink: 0; }
 .process-item h3 { font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .process-item p { font-size: 15px; color: var(--muted2); line-height: 1.75; }
 
+.process-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.footer-brand-heading { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+.form-success-title { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
+.cta-blog-title { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
 .svc-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .pay-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
 /* ─── FEATURED BLOG ─── */
@@ -823,12 +827,12 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <h2 class="sec-title">Simple. Transparent.<br>No surprises. Ever.</h2>
     <p class="sec-sub">From your first message to live DA 50–90 links — here is exactly how every campaign runs.</p>
     <div class="process-list">
-      <div class="process-item"><div class="process-step-num">01</div><div><h3>Submit your order</h3><p>Provide your target URL, anchor text, niche and any preferences. Fill our quick onboarding form — takes 3 minutes. We handle everything from there.</p></div></div>
-      <div class="process-item"><div class="process-step-num">02</div><div><h3>Publisher matching</h3><p>We find the most relevant high-DA publisher site from our network of 5,000+ sites. Niche-matched for maximum topical relevance and ranking impact.</p></div></div>
-      <div class="process-item"><div class="process-step-num">03</div><div><h3>Content and placement</h3><p>100% premium content written and published within 7–10 days. Niche-relevant, Google-indexed and permanently placed.</p></div></div>
-      <div class="process-item"><div class="process-step-num">04</div><div><h3>Live report delivered</h3><p>You receive the live link report directly — Google Sheet updated in real time. Click any URL to verify the placement yourself. No PDFs, no waiting.</p></div></div>
-      <div class="process-item"><div class="process-step-num">05</div><div><h3>Day 15 mid-campaign update</h3><p>Quick update on links placed, what is in progress and estimated completion. You are never in the dark — proactive communication built into every campaign.</p></div></div>
-      <div class="process-item"><div class="process-step-num">06</div><div><h3>Rankings move. You scale.</h3><p>Most clients see keyword movement within 60–90 days. The longer you run campaigns, the more authority compounds. That is when you scale up — and so do we.</p></div></div>
+      <div class="process-item"><div class="process-step-num">01</div><div><div class="process-title">Submit your order</div><p>Provide your target URL, anchor text, niche and any preferences. Fill our quick onboarding form — takes 3 minutes. We handle everything from there.</p></div></div>
+      <div class="process-item"><div class="process-step-num">02</div><div><div class="process-title">Publisher matching</div><p>We find the most relevant high-DA publisher site from our network of 5,000+ sites. Niche-matched for maximum topical relevance and ranking impact.</p></div></div>
+      <div class="process-item"><div class="process-step-num">03</div><div><div class="process-title">Content and placement</div><p>100% premium content written and published within 7–10 days. Niche-relevant, Google-indexed and permanently placed.</p></div></div>
+      <div class="process-item"><div class="process-step-num">04</div><div><div class="process-title">Live report delivered</div><p>You receive the live link report directly — Google Sheet updated in real time. Click any URL to verify the placement yourself. No PDFs, no waiting.</p></div></div>
+      <div class="process-item"><div class="process-step-num">05</div><div><div class="process-title">Day 15 mid-campaign update</div><p>Quick update on links placed, what is in progress and estimated completion. You are never in the dark — proactive communication built into every campaign.</p></div></div>
+      <div class="process-item"><div class="process-step-num">06</div><div><div class="process-title">Rankings move. You scale.</div><p>Most clients see keyword movement within 60–90 days. The longer you run campaigns, the more authority compounds. That is when you scale up — and so do we.</p></div></div>
     </div>
 
     <!-- PAYMENT -->
@@ -863,7 +867,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <p class="sec-sub">Fill the form and we reply within 2–5 hours. Every new client starts with 20 free DA 50+ guest posts. Zero cost. Zero commitment.</p>
     <div class="contact-grid">
       <div class="contact-left">
-        <h3>Apex Digital Forge</h3>
+        <div class="footer-brand-heading">Apex Digital Forge</div>
         <p>Premium white-label SEO backlink agency serving clients globally. 5,000+ publisher sites. DA 50–90 verified placements. US agency quality at honest pricing.</p>
         <div class="contact-detail"><div class="contact-icon">📧</div><div><a href="mailto:apexdigitalforge@gmail.com" style="color:var(--white);font-weight:500;font-size:14px;">apexdigitalforge@gmail.com</a><div class="contact-detail-sub">Email — reply within 2–5 hours</div></div></div>
         <div class="contact-detail"><div class="contact-icon">📧</div><div><a href="mailto:apexdigitalforge@outlook.com" style="color:var(--white);font-weight:500;font-size:14px;">apexdigitalforge@outlook.com</a><div class="contact-detail-sub">Email — alternate</div></div></div>
@@ -951,7 +955,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         </form>
         <div class="form-success" id="formSuccess" style="display:none;background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);">
           <div style="font-size:48px;margin-bottom:16px;">✓</div>
-          <h3>Thank you — message received!</h3>
+          <div class="form-success-title">Thank you — message received!</div>
           <p>Our team will review your requirements and reply within 2–5 hours. Check your inbox at the email you provided.</p>
         </div>
       </div>
@@ -1072,7 +1076,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <button class="article-back" onclick="closearticle()">← Back to Blog</button>
       <div id="articleContent"></div>
       <div class="blog-cta">
-        <h3>Need premium backlinks for your clients?</h3>
+        <div class="cta-blog-title">Need premium backlinks for your clients?</div>
         <p>DA 50–90 verified sites. Live reporting. 7–10 day delivery. Start with 20 free links.</p>
         <a href="javascript:void(0)" class="btn btn-primary" onclick="showPage('contact', event)">Get Free Trial</a>
       </div>
