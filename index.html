@@ -971,7 +971,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   <div id="blogListView">
     <div class="blog-hero section" style="padding-bottom:40px;">
       <div class="sec-eyebrow">Knowledge Base</div>
-      <h1 class="sec-title">SEO &amp; Agency<br>Growth Blog</h1>
+      <h2 class="sec-title">SEO &amp; Agency<br>Growth Blog</h2>
       <p class="sec-sub">In-depth insights on link building, SEO strategy, and agency growth — written by the Apex Digital Forge team.</p>
     </div>
 
@@ -1407,7 +1407,7 @@ function openArticle(slug) {
   window.scrollTo(0, 0);
   if (window.aiArticles && window.aiArticles[slug]) {
     var art = window.aiArticles[slug];
-    content.innerHTML = '<div class="article-cat">' + art.category + '</div><h1 class="article-title">' + art.title + '</h1><div class="article-meta"><span>Ravi Bairwa</span><span>' + art.date + '</span><span>' + art.readTime + '</span></div><div class="article-body">' + markdownToHtml(art.content) + '</div>';
+    content.innerHTML = '<div class="article-cat">' + art.category + '</div><h2 class="article-title">' + art.title + '</h2><div class="article-meta"><span>Ravi Bairwa</span><span>' + art.date + '</span><span>' + art.readTime + '</span></div><div class="article-body">' + markdownToHtml(art.content) + '</div>';
     return;
   }
   var staticArticles = {
@@ -1421,7 +1421,7 @@ function openArticle(slug) {
   var art = staticArticles[slug];
   if (!art) { content.innerHTML = '<p style="color:#9999aa">Article not found.</p>'; return; }
   var articleText = staticContent[slug] || '';
-  content.innerHTML = '<div class="article-cat">' + art.category + '</div><h1 class="article-title">' + art.title + '</h1><div class="article-meta"><span>Ravi Bairwa</span><span>' + art.date + '</span><span>' + art.readTime + '</span></div><div class="article-body">' + markdownToHtml(articleText) + '</div>';
+  content.innerHTML = '<div class="article-cat">' + art.category + '</div><h2 class="article-title">' + art.title + '</h2><div class="article-meta"><span>Ravi Bairwa</span><span>' + art.date + '</span><span>' + art.readTime + '</span></div><div class="article-body">' + markdownToHtml(articleText) + '</div>';
 }
 
 // Close article view
