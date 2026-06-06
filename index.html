@@ -224,6 +224,9 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .process-item h3 { font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .process-item p { font-size: 15px; color: var(--muted2); line-height: 1.75; }
 
+.feature-title { font-family: var(--font-heading); font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.footer-col-title { font-family: var(--font-heading); font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; }
+.cta-title { font-family: var(--font-heading); font-size: clamp(28px,4vw,48px); font-weight: 800; color: var(--white); margin-bottom: 16px; }
 .process-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .footer-brand-heading { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
 .form-success-title { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
@@ -528,10 +531,10 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <h2 class="sec-title">The leading global white-label backlink agency.</h2>
         <p class="sec-sub">5,000+ publisher sites. DA 50–90 verified traffic. 100% premium content. Google-indexed placements guaranteed.</p>
         <ul class="feature-list">
-          <li class="feature-item"><div class="feature-icon">📊</div><div><h4>Live Google Sheet reporting</h4><p>Every placement tracked in real time. Click any URL to verify the link yourself. No waiting for monthly PDFs.</p></div></li>
-          <li class="feature-item"><div class="feature-icon">🎯</div><div><h4>Niche-matched placements</h4><p>We match every guest post to a topically relevant site. Relevance plus high DA equals maximum ranking impact.</p></div></li>
-          <li class="feature-item"><div class="feature-icon">⚡</div><div><h4>7–10 day delivery</h4><p>Faster than any US or UK agency. Mid-month update on Day 15. Full report on Day 30. Same date every month.</p></div></li>
-          <li class="feature-item"><div class="feature-icon">🤝</div><div><h4>100% white-label</h4><p>Your brand. Your clients. Zero exposure. Reports formatted so you can forward directly to your clients.</p></div></li>
+          <li class="feature-item"><div class="feature-icon">📊</div><div><div class="feature-title">Live Google Sheet reporting</div><p>Every placement tracked in real time. Click any URL to verify the link yourself. No waiting for monthly PDFs.</p></div></li>
+          <li class="feature-item"><div class="feature-icon">🎯</div><div><div class="feature-title">Niche-matched placements</div><p>We match every guest post to a topically relevant site. Relevance plus high DA equals maximum ranking impact.</p></div></li>
+          <li class="feature-item"><div class="feature-icon">⚡</div><div><div class="feature-title">7–10 day delivery</div><p>Faster than any US or UK agency. Mid-month update on Day 15. Full report on Day 30. Same date every month.</p></div></li>
+          <li class="feature-item"><div class="feature-icon">🤝</div><div><div class="feature-title">100% white-label</div><p>Your brand. Your clients. Zero exposure. Reports formatted so you can forward directly to your clients.</p></div></li>
         </ul>
       </div>
       <div>
@@ -551,7 +554,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 
   <!-- CTA -->
   <section class="cta-section">
-    <h2>Try before you pay. Always.</h2>
+    <div class="cta-title">Try before you pay. Always.</div>
     <p>20 DA 50–90 backlinks on real publisher sites. Zero payment. Zero contract. Judge the quality yourself before committing to anything.</p>
     <a href="javascript:void(0)" class="btn btn-primary btn-lg" onclick="showPage('contact', event)">Claim Free Trial Now</a>
   </section>
@@ -589,7 +592,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   <!-- HOME: SERVICES PREVIEW -->
   <section class="section" style="padding-top:0;">
     <div class="sec-eyebrow">What We Do</div>
-    <h2 class="sec-title">Complete link building service stack.</h2>
+    <div class="sec-title">Complete link building service stack.</div>
     <p class="sec-sub" style="margin-bottom:40px;">Every service is fully white-label ready — your clients never know we exist.</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
@@ -616,27 +619,25 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   <!-- HOME: PRICING PREVIEW -->
   <section class="section" style="padding-top:0;">
     <div class="sec-eyebrow">Pricing</div>
-    <h2 class="sec-title">Transparent pricing. No surprises.</h2>
+    <div class="sec-title">Transparent pricing. No surprises.</div>
     <p class="sec-sub" style="margin-bottom:40px;">Choose a ready-made package or build a custom plan around your exact requirements.</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
         <div style="font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;">Starter</div>
         <div style="font-family:var(--font-heading);font-size:32px;font-weight:800;color:var(--white);margin-bottom:8px;">$249<span style="font-size:14px;font-weight:400;color:var(--muted2);">/mo</span></div>
         <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin-bottom:16px;">5 guest posts · DA 50–60 · Web 2.0s included · Monthly report</p>
-        <a href="/pricing" class="btn btn-dark" style="width:100%;text-align:center;display:block;" onclick="showPage('pricing',event)">View plan</a>
-      </div>
-      <div style="background:var(--dark2);border:2px solid var(--accent);border-radius:var(--radius-lg);padding:28px;position:relative;">
+        <a href="/pricing" class="btn btn-dark" style="width:100%;text-align:center;display:block;" onclick="showPage('pricing',event)">View Starter Plan</a>;border-radius:var(--radius-lg);padding:28px;position:relative;">
         <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:white;font-size:11px;font-weight:700;padding:3px 14px;border-radius:20px;letter-spacing:.06em;">MOST POPULAR</div>
         <div style="font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;">Growth</div>
         <div style="font-family:var(--font-heading);font-size:32px;font-weight:800;color:var(--white);margin-bottom:8px;">$450<span style="font-size:14px;font-weight:400;color:var(--muted2);">/mo</span></div>
         <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin-bottom:16px;">10 guest posts · DA 60–70 · Web 2.0s + Social · SEO audit included</p>
-        <a href="/contact" class="btn btn-primary" style="width:100%;text-align:center;display:block;" onclick="showPage('contact',event)">Start free trial</a>
+        <a href="/contact" class="btn btn-primary" style="width:100%;text-align:center;display:block;" onclick="showPage('contact',event)">Start Growth Plan Free Trial</a>
       </div>
       <div style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
         <div style="font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;">Pro</div>
         <div style="font-family:var(--font-heading);font-size:32px;font-weight:800;color:var(--white);margin-bottom:8px;">$800<span style="font-size:14px;font-weight:400;color:var(--muted2);">/mo</span></div>
         <p style="font-size:13px;color:var(--muted2);line-height:1.6;margin-bottom:16px;">20 guest posts · DA 70–80 · Full suite · Priority delivery</p>
-        <a href="/pricing" class="btn btn-dark" style="width:100%;text-align:center;display:block;" onclick="showPage('pricing',event)">View plan</a>
+        <a href="/pricing" class="btn btn-dark" style="width:100%;text-align:center;display:block;" onclick="showPage('pricing',event)">View Pro Plan Details</a>
       </div>
     </div>
     <div style="text-align:center;margin-top:24px;">
@@ -647,7 +648,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   <!-- HOME: HOW IT WORKS PREVIEW -->
   <section class="section" style="padding-top:0;">
     <div class="sec-eyebrow">How It Works</div>
-    <h2 class="sec-title">Live and delivering in 7–10 days.</h2>
+    <div class="sec-title">Live and delivering in 7–10 days.</div>
     <p class="sec-sub" style="margin-bottom:40px;">A simple, transparent process from order to live placement.</p>
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
       <div style="text-align:center;padding:24px 16px;">
@@ -679,7 +680,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   <!-- HOME: CONTACT PREVIEW -->
   <section class="section" style="padding-top:0;padding-bottom:80px;">
     <div class="sec-eyebrow">Get In Touch</div>
-    <h2 class="sec-title">Start your free trial today.</h2>
+    <div class="sec-title">Start your free trial today.</div>
     <p class="sec-sub" style="margin-bottom:40px;">20 DA 50–90 backlinks completely free. No payment, no contract, no obligation. We respond within 2–5 hours.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;">
       <div style="display:flex;flex-direction:column;gap:24px;">
@@ -1011,7 +1012,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <div class="contact-detail"><div class="contact-icon">📍</div><div><div class="contact-detail-text">Jaipur, Rajasthan, India</div><div class="contact-detail-sub">Serving agencies globally</div></div></div>
         <div class="contact-detail"><div class="contact-icon">🕐</div><div><div class="contact-detail-text">Mon–Sat, 10am–7pm IST</div><div class="contact-detail-sub">2–5 hour response guarantee</div></div></div>
         <div class="trial-callout">
-          <h4>Free trial — for every new client</h4>
+          <div class="feature-title">Free trial — for every new client</div>
           <p>20 DA 50–90 backlinks on real publisher sites. Zero payment. Zero contract. Click any link to verify the placement yourself. We earn your trust before we ask for your money.</p>
         </div>
       </div>
@@ -1245,7 +1246,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       </div>
     </div>
     <div class="footer-col">
-      <h4>Navigate</h4>
+      <div class="footer-col-title">Navigate</div>
       <a href="javascript:void(0)" onclick="showPage('home', event)">Home</a>
       <a href="javascript:void(0)" onclick="showPage('services', event)">Services</a>
       <a href="javascript:void(0)" onclick="showPage('pricing', event)">Pricing</a>
@@ -1254,7 +1255,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <a href="javascript:void(0)" onclick="showPage('blog', event)">Blog</a>
     </div>
     <div class="footer-col">
-      <h4>Services</h4>
+      <div class="footer-col-title">Services</div>
       <a href="javascript:void(0)" onclick="showPage('services', event)">Guest Posts DA 50–90</a>
       <a href="javascript:void(0)" onclick="showPage('services', event)">Web 2.0 Links</a>
       <a href="javascript:void(0)" onclick="showPage('services', event)">Niche Edits</a>
@@ -1264,7 +1265,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       <a href="javascript:void(0)" onclick="showPage('services', event)">PBN Links</a>
     </div>
     <div class="footer-col">
-      <h4>Contact</h4>
+      <div class="footer-col-title">Contact</div>
       <a href="mailto:apexdigitalforge@gmail.com">Gmail</a>
       <a href="mailto:apexdigitalforge@outlook.com">Outlook</a>
       <a href="https://wa.me/918209374032" target="_blank">WhatsApp Us (Primary)</a>
