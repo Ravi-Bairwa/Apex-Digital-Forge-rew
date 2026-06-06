@@ -57,8 +57,8 @@ a { text-decoration: none; }
 img { max-width: 100%; }
 
 /* ─── TOPBAR ─── */
-.topbar { background: var(--accent); padding: 10px 5%; display: flex; justify-content: center; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; color: #fff; }
-.topbar a { color: #fff; text-decoration: underline; }
+.topbar { background: var(--accent); padding: 10px 5%; display: flex; justify-content: center; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; color: #fff; flex-wrap: wrap; text-align: center; }
+.topbar a { color: #fff; text-decoration: underline; white-space: nowrap; }
 
 /* ─── NAV ─── */
 nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 68px; }
@@ -319,14 +319,104 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   .nav-links, .nav-right { display: none; }
   .hamburger { display: flex; }
   .form-row { grid-template-columns: 1fr; }
+  /* Home preview sections */
+  .featured-blog-grid { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 768px) {
+  /* Pricing preview 3-col → 1-col */
+  .featured-blog-grid { grid-template-columns: 1fr; }
+
+  /* Home services preview 3-col → 1-col */
+  [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* How it works 4-col → 2-col */
+  [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* Contact split 2-col → 1-col */
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Pricing cards most popular badge */
+  [style*="position:absolute;top:-12px"] {
+    font-size: 10px !important;
+  }
+}
+
 @media (max-width: 600px) {
   .stats-row { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; }
-  .hero-proof { gap: 24px; }
-  .section { padding: 60px 5%; }
+  .hero-proof { gap: 16px; flex-wrap: wrap; }
+  .hero-proof > div { flex: 1 1 40%; }
+  .section { padding: 48px 5%; }
   .svc-grid { grid-template-columns: 1fr; }
-  .anchor-grid { grid-template-columns: 1fr 1fr; }
+  .anchor-grid { grid-template-columns: 1fr; }
+
+  /* How it works 4-col → 1-col on small screens */
+  [style*="grid-template-columns:repeat(4,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Pricing preview cards */
+  [style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Most popular badge on Growth card */
+  [style*="position:absolute;top:-12px;left:50%"] {
+    position: static !important;
+    transform: none !important;
+    display: inline-block !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Hero */
+  .hero { padding: 60px 5% 48px; }
+  .hero h1 { font-size: clamp(36px, 10vw, 56px); }
+  .hero-sub { font-size: 15px; }
+  .hero-actions { flex-direction: column; gap: 12px; }
+  .hero-actions a { width: 100%; text-align: center; }
+
+  /* Nav */
+  nav { padding: 0 5%; height: 60px; }
+  .nav-logo img { width: 32px; height: 32px; }
+
+  /* Sections */
+  .sec-title { font-size: clamp(24px, 7vw, 36px) !important; }
+  .cta-title { font-size: clamp(22px, 6vw, 32px) !important; }
+  .cta-section { padding: 60px 5%; }
+
+  /* Pricing tabs */
+  .ptabs { flex-wrap: wrap; gap: 8px; }
+  .ptab { font-size: 12px; padding: 8px 12px; }
+
+  /* Contact form */
+  .form-row { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Blog */
+  .blog-grid { grid-template-columns: 1fr; }
+  .article-view { padding: 32px 5% 60px; }
+  .article-title { font-size: clamp(22px, 7vw, 36px); }
+
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  .footer-social { flex-wrap: wrap; justify-content: center; }
+
+  /* Process steps */
+  .process-steps { grid-template-columns: 1fr !important; }
+
+  /* Comparison table */
+  .comp-table { font-size: 12px; }
+  .comp-table td, .comp-table th { padding: 10px 8px; }
+
+  /* WhatsApp float button */
+  #waFloat { width: 48px; height: 48px; bottom: 20px; right: 20px; }
+
+  /* General inline grids */
+  [style*="display:grid"] { gap: 16px !important; }
 }
 
 /* ─── ANIMATIONS ─── */
