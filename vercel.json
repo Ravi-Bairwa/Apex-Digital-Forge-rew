@@ -3,6 +3,11 @@
   "builds": [
     { "src": "index.html", "use": "@vercel/static" }
   ],
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/home/", "destination": "/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true }
+  ],
   "routes": [
     { "src": "/(.*)", "dest": "/index.html" }
   ]
