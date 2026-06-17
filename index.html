@@ -1697,12 +1697,13 @@ document.addEventListener('DOMContentLoaded', function() {
   if (firstTab) firstTab.classList.add('active');
   if (firstSection) firstSection.classList.add('active');
   // Load page from clean URL path on initial visit
-  var path = window.location.pathname.replace('/', '').replace('/', '') || 'home';
-  var validPages = ['home', 'services', 'pricing', 'process', 'contact', 'blog'];
-  if (path && validPages.indexOf(path) !== -1) {
-    showPage(path);
-    window.history.replaceState({ page: path }, '', '/' + path);
+  var rawPath = window.location.pathname.replace(/^\/+/, '').replace(/\/+$/, '');
+  var validPages = ['services', 'pricing', 'process', 'contact', 'blog'];
+  if (rawPath && validPages.indexOf(rawPath) !== -1) {
+    showPage(rawPath);
+    window.history.replaceState({ page: rawPath }, '', '/' + rawPath);
   } else {
+    showPage('home');
     window.history.replaceState({ page: 'home' }, '', '/');
   }
 });
