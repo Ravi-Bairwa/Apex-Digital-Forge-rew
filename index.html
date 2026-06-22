@@ -25,7 +25,7 @@
 <meta name="robots" content="index, follow">
 <meta name="keywords" content="white label link building agency, link building companies, link building agencies, best link building agencies, white label link building, link building for seo agencies, backlink agency for agencies, white label backlinks, DA 50-90 backlinks">
 <meta name="author" content="Ravi Bairwa — Apex Digital Forge">
-<link rel="canonical" href="https://www.apexdigitalforge.in/">
+<link rel="canonical" href="https://www.apexdigitalforge.in/" id="canonical-tag">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1565,6 +1565,12 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 // Page navigation
 function showPage(page, e) {
   if (e) { e.preventDefault(); e.stopPropagation(); }
+  // Update canonical tag dynamically per page
+  var canonicalTag = document.getElementById('canonical-tag');
+  if (canonicalTag) {
+    var base = 'https://www.apexdigitalforge.in';
+    canonicalTag.setAttribute('href', page === 'home' ? base + '/' : base + '/' + page);
+  }
   document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
   var target = document.getElementById('page-' + page);
   if (target) {
