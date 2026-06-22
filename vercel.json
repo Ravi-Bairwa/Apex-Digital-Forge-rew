@@ -1,19 +1,20 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" }
-  ],
   "redirects": [
     { "source": "/home", "destination": "/", "permanent": true },
     { "source": "/home/", "destination": "/", "permanent": true },
-    { "source": "/index.html", "destination": "/", "permanent": true }
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/services.html", "destination": "/services", "permanent": true },
+    { "source": "/pricing.html", "destination": "/pricing", "permanent": true },
+    { "source": "/process.html", "destination": "/process", "permanent": true },
+    { "source": "/contact.html", "destination": "/contact", "permanent": true },
+    { "source": "/blog.html", "destination": "/blog", "permanent": true }
   ],
-  "routes": [
-    { "src": "/services", "dest": "/services.html" },
-    { "src": "/pricing", "dest": "/pricing.html" },
-    { "src": "/process", "dest": "/process.html" },
-    { "src": "/contact", "dest": "/contact.html" },
-    { "src": "/blog", "dest": "/blog.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/services", "destination": "/services.html" },
+    { "source": "/pricing", "destination": "/pricing.html" },
+    { "source": "/process", "destination": "/process.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
