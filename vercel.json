@@ -247,6 +247,10 @@
       "dest": "/blog/link-building-companies-comparison.html"
     },
     {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
