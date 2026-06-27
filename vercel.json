@@ -149,110 +149,110 @@
       "permanent": true
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/sitemap.xml",
-      "dest": "/sitemap.xml"
+      "source": "/services",
+      "destination": "/services.html"
     },
     {
-      "src": "/robots.txt",
-      "dest": "/robots.txt"
+      "source": "/pricing",
+      "destination": "/pricing.html"
     },
     {
-      "src": "/services",
-      "dest": "/services.html"
+      "source": "/process",
+      "destination": "/process.html"
     },
     {
-      "src": "/pricing",
-      "dest": "/pricing.html"
+      "source": "/contact",
+      "destination": "/contact.html"
     },
     {
-      "src": "/process",
-      "dest": "/process.html"
+      "source": "/blog",
+      "destination": "/blog.html"
     },
     {
-      "src": "/contact",
-      "dest": "/contact.html"
+      "source": "/blog/what-is-white-label-link-building",
+      "destination": "/blog/what-is-white-label-link-building.html"
     },
     {
-      "src": "/blog",
-      "dest": "/blog.html"
+      "source": "/blog/da-50-backlinks-guide",
+      "destination": "/blog/da-50-backlinks-guide.html"
     },
     {
-      "src": "/blog/what-is-white-label-link-building",
-      "dest": "/blog/what-is-white-label-link-building.html"
+      "source": "/blog/guest-post-vs-niche-edits",
+      "destination": "/blog/guest-post-vs-niche-edits.html"
     },
     {
-      "src": "/blog/da-50-backlinks-guide",
-      "dest": "/blog/da-50-backlinks-guide.html"
+      "source": "/blog/scale-link-building-agency",
+      "destination": "/blog/scale-link-building-agency.html"
     },
     {
-      "src": "/blog/guest-post-vs-niche-edits",
-      "dest": "/blog/guest-post-vs-niche-edits.html"
+      "source": "/blog/anchor-text-strategy",
+      "destination": "/blog/anchor-text-strategy.html"
     },
     {
-      "src": "/blog/scale-link-building-agency",
-      "dest": "/blog/scale-link-building-agency.html"
+      "source": "/blog/ai-seo-2026",
+      "destination": "/blog/ai-seo-2026.html"
     },
     {
-      "src": "/blog/anchor-text-strategy",
-      "dest": "/blog/anchor-text-strategy.html"
+      "source": "/blog/outsource-link-building",
+      "destination": "/blog/outsource-link-building.html"
     },
     {
-      "src": "/blog/ai-seo-2026",
-      "dest": "/blog/ai-seo-2026.html"
+      "source": "/blog/white-label-link-building-services",
+      "destination": "/blog/white-label-link-building-services.html"
     },
     {
-      "src": "/blog/outsource-link-building",
-      "dest": "/blog/outsource-link-building.html"
+      "source": "/blog/high-quality-link-building",
+      "destination": "/blog/high-quality-link-building.html"
     },
     {
-      "src": "/blog/white-label-link-building-services",
-      "dest": "/blog/white-label-link-building-services.html"
+      "source": "/blog/outreach-link-building-services",
+      "destination": "/blog/outreach-link-building-services.html"
     },
     {
-      "src": "/blog/high-quality-link-building",
-      "dest": "/blog/high-quality-link-building.html"
+      "source": "/blog/saas-link-building-agency",
+      "destination": "/blog/saas-link-building-agency.html"
     },
     {
-      "src": "/blog/outreach-link-building-services",
-      "dest": "/blog/outreach-link-building-services.html"
+      "source": "/blog/best-backlink-provider",
+      "destination": "/blog/best-backlink-provider.html"
     },
     {
-      "src": "/blog/saas-link-building-agency",
-      "dest": "/blog/saas-link-building-agency.html"
+      "source": "/blog/pbn-vs-real-backlinks",
+      "destination": "/blog/pbn-vs-real-backlinks.html"
     },
     {
-      "src": "/blog/best-backlink-provider",
-      "dest": "/blog/best-backlink-provider.html"
+      "source": "/blog/da-vs-traffic",
+      "destination": "/blog/da-vs-traffic.html"
     },
     {
-      "src": "/blog/pbn-vs-real-backlinks",
-      "dest": "/blog/pbn-vs-real-backlinks.html"
+      "source": "/blog/link-building-pricing-guide",
+      "destination": "/blog/link-building-pricing-guide.html"
     },
     {
-      "src": "/blog/da-vs-traffic",
-      "dest": "/blog/da-vs-traffic.html"
+      "source": "/blog/how-to-choose-link-building-agency",
+      "destination": "/blog/how-to-choose-link-building-agency.html"
     },
     {
-      "src": "/blog/link-building-pricing-guide",
-      "dest": "/blog/link-building-pricing-guide.html"
+      "source": "/blog/link-building-companies-comparison",
+      "destination": "/blog/link-building-companies-comparison.html"
     },
     {
-      "src": "/blog/how-to-choose-link-building-agency",
-      "dest": "/blog/how-to-choose-link-building-agency.html"
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
     },
     {
-      "src": "/blog/link-building-companies-comparison",
-      "dest": "/blog/link-building-companies-comparison.html"
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "source": "/robots.txt",
+      "destination": "/robots.txt"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
