@@ -6,6 +6,10 @@
       "use": "@vercel/static"
     },
     {
+      "src": "learn-seo.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "blog/*.html",
       "use": "@vercel/static"
     },
@@ -147,6 +151,11 @@
       "source": "/blog/link-building-companies-comparison.html",
       "destination": "/blog/link-building-companies-comparison",
       "permanent": true
+    },
+    {
+      "source": "/learn-seo.html",
+      "destination": "/learn-seo",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -249,6 +258,10 @@
     {
       "source": "/robots.txt",
       "destination": "/robots.txt"
+    },
+    {
+      "source": "/learn-seo",
+      "destination": "/learn-seo.html"
     },
     {
       "source": "/(.*)",
