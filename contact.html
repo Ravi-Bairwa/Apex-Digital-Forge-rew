@@ -2104,14 +2104,17 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 
 // Page navigation
 function showPricingTab(tab) {
-  document.querySelectorAll('.pricing-tab-content').forEach(function(el) { el.classList.remove('active'); });
-  document.querySelectorAll('[id^="ptab-"]').forEach(function(btn) {
-    if (!btn.id.includes('-content')) {
-      btn.style.background = 'transparent';
-      btn.style.color = 'var(--muted)';
-      btn.style.borderColor = 'var(--border)';
-    }
-  });
+  var pricingPage = document.getElementById('page-pricing');
+  if (pricingPage) {
+    pricingPage.querySelectorAll('.pricing-tab-content').forEach(function(el) { el.classList.remove('active'); });
+    pricingPage.querySelectorAll('[id^="ptab-"]').forEach(function(btn) {
+      if (!btn.id.includes('-content')) {
+        btn.style.background = 'transparent';
+        btn.style.color = 'var(--muted)';
+        btn.style.borderColor = 'var(--border)';
+      }
+    });
+  }
   var el = document.getElementById('ptab-' + tab + '-content');
   if (el) el.classList.add('active');
   var btn = document.getElementById('ptab-' + tab);
@@ -2123,12 +2126,15 @@ function showPricingTab(tab) {
 }
 
 function showServiceTab(tab) {
-  document.querySelectorAll('.svc-tab-content').forEach(function(el) { el.classList.remove('active'); });
-  document.querySelectorAll('[id^="tab-"]').forEach(function(btn) {
-    btn.style.background = 'transparent';
-    btn.style.color = 'var(--muted)';
-    btn.style.borderColor = 'var(--border)';
-  });
+  var svcPage = document.getElementById('page-services');
+  if (svcPage) {
+    svcPage.querySelectorAll('.svc-tab-content').forEach(function(el) { el.classList.remove('active'); });
+    svcPage.querySelectorAll('[id^="tab-"]').forEach(function(btn) {
+      btn.style.background = 'transparent';
+      btn.style.color = 'var(--muted)';
+      btn.style.borderColor = 'var(--border)';
+    });
+  }
   var el = document.getElementById('svc-' + tab);
   if (el) el.classList.add('active');
   var btn = document.getElementById('tab-' + tab);
@@ -2486,10 +2492,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <script>
-window.addEventListener('load', function() {
-  if (typeof showPage === 'function') {
-    showPage('contact');
-  }
+window.addEventListener("load", function() {
+  if (typeof showPage === "function") showPage("contact");
 });
 </script>
 </body>
