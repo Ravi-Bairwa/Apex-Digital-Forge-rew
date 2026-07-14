@@ -295,6 +295,12 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .cta-section h2 { font-size: clamp(32px, 4vw, 56px); font-weight: 800; color: var(--white); margin-bottom: 20px; }
 .cta-section p { font-size: 18px; color: var(--muted2); max-width: 500px; margin: 0 auto 36px; line-height: 1.75; }
 
+/* ─── SERVICE & PRICING TABS ─── */
+.svc-tab-content { display: none; }
+.svc-tab-content.active { display: block; }
+.pricing-tab-content { display: none; }
+.pricing-tab-content.active { display: block; }
+
 /* ─── FOOTER ─── */
 footer { background: var(--dark); border-top: 1px solid var(--border); padding: 60px 5% 32px; }
 .footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
@@ -933,7 +939,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     </div>
 
     <!-- ON-PAGE SEO TAB -->
-    <div id="svc-onpage" class="svc-tab-content">
+    <div id="svc-onpage" class="svc-tab-content active">
       <div class="svc-grid">
         <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Title Tag Optimization</div><p>Every page title rewritten with primary keywords, brand name, and click-worthy copy that improves CTR in Google search results.</p><div class="svc-tags"><span class="svc-tag">On-Page</span><span class="svc-tag">CTR Boost</span><span class="svc-tag">Keywords</span></div></div>
         <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Meta Description Writing</div><p>Compelling meta descriptions crafted for every page to maximize click-through rates from search results.</p><div class="svc-tags"><span class="svc-tag">On-Page</span><span class="svc-tag">SERP</span><span class="svc-tag">CTR</span></div></div>
@@ -1007,15 +1013,14 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     </div>
 
     <!-- AGENCIES TAB -->
-    <div id="ptab-agencies-content" class="pricing-tab-content">
+    <div id="ptab-agencies-content" class="pricing-tab-content active">
       <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">White-label full SEO service for SEO agencies. 100% white-label — your clients never know we exist.</p>
       <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
 
         <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
           <div class="plan-label">Starter</div>
           <div class="plan-price">$349<span>/mo</span></div>
-          <div class="plan-price-inr" style="color:var(--muted);font-size:13px;margin-top:4px;">≈ ₹29,000/mo</div>
-          <ul class="plan-features">
+                    <ul class="plan-features">
             <li>✅ 5 DA 50–90 Backlinks</li>
             <li>✅ On-Page Audit (5 pages)</li>
             <li>✅ Technical SEO Audit</li>
@@ -1031,8 +1036,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
           <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;letter-spacing:0.08em;">MOST POPULAR</div>
           <div class="plan-label">Growth</div>
           <div class="plan-price">$649<span>/mo</span></div>
-          <div class="plan-price-inr" style="color:var(--muted);font-size:13px;margin-top:4px;">≈ ₹54,000/mo</div>
-          <ul class="plan-features">
+                    <ul class="plan-features">
             <li>✅ 10 DA 50–90 Backlinks</li>
             <li>✅ On-Page Optimization (10 pages)</li>
             <li>✅ Full Technical SEO</li>
@@ -1047,8 +1051,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
           <div class="plan-label">Authority</div>
           <div class="plan-price">$1,099<span>/mo</span></div>
-          <div class="plan-price-inr" style="color:var(--muted);font-size:13px;margin-top:4px;">≈ ₹91,000/mo</div>
-          <ul class="plan-features">
+                    <ul class="plan-features">
             <li>✅ 20 DA 50–90 Backlinks</li>
             <li>✅ On-Page Optimization (20 pages)</li>
             <li>✅ Full Technical SEO</li>
@@ -1132,7 +1135,8 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       </div>
 
       <!-- INR Plans -->
-      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:16px;letter-spacing:0.08em;">INDIA (INR)</div>
+      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px;letter-spacing:0.08em;">INDIA (INR)</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:16px;">* All prices exclusive of 18% GST applicable for Indian clients.</p>
       <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
 
         <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
@@ -1186,8 +1190,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
           <div class="plan-label">Reseller Basic</div>
           <div class="plan-price">$199<span>/mo</span></div>
-          <div class="plan-price-inr" style="color:var(--muted);font-size:13px;margin-top:4px;">≈ ₹16,500/mo</div>
-          <ul class="plan-features">
+                    <ul class="plan-features">
             <li>✅ 5 DA 50–90 Backlinks</li>
             <li>✅ On-Page Audit Report</li>
             <li>✅ White-Label Ready Reports</li>
@@ -1201,8 +1204,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
           <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;">BEST VALUE</div>
           <div class="plan-label">Reseller Pro</div>
           <div class="plan-price">$399<span>/mo</span></div>
-          <div class="plan-price-inr" style="color:var(--muted);font-size:13px;margin-top:4px;">≈ ₹33,000/mo</div>
-          <ul class="plan-features">
+                    <ul class="plan-features">
             <li>✅ 10 DA 50–90 Backlinks</li>
             <li>✅ Full On-Page Audit</li>
             <li>✅ Technical SEO Audit</li>
@@ -1234,7 +1236,8 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <div id="ptab-linkbuilding-content" class="pricing-tab-content" style="display:none;">
       <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">Standalone link building packages. No SEO retainer needed — just pure DA 50–90 backlinks.</p>
 
-      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:16px;letter-spacing:0.08em;">PLAN A — INDIA (INR)</div>
+      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px;letter-spacing:0.08em;">PLAN A — INDIA (INR)</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:16px;">* All prices exclusive of 18% GST applicable for Indian clients.</p>
       <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:40px;">
         <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;"><div class="plan-label">Silver</div><div class="plan-price">₹6,000<span>/mo</span></div><ul class="plan-features"><li>✅ 5 DA 50+ Backlinks</li><li>✅ Live Reporting</li><li>✅ White-Label</li></ul><a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:16px;display:block;">Get Silver Plan</a></div>
         <div class="plan-card" style="background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:28px;position:relative;"><div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 14px;border-radius:20px;">POPULAR</div><div class="plan-label">Gold</div><div class="plan-price">₹11,000<span>/mo</span></div><ul class="plan-features"><li>✅ 10 DA 50+ Backlinks</li><li>✅ Live Reporting</li><li>✅ White-Label</li></ul><a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:16px;display:block;">Get Gold Plan</a></div>
@@ -2100,7 +2103,7 @@ id="page-process" class="page">
 
 // Page navigation
 function showPricingTab(tab) {
-  document.querySelectorAll('.pricing-tab-content').forEach(function(el) { el.style.display = 'none'; });
+  document.querySelectorAll('.pricing-tab-content').forEach(function(el) { el.classList.remove('active'); });
   document.querySelectorAll('[id^="ptab-"]').forEach(function(btn) {
     if (!btn.id.includes('-content')) {
       btn.style.background = 'transparent';
@@ -2109,7 +2112,7 @@ function showPricingTab(tab) {
     }
   });
   var el = document.getElementById('ptab-' + tab + '-content');
-  if (el) el.style.display = 'block';
+  if (el) el.classList.add('active');
   var btn = document.getElementById('ptab-' + tab);
   if (btn) {
     btn.style.background = 'var(--accent)';
@@ -2119,14 +2122,14 @@ function showPricingTab(tab) {
 }
 
 function showServiceTab(tab) {
-  document.querySelectorAll('.svc-tab-content').forEach(function(el) { el.style.display = 'none'; });
+  document.querySelectorAll('.svc-tab-content').forEach(function(el) { el.classList.remove('active'); });
   document.querySelectorAll('[id^="tab-"]').forEach(function(btn) {
     btn.style.background = 'transparent';
     btn.style.color = 'var(--muted)';
     btn.style.borderColor = 'var(--border)';
   });
   var el = document.getElementById('svc-' + tab);
-  if (el) el.style.display = 'block';
+  if (el) el.classList.add('active');
   var btn = document.getElementById('tab-' + tab);
   if (btn) {
     btn.style.background = 'var(--accent)';
