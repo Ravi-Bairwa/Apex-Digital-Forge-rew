@@ -11,19 +11,19 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>White Label Link Building Pricing | Apex Digital Forge</title>
-<meta name="description" content="Apex Digital Forge is a white label SEO & link building agency. On-page, off-page, technical SEO + DA 50-90 backlinks for agencies, businesses & freelancers.">
-<meta property="og:title" content="White Label SEO & Link Building Agency | Apex Digital Forge">
-<meta property="og:description" content="Full-service white label SEO agency — on-page, technical SEO, DA 50–90 backlinks. Serving agencies, businesses & freelancers worldwide.">
-<meta property="og:url" content="https://www.apexdigitalforge.in/pricing">
+<title>White Label SEO & Link Building Agency | Apex Digital Forge</title>
+<meta name="description" content="Apex Digital Forge is a white label SEO & link building agency for agencies, businesses and freelancers. On-page, off-page, technical SEO + DA 50–90 backlinks. Live reporting. Free trial.">
+<meta property="og:title" content="White Label Link Building Agency | Apex Digital Forge">
+<meta property="og:description" content="A trusted white label link building agency delivering DA 50–90 guest posts and backlinks for SEO agencies worldwide. 7–10 day delivery, live reporting.">
+<meta property="og:url" content="https://www.apexdigitalforge.in/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Apex Digital Forge | White-Label SEO & Link Building Agency">
+<meta name="twitter:title" content="Apex Digital Forge | White-Label SEO Backlink Agency">
 <meta name="twitter:description" content="Premium white-label backlinks. DA 50–90 verified sites. 7–10 day delivery. Free trial — 20 links.">
 <meta property="og:image" content="https://www.apexdigitalforge.in/assets/og-image.png">
 <meta name="twitter:image" content="https://www.apexdigitalforge.in/assets/og-image.png">
 <meta name="robots" content="index, follow">
-<meta name="keywords" content="white label SEO agency, white label link building agency, on-page SEO services, technical SEO services, link building agencies, white label SEO services, SEO agency for businesses, full service SEO, DA 50-90 backlinks, white label backlinks">
+<meta name="keywords" content="white label link building agency, link building companies, link building agencies, best link building agencies, white label link building, link building for seo agencies, backlink agency for agencies, white label backlinks, DA 50-90 backlinks">
 <meta name="author" content="Ravi Bairwa — Apex Digital Forge">
 <link rel="canonical" href="https://www.apexdigitalforge.in/pricing" id="canonical-tag">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -197,6 +197,13 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .ptab:hover:not(.active) { border-color: var(--border2); color: var(--white); }
 .psection { display: none; }
 .psection.active { display: block; }
+/* Service page tabs — separate classes to avoid JS conflicts */
+.svctabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+.svctab { padding: 10px 20px; border-radius: var(--radius); font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--muted2); transition: .2s; font-family: var(--font-body); }
+.svctab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+.svctab:hover:not(.active) { border-color: var(--border2); color: var(--white); }
+.svcpane { display: none; }
+.svcpane.active { display: block; }
 .pkg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
 .pkg { background: var(--dark2); padding: 32px 24px; transition: background .2s; position: relative; }
 .pkg:hover { background: var(--dark3); }
@@ -294,12 +301,6 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .cta-section { padding: 100px 5%; background: var(--dark); text-align: center; border-top: 1px solid var(--border); }
 .cta-section h2 { font-size: clamp(32px, 4vw, 56px); font-weight: 800; color: var(--white); margin-bottom: 20px; }
 .cta-section p { font-size: 18px; color: var(--muted2); max-width: 500px; margin: 0 auto 36px; line-height: 1.75; }
-
-/* ─── SERVICE & PRICING TABS ─── */
-.svc-tab-content { display: none; }
-.svc-tab-content.active { display: block; }
-.pricing-tab-content { display: none; }
-.pricing-tab-content.active { display: block; }
 
 /* ─── FOOTER ─── */
 footer { background: var(--dark); border-top: 1px solid var(--border); padding: 60px 5% 32px; }
@@ -522,7 +523,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       "height": 192
     },
     "image": "https://www.apexdigitalforge.in/assets/og-image.png",
-    "description": "Apex Digital Forge is a white label SEO & link building agency offering on-page SEO, technical SEO, and DA 50-90 backlinks for agencies, businesses, and freelancers worldwide.",
+    "description": "Apex Digital Forge is a white label link building agency for SEO agencies. DA 50-90 verified backlinks, real organic traffic, live reporting, 7-10 day delivery.",
     "email": "apexdigitalforge@gmail.com",
     "telephone": "+918209374032",
     "address": {
@@ -623,16 +624,16 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 
   <section class="hero">
     <div>
-      <div class="hero-eyebrow">White-Label SEO Backlink Agency</div>
-      <h1>Premium<br>backlinks that<br><em>move rankings.</em></h1>
-      <p class="hero-sub">Apex Digital Forge is a premium white-label backlink agency trusted by SEO agencies and digital marketing consultants worldwide. We place high-authority guest posts and contextual backlinks on real DA 50–90 publisher sites with verified organic traffic across every niche. Every campaign includes live Google Sheet reporting so you can track each placement in real time, with 7–10 day delivery and no long-term contracts required. Our network spans 5,000+ verified English-language publisher sites — giving your clients stronger rankings while your agency takes full credit.</p>
+      <div class="hero-eyebrow">White-Label SEO & Link Building Agency</div>
+      <h1>Full-service SEO<br>that <em>moves rankings</em><br>& grows revenue.</h1>
+      <p class="hero-sub">Apex Digital Forge is a premium white-label SEO agency trusted by agencies, businesses and freelancers worldwide. We deliver complete SEO — on-page optimization, technical fixes, and DA 50–90 verified backlinks — all under your brand. Live reporting, 7–10 day delivery, no contracts.</p>
       <div class="hero-actions">
         <a href="javascript:void(0)" class="btn btn-primary btn-lg" onclick="showPage('contact', event)">Start Free Trial — 20 Backlinks</a>
         <a href="javascript:void(0)" class="btn btn-dark btn-lg" onclick="showPage('pricing', event)">View Pricing</a>
       </div>
       <div class="hero-proof">
-        <div><div class="proof-num">5,000<span>+</span></div><div class="proof-label">Publisher Sites</div></div>
-        <div><div class="proof-num">DA<span> 50–90</span></div><div class="proof-label">Guaranteed Range</div></div>
+        <div><div class="proof-num">3<span>-in-1</span></div><div class="proof-label">On-Page + Off-Page + Technical</div></div>
+        <div><div class="proof-num">DA<span> 50–90</span></div><div class="proof-label">Guaranteed Backlinks</div></div>
         <div><div class="proof-num">7<span>–10</span></div><div class="proof-label">Day Delivery</div></div>
         <div><div class="proof-num">100<span>%</span></div><div class="proof-label">White-Label</div></div>
       </div>
@@ -922,340 +923,422 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 <div id="page-services" class="page">
   <section class="section">
     <div class="sec-eyebrow">What We Do</div>
-    <h2 class="sec-title">Complete SEO & Link Building Services</h2>
-    <p class="sec-sub">Full-service SEO for agencies, businesses, and freelancers. On-page optimization, technical SEO, and DA 50–90 verified backlinks — all 100% white-label ready. Your clients never know we exist.</p>
-
-    <!-- SERVICE CATEGORY TABS -->
-    <div style="display:flex;gap:12px;margin:32px 0 40px;flex-wrap:wrap;">
-      <button onclick="showServiceTab('onpage')" id="tab-onpage" style="padding:10px 24px;border-radius:30px;border:2px solid var(--accent);background:var(--accent);color:#fff;font-weight:700;cursor:pointer;font-size:14px;">On-Page SEO</button>
-      <button onclick="showServiceTab('offpage')" id="tab-offpage" style="padding:10px 24px;border-radius:30px;border:2px solid var(--border);background:transparent;color:var(--muted);font-weight:700;cursor:pointer;font-size:14px;">Off-Page & Link Building</button>
-      <button onclick="showServiceTab('technical')" id="tab-technical" style="padding:10px 24px;border-radius:30px;border:2px solid var(--border);background:transparent;color:var(--muted);font-weight:700;cursor:pointer;font-size:14px;">Technical SEO</button>
-      <button onclick="showServiceTab('content')" id="tab-content" style="padding:10px 24px;border-radius:30px;border:2px solid var(--border);background:transparent;color:var(--muted);font-weight:700;cursor:pointer;font-size:14px;">Content & Keyword Research</button>
-    </div>
+    <h2 class="sec-title">Complete SEO service stack</h2>
+    <p class="sec-sub">Every service is fully white-label ready — your clients never know we exist and your agency takes full credit. We cover all three pillars of SEO: on-page, off-page, and technical. All work is manual, transparent, and backed by live reporting.</p>
 
     <div class="trial-banner" style="margin-top:40px;">
       <p>New client? Start with <span>20 free DA 50–90 backlinks — zero cost, zero commitment.</span></p>
       <a href="/contact" class="btn btn-primary" onclick="showPage('contact', event)">Claim Free Trial</a>
     </div>
 
-    <!-- ON-PAGE SEO TAB -->
-    <div id="svc-onpage" class="svc-tab-content active">
+    <div class="svctabs" style="margin-top:48px;">
+      <button class="svctab active" onclick="showSvcTab('linkbuilding', this)">🔗 Link Building</button>
+      <button class="svctab" onclick="showSvcTab('onpage', this)">📄 On-Page SEO</button>
+      <button class="svctab" onclick="showSvcTab('technical', this)">⚙️ Technical SEO</button>
+    </div>
+
+    <!-- LINK BUILDING TAB -->
+    <div id="svcp-linkbuilding" class="svcpane active">
       <div class="svc-grid">
-        <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Title Tag Optimization</div><p>Every page title rewritten with primary keywords, brand name, and click-worthy copy that improves CTR in Google search results.</p><div class="svc-tags"><span class="svc-tag">On-Page</span><span class="svc-tag">CTR Boost</span><span class="svc-tag">Keywords</span></div></div>
-        <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Meta Description Writing</div><p>Compelling meta descriptions crafted for every page to maximize click-through rates from search results.</p><div class="svc-tags"><span class="svc-tag">On-Page</span><span class="svc-tag">SERP</span><span class="svc-tag">CTR</span></div></div>
-        <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">H1–H6 Heading Structure</div><p>Full heading hierarchy audit and rewrite. Proper keyword placement in H1, H2, H3 tags with natural semantic structure.</p><div class="svc-tags"><span class="svc-tag">On-Page</span><span class="svc-tag">Structure</span><span class="svc-tag">Semantics</span></div></div>
-        <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">Content Optimization</div><p>Existing content rewritten and optimized for target keywords, semantic relevance, readability, and search intent alignment.</p><div class="svc-tags"><span class="svc-tag">On-Page</span><span class="svc-tag">Content</span><span class="svc-tag">Keywords</span></div></div>
-        <div class="svc-card"><div class="svc-num">05</div><div class="svc-title">Internal Linking</div><p>Strategic internal link structure built across every page to distribute authority, improve crawlability and boost rankings.</p><div class="svc-tags"><span class="svc-tag">On-Page</span><span class="svc-tag">Authority</span><span class="svc-tag">Crawlability</span></div></div>
-        <div class="svc-card"><div class="svc-num">06</div><div class="svc-title">Image Alt Text & Optimization</div><p>Every image optimized with descriptive alt text, compressed for speed, and renamed with keyword-rich filenames.</p><div class="svc-tags"><span class="svc-tag">On-Page</span><span class="svc-tag">Accessibility</span><span class="svc-tag">Speed</span></div></div>
-        <div class="svc-card"><div class="svc-num">07</div><div class="svc-title">URL Structure Optimization</div><p>Clean, keyword-rich URLs implemented across every page. Redirects handled properly with no broken links.</p><div class="svc-tags"><span class="svc-tag">On-Page</span><span class="svc-tag">URLs</span><span class="svc-tag">Redirects</span></div></div>
-        <div class="svc-card"><div class="svc-num">08</div><div class="svc-title">Keyword Research & Mapping</div><p>Full keyword research identifying low-competition, high-intent keywords mapped to every page of the site.</p><div class="svc-tags"><span class="svc-tag">Research</span><span class="svc-tag">Strategy</span><span class="svc-tag">Intent</span></div></div>
+        <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Guest Posts — DA 50–90</div><p>Real editorial placements on high-authority domains. 100% premium content on every placement. Google-indexed and permanently placed.</p><div class="svc-tags"><span class="svc-tag">Tier 1</span><span class="svc-tag">DA 50–90</span><span class="svc-tag">Real traffic</span><span class="svc-tag">Permanent</span><span class="svc-tag">Dofollow</span></div></div>
+        <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Web 2.0 Link Building</div><p>Contextual links from high-DA web properties including Medium, Blogger, WordPress.com, Tumblr and Weebly. Strengthens Tier 1 placements and boosts authority flow.</p><div class="svc-tags"><span class="svc-tag">Tier 2</span><span class="svc-tag">Medium</span><span class="svc-tag">Blogger</span><span class="svc-tag">WordPress.com</span></div></div>
+        <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">Niche Edits and Link Insertions</div><p>Links added to existing aged content on real publisher sites. Faster indexing than new posts, strong topical relevance, and natural link profile signal for Google.</p><div class="svc-tags"><span class="svc-tag">Tier 1</span><span class="svc-tag">Aged content</span><span class="svc-tag">Fast index</span><span class="svc-tag">High relevance</span></div></div>
+        <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">Homepage Links</div><p>Sitewide authority signals from relevant high-DA domains. Strong domain-level trust passed directly to your target URL. Best for boosting overall domain authority fast.</p><div class="svc-tags"><span class="svc-tag">Tier 1</span><span class="svc-tag">Domain authority</span><span class="svc-tag">Sitewide</span></div></div>
+        <div class="svc-card"><div class="svc-num">05</div><div class="svc-title">News and Press Release Links</div><p>Coverage on real news portals and media sites. High DA, high trust, excellent for brand authority and Google News indexing. Ideal for product launches and brand awareness.</p><div class="svc-tags"><span class="svc-tag">Tier 1</span><span class="svc-tag">News portals</span><span class="svc-tag">Media sites</span><span class="svc-tag">Brand authority</span></div></div>
+        <div class="svc-card"><div class="svc-num">06</div><div class="svc-title">Casino and Adult Links</div><p>Niche-specific high-authority placements for casino, gambling, and adult industry clients. Dedicated publisher network with strong DA and verified traffic in these verticals.</p><div class="svc-tags"><span class="svc-tag">Niche specific</span><span class="svc-tag">High authority</span><span class="svc-tag">Verified traffic</span></div></div>
+        <div class="svc-card"><div class="svc-num">07</div><div class="svc-title">Local Citations</div><p>NAP-consistent local directory submissions for businesses targeting local search rankings. Google Business Profile signals, local aggregators, and industry-specific directories.</p><div class="svc-tags"><span class="svc-tag">Local SEO</span><span class="svc-tag">NAP consistent</span><span class="svc-tag">Directory</span><span class="svc-tag">GMB signals</span></div></div>
+        <div class="svc-card"><div class="svc-num">08</div><div class="svc-title">Social Signals and Bookmarking</div><p>Links shared across Reddit, Pinterest, Mix, Scoop.it and Flipboard. Creates natural social signals that tell Google your content is being discovered and shared organically.</p><div class="svc-tags"><span class="svc-tag">Tier 2</span><span class="svc-tag">Reddit</span><span class="svc-tag">Pinterest</span><span class="svc-tag">Natural profile</span></div></div>
+      </div>
+
+      <!-- ANCHOR TEXT -->
+      <div style="margin-top:80px;">
+        <div class="sec-eyebrow">Anchor Text Strategy</div>
+        <h2 class="sec-title" style="font-size:36px;">Natural distribution. Google-approved.</h2>
+        <p class="sec-sub">We never use the same keyword on every link. Our distribution mirrors how real sites link naturally.</p>
+        <div class="anchor-grid">
+          <div class="anchor-item"><div class="anchor-pct">30%</div><div class="anchor-type">Exact match</div><div class="anchor-ex">"white label link building"</div></div>
+          <div class="anchor-item"><div class="anchor-pct">30%</div><div class="anchor-type">Partial match</div><div class="anchor-ex">"premium backlinks for SEO agencies"</div></div>
+          <div class="anchor-item"><div class="anchor-pct">20%</div><div class="anchor-type">Branded</div><div class="anchor-ex">"Apex Digital Forge" or client brand name</div></div>
+          <div class="anchor-item"><div class="anchor-pct">20%</div><div class="anchor-type">Generic / naked</div><div class="anchor-ex"><a href="/blog" onclick="showPage('blog', event); setTimeout(function(){ openArticle('anchor-text-strategy'); }, 100);" style="color:var(--muted2);text-decoration:underline;text-underline-offset:3px;">apexdigitalforge.in/blog/anchor-text-strategy</a></div></div>
+        </div>
+      </div>
+
+      <!-- COMPARISON -->
+      <div style="margin-top:80px;">
+        <div class="sec-eyebrow">Comparison</div>
+        <h2 class="sec-title" style="font-size:36px;">Apex vs typical US agencies</h2>
+        <div class="compare-wrap">
+          <table class="compare-table">
+            <thead><tr><th>Feature</th><th>Typical US Agency</th><th class="ours">Apex Digital Forge</th></tr></thead>
+            <tbody>
+              <tr><td>Publisher network</td><td>Not disclosed</td><td class="ours">5,000+ verified sites</td></tr>
+              <tr><td>DA range</td><td>Not specified</td><td class="ours">DA 50–90 guaranteed</td></tr>
+              <tr><td>Traffic verification</td><td>Not verified</td><td class="ours">Real organic traffic confirmed</td></tr>
+              <tr><td>Content quality</td><td>Varies</td><td class="ours">100% premium AI-assisted</td></tr>
+              <tr><td>Reporting</td><td>Monthly PDF</td><td class="ours">Live Google Sheet — real time</td></tr>
+              <tr><td>Delivery time</td><td>Full month cycle</td><td class="ours">7–10 days</td></tr>
+              <tr><td>Price per DA 60+ link</td><td>$100–300</td><td class="ours">$18–40</td></tr>
+              <tr><td>Free trial</td><td><span class="no">✗ Never</span></td><td class="ours"><span class="yes">✓ 20 links free</span></td></tr>
+              <tr><td>Custom plans</td><td><span class="no">✗ Rigid packages</span></td><td class="ours"><span class="yes">✓ Fully customizable</span></td></tr>
+              <tr><td>Response time</td><td>24–72 hours</td><td class="ours">2–5 hours response time</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
-    <!-- OFF-PAGE & LINK BUILDING TAB -->
-    <div id="svc-offpage" class="svc-tab-content" style="display:none;">
+    <!-- ON-PAGE SEO TAB -->
+    <div id="svcp-onpage" class="svcpane">
+      <p style="color:var(--muted2);font-size:15px;line-height:1.8;margin-bottom:40px;">We optimize every element of your client's pages so Google fully understands what each page is about — and ranks it higher for the right keywords. All work is delivered white-label, client-ready.</p>
       <div class="svc-grid">
-        <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Guest Posts — DA 50–90</div><p>Real editorial placements on high-authority domains. 100% premium content. Google-indexed and permanently placed.</p><div class="svc-tags"><span class="svc-tag">Tier 1</span><span class="svc-tag">DA 50–90</span><span class="svc-tag">Real traffic</span><span class="svc-tag">Dofollow</span></div></div>
-        <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Niche Edits & Link Insertions</div><p>Links inserted into existing high-DA indexed articles. Faster indexing, stronger authority pass-through than new content.</p><div class="svc-tags"><span class="svc-tag">Tier 1</span><span class="svc-tag">Niche Edit</span><span class="svc-tag">Fast</span></div></div>
-        <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">Web 2.0 Link Building</div><p>Contextual links from high-DA web properties — Medium, Blogger, WordPress.com, Tumblr. Strengthens Tier 1 placements.</p><div class="svc-tags"><span class="svc-tag">Tier 2</span><span class="svc-tag">Medium</span><span class="svc-tag">Blogger</span></div></div>
-        <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">Homepage Backlinks</div><p>Direct homepage backlinks from real DA 50+ sites. Boosts overall domain authority fast.</p><div class="svc-tags"><span class="svc-tag">DA 50+</span><span class="svc-tag">Homepage</span><span class="svc-tag">Authority</span></div></div>
-        <div class="svc-card"><div class="svc-num">05</div><div class="svc-title">Press Release Distribution</div><p>Professional press releases distributed to 200+ news and media sites. Builds brand authority and referral traffic.</p><div class="svc-tags"><span class="svc-tag">PR</span><span class="svc-tag">News</span><span class="svc-tag">Brand</span></div></div>
-        <div class="svc-card"><div class="svc-num">06</div><div class="svc-title">Social Signals & Citations</div><p>Social bookmarking, profile links, and citations across high-DA platforms. Builds a natural, diverse link profile.</p><div class="svc-tags"><span class="svc-tag">Tier 2</span><span class="svc-tag">Citations</span><span class="svc-tag">Diversity</span></div></div>
-        <div class="svc-card"><div class="svc-num">07</div><div class="svc-title">Casino & Adult Links</div><p>Specialist high-DA placements for casino, betting, and adult niches. Strict quality control on every placement.</p><div class="svc-tags"><span class="svc-tag">Niche</span><span class="svc-tag">DA 50+</span><span class="svc-tag">Specialist</span></div></div>
-        <div class="svc-card"><div class="svc-num">08</div><div class="svc-title">Local Citations</div><p>Business listings and citations built across 50+ local directories to boost local SEO authority and map rankings.</p><div class="svc-tags"><span class="svc-tag">Local SEO</span><span class="svc-tag">Citations</span><span class="svc-tag">GMB</span></div></div>
+        <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Title Tag Optimization</div><p>Rewrite title tags for every target page using primary keyword placement, correct length (50–60 chars), and click-worthy formatting that improves CTR in search results.</p><div class="svc-tags"><span class="svc-tag">Keyword targeting</span><span class="svc-tag">CTR boost</span><span class="svc-tag">Google-ready</span></div></div>
+        <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Meta Description Writing</div><p>Craft compelling meta descriptions (150–160 chars) for each page. Naturally includes target keyword and a clear call to action to increase organic click-through rates.</p><div class="svc-tags"><span class="svc-tag">155 char limit</span><span class="svc-tag">Keyword natural</span><span class="svc-tag">CTA included</span></div></div>
+        <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">H1–H6 Heading Structure</div><p>Audit and rewrite heading hierarchy across all target pages. Each page gets exactly one H1, properly nested H2/H3 subheadings, and keyword-rich structure for crawler clarity.</p><div class="svc-tags"><span class="svc-tag">Single H1</span><span class="svc-tag">Proper nesting</span><span class="svc-tag">Keyword in headings</span></div></div>
+        <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">Content Optimization</div><p>Optimize existing page content for keyword density, semantic coverage, readability, and topical depth. We improve what's there — no full rewrites unless requested.</p><div class="svc-tags"><span class="svc-tag">Keyword density</span><span class="svc-tag">Semantic SEO</span><span class="svc-tag">Readability</span></div></div>
+        <div class="svc-card"><div class="svc-num">05</div><div class="svc-title">Internal Linking</div><p>Audit existing internal links and add strategic new ones across target pages. Passes link equity to priority pages and helps Google discover and index content faster.</p><div class="svc-tags"><span class="svc-tag">Link equity</span><span class="svc-tag">Crawl depth</span><span class="svc-tag">Anchor text</span></div></div>
+        <div class="svc-card"><div class="svc-num">06</div><div class="svc-title">Image Alt Text</div><p>Add or rewrite alt attributes on all images across target pages. Ensures images are indexed correctly, improves accessibility scores, and adds keyword signals for Google.</p><div class="svc-tags"><span class="svc-tag">Accessibility</span><span class="svc-tag">Image SEO</span><span class="svc-tag">Keyword signals</span></div></div>
+        <div class="svc-card"><div class="svc-num">07</div><div class="svc-title">URL Structure Review</div><p>Audit URL slugs for all target pages. Recommend and implement cleaner, keyword-rich URL structures. Set up 301 redirects where URLs are changed to preserve authority.</p><div class="svc-tags"><span class="svc-tag">Clean URLs</span><span class="svc-tag">301 redirect</span><span class="svc-tag">Keyword slug</span></div></div>
+        <div class="svc-card"><div class="svc-num">08</div><div class="svc-title">Keyword Mapping & Research</div><p>Full keyword research and page-by-page mapping. Each URL gets a primary keyword and 3–5 supporting keywords. Includes search volume and competition data from Ahrefs/SEMrush.</p><div class="svc-tags"><span class="svc-tag">Ahrefs data</span><span class="svc-tag">Search volume</span><span class="svc-tag">Competition</span></div></div>
       </div>
     </div>
 
     <!-- TECHNICAL SEO TAB -->
-    <div id="svc-technical" class="svc-tab-content" style="display:none;">
+    <div id="svcp-technical" class="svcpane">
+      <p style="color:var(--muted2);font-size:15px;line-height:1.8;margin-bottom:40px;">Technical SEO ensures Google can crawl, understand, and index your client's site correctly. We audit, identify, and fix every technical issue — all delivered as a white-label report your agency can present as your own.</p>
       <div class="svc-grid">
-        <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Full Technical SEO Audit</div><p>200-point technical audit covering every crawlability, indexation, speed, and usability issue on the site.</p><div class="svc-tags"><span class="svc-tag">Technical</span><span class="svc-tag">Audit</span><span class="svc-tag">200-Point</span></div></div>
-        <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Core Web Vitals Optimization</div><p>LCP, CLS, and FID optimized to pass Google's Core Web Vitals thresholds — directly impacts rankings.</p><div class="svc-tags"><span class="svc-tag">Core Web Vitals</span><span class="svc-tag">Speed</span><span class="svc-tag">UX</span></div></div>
-        <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">Schema Markup</div><p>JSON-LD schema implemented for Organization, LocalBusiness, Article, FAQ, Product, and Review types.</p><div class="svc-tags"><span class="svc-tag">Schema</span><span class="svc-tag">JSON-LD</span><span class="svc-tag">Rich Results</span></div></div>
-        <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">Crawl Error Fixes</div><p>All 404 errors, redirect chains, broken links, and crawl traps identified and fixed for clean Googlebot crawling.</p><div class="svc-tags"><span class="svc-tag">Crawl</span><span class="svc-tag">404 Fixes</span><span class="svc-tag">Redirects</span></div></div>
-        <div class="svc-card"><div class="svc-num">05</div><div class="svc-title">Sitemap & Robots.txt</div><p>XML sitemap built and submitted. Robots.txt configured to guide Google crawlers to all important pages.</p><div class="svc-tags"><span class="svc-tag">Sitemap</span><span class="svc-tag">Robots.txt</span><span class="svc-tag">Indexation</span></div></div>
-        <div class="svc-card"><div class="svc-num">06</div><div class="svc-title">Mobile Usability</div><p>Full mobile audit ensuring responsive design, tap targets, font sizes, and viewport configuration all meet Google's standards.</p><div class="svc-tags"><span class="svc-tag">Mobile</span><span class="svc-tag">Responsive</span><span class="svc-tag">Google</span></div></div>
-        <div class="svc-card"><div class="svc-num">07</div><div class="svc-title">Duplicate Content & Canonicals</div><p>Duplicate pages identified, canonical tags implemented, and thin content issues resolved to prevent indexation dilution.</p><div class="svc-tags"><span class="svc-tag">Canonical</span><span class="svc-tag">Duplicate</span><span class="svc-tag">Indexation</span></div></div>
-        <div class="svc-card"><div class="svc-num">08</div><div class="svc-title">HTTPS & Security</div><p>SSL certificate verification, mixed content fixes, and security headers configured for full HTTPS compliance.</p><div class="svc-tags"><span class="svc-tag">HTTPS</span><span class="svc-tag">SSL</span><span class="svc-tag">Security</span></div></div>
-      </div>
-    </div>
-
-    <!-- CONTENT TAB -->
-    <div id="svc-content" class="svc-tab-content" style="display:none;">
-      <div class="svc-grid">
-        <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">SEO Blog Writing</div><p>800–1,500 word SEO-optimized blog posts targeting low-competition, high-intent keywords. Fully researched and original.</p><div class="svc-tags"><span class="svc-tag">Content</span><span class="svc-tag">Blog</span><span class="svc-tag">Keywords</span></div></div>
-        <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Keyword Research</div><p>Full keyword research report covering primary, secondary, and LSI keywords with search volume, competition, and CPC data.</p><div class="svc-tags"><span class="svc-tag">Research</span><span class="svc-tag">Strategy</span><span class="svc-tag">Data</span></div></div>
-        <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">Content Gap Analysis</div><p>Competitor content audit identifying what keywords your competitors rank for that you don't — and a plan to close the gap.</p><div class="svc-tags"><span class="svc-tag">Competitor</span><span class="svc-tag">Gap</span><span class="svc-tag">Strategy</span></div></div>
-        <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">Landing Page Copywriting</div><p>High-converting, SEO-optimized landing pages written for product, service, and location pages.</p><div class="svc-tags"><span class="svc-tag">Copy</span><span class="svc-tag">Landing Page</span><span class="svc-tag">Conversion</span></div></div>
+        <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Full Technical SEO Audit</div><p>Complete site audit using Ahrefs and Screaming Frog. Identifies all crawl errors, redirect issues, broken links, duplicate content, indexability problems, and more. Delivered as a branded report.</p><div class="svc-tags"><span class="svc-tag">Ahrefs audit</span><span class="svc-tag">Crawl report</span><span class="svc-tag">White-label PDF</span></div></div>
+        <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">Core Web Vitals Fixes</div><p>Diagnose and fix LCP, FID/INP, and CLS scores. Includes image compression, lazy loading, render-blocking JS removal, and layout shift fixes to hit green on Google's PageSpeed Insights.</p><div class="svc-tags"><span class="svc-tag">LCP</span><span class="svc-tag">CLS</span><span class="svc-tag">INP</span><span class="svc-tag">PageSpeed</span></div></div>
+        <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">Schema Markup Implementation</div><p>Add structured data (JSON-LD) for Organization, LocalBusiness, Article, FAQ, Product, and BreadcrumbList schemas. Increases eligibility for Google rich results and knowledge panels.</p><div class="svc-tags"><span class="svc-tag">JSON-LD</span><span class="svc-tag">Rich results</span><span class="svc-tag">Schema.org</span></div></div>
+        <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">Crawl Error Fixes</div><p>Resolve 404 errors, redirect chains, broken internal links, and soft 404s. Fix crawl budget waste caused by paginated or duplicate URLs. Submit clean URL sets to Google Search Console.</p><div class="svc-tags"><span class="svc-tag">404 fixes</span><span class="svc-tag">Redirect chains</span><span class="svc-tag">Crawl budget</span></div></div>
+        <div class="svc-card"><div class="svc-num">05</div><div class="svc-title">Sitemap & Robots.txt</div><p>Create or update XML sitemaps with all indexable pages, correct priority values, and lastmod dates. Optimize robots.txt to block crawl waste and protect sensitive directories.</p><div class="svc-tags"><span class="svc-tag">XML sitemap</span><span class="svc-tag">Robots.txt</span><span class="svc-tag">GSC submission</span></div></div>
+        <div class="svc-card"><div class="svc-num">06</div><div class="svc-title">Canonical Tag Fixes</div><p>Audit and implement correct canonical tags across all pages. Resolve self-referencing canonicals, cross-domain canonicals, and duplicate content signals that split ranking power.</p><div class="svc-tags"><span class="svc-tag">Canonical</span><span class="svc-tag">Duplicate content</span><span class="svc-tag">Link consolidation</span></div></div>
+        <div class="svc-card"><div class="svc-num">07</div><div class="svc-title">Mobile Usability</div><p>Fix mobile viewport issues, tap target sizing, font rendering, and layout breaks flagged in Google Search Console's mobile usability report. Full cross-device responsiveness check.</p><div class="svc-tags"><span class="svc-tag">Mobile-first</span><span class="svc-tag">Viewport</span><span class="svc-tag">GSC report</span></div></div>
+        <div class="svc-card"><div class="svc-num">08</div><div class="svc-title">HTTPS & Security</div><p>Ensure full HTTPS implementation with no mixed content warnings. Fix HTTP to HTTPS redirect chains, update internal links, and verify SSL certificate validity for all subdomains.</p><div class="svc-tags"><span class="svc-tag">HTTPS</span><span class="svc-tag">SSL</span><span class="svc-tag">Mixed content</span><span class="svc-tag">Security</span></div></div>
       </div>
     </div>
 
   </section>
 </div>
+      <div class="svc-card">
+        <div class="svc-num">01</div>
+        <div class="svc-title">Guest Posts — DA 50–90</div>
+        <p>Real editorial placements on high-authority domains. 100% premium content on every placement. Google-indexed and permanently placed.</p>
+        <div class="svc-tags"><span class="svc-tag">Tier 1</span><span class="svc-tag">DA 50–90</span><span class="svc-tag">Real traffic</span><span class="svc-tag">Permanent</span><span class="svc-tag">Dofollow</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">02</div>
+        <div class="svc-title">Web 2.0 Link Building</div>
+        <p>Contextual links from high-DA web properties including Medium, Blogger, WordPress.com, Tumblr and Weebly. Strengthens Tier 1 placements and boosts authority flow.</p>
+        <div class="svc-tags"><span class="svc-tag">Tier 2</span><span class="svc-tag">Medium</span><span class="svc-tag">Blogger</span><span class="svc-tag">WordPress.com</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">03</div>
+        <div class="svc-title">Niche Edits and Link Insertions</div>
+        <p>Links added to existing aged content on real publisher sites. Faster indexing than new posts, strong topical relevance, and natural link profile signal for Google.</p>
+        <div class="svc-tags"><span class="svc-tag">Tier 1</span><span class="svc-tag">Aged content</span><span class="svc-tag">Fast index</span><span class="svc-tag">High relevance</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">04</div>
+        <div class="svc-title">Homepage Links</div>
+        <p>Sitewide authority signals from relevant high-DA domains. Strong domain-level trust passed directly to your target URL. Best for boosting overall domain authority fast.</p>
+        <div class="svc-tags"><span class="svc-tag">Tier 1</span><span class="svc-tag">Domain authority</span><span class="svc-tag">Sitewide</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">05</div>
+        <div class="svc-title">News and Press Release Links</div>
+        <p>Coverage on real news portals and media sites. High DA, high trust, excellent for brand authority and Google News indexing. Ideal for product launches and brand awareness.</p>
+        <div class="svc-tags"><span class="svc-tag">Tier 1</span><span class="svc-tag">News portals</span><span class="svc-tag">Media sites</span><span class="svc-tag">Brand authority</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">06</div>
+        <div class="svc-title">Casino and Adult Links</div>
+        <p>Niche-specific high-authority placements for casino, gambling, and adult industry clients. Dedicated publisher network with strong DA and verified traffic in these verticals.</p>
+        <div class="svc-tags"><span class="svc-tag">Niche specific</span><span class="svc-tag">High authority</span><span class="svc-tag">Verified traffic</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">07</div>
+        <div class="svc-title">Local Citations</div>
+        <p>NAP-consistent local directory submissions for businesses targeting local search rankings. Google Business Profile signals, local aggregators, and industry-specific directories.</p>
+        <div class="svc-tags"><span class="svc-tag">Local SEO</span><span class="svc-tag">NAP consistent</span><span class="svc-tag">Directory</span><span class="svc-tag">GMB signals</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-num">08</div>
+        <div class="svc-title">Social Signals and Bookmarking</div>
+        <p>Links shared across Reddit, Pinterest, Mix, Scoop.it and Flipboard. Creates natural social signals that tell Google your content is being discovered and shared organically.</p>
+        <div class="svc-tags"><span class="svc-tag">Tier 2</span><span class="svc-tag">Reddit</span><span class="svc-tag">Pinterest</span><span class="svc-tag">Natural profile</span></div>
+      </div>
+    </div>
 
+<!-- ═══ PRICING ═══ -->
 <div id="page-pricing" class="page">
   <section class="section">
     <div class="sec-eyebrow">Transparent Pricing</div>
-    <h2 class="sec-title">Full SEO Plans for Every Client Type</h2>
-    <p class="sec-sub">Complete on-page, off-page & technical SEO packages — for agencies, businesses, and freelancers. Plus standalone link building plans.</p>
+    <h2 class="sec-title">Every audience.<br>Every budget covered.</h2>
+    <p class="sec-sub">Choose from full SEO packages for agencies, businesses, or freelancers — or pick link-building-only plans. All plans include live reporting, verified DA 50–90 placements and 7–10 day delivery.</p>
 
     <div class="trial-banner" style="margin-top:40px;">
       <p>All new clients get <span>20 free DA 50–90 backlinks — zero payment, zero contract.</span></p>
-      <a href="/contact" onclick="showPage('contact',event)" class="btn btn-sm">Claim Free Trial</a>
+      <a href="/contact" class="btn btn-primary" onclick="showPage('contact', event)">Start Free Trial</a>
     </div>
 
-    <!-- PRICING TABS -->
-    <div style="display:flex;gap:10px;margin:40px 0 32px;flex-wrap:wrap;">
-      <button onclick="showPricingTab('agencies')" id="ptab-agencies" style="padding:10px 22px;border-radius:30px;border:2px solid var(--accent);background:var(--accent);color:#fff;font-weight:700;cursor:pointer;font-size:13px;">For Agencies</button>
-      <button onclick="showPricingTab('businesses')" id="ptab-businesses" style="padding:10px 22px;border-radius:30px;border:2px solid var(--border);background:transparent;color:var(--muted);font-weight:700;cursor:pointer;font-size:13px;">For Businesses</button>
-      <button onclick="showPricingTab('freelancers')" id="ptab-freelancers" style="padding:10px 22px;border-radius:30px;border:2px solid var(--border);background:transparent;color:var(--muted);font-weight:700;cursor:pointer;font-size:13px;">For Freelancers</button>
-      <button onclick="showPricingTab('linkbuilding')" id="ptab-linkbuilding" style="padding:10px 22px;border-radius:30px;border:2px solid var(--border);background:transparent;color:var(--muted);font-weight:700;cursor:pointer;font-size:13px;">Link Building Only</button>
+    <div class="ptabs">
+      <button class="ptab active" onclick="showPricing('agencies')">🏢 For Agencies</button>
+      <button class="ptab" onclick="showPricing('businesses')">💼 For Businesses</button>
+      <button class="ptab" onclick="showPricing('freelancers')">👤 Freelancers</button>
+      <button class="ptab" onclick="showPricing('a-india')">🔗 Link Building (India ₹)</button>
+      <button class="ptab" onclick="showPricing('a-intl')">🔗 Link Building (Intl $)</button>
+      <button class="ptab" onclick="showPricing('perlink')">📊 Per Link Rates</button>
+      <button class="ptab" onclick="showPricing('custom')">🔧 Custom Plan</button>
     </div>
 
-    <!-- AGENCIES TAB -->
-    <div id="ptab-agencies-content" class="pricing-tab-content active">
-      <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">White-label full SEO service for SEO agencies. 100% white-label — your clients never know we exist.</p>
-      <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
-
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <div class="plan-label">Starter</div>
-          <div class="plan-price">$349<span>/mo</span></div>
-                    <ul class="plan-features">
-            <li>✅ 5 DA 50–90 Backlinks</li>
-            <li>✅ On-Page Audit (5 pages)</li>
-            <li>✅ Technical SEO Audit</li>
-            <li>✅ Keyword Research Report</li>
-            <li>✅ Live Google Sheet Reporting</li>
-            <li>✅ White-Label Reports</li>
-            <li>✅ 7–10 Day Delivery</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Get Starter Agency Plan</a>
+    <!-- FOR AGENCIES -->
+    <div id="ps-agencies" class="psection active">
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">Full-service white-label SEO for agencies. On-page, off-page, technical SEO + backlinks — all under your brand. Your clients never know we exist.</p>
+      <div class="pkg-grid">
+        <div class="pkg">
+          <div class="pkg-tier">Starter</div>
+          <div class="pkg-name">Agency Starter</div>
+          <div class="pkg-price">$349 <span>/mo</span></div>
+          <div class="pkg-inr">≈ ₹29,000/month</div>
+          <div class="pkg-divider"></div>
+          <div class="pkg-row">5 DA 50+ backlinks</div>
+          <div class="pkg-row">On-page audit (5 pages)</div>
+          <div class="pkg-row">Technical audit report</div>
+          <div class="pkg-row">Keyword research</div>
+          <div class="pkg-row">1 target URL</div>
+          <div class="pkg-row">Live Google Sheet</div>
+          <div class="pkg-row">White-label PDF report</div>
+          <div class="pkg-row dim">No content included</div>
+          <a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Agency Starter</a>
         </div>
-
-        <div class="plan-card popular" style="background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:32px;position:relative;">
-          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;letter-spacing:0.08em;">MOST POPULAR</div>
-          <div class="plan-label">Growth</div>
-          <div class="plan-price">$649<span>/mo</span></div>
-                    <ul class="plan-features">
-            <li>✅ 10 DA 50–90 Backlinks</li>
-            <li>✅ On-Page Optimization (10 pages)</li>
-            <li>✅ Full Technical SEO</li>
-            <li>✅ 2 SEO Blog Posts</li>
-            <li>✅ Keyword Research & Mapping</li>
-            <li>✅ Competitor Analysis</li>
-            <li>✅ Live Reporting + White-Label</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Start Growth Agency Plan</a>
+        <div class="pkg hot">
+          <div class="pkg-pop">Most Popular</div>
+          <div class="pkg-tier">Growth</div>
+          <div class="pkg-name">Agency Growth</div>
+          <div class="pkg-price">$649 <span>/mo</span></div>
+          <div class="pkg-inr">≈ ₹54,000/month</div>
+          <div class="pkg-divider"></div>
+          <div class="pkg-row">10 DA 50+ backlinks</div>
+          <div class="pkg-row">On-page optimization (10 pages)</div>
+          <div class="pkg-row">Full technical SEO fixes</div>
+          <div class="pkg-row">2 SEO blog posts</div>
+          <div class="pkg-row">Keyword tracking</div>
+          <div class="pkg-row">2 target URLs</div>
+          <div class="pkg-row">Live reporting + white-label PDF</div>
+          <div class="pkg-row">Competitor analysis</div>
+          <a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Agency Growth</a>
         </div>
-
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <div class="plan-label">Authority</div>
-          <div class="plan-price">$1,099<span>/mo</span></div>
-                    <ul class="plan-features">
-            <li>✅ 20 DA 50–90 Backlinks</li>
-            <li>✅ On-Page Optimization (20 pages)</li>
-            <li>✅ Full Technical SEO</li>
-            <li>✅ 4 SEO Blog Posts</li>
-            <li>✅ Full Competitor Analysis</li>
-            <li>✅ Priority Delivery</li>
-            <li>✅ Dedicated Account Manager</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Get Authority Agency Plan</a>
+        <div class="pkg">
+          <div class="pkg-tier">Premium</div>
+          <div class="pkg-name">Agency Authority</div>
+          <div class="pkg-price">$1,099 <span>/mo</span></div>
+          <div class="pkg-inr">≈ ₹91,000/month</div>
+          <div class="pkg-divider"></div>
+          <div class="pkg-row">20 DA 50+ backlinks</div>
+          <div class="pkg-row">On-page optimization (20 pages)</div>
+          <div class="pkg-row">Full technical SEO fixes</div>
+          <div class="pkg-row">4 SEO blog posts</div>
+          <div class="pkg-row">Competitor analysis</div>
+          <div class="pkg-row">Priority 7-day delivery</div>
+          <div class="pkg-row">Unlimited target URLs</div>
+          <div class="pkg-row">Dedicated account manager</div>
+          <a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Agency Authority</a>
         </div>
-
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <div class="plan-label">Enterprise</div>
-          <div class="plan-price">Custom</div>
-          <div class="plan-price-inr" style="color:var(--muted);font-size:13px;margin-top:4px;">Tailored to your volume</div>
-          <ul class="plan-features">
-            <li>✅ Unlimited Backlinks</li>
-            <li>✅ Full On-Page + Technical SEO</li>
-            <li>✅ Unlimited Blog Posts</li>
-            <li>✅ Custom Reporting Format</li>
-            <li>✅ Dedicated Account Manager</li>
-            <li>✅ Priority Support</li>
-            <li>✅ Custom SLA Agreement</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Discuss Enterprise Plan</a>
+        <div class="pkg">
+          <div class="pkg-tier">Enterprise</div>
+          <div class="pkg-name">Agency Enterprise</div>
+          <div class="pkg-price">Custom <span>quote</span></div>
+          <div class="pkg-inr">Starting ₹1,00,000/month</div>
+          <div class="pkg-divider"></div>
+          <div class="pkg-row">Unlimited backlinks</div>
+          <div class="pkg-row">Full site on-page optimization</div>
+          <div class="pkg-row">Ongoing technical SEO</div>
+          <div class="pkg-row">Custom content volume</div>
+          <div class="pkg-row">Custom reporting format</div>
+          <div class="pkg-row">Multiple client campaigns</div>
+          <div class="pkg-row">Dedicated account team</div>
+          <div class="pkg-row">SLA-backed delivery</div>
+          <a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Request Enterprise Quote</a>
         </div>
+      </div>
+      <p style="color:var(--muted);font-size:12px;margin-top:14px;">INR clients: + 18% GST on all Indian invoices.</p>
+    </div>
 
+    <!-- FOR BUSINESSES -->
+    <div id="ps-businesses" class="psection">
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">Direct SEO for businesses who want to rank higher and get more customers. We handle everything — on-page, off-page, and technical — so you can focus on running your business.</p>
+      <div class="pkg-grid">
+        <div class="pkg">
+          <div class="pkg-tier">Starter</div>
+          <div class="pkg-name">Foundation</div>
+          <div class="pkg-price">$499 <span>/mo</span></div>
+          <div class="pkg-inr">≈ ₹41,500/month</div>
+          <div class="pkg-divider"></div>
+          <div class="pkg-row">Technical SEO audit + fixes</div>
+          <div class="pkg-row">On-page optimization (5 pages)</div>
+          <div class="pkg-row">3 DA 50+ backlinks</div>
+          <div class="pkg-row">Keyword research</div>
+          <div class="pkg-row">Monthly ranking report</div>
+          <div class="pkg-row">Google Search Console setup</div>
+          <div class="pkg-row dim">No content included</div>
+          <a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Foundation Plan</a>
+        </div>
+        <div class="pkg hot">
+          <div class="pkg-pop">Most Popular</div>
+          <div class="pkg-tier">Growth</div>
+          <div class="pkg-name">Business Growth</div>
+          <div class="pkg-price">$899 <span>/mo</span></div>
+          <div class="pkg-inr">≈ ₹74,500/month</div>
+          <div class="pkg-divider"></div>
+          <div class="pkg-row">Full technical SEO</div>
+          <div class="pkg-row">On-page optimization (15 pages)</div>
+          <div class="pkg-row">8 DA 50+ backlinks</div>
+          <div class="pkg-row">2 SEO blog posts</div>
+          <div class="pkg-row">Keyword tracking dashboard</div>
+          <div class="pkg-row">Competitor analysis</div>
+          <div class="pkg-row">Monthly strategy call</div>
+          <a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Business Growth</a>
+        </div>
+        <div class="pkg">
+          <div class="pkg-tier">Premium</div>
+          <div class="pkg-name">Dominate</div>
+          <div class="pkg-price">$1,499 <span>/mo</span></div>
+          <div class="pkg-inr">≈ ₹1,24,000/month</div>
+          <div class="pkg-divider"></div>
+          <div class="pkg-row">Complete SEO (all pillars)</div>
+          <div class="pkg-row">Unlimited page optimization</div>
+          <div class="pkg-row">15 DA 50+ backlinks</div>
+          <div class="pkg-row">4 SEO blog posts</div>
+          <div class="pkg-row">Content strategy</div>
+          <div class="pkg-row">Competitor gap analysis</div>
+          <div class="pkg-row">Priority support + weekly report</div>
+          <a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Dominate Plan</a>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:12px;margin-top:14px;">INR clients: + 18% GST on all Indian invoices.</p>
+    </div>
+
+    <!-- FOR FREELANCERS -->
+    <div id="ps-freelancers" class="psection">
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">Reseller packages for freelancers and consultants. Buy our white-label SEO work, deliver it to your clients under your own brand. Keep the margin, we stay invisible.</p>
+      <div class="pkg-grid" style="max-width:700px;">
+        <div class="pkg">
+          <div class="pkg-tier">Basic</div>
+          <div class="pkg-name">Reseller Basic</div>
+          <div class="pkg-price">$199 <span>/mo</span></div>
+          <div class="pkg-inr">≈ ₹16,500/month</div>
+          <div class="pkg-divider"></div>
+          <div class="pkg-row">5 DA 50+ backlinks</div>
+          <div class="pkg-row">On-page audit report (white-label)</div>
+          <div class="pkg-row">Keyword research sheet</div>
+          <div class="pkg-row">Live Google Sheet</div>
+          <div class="pkg-row">Branded PDF report ready to send</div>
+          <div class="pkg-row">1 revision per month</div>
+          <div class="pkg-row dim">No technical fixes included</div>
+          <a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Reseller Basic</a>
+        </div>
+        <div class="pkg hot">
+          <div class="pkg-pop">Best Value</div>
+          <div class="pkg-tier">Pro</div>
+          <div class="pkg-name">Reseller Pro</div>
+          <div class="pkg-price">$399 <span>/mo</span></div>
+          <div class="pkg-inr">≈ ₹33,000/month</div>
+          <div class="pkg-divider"></div>
+          <div class="pkg-row">10 DA 50+ backlinks</div>
+          <div class="pkg-row">On-page + technical audit report</div>
+          <div class="pkg-row">Keyword research + mapping</div>
+          <div class="pkg-row">Live Google Sheet</div>
+          <div class="pkg-row">Full white-label PDF report</div>
+          <div class="pkg-row">Priority delivery (7 days)</div>
+          <div class="pkg-row">2 revisions per month</div>
+          <a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Reseller Pro</a>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:12px;margin-top:14px;">INR clients: + 18% GST on all Indian invoices.</p>
+    </div>
+    <div id="ps-a-india" class="psection active">
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">Simple packages focused on premium guest posts and supporting links. Best for agencies wanting clear deliverables.</p>
+      <div class="pkg-grid">
+        <div class="pkg"><div class="pkg-tier">Starter</div><div class="pkg-name">Silver</div><div class="pkg-price">₹6,000 <span>/mo</span></div><div class="pkg-inr">For small agencies</div><div class="pkg-divider"></div><div class="pkg-row">5 guest posts</div><div class="pkg-row">DA 50–60 sites</div><div class="pkg-row">10 Web 2.0 links</div><div class="pkg-row">10 social signals</div><div class="pkg-row">1 target URL</div><div class="pkg-row">Up to 3 keywords</div><div class="pkg-row">Live Google Sheet</div><div class="pkg-row dim">No SEO audit</div><a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Silver Plan</a></div>
+        <div class="pkg hot"><div class="pkg-pop">Most Popular</div><div class="pkg-tier">Growth</div><div class="pkg-name">Gold</div><div class="pkg-price">₹12,000 <span>/mo</span></div><div class="pkg-inr">For growing agencies</div><div class="pkg-divider"></div><div class="pkg-row">10 guest posts</div><div class="pkg-row">DA 55–70 sites</div><div class="pkg-row">20 Web 2.0 links</div><div class="pkg-row">20 social signals</div><div class="pkg-row">2 target URLs</div><div class="pkg-row">Up to 5 keywords/URL</div><div class="pkg-row">Sheet + PDF report</div><div class="pkg-row">Basic SEO audit (one-time)</div><a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Gold Plan</a></div>
+        <div class="pkg"><div class="pkg-tier">Premium</div><div class="pkg-name">Platinum</div><div class="pkg-price">₹22,000 <span>/mo</span></div><div class="pkg-inr">For established agencies</div><div class="pkg-divider"></div><div class="pkg-row">20 guest posts</div><div class="pkg-row">DA 65–90 sites</div><div class="pkg-row">40 Web 2.0 links</div><div class="pkg-row">30 social signals</div><div class="pkg-row">Up to 4 URLs</div><div class="pkg-row">Up to 8 keywords/URL</div><div class="pkg-row">Full report + next plan</div><div class="pkg-row">Monthly SEO audit</div><div class="pkg-row">WhatsApp priority</div><a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Platinum Plan</a></div>
+        <div class="pkg"><div class="pkg-tier">Enterprise</div><div class="pkg-name">Diamond</div><div class="pkg-price">₹40,000 <span>/mo</span></div><div class="pkg-inr">For large agencies</div><div class="pkg-divider"></div><div class="pkg-row">40 guest posts</div><div class="pkg-row">DA 70–90+ sites</div><div class="pkg-row">60 Web 2.0 links</div><div class="pkg-row">50 social signals</div><div class="pkg-row">Unlimited URLs</div><div class="pkg-row">Unlimited keywords</div><div class="pkg-row">Full reporting suite</div><div class="pkg-row">Weekly SEO audit</div><div class="pkg-row">Dedicated account manager</div><a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Diamond Plan</a></div>
+      </div>
+      <p style="color:var(--muted);font-size:12px;margin-top:14px;">+ 18% GST applicable on all Indian invoices.</p>
+    </div>
+
+    <!-- PLAN A INTL -->
+    <div id="ps-a-intl" class="psection">
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">Premium link placements for US, UK, Australia, Canada and Europe. Pay via Wise or Crypto. Zero GST.</p>
+      <div class="pkg-grid">
+        <div class="pkg"><div class="pkg-tier">Starter</div><div class="pkg-name">Silver</div><div class="pkg-price">$180 <span>/mo</span></div><div class="pkg-inr">≈ ₹15,000/month</div><div class="pkg-divider"></div><div class="pkg-row">5 guest posts</div><div class="pkg-row">DA 50–60 sites</div><div class="pkg-row">10 Web 2.0 links</div><div class="pkg-row">10 social signals</div><div class="pkg-row">1 target URL</div><div class="pkg-row">Up to 3 keywords</div><div class="pkg-row">Live Google Sheet</div><a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Starter Plan</a></div>
+        <div class="pkg hot"><div class="pkg-pop">Most Popular</div><div class="pkg-tier">Growth</div><div class="pkg-name">Gold</div><div class="pkg-price">$350 <span>/mo</span></div><div class="pkg-inr">≈ ₹29,000/month</div><div class="pkg-divider"></div><div class="pkg-row">10 guest posts</div><div class="pkg-row">DA 55–70 sites</div><div class="pkg-row">20 Web 2.0 links</div><div class="pkg-row">20 social signals</div><div class="pkg-row">2 target URLs</div><div class="pkg-row">Up to 5 keywords/URL</div><div class="pkg-row">Sheet + PDF report</div><div class="pkg-row">Basic SEO audit</div><a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Growth Plan</a></div>
+        <div class="pkg"><div class="pkg-tier">Premium</div><div class="pkg-name">Platinum</div><div class="pkg-price">$650 <span>/mo</span></div><div class="pkg-inr">≈ ₹54,000/month</div><div class="pkg-divider"></div><div class="pkg-row">20 guest posts</div><div class="pkg-row">DA 65–90 sites</div><div class="pkg-row">40 Web 2.0 links</div><div class="pkg-row">30 social signals</div><div class="pkg-row">Up to 4 URLs</div><div class="pkg-row">Up to 8 keywords/URL</div><div class="pkg-row">Full report + next plan</div><div class="pkg-row">Monthly SEO audit</div><a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Pro Plan</a></div>
+        <div class="pkg"><div class="pkg-tier">Enterprise</div><div class="pkg-name">Diamond</div><div class="pkg-price">$1,200 <span>/mo</span></div><div class="pkg-inr">≈ ₹1,00,000/month</div><div class="pkg-divider"></div><div class="pkg-row">40 guest posts</div><div class="pkg-row">DA 70–90+ sites</div><div class="pkg-row">60 Web 2.0 links</div><div class="pkg-row">50 social signals</div><div class="pkg-row">Unlimited URLs</div><div class="pkg-row">Unlimited keywords</div><div class="pkg-row">Full reporting suite</div><div class="pkg-row">Weekly SEO audit</div><a href="javascript:void(0)" class="pkg-cta" onclick="showPage('contact', event)">Get Enterprise Plan</a></div>
       </div>
     </div>
 
-    <!-- BUSINESSES TAB -->
-    <div id="ptab-businesses-content" class="pricing-tab-content" style="display:none;">
-      <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">Complete SEO service for businesses looking to rank on Google and grow organic traffic.</p>
-
-      <!-- USD Plans -->
-      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:16px;letter-spacing:0.08em;">INTERNATIONAL (USD)</div>
-      <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:40px;">
-
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <div class="plan-label">Foundation</div>
-          <div class="plan-price">$499<span>/mo</span></div>
-          <ul class="plan-features">
-            <li>✅ Technical SEO Audit + Fixes</li>
-            <li>✅ On-Page Optimization (5 pages)</li>
-            <li>✅ 3 DA 50–90 Backlinks</li>
-            <li>✅ Keyword Research</li>
-            <li>✅ Monthly Report</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Get Foundation Plan</a>
-        </div>
-
-        <div class="plan-card popular" style="background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:32px;position:relative;">
-          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;">MOST POPULAR</div>
-          <div class="plan-label">Growth</div>
-          <div class="plan-price">$899<span>/mo</span></div>
-          <ul class="plan-features">
-            <li>✅ Full Technical SEO</li>
-            <li>✅ On-Page Optimization (15 pages)</li>
-            <li>✅ 8 DA 50–90 Backlinks</li>
-            <li>✅ 2 SEO Blog Posts</li>
-            <li>✅ Keyword Tracking</li>
-            <li>✅ Competitor Analysis</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Start Growth Plan</a>
-        </div>
-
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <div class="plan-label">Dominate</div>
-          <div class="plan-price">$1,499<span>/mo</span></div>
-          <ul class="plan-features">
-            <li>✅ Complete SEO (All 3 Pillars)</li>
-            <li>✅ On-Page Optimization (Unlimited)</li>
-            <li>✅ 15 DA 50–90 Backlinks</li>
-            <li>✅ 4 SEO Blog Posts</li>
-            <li>✅ Content Strategy</li>
-            <li>✅ Full Competitor Analysis</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Get Dominate Plan</a>
-        </div>
-
+    <!-- PER LINK -->
+    <div id="ps-perlink" class="psection">
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">Pay per link for one-off orders. Bulk discounts available for agencies managing multiple campaigns.</p>
+      <div style="overflow-x:auto;">
+        <table class="compare-table">
+          <thead><tr><th>Service</th><th>DA Range</th><th>India (INR)</th><th class="ours">International (USD)</th></tr></thead>
+          <tbody>
+            <tr><td>Guest post</td><td>DA 50–60</td><td>₹1,200</td><td class="ours">$18</td></tr>
+            <tr><td>Guest post</td><td>DA 60–70</td><td>₹1,800</td><td class="ours">$28</td></tr>
+            <tr><td>Guest post</td><td>DA 70–80</td><td>₹2,500</td><td class="ours">$40</td></tr>
+            <tr><td>Guest post</td><td>DA 80–90</td><td>₹3,500</td><td class="ours">$55</td></tr>
+            <tr><td>Niche edit / link insertion</td><td>DA 50–60</td><td>₹900</td><td class="ours">$14</td></tr>
+            <tr><td>Niche edit / link insertion</td><td>DA 60–70</td><td>₹1,400</td><td class="ours">$22</td></tr>
+            <tr><td>Homepage link</td><td>DA 50–70</td><td>₹2,000</td><td class="ours">$32</td></tr>
+            <tr><td>News / press release</td><td>DA 50–80</td><td>₹1,500</td><td class="ours">$24</td></tr>
+            <tr><td>Web 2.0 links</td><td>DA 20–40</td><td>₹150 each</td><td class="ours">$3 each</td></tr>
+            <tr><td>Social signals (10 pack)</td><td>—</td><td>₹500</td><td class="ours">$8</td></tr>
+            <tr><td>Local citations (10 pack)</td><td>—</td><td>₹800</td><td class="ours">$12</td></tr>
+            <tr><td>SEO audit (one-time)</td><td>—</td><td>₹2,000</td><td class="ours">$30</td></tr>
+          </tbody>
+        </table>
       </div>
-
-      <!-- INR Plans -->
-      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px;letter-spacing:0.08em;">INDIA (INR)</div>
-      <p style="font-size:12px;color:var(--muted);margin-bottom:16px;">* All prices exclusive of 18% GST applicable for Indian clients.</p>
-      <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
-
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <div class="plan-label">Foundation</div>
-          <div class="plan-price">₹18,000<span>/mo</span></div>
-          <ul class="plan-features">
-            <li>✅ Technical SEO Audit + Fixes</li>
-            <li>✅ On-Page Optimization (5 pages)</li>
-            <li>✅ 3 DA 50–90 Backlinks</li>
-            <li>✅ Keyword Research</li>
-            <li>✅ Monthly Report</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Get Foundation India Plan</a>
+      <div style="margin-top:20px;padding:16px 20px;background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);">
+        <div style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:10px;">Bulk discounts</div>
+        <div style="display:flex;gap:32px;flex-wrap:wrap;font-size:13px;color:var(--muted2);">
+          <span>2–3 campaigns: <span style="color:var(--accent);font-weight:700;">10% off</span></span>
+          <span>4–6 campaigns: <span style="color:var(--accent);font-weight:700;">15% off</span></span>
+          <span>7+ campaigns: <span style="color:var(--accent);font-weight:700;">20% off + custom</span></span>
         </div>
-
-        <div class="plan-card popular" style="background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:32px;position:relative;">
-          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;">MOST POPULAR</div>
-          <div class="plan-label">Growth</div>
-          <div class="plan-price">₹32,000<span>/mo</span></div>
-          <ul class="plan-features">
-            <li>✅ Full Technical SEO</li>
-            <li>✅ On-Page Optimization (15 pages)</li>
-            <li>✅ 8 DA 50–90 Backlinks</li>
-            <li>✅ 2 SEO Blog Posts</li>
-            <li>✅ Keyword Tracking</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Start Growth India Plan</a>
-        </div>
-
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <div class="plan-label">Dominate</div>
-          <div class="plan-price">₹55,000<span>/mo</span></div>
-          <ul class="plan-features">
-            <li>✅ Complete SEO (All 3 Pillars)</li>
-            <li>✅ On-Page Optimization (Unlimited)</li>
-            <li>✅ 15 DA 50–90 Backlinks</li>
-            <li>✅ 4 SEO Blog Posts</li>
-            <li>✅ Full Competitor Analysis</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Get Dominate India Plan</a>
-        </div>
-
       </div>
     </div>
 
-    <!-- FREELANCERS TAB -->
-    <div id="ptab-freelancers-content" class="pricing-tab-content" style="display:none;">
-      <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">Reseller packages for freelancers. Buy wholesale, deliver under your brand, keep the margin.</p>
-      <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
-
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <div class="plan-label">Reseller Basic</div>
-          <div class="plan-price">$199<span>/mo</span></div>
-                    <ul class="plan-features">
-            <li>✅ 5 DA 50–90 Backlinks</li>
-            <li>✅ On-Page Audit Report</li>
-            <li>✅ White-Label Ready Reports</li>
-            <li>✅ Live Google Sheet</li>
-            <li>✅ 7–10 Day Delivery</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Get Reseller Basic</a>
+    <!-- CUSTOM -->
+    <div id="ps-custom" class="psection">
+      <div class="custom-box">
+        <div style="flex:1;min-width:260px;">
+          <div class="sec-eyebrow" style="margin-bottom:14px;">Enterprise</div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:34px;font-weight:800;color:var(--white);margin-bottom:14px;">Custom Plan</h3>
+          <p style="color:var(--muted2);font-size:15px;line-height:1.8;margin-bottom:8px;">For large agencies and enterprise clients. You tell us exactly what you need — we build the plan and price it accordingly. No limits, no compromises.</p>
+          <p style="color:var(--accent);font-size:13px;font-weight:700;margin-bottom:24px;">Minimum: ₹50,000/month or $600/month</p>
+          <a href="javascript:void(0)" class="btn btn-primary btn-lg" onclick="showPage('contact', event)">Request Custom Quote</a>
         </div>
-
-        <div class="plan-card popular" style="background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:32px;position:relative;">
-          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 16px;border-radius:20px;">BEST VALUE</div>
-          <div class="plan-label">Reseller Pro</div>
-          <div class="plan-price">$399<span>/mo</span></div>
-                    <ul class="plan-features">
-            <li>✅ 10 DA 50–90 Backlinks</li>
-            <li>✅ Full On-Page Audit</li>
-            <li>✅ Technical SEO Audit</li>
-            <li>✅ White-Label Ready Reports</li>
-            <li>✅ Live Reporting</li>
-            <li>✅ Priority Support</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Start Reseller Pro</a>
+        <div style="flex:1;min-width:260px;">
+          <div class="custom-grid">
+            <div class="custom-item"><div class="custom-item-label">DA Range</div><div class="custom-item-val">You choose</div></div>
+            <div class="custom-item"><div class="custom-item-label">Volume</div><div class="custom-item-val">Any number</div></div>
+            <div class="custom-item"><div class="custom-item-label">Target URLs</div><div class="custom-item-val">Unlimited</div></div>
+            <div class="custom-item"><div class="custom-item-label">Keywords</div><div class="custom-item-val">Unlimited</div></div>
+            <div class="custom-item"><div class="custom-item-label">Turnaround</div><div class="custom-item-val">Negotiable</div></div>
+            <div class="custom-item"><div class="custom-item-label">Reporting</div><div class="custom-item-val">Any format</div></div>
+            <div class="custom-item"><div class="custom-item-label">Niche Focus</div><div class="custom-item-val">Dedicated</div></div>
+            <div class="custom-item"><div class="custom-item-label">Pricing</div><div class="custom-item-val">Scope-based</div></div>
+          </div>
         </div>
-
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;">
-          <div class="plan-label">Custom Reseller</div>
-          <div class="plan-price">Custom</div>
-          <div class="plan-price-inr" style="color:var(--muted);font-size:13px;margin-top:4px;">Based on volume</div>
-          <ul class="plan-features">
-            <li>✅ Custom monthly volume</li>
-            <li>✅ Full SEO service stack</li>
-            <li>✅ Bulk pricing discounts</li>
-            <li>✅ Dedicated account manager</li>
-            <li>✅ Custom report branding</li>
-          </ul>
-          <a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:20px;display:block;">Discuss Custom Reseller</a>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- LINK BUILDING ONLY TAB -->
-    <div id="ptab-linkbuilding-content" class="pricing-tab-content" style="display:none;">
-      <p style="color:var(--muted);margin-bottom:28px;font-size:14px;">Standalone link building packages. No SEO retainer needed — just pure DA 50–90 backlinks.</p>
-
-      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:8px;letter-spacing:0.08em;">PLAN A — INDIA (INR)</div>
-      <p style="font-size:12px;color:var(--muted);margin-bottom:16px;">* All prices exclusive of 18% GST applicable for Indian clients.</p>
-      <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:40px;">
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;"><div class="plan-label">Silver</div><div class="plan-price">₹6,000<span>/mo</span></div><ul class="plan-features"><li>✅ 5 DA 50+ Backlinks</li><li>✅ Live Reporting</li><li>✅ White-Label</li></ul><a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:16px;display:block;">Get Silver Plan</a></div>
-        <div class="plan-card" style="background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:28px;position:relative;"><div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 14px;border-radius:20px;">POPULAR</div><div class="plan-label">Gold</div><div class="plan-price">₹11,000<span>/mo</span></div><ul class="plan-features"><li>✅ 10 DA 50+ Backlinks</li><li>✅ Live Reporting</li><li>✅ White-Label</li></ul><a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:16px;display:block;">Get Gold Plan</a></div>
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;"><div class="plan-label">Platinum</div><div class="plan-price">₹20,000<span>/mo</span></div><ul class="plan-features"><li>✅ 20 DA 50+ Backlinks</li><li>✅ Live Reporting</li><li>✅ White-Label</li></ul><a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:16px;display:block;">Get Platinum Plan</a></div>
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;"><div class="plan-label">Diamond</div><div class="plan-price">₹28,000<span>/mo</span></div><ul class="plan-features"><li>✅ 30 DA 50+ Backlinks</li><li>✅ Live Reporting</li><li>✅ White-Label</li></ul><a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:16px;display:block;">Get Diamond Plan</a></div>
-      </div>
-
-      <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:16px;letter-spacing:0.08em;">PLAN B — INTERNATIONAL (USD)</div>
-      <div class="pricing-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;">
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;"><div class="plan-label">Starter</div><div class="plan-price">$249<span>/mo</span></div><ul class="plan-features"><li>✅ 10 DA 50+ Backlinks</li><li>✅ Tier 2 Links</li><li>✅ Live Reporting</li></ul><a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:16px;display:block;">Get Starter Plan (Intl)</a></div>
-        <div class="plan-card" style="background:var(--card);border:2px solid var(--accent);border-radius:16px;padding:28px;position:relative;"><div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:11px;font-weight:800;padding:4px 14px;border-radius:20px;">POPULAR</div><div class="plan-label">Growth</div><div class="plan-price">$450<span>/mo</span></div><ul class="plan-features"><li>✅ 20 DA 50+ Backlinks</li><li>✅ Tier 2 Links</li><li>✅ Live Reporting</li></ul><a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:16px;display:block;">Start Growth Plan (Intl)</a></div>
-        <div class="plan-card" style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;"><div class="plan-label">Pro</div><div class="plan-price">$800<span>/mo</span></div><ul class="plan-features"><li>✅ 40 DA 50+ Backlinks</li><li>✅ Tier 2 Links</li><li>✅ Priority Delivery</li></ul><a href="/contact" onclick="showPage('contact',event)" class="btn" style="width:100%;text-align:center;margin-top:16px;display:block;">Get Pro Plan (Intl)</a></div>
       </div>
     </div>
 
   </section>
 </div>
 
+<!-- ═══ PROCESS ═══ -->
 <div id="page-process" class="page">
   <section class="section">
     <div class="sec-eyebrow">How It Works</div>
@@ -1627,7 +1710,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     </div>
   </div>
 
-</div><!-- end page-blog -->
+</div>
 
 <!-- FOOTER -->
 
@@ -2092,7 +2175,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   </div>
   <div class="footer-bottom">
   <p class="footer-copy">© 2026 Apex Digital Forge — Ravi Bairwa, Jaipur, India. All rights reserved.</p>
-    <p class="footer-usp">On-Page · Off-Page · Technical SEO · DA 50–90 Backlinks · Live Reporting · White-Label</p>
+    <p class="footer-usp">DA 50–90 Guaranteed · 5,000+ Publisher Sites · Live Reporting · 7–10 Day Delivery</p>
   </div>
 </footer>
 
@@ -2103,48 +2186,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 ═══════════════════════════════ */
 
 // Page navigation
-function showPricingTab(tab) {
-  var pricingPage = document.getElementById('page-pricing');
-  if (pricingPage) {
-    pricingPage.querySelectorAll('.pricing-tab-content').forEach(function(el) { el.classList.remove('active'); });
-    pricingPage.querySelectorAll('[id^="ptab-"]').forEach(function(btn) {
-      if (!btn.id.includes('-content')) {
-        btn.style.background = 'transparent';
-        btn.style.color = 'var(--muted)';
-        btn.style.borderColor = 'var(--border)';
-      }
-    });
-  }
-  var el = document.getElementById('ptab-' + tab + '-content');
-  if (el) el.classList.add('active');
-  var btn = document.getElementById('ptab-' + tab);
-  if (btn) {
-    btn.style.background = 'var(--accent)';
-    btn.style.color = '#fff';
-    btn.style.borderColor = 'var(--accent)';
-  }
-}
-
-function showServiceTab(tab) {
-  var svcPage = document.getElementById('page-services');
-  if (svcPage) {
-    svcPage.querySelectorAll('.svc-tab-content').forEach(function(el) { el.classList.remove('active'); });
-    svcPage.querySelectorAll('[id^="tab-"]').forEach(function(btn) {
-      btn.style.background = 'transparent';
-      btn.style.color = 'var(--muted)';
-      btn.style.borderColor = 'var(--border)';
-    });
-  }
-  var el = document.getElementById('svc-' + tab);
-  if (el) el.classList.add('active');
-  var btn = document.getElementById('tab-' + tab);
-  if (btn) {
-    btn.style.background = 'var(--accent)';
-    btn.style.color = '#fff';
-    btn.style.borderColor = 'var(--accent)';
-  }
-}
-
 function showPage(page, e) {
   if (e) { e.preventDefault(); e.stopPropagation(); }
   // Update canonical tag dynamically per page
@@ -2193,6 +2234,14 @@ function showPricing(tab) {
   var section = document.getElementById('ps-' + tab);
   if (section) section.classList.add('active');
   if (event && event.target) event.target.classList.add('active');
+}
+
+function showSvcTab(tab, btn) {
+  document.querySelectorAll('.svcpane').forEach(function(s) { s.classList.remove('active'); });
+  document.querySelectorAll('.svctab').forEach(function(t) { t.classList.remove('active'); });
+  var pane = document.getElementById('svcp-' + tab);
+  if (pane) pane.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
 // Mobile menu
@@ -2490,11 +2539,5 @@ document.addEventListener('DOMContentLoaded', function() {
   </svg>
 </a>
 
-
-<script>
-window.addEventListener("load", function() {
-  if (typeof showPage === "function") showPage("pricing");
-});
-</script>
 </body>
 </html>
