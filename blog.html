@@ -2206,9 +2206,9 @@ function showPage(page, e) {
     window.scrollTo(0, 0);
   }
   // Update nav active state
-  document.querySelectorAll('nav li a, .mobile-menu a').forEach(function(a) { a.classList.remove('nav-active'); });
+  document.querySelectorAll('nav li a, .mobile-menu a').forEach(function(a) { a.classList.remove('active-nav'); });
   var navLink = document.querySelector('[data-page="' + page + '"]');
-  if (navLink) navLink.classList.add('nav-active');
+  if (navLink) navLink.classList.add('active-nav');
   // Push clean URL — /services not /#services
   if (window.history && window.history.pushState) {
     var cleanPath = page === 'home' ? '/' : '/' + page;
