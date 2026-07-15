@@ -156,6 +156,11 @@
       "source": "/learn-seo.html",
       "destination": "/learn-seo",
       "permanent": true
+    },
+    {
+      "source": "/seo-audit.html",
+      "destination": "/seo-audit",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -262,6 +267,10 @@
     {
       "source": "/learn-seo",
       "destination": "/learn-seo.html"
+    },
+    {
+      "source": "/seo-audit",
+      "destination": "/seo-audit.html"
     },
     {
       "source": "/(.*)",
