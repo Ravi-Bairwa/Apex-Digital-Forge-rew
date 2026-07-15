@@ -73,7 +73,7 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .nav-logo { display: flex; align-items: center; gap: 11px; }
 .nav-brand { font-family: var(--font-heading); font-size: 16px; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
 .nav-brand span { color: var(--accent); }
-.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
 .nav-links a { color: var(--muted2); font-size: 14px; font-weight: 500; transition: color .2s; }
 .nav-links a:hover { color: var(--white); }
 .nav-right { display: flex; align-items: center; gap: 12px; }
@@ -600,13 +600,11 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <li><a href="/" data-page="home" onclick="showPage('home', event)">Home</a></li>
     <li><a href="/services" data-page="services" onclick="showPage('services', event)">Services</a></li>
     <li><a href="/pricing" data-page="pricing" onclick="showPage('pricing', event)">Pricing</a></li>
-    <li><a href="/process" data-page="process" onclick="showPage('process', event)">How It Works</a></li>
-    <li><a href="/learn-seo" data-page="learn-seo" onclick="showPage('learn-seo', event)">Learn SEO</a></li>
+    <li><a href="/process" data-page="process" onclick="showPage('process', event)">Process</a></li>
     <li><a href="/contact" data-page="contact" onclick="showPage('contact', event)">Contact</a></li>
     <li><a href="/blog" data-page="blog" onclick="showPage('blog', event)">Blog</a></li>
   </ul>
   <div class="nav-right">
-    <span class="nav-phone">+91 82093 74032</span>
     <a href="/seo-audit" class="btn btn-dark" onclick="showPage('seo-audit', event)" style="font-size:13px;padding:8px 16px;">Free SEO Audit</a>
     <a href="/contact" class="btn btn-primary" onclick="showPage('contact', event)">Free Trial</a>
   </div>
