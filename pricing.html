@@ -503,7 +503,22 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 .topic-chip { background: var(--dark3); border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 12px; color: var(--muted2); cursor: pointer; transition: .2s; }
 .topic-chip:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ─── ANIMATED VISUALS: Authority Engine (home) ─── */
+/* ─── More animations: stats count-up, feature stagger, card tilt, scan browser, reveal-on-scroll ─── */
+.feature-item { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.feature-item.in-view { opacity: 1; transform: translateY(0); }
+.fb-card, .blog-card { transition: transform .25s ease, box-shadow .25s ease; transform-style: preserve-3d; will-change: transform; }
+.fb-card:hover, .blog-card:hover { box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+.reveal-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal-on-scroll.in-view { opacity: 1; transform: translateY(0); }
+
+.scan-browser-mock { border-radius: 12px; overflow: hidden; border: 1px solid var(--border2); margin-bottom: 28px; background: var(--dark2); }
+.scan-browser-bar { display: flex; gap: 6px; padding: 10px 14px; background: var(--dark3); }
+.scan-browser-bar span { width: 9px; height: 9px; border-radius: 50%; background: var(--border2); }
+.scan-browser-body { position: relative; padding: 22px 20px; overflow: hidden; }
+.scan-browser-line { height: 10px; border-radius: 4px; background: var(--border2); margin-bottom: 12px; }
+.scan-browser-beam { position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, transparent, var(--accent), transparent); box-shadow: 0 0 16px 2px rgba(255,92,53,.6); animation: scanbeammove 3.2s ease-in-out infinite; }
+@keyframes scanbeammove { 0% { top: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+
 .ae-stage { position: relative; width: 100%; height: 520px; }
 .ae-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .ae-node { position: absolute; cursor: pointer; display: flex; flex-direction: column; align-items: center; z-index: 3; }
@@ -762,10 +777,10 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   <!-- STATS -->
   <div class="section" style="padding-bottom:0;">
     <div class="stats-row">
-      <div class="stat-block"><div class="stat-big">5,000<span>+</span></div><div class="stat-desc">Verified English-language publisher sites spanning every major niche globally</div></div>
-      <div class="stat-block"><div class="stat-big">DA<span>90</span></div><div class="stat-desc">Highest domain authority site in our entire publisher network</div></div>
-      <div class="stat-block"><div class="stat-big">7<span>–10</span></div><div class="stat-desc">Days average delivery time — among the fastest turnarounds in the industry</div></div>
-      <div class="stat-block"><div class="stat-big">100<span>%</span></div><div class="stat-desc">Fully white-label delivery — your brand gets the credit, every single time</div></div>
+      <div class="stat-block"><div class="stat-big"><span class="count-num" data-target="5000">0</span><span>+</span></div><div class="stat-desc">Verified English-language publisher sites spanning every major niche globally</div></div>
+      <div class="stat-block"><div class="stat-big">DA<span class="count-num" data-target="90">0</span></div><div class="stat-desc">Highest domain authority site in our entire publisher network</div></div>
+      <div class="stat-block"><div class="stat-big">7–<span class="count-num" data-target="10">0</span></div><div class="stat-desc">Days average delivery time — among the fastest turnarounds in the industry</div></div>
+      <div class="stat-block"><div class="stat-big"><span class="count-num" data-target="100">0</span><span>%</span></div><div class="stat-desc">Fully white-label delivery — your brand gets the credit, every single time</div></div>
     </div>
   </div>
 
@@ -1554,7 +1569,12 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
   </section>
 </div>
 <div id="page-contact" class="page">
-  <section class="section">
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="pricing-ambient">
+      <div class="pricing-blob pb1"></div>
+      <div class="pricing-blob pb2"></div>
+    </div>
+    <div style="position:relative;z-index:1;">
     <div class="sec-eyebrow">Get In Touch</div>
     <h2 class="sec-title">Start your free trial.<br>Or get a custom quote.</h2>
     <p class="sec-sub">Fill the form and we reply within 2–5 hours. Every new client starts with 20 free DA 50+ guest posts. Zero cost. Zero commitment. <a href="/seo-audit" onclick="showPage('seo-audit', event)" style="color:var(--accent);text-decoration:underline;">Looking for a free SEO audit instead?</a></p>
@@ -1673,6 +1693,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
           <p>Our team will review your requirements and reply within 2–5 hours. Check your inbox at the email you provided.</p>
         </div>
       </div>
+    </div>
     </div>
   </section>
 </div>
@@ -1988,6 +2009,16 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 
         <!-- WHAT YOU GET -->
         <div>
+          <div class="scan-browser-mock">
+            <div class="scan-browser-bar"><span></span><span></span><span></span></div>
+            <div class="scan-browser-body">
+              <div class="scan-browser-line" style="width:70%;"></div>
+              <div class="scan-browser-line" style="width:90%;"></div>
+              <div class="scan-browser-line" style="width:55%;"></div>
+              <div class="scan-browser-line" style="width:80%;"></div>
+              <div class="scan-browser-beam"></div>
+            </div>
+          </div>
           <div style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:24px;">What your free audit covers</div>
           <div style="display:flex;flex-direction:column;gap:16px;">
             <div style="display:flex;gap:16px;align-items:flex-start;">
@@ -3009,9 +3040,89 @@ document.addEventListener('DOMContentLoaded', function() {
     update();
   }
 
+  function initCountUp(){
+    var nums = document.querySelectorAll('.count-num');
+    if(!nums.length) return;
+    var done = new WeakSet();
+    function animate(el){
+      var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+      var start = null;
+      var duration = 1200;
+      function step(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target).toLocaleString('en-US');
+        if(progress < 1){ requestAnimationFrame(step); }
+        else { el.textContent = target.toLocaleString('en-US'); }
+      }
+      requestAnimationFrame(step);
+    }
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !done.has(entry.target)){
+          done.add(entry.target);
+          animate(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    nums.forEach(function(n){ obs.observe(n); });
+  }
+
+  function initFeatureStagger(){
+    var items = document.querySelectorAll('.feature-item');
+    if(!items.length) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry, i){
+        if(entry.isIntersecting){
+          var idx = Array.prototype.indexOf.call(items, entry.target);
+          setTimeout(function(){ entry.target.classList.add('in-view'); }, idx * 100);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    items.forEach(function(item){ obs.observe(item); });
+  }
+
+  function initCardTilt(){
+    var cards = document.querySelectorAll('.fb-card, .blog-card');
+    cards.forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var rect = card.getBoundingClientRect();
+        var x = e.clientX - rect.left;
+        var y = e.clientY - rect.top;
+        var rotateX = ((y / rect.height) - 0.5) * -8;
+        var rotateY = ((x / rect.width) - 0.5) * 8;
+        card.style.transform = 'perspective(600px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-2px)';
+      });
+      card.addEventListener('mouseleave', function(){
+        card.style.transform = '';
+      });
+    });
+  }
+
+  function initRevealOnScroll(){
+    var sections = document.querySelectorAll('#page-learn-seo [id][style*="margin-bottom:60px"]');
+    if(!sections.length) return;
+    sections.forEach(function(s){ s.classList.add('reveal-on-scroll'); });
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+
   function initAll(){
     initAuthorityEngine();
     initScanBeam();
+    initCountUp();
+    initFeatureStagger();
+    initCardTilt();
+    initRevealOnScroll();
   }
 
   if(document.readyState === 'loading'){
