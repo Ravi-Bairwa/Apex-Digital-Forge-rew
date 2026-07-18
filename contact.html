@@ -503,6 +503,78 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 .topic-chip { background: var(--dark3); border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 12px; color: var(--muted2); cursor: pointer; transition: .2s; }
 .topic-chip:hover { border-color: var(--accent); color: var(--accent); }
 
+/* ─── ANIMATED VISUALS: Authority Engine (home) ─── */
+.ae-stage { position: relative; width: 100%; height: 520px; }
+.ae-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ae-node { position: absolute; cursor: pointer; display: flex; flex-direction: column; align-items: center; z-index: 3; }
+.ae-circle { width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.01)); border: 1px solid var(--border2); transition: all .35s cubic-bezier(.2,.8,.2,1); }
+.ae-circle svg { width: 22px; height: 22px; stroke: var(--muted); fill: none; stroke-width: 1.6; transition: stroke .35s; }
+.ae-label { margin-top: 8px; font-size: 12px; font-weight: 500; color: var(--muted); transition: color .3s; white-space: nowrap; text-align: center; }
+.ae-node:hover .ae-circle { transform: scale(1.15); border-color: rgba(255,92,53,.6); box-shadow: 0 0 0 1px rgba(255,92,53,.15), 0 0 34px rgba(255,92,53,.35); }
+.ae-node:hover .ae-circle svg { stroke: var(--accent); }
+.ae-node:hover .ae-label { color: var(--white); }
+.ae-tooltip { position: absolute; bottom: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(6px); background: var(--dark3); border: 1px solid var(--border2); border-radius: 10px; padding: 12px 14px; width: 190px; font-size: 12px; line-height: 1.5; color: var(--muted); opacity: 0; pointer-events: none; transition: all .25s; text-align: left; z-index: 10; }
+.ae-node:hover .ae-tooltip { opacity: 1; transform: translateX(-50%) translateY(0); }
+.ae-tooltip b { color: var(--white); display: block; margin-bottom: 4px; font-size: 12.5px; }
+.ae-pub .ae-circle { border-color: rgba(255,92,53,.25); }
+.ae-graph .ae-circle svg { stroke: #4fbf98; }
+.ae-graph:hover .ae-circle { border-color: rgba(79,191,152,.6); box-shadow: 0 0 0 1px rgba(79,191,152,.15), 0 0 34px rgba(79,191,152,.35); }
+.ae-graph:hover .ae-circle svg { stroke: #4fbf98; }
+
+/* ─── 3D Rotating Carousel (services) ─── */
+.carousel-stage { position: relative; width: 100%; height: 340px; perspective: 1400px; }
+.carousel-floor-glow { position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); width: 500px; height: 100px; background: radial-gradient(ellipse, rgba(255,92,53,.14), transparent 70%); filter: blur(20px); pointer-events: none; }
+.carousel-3d { position: absolute; top: 50%; left: 50%; width: 200px; height: 240px; transform-style: preserve-3d; animation: carouselspin 24s linear infinite; }
+.carousel-3d:hover { animation-play-state: paused; }
+.carousel-card { position: absolute; top: 0; left: 0; width: 200px; height: 240px; border-radius: 16px; background: linear-gradient(160deg, rgba(255,255,255,.05), rgba(255,255,255,.01)); border: 1px solid var(--border2); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 22px; transition: border-color .3s, box-shadow .3s; }
+.carousel-card:hover { border-color: rgba(255,92,53,.5); box-shadow: 0 0 46px rgba(255,92,53,.22); }
+.carousel-card-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.04); border: 1px solid var(--border2); margin-bottom: 16px; }
+.carousel-card-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.6; }
+.carousel-card-title { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+.carousel-card-desc { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+.cc1 { transform: rotateY(0deg) translateZ(320px); }
+.cc2 { transform: rotateY(90deg) translateZ(320px); }
+.cc3 { transform: rotateY(180deg) translateZ(320px); }
+.cc4 { transform: rotateY(270deg) translateZ(320px); }
+@keyframes carouselspin { from { transform: translate(-50%,-50%) rotateY(0deg); } to { transform: translate(-50%,-50%) rotateY(360deg); } }
+@media (max-width: 640px) {
+  .carousel-stage { height: 280px; perspective: 900px; }
+  .carousel-3d { width: 160px; height: 200px; }
+  .carousel-card { width: 160px; height: 200px; padding: 16px; }
+  .cc1, .cc2, .cc3, .cc4 { translate: 0; }
+  .cc1 { transform: rotateY(0deg) translateZ(220px); }
+  .cc2 { transform: rotateY(90deg) translateZ(220px); }
+  .cc3 { transform: rotateY(180deg) translateZ(220px); }
+  .cc4 { transform: rotateY(270deg) translateZ(220px); }
+}
+
+/* ─── Light Beam Scanner (process) ─── */
+.scan-track { position: relative; width: 100%; height: 6px; background: var(--border); border-radius: 3px; margin: 56px 0 0; }
+.scan-beam { position: absolute; top: -14px; width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle, rgba(255,92,53,.9), rgba(255,92,53,0) 70%); filter: blur(2px); animation: scanmove 6s ease-in-out infinite; }
+@keyframes scanmove { 0% { left: 0%; } 45% { left: calc(100% - 34px); } 55% { left: calc(100% - 34px); } 100% { left: 0%; } }
+.scan-checkpoints { position: relative; width: 100%; display: flex; justify-content: space-between; margin-top: -3px; flex-wrap: wrap; gap: 24px; }
+.scan-checkpoint { position: relative; display: flex; flex-direction: column; align-items: center; width: 110px; }
+.scan-cp-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--dark); border: 2px solid var(--border2); margin-bottom: 18px; transition: all .3s; }
+.scan-checkpoint.lit .scan-cp-dot { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 14px rgba(255,92,53,.7); }
+.scan-cp-icon { width: 52px; height: 52px; border-radius: 12px; background: rgba(255,255,255,.03); border: 1px solid var(--border2); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; transition: all .3s; }
+.scan-checkpoint.lit .scan-cp-icon { border-color: rgba(255,92,53,.5); box-shadow: 0 0 22px rgba(255,92,53,.22); }
+.scan-cp-icon svg { width: 22px; height: 22px; stroke: var(--muted); fill: none; stroke-width: 1.6; transition: stroke .3s; }
+.scan-checkpoint.lit .scan-cp-icon svg { stroke: var(--accent); }
+.scan-cp-title { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+.scan-cp-desc { font-size: 11px; color: var(--muted); text-align: center; line-height: 1.4; }
+@media (max-width: 900px) {
+  .scan-track { display: none; }
+  .scan-checkpoints { justify-content: center; }
+}
+
+/* Pricing ambient background */
+.pricing-ambient { position: absolute; inset: 0; overflow: hidden; filter: blur(80px); opacity: .35; pointer-events: none; z-index: 0; }
+.pricing-blob { position: absolute; border-radius: 50%; mix-blend-mode: screen; }
+.pb1 { width: 420px; height: 420px; background: radial-gradient(circle, #ff5c35 0%, transparent 70%); top: -10%; left: -8%; animation: pbdrift1 20s ease-in-out infinite; }
+.pb2 { width: 480px; height: 480px; background: radial-gradient(circle, #1d9e75 0%, transparent 70%); bottom: -12%; right: -8%; animation: pbdrift2 24s ease-in-out infinite; }
+@keyframes pbdrift1 { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px,40px) scale(1.1); } }
+@keyframes pbdrift2 { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-40px,-30px) scale(1.08); } }
+
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
@@ -640,43 +712,35 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
       </div>
     </div>
     <div class="hero-right" style="position:relative;">
-      <div class="hero-card-stack">
-        <div class="hero-card hero-card-main">
-          <div class="card-label">Why agencies choose Apex Digital Forge</div>
-          <div class="card-site-row">
-            <span style="color:var(--white);font-weight:500;">DA 50–90 verified backlinks</span>
-            <span class="card-da">Guaranteed</span>
-          </div>
-          <div class="card-site-row">
-            <span style="color:var(--white);font-weight:500;">Real organic traffic on every site</span>
-            <span class="card-da">Verified</span>
-          </div>
-          <div class="card-site-row">
-            <span style="color:var(--white);font-weight:500;">Live Google Sheet reporting</span>
-            <span class="card-da card-da-gold">Real-time</span>
-          </div>
-          <div class="card-site-row">
-            <span style="color:var(--white);font-weight:500;">100% white-label — invisible</span>
-            <span class="card-da">Always</span>
-          </div>
-          <div class="card-site-row">
-            <span style="color:var(--white);font-weight:500;">7–10 day delivery worldwide</span>
-            <span class="card-da card-da-gold">Fast</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.06);font-size:12px;color:var(--muted);">
-            <div class="live-dot"></div> 5,000+ verified publisher sites across all niches
-          </div>
+      <div class="ae-stage" id="aeStage">
+        <canvas class="ae-canvas" id="aeCanvas"></canvas>
+
+        <div class="ae-node" style="left:2%;top:46%;">
+          <div class="ae-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z"/></svg></div>
+          <div class="ae-label">Client site</div>
+          <div class="ae-tooltip"><b>Starting point</b>Low DA, buried on page 4 for the keywords that matter.</div>
         </div>
-        <div class="hero-card hero-card-float">
-          <div class="float-stat">
-            <div class="num">20<span>+</span></div>
-            <div class="lbl">Free trial links</div>
-          </div>
-          <div style="border-top:1px solid rgba(255,255,255,0.06);margin:14px 0;"></div>
-          <div class="float-stat">
-            <div class="num">0<span>$</span></div>
-            <div class="lbl">No commitment</div>
-          </div>
+
+        <div class="ae-node ae-pub" style="left:42%;top:10%;">
+          <div class="ae-circle"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/></svg></div>
+          <div class="ae-label">DA 68 site</div>
+          <div class="ae-tooltip"><b>Real editorial site</b>Genuine organic traffic, manually vetted — never a PBN.</div>
+        </div>
+        <div class="ae-node ae-pub" style="left:42%;top:44%;">
+          <div class="ae-circle"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/></svg></div>
+          <div class="ae-label">DA 74 site</div>
+          <div class="ae-tooltip"><b>Real editorial site</b>Niche-relevant blog, verified traffic, natural anchor text.</div>
+        </div>
+        <div class="ae-node ae-pub" style="left:42%;top:78%;">
+          <div class="ae-circle"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h4"/></svg></div>
+          <div class="ae-label">DA 82 site</div>
+          <div class="ae-tooltip"><b>Real editorial site</b>High-authority placement secured via direct manual outreach.</div>
+        </div>
+
+        <div class="ae-node ae-graph" style="left:82%;top:46%;">
+          <div class="ae-circle"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 8-9"/><path d="M15 7h5v5"/></svg></div>
+          <div class="ae-label">Rankings rise</div>
+          <div class="ae-tooltip"><b>The result</b>Authority compounds — client climbs to page 1 in 60–90 days.</div>
         </div>
       </div>
     </div>
@@ -957,7 +1021,33 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <h2 class="sec-title">Complete SEO service stack</h2>
     <p class="sec-sub">Every service is fully white-label ready — your clients never know we exist and your agency takes full credit. We cover all four pillars of modern SEO: on-page, off-page, technical, and GEO (Generative Engine Optimization) — getting your client's brand cited in ChatGPT, Perplexity, and Google AI Overviews. All work is manual, transparent, and backed by live reporting.</p>
 
-    <div class="trial-banner" style="margin-top:40px;">
+    <div class="carousel-stage" style="margin-top:56px;">
+      <div class="carousel-floor-glow"></div>
+      <div class="carousel-3d" id="svcCarousel">
+        <div class="carousel-card cc1">
+          <div class="carousel-card-icon"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.5.5l2-2a5 5 0 00-7-7l-1 1"/><path d="M14 11a5 5 0 00-7.5-.5l-2 2a5 5 0 007 7l1-1"/></svg></div>
+          <div class="carousel-card-title">Link Building</div>
+          <div class="carousel-card-desc">DA 50–90 guest posts & niche edits from real editorial sites.</div>
+        </div>
+        <div class="carousel-card cc2">
+          <div class="carousel-card-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg></div>
+          <div class="carousel-card-title">On-Page SEO</div>
+          <div class="carousel-card-desc">Meta, headings, content structure tuned for rankings.</div>
+        </div>
+        <div class="carousel-card cc3">
+          <div class="carousel-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.9 2.9M16.9 16.9l2.9 2.9M1 12h4M19 12h4M4.2 19.8l2.9-2.9M16.9 7.1l2.9-2.9"/></svg></div>
+          <div class="carousel-card-title">Technical SEO</div>
+          <div class="carousel-card-desc">Crawlability, schema, speed — the foundation Google trusts.</div>
+        </div>
+        <div class="carousel-card cc4">
+          <div class="carousel-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 10h.01M12 10h4M8 14h8"/></svg></div>
+          <div class="carousel-card-title">GEO</div>
+          <div class="carousel-card-desc">Get cited in ChatGPT, Perplexity & AI Overviews.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trial-banner" style="margin-top:56px;">
       <p>New client? Start with <span>20 free DA 50–90 backlinks — zero cost, zero commitment.</span></p>
       <a href="/contact" class="btn btn-primary" onclick="showPage('contact', event)">Claim Free Trial</a>
     </div>
@@ -1098,7 +1188,12 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 
 <!-- ═══ PRICING ═══ -->
 <div id="page-pricing" class="page">
-  <section class="section">
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="pricing-ambient">
+      <div class="pricing-blob pb1"></div>
+      <div class="pricing-blob pb2"></div>
+    </div>
+    <div style="position:relative;z-index:1;">
     <div class="sec-eyebrow">Transparent Pricing</div>
     <h2 class="sec-title">Every audience.<br>Every budget covered.</h2>
     <p class="sec-sub">Choose from full SEO packages for agencies, businesses, or freelancers — or pick link-building-only plans. All plans include live reporting, verified DA 50–90 placements and 7–10 day delivery.</p>
@@ -1364,6 +1459,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         </div>
       </div>
     </div>
+    </div>
 
   </section>
 </div>
@@ -1374,7 +1470,50 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <div class="sec-eyebrow">How It Works</div>
     <h2 class="sec-title">Simple. Transparent.<br>No surprises. Ever.</h2>
     <p class="sec-sub">From your first message to live DA 50–90 links — here is exactly how every campaign runs.</p>
-    <div class="process-list">
+
+    <div class="scan-track">
+      <div class="scan-beam"></div>
+    </div>
+    <div class="scan-checkpoints" id="scanCheckpoints">
+      <div class="scan-checkpoint">
+        <div class="scan-cp-dot"></div>
+        <div class="scan-cp-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 8h16M9 4v4"/></svg></div>
+        <div class="scan-cp-title">Submit</div>
+        <div class="scan-cp-desc">Target URLs & keywords via quick form.</div>
+      </div>
+      <div class="scan-checkpoint">
+        <div class="scan-cp-dot"></div>
+        <div class="scan-cp-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <div class="scan-cp-title">Match</div>
+        <div class="scan-cp-desc">Niche-relevant, traffic-verified sites found.</div>
+      </div>
+      <div class="scan-checkpoint">
+        <div class="scan-cp-dot"></div>
+        <div class="scan-cp-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></div>
+        <div class="scan-cp-title">Placement</div>
+        <div class="scan-cp-desc">Content written & published within days.</div>
+      </div>
+      <div class="scan-checkpoint">
+        <div class="scan-cp-dot"></div>
+        <div class="scan-cp-icon"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="scan-cp-title">Live</div>
+        <div class="scan-cp-desc">Tracked live in your Google Sheet.</div>
+      </div>
+      <div class="scan-checkpoint">
+        <div class="scan-cp-dot"></div>
+        <div class="scan-cp-icon"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="4" height="10"/><rect x="10" y="6" width="4" height="14"/><rect x="16" y="3" width="4" height="17"/></svg></div>
+        <div class="scan-cp-title">Update</div>
+        <div class="scan-cp-desc">Mid-campaign progress, fully transparent.</div>
+      </div>
+      <div class="scan-checkpoint">
+        <div class="scan-cp-dot"></div>
+        <div class="scan-cp-icon"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 8-9"/><path d="M15 7h5v5"/></svg></div>
+        <div class="scan-cp-title">Rankings</div>
+        <div class="scan-cp-desc">Authority compounds — rankings climb.</div>
+      </div>
+    </div>
+
+    <div class="process-list" style="margin-top:24px;">
       <div class="process-item"><div class="process-step-num">01</div><div><div class="process-title">Submit your order</div><p>Provide your target URL, anchor text, niche and any preferences. Fill our quick onboarding form — takes 3 minutes. We handle everything from there.</p></div></div>
       <div class="process-item"><div class="process-step-num">02</div><div><div class="process-title">Publisher matching</div><p>We find the most relevant high-DA publisher site from our network of 5,000+ sites. Niche-matched for maximum topical relevance and ranking impact.</p></div></div>
       <div class="process-item"><div class="process-step-num">03</div><div><div class="process-title">Content and placement</div><p>100% premium content written and published within 7–10 days. Niche-relevant, Google-indexed and permanently placed.</p></div></div>
@@ -2762,6 +2901,126 @@ document.addEventListener('DOMContentLoaded', function() {
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.117 1.523 5.845L.057 23.885l6.194-1.624A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.371l-.359-.214-3.722.976.993-3.63-.234-.374A9.818 9.818 0 0112 2.182c5.424 0 9.818 4.394 9.818 9.818S17.424 21.818 12 21.818z"/>
   </svg>
 </a>
+
+<script>
+/* ═══ ANIMATED VISUALS: Authority Engine / Orbit / Timeline ═══ */
+(function(){
+  function initAuthorityEngine(){
+    var stage = document.getElementById('aeStage');
+    var canvas = document.getElementById('aeCanvas');
+    if(!stage || !canvas) return;
+    var ctx = canvas.getContext('2d');
+    var w, h;
+    function resize(){
+      var rect = stage.getBoundingClientRect();
+      w = canvas.width = rect.width;
+      h = canvas.height = rect.height;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    function clientPt(){ return {x: w*0.07, y: h*0.5}; }
+    function pubPts(){ return [
+      {x: w*0.45, y: h*0.14},
+      {x: w*0.45, y: h*0.48},
+      {x: w*0.45, y: h*0.82}
+    ]; }
+    function graphPt(){ return {x: w*0.85, y: h*0.5}; }
+
+    var particles = [];
+    function spawn(){
+      var pubs = pubPts();
+      var from = pubs[Math.floor(Math.random()*pubs.length)];
+      particles.push({ x: from.x, y: from.y, t: 0, speed: 0.006 + Math.random()*0.004, leg: 1 });
+    }
+    var spawnTimer = setInterval(spawn, 420);
+
+    var mx = -1000, my = -1000;
+    stage.addEventListener('mousemove', function(e){
+      var r = stage.getBoundingClientRect();
+      mx = e.clientX - r.left; my = e.clientY - r.top;
+    });
+    stage.addEventListener('mouseleave', function(){ mx = -1000; my = -1000; });
+
+    function line(a, b, alpha, color){
+      ctx.strokeStyle = color.replace('ALPHA', alpha);
+      ctx.lineWidth = 1.2;
+      ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+    }
+
+    var rafId;
+    function tick(){
+      ctx.clearRect(0,0,w,h);
+      var client = clientPt(), pubs = pubPts(), graph = graphPt();
+      pubs.forEach(function(p){ line(p, client, 0.1, 'rgba(255,92,53,ALPHA)'); });
+      line(client, graph, 0.08, 'rgba(29,158,117,ALPHA)');
+
+      particles.forEach(function(p){
+        p.t += p.speed;
+        if(p.leg === 1){
+          if(p.t >= 1){ p.leg = 2; p.t = 0; }
+        } else if(p.t >= 1){ p.done = true; }
+      });
+      particles = particles.filter(function(p){ return !p.done; });
+
+      particles.forEach(function(p){
+        var pubs2 = pubPts();
+        var from, to;
+        if(p.leg === 1){ from = p._from || (p._from = pubs2[Math.floor(Math.random()*pubs2.length)]); to = client; }
+        else { from = client; to = graph; }
+        var ex = from.x + (to.x - from.x) * p.t;
+        var ey = from.y + (to.y - from.y) * p.t;
+        var dist = Math.hypot(mx-ex, my-ey);
+        var boost = dist < 70 ? (70-dist)/70 * 5 : 0;
+        var angle = Math.atan2(my-ey, mx-ex);
+        var px = ex - Math.cos(angle)*boost;
+        var py = ey - Math.sin(angle)*boost;
+        ctx.beginPath();
+        ctx.arc(px, py, 2.6, 0, Math.PI*2);
+        ctx.fillStyle = p.leg === 1 ? 'rgba(255,92,53,0.9)' : 'rgba(29,158,117,0.9)';
+        ctx.shadowColor = p.leg === 1 ? '#ff5c35' : '#1d9e75';
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+
+      rafId = requestAnimationFrame(tick);
+    }
+    tick();
+  }
+
+  function initScanBeam(){
+    var track = document.querySelector('.scan-track');
+    var beam = document.querySelector('.scan-beam');
+    var checkpoints = document.querySelectorAll('.scan-checkpoint');
+    if(!track || !beam || !checkpoints.length) return;
+    var N = checkpoints.length;
+    function update(){
+      var beamRect = beam.getBoundingClientRect();
+      var trackRect = track.getBoundingClientRect();
+      var progress = (beamRect.left - trackRect.left) / (trackRect.width - beamRect.width || 1);
+      checkpoints.forEach(function(cp, i){
+        var threshold = i / (N - 1);
+        if(progress >= threshold - 0.02){ cp.classList.add('lit'); }
+        else { cp.classList.remove('lit'); }
+      });
+      requestAnimationFrame(update);
+    }
+    update();
+  }
+
+  function initAll(){
+    initAuthorityEngine();
+    initScanBeam();
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initAll);
+  } else {
+    initAll();
+  }
+})();
+</script>
 
 </body>
 </html>
