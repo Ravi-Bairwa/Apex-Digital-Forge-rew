@@ -517,6 +517,13 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 .fb-card:hover, .blog-card:hover { box-shadow: 0 20px 50px rgba(0,0,0,.35); }
 .reveal-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
 .reveal-on-scroll.in-view { opacity: 1; transform: translateY(0); }
+.split-visual .reveal-on-scroll:nth-child(1) { transition-delay: 0s; }
+.split-visual .reveal-on-scroll:nth-child(2) { transition-delay: .1s; }
+.split-visual .reveal-on-scroll:nth-child(3) { transition-delay: .2s; }
+.split-visual .reveal-on-scroll:nth-child(4) { transition-delay: .3s; }
+.cta-section .reveal-on-scroll:nth-of-type(1) { transition-delay: 0s; }
+.cta-section .reveal-on-scroll:nth-of-type(2) { transition-delay: .1s; }
+.cta-section .reveal-on-scroll:nth-of-type(3) { transition-delay: .2s; }
 
 .scan-browser-mock { border-radius: 12px; overflow: hidden; border: 1px solid var(--border2); margin-bottom: 28px; background: var(--dark2); }
 .scan-browser-bar { display: flex; gap: 6px; padding: 10px 14px; background: var(--dark3); }
@@ -817,10 +824,10 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
         <div class="split-visual">
           <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;">Site quality verification</div>
           <div style="display:flex;flex-direction:column;gap:10px;">
-            <div style="background:var(--dark3);border-radius:var(--radius);padding:14px 16px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;color:var(--white);">Every site verified before placement</span><span class="card-da">DA 50–90</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--muted);">✓ Real traffic confirmed &nbsp; ✓ Dofollow links</div></div>
-            <div style="background:var(--dark3);border-radius:var(--radius);padding:14px 16px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;color:var(--white);">Multi-niche English publisher network</span><span class="card-da card-da-gold">5,000+</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--muted);">✓ Tech &nbsp; ✓ Health &nbsp; ✓ Finance &nbsp; ✓ Real Estate &nbsp; ✓ More</div></div>
-            <div style="background:var(--dark3);border-radius:var(--radius);padding:14px 16px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;color:var(--white);">100% original manually written content</span><span class="card-da">Quality</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--muted);">✓ Niche-relevant &nbsp; ✓ Google-indexed &nbsp; ✓ Permanent</div></div>
-            <div style="background:var(--dark3);border-radius:var(--radius);padding:14px 16px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;color:var(--white);">Live Google Sheet — updated in real time</span><span class="card-da">Transparent</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--muted);">✓ Click any link to verify &nbsp; ✓ No PDF delays</div></div>
+            <div class="reveal-on-scroll" style="background:var(--dark3);border-radius:var(--radius);padding:14px 16px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;color:var(--white);">Every site verified before placement</span><span class="card-da">DA 50–90</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--muted);">✓ Real traffic confirmed &nbsp; ✓ Dofollow links</div></div>
+            <div class="reveal-on-scroll" style="background:var(--dark3);border-radius:var(--radius);padding:14px 16px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;color:var(--white);">Multi-niche English publisher network</span><span class="card-da card-da-gold">5,000+</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--muted);">✓ Tech &nbsp; ✓ Health &nbsp; ✓ Finance &nbsp; ✓ Real Estate &nbsp; ✓ More</div></div>
+            <div class="reveal-on-scroll" style="background:var(--dark3);border-radius:var(--radius);padding:14px 16px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;color:var(--white);">100% original manually written content</span><span class="card-da">Quality</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--muted);">✓ Niche-relevant &nbsp; ✓ Google-indexed &nbsp; ✓ Permanent</div></div>
+            <div class="reveal-on-scroll" style="background:var(--dark3);border-radius:var(--radius);padding:14px 16px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><span style="font-size:13px;font-weight:600;color:var(--white);">Live Google Sheet — updated in real time</span><span class="card-da">Transparent</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--muted);">✓ Click any link to verify &nbsp; ✓ No PDF delays</div></div>
           </div>
           <div style="margin-top:14px;padding:10px 14px;background:rgba(74,222,128,0.06);border:1px solid rgba(74,222,128,0.15);border-radius:var(--radius);font-size:12px;color:#4ade80;">✓ All sites verified for real organic traffic before placement</div>
         </div>
@@ -830,9 +837,9 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 
   <!-- CTA -->
   <section class="cta-section">
-    <div class="cta-title">Try before you pay. Always.</div>
-    <p>20 DA 50–90 backlinks on real publisher sites. Zero payment. Zero contract. Judge the quality yourself before committing to anything.</p>
-    <a href="/contact" class="btn btn-primary btn-lg" onclick="showPage('contact', event)">Get 20 Free Backlinks Now</a>
+    <div class="reveal-on-scroll cta-title">Try before you pay. Always.</div>
+    <p class="reveal-on-scroll">20 DA 50–90 backlinks on real publisher sites. Zero payment. Zero contract. Judge the quality yourself before committing to anything.</p>
+    <a href="/contact" class="btn btn-primary btn-lg reveal-on-scroll" onclick="showPage('contact', event)">Get 20 Free Backlinks Now</a>
   </section>
 
   <!-- FEATURED BLOG -->
@@ -865,7 +872,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     </div>
 
     <!-- LEARN SEO FEATURE CARD -->
-    <div style="background:linear-gradient(135deg,#0f1629,#1a1040);border:1px solid var(--accent);border-radius:16px;padding:32px;margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+    <div class="hover-card reveal-on-scroll" style="background:linear-gradient(135deg,#0f1629,#1a1040);border:1px solid var(--accent);border-radius:16px;padding:32px;margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
       <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
         <div style="width:56px;height:56px;background:var(--accent);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">📚</div>
         <div>
@@ -880,7 +887,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 
   <!-- HOME: FREE SEO AUDIT CTA -->
   <section class="section" style="padding-top:0;padding-bottom:0;">
-    <div style="background:linear-gradient(135deg,var(--dark2) 0%,rgba(255,92,53,0.08) 100%);border:1px solid rgba(255,92,53,0.3);border-radius:var(--radius-lg);padding:40px 48px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;">
+    <div class="reveal-on-scroll" style="background:linear-gradient(135deg,var(--dark2) 0%,rgba(255,92,53,0.08) 100%);border:1px solid rgba(255,92,53,0.3);border-radius:var(--radius-lg);padding:40px 48px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;">
       <div>
         <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,92,53,0.12);border:1px solid rgba(255,92,53,0.3);border-radius:20px;padding:4px 14px;margin-bottom:16px;">
           <span style="font-size:14px;">🔍</span>
@@ -914,17 +921,17 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <div class="sec-title">Complete SEO — all three pillars.</div>
     <p class="sec-sub" style="margin-bottom:40px;">On-page, off-page, and technical SEO — all fully white-label ready. Your clients never know we exist.</p>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <div style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
+      <div class="hover-card" style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
         <div style="font-size:28px;margin-bottom:12px;">📄</div>
         <div class="svc-title">On-Page SEO</div>
         <p style="font-size:14px;color:var(--muted2);line-height:1.6;">Title tags, meta descriptions, H1–H6 structure, content optimization, internal linking, image alt text, keyword mapping — every element that tells Google what your page is about.</p>
       </div>
-      <div style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
+      <div class="hover-card" style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
         <div style="font-size:28px;margin-bottom:12px;">🔗</div>
         <div class="svc-title">Link Building (Off-Page)</div>
         <p style="font-size:14px;color:var(--muted2);line-height:1.6;">DA 50–90 verified guest posts, niche edits, homepage links, press releases, and Web 2.0 signals — all on real publisher sites with genuine organic traffic.</p>
       </div>
-      <div style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
+      <div class="hover-card" style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;">
         <div style="font-size:28px;margin-bottom:12px;">⚙️</div>
         <div class="svc-title">Technical SEO</div>
         <p style="font-size:14px;color:var(--muted2);line-height:1.6;">Site audits, Core Web Vitals, schema markup, crawl error fixes, sitemap, robots.txt, canonical tags, HTTPS, mobile usability — everything under the hood that Google rewards.</p>
@@ -3117,9 +3124,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function initRevealOnScroll(){
-    var sections = document.querySelectorAll('#page-learn-seo [id][style*="margin-bottom:60px"]');
+    var learnSeoSections = document.querySelectorAll('#page-learn-seo [id][style*="margin-bottom:60px"]');
+    learnSeoSections.forEach(function(s){ s.classList.add('reveal-on-scroll'); });
+    var sections = document.querySelectorAll('.reveal-on-scroll');
     if(!sections.length) return;
-    sections.forEach(function(s){ s.classList.add('reveal-on-scroll'); });
     var obs = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if(entry.isIntersecting){
