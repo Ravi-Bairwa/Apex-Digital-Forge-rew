@@ -67,6 +67,12 @@ img { max-width: 100%; }
 /* ─── TOPBAR ─── */
 .topbar { background: var(--accent); padding: 10px 5%; display: flex; justify-content: center; align-items: center; gap: 12px; font-size: 13px; font-weight: 600; color: #fff; flex-wrap: wrap; text-align: center; }
 .topbar a { color: #fff; text-decoration: underline; white-space: nowrap; }
+@media (max-width: 640px) {
+  .topbar { padding: 7px 4%; font-size: 11px; gap: 4px 8px; line-height: 1.4; }
+}
+@media (max-width: 380px) {
+  .topbar { font-size: 10px; }
+}
 
 /* ─── NAV ─── */
 nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 68px; }
@@ -323,7 +329,6 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: 48px; min-height: auto; padding: 80px 5% 60px; }
-  .hero-right { display: none; }
   .split { grid-template-columns: 1fr; gap: 40px; }
   .svc-grid { grid-template-columns: 1fr; }
   .stats-row { grid-template-columns: 1fr 1fr; }
@@ -538,6 +543,16 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 @keyframes scanbeammove { 0% { top: 0%; opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
 
 .ae-stage { position: relative; width: 100%; height: 520px; }
+@media (max-width: 900px) {
+  .ae-stage { height: 380px; }
+  .ae-circle { width: 46px; height: 46px; }
+  .ae-circle svg { width: 18px; height: 18px; }
+  .ae-label { font-size: 10.5px; }
+  .ae-tooltip { display: none; }
+}
+@media (max-width: 480px) {
+  .ae-stage { height: 320px; }
+}
 .ae-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .ae-node { position: absolute; cursor: pointer; display: flex; flex-direction: column; align-items: center; z-index: 3; }
 .ae-circle { width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.01)); border: 1px solid var(--border2); transition: all .35s cubic-bezier(.2,.8,.2,1); }
