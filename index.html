@@ -3004,6 +3004,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     resize();
     window.addEventListener('resize', resize);
+    if(window.ResizeObserver){
+      new ResizeObserver(resize).observe(stage);
+    }
+    if(document.fonts && document.fonts.ready){
+      document.fonts.ready.then(resize);
+    }
+    setTimeout(resize, 500);
+    setTimeout(resize, 1500);
 
     function clientPt(){ return {x: w*0.07, y: h*0.5}; }
     function pubPts(){ return [
