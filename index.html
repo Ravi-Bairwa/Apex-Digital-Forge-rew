@@ -58,7 +58,7 @@
 
 /* ─── RESET ─── */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
+html { scroll-behavior: smooth; max-width: 100%; }
 body { background: var(--black); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.65; overflow-x: hidden; max-width: 100%; }
 h1, h2, h3, h4, h5 { font-family: var(--font-heading); line-height: 1.1; letter-spacing: -0.03em; }
 a { text-decoration: none; }
@@ -3076,15 +3076,19 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function initScanBeam(){
-    var track = document.querySelector('.scan-track');
-    var beam = document.querySelector('.scan-beam');
     var checkpoints = document.querySelectorAll('.scan-checkpoint');
-    if(!track || !beam || !checkpoints.length) return;
+    if(!checkpoints.length) return;
     var N = checkpoints.length;
-    function update(){
-      var beamRect = beam.getBoundingClientRect();
-      var trackRect = track.getBoundingClientRect();
-      var progress = (beamRect.left - trackRect.left) / (trackRect.width - beamRect.width || 1);
+    var duration = 6000;
+    var startTime = null;
+    function update(ts){
+      if(!startTime) startTime = ts;
+      var elapsed = (ts - startTime) % duration;
+      var frac = elapsed / duration;
+      var progress;
+      if(frac <= 0.45){ progress = frac / 0.45; }
+      else if(frac <= 0.55){ progress = 1; }
+      else { progress = 1 - (frac - 0.55) / 0.45; }
       checkpoints.forEach(function(cp, i){
         var threshold = i / (N - 1);
         if(progress >= threshold - 0.02){ cp.classList.add('lit'); }
@@ -3092,7 +3096,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       requestAnimationFrame(update);
     }
-    update();
+    requestAnimationFrame(update);
   }
 
   function initCountUp(){
