@@ -3013,13 +3013,27 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(resize, 500);
     setTimeout(resize, 1500);
 
-    function clientPt(){ return {x: w*0.07, y: h*0.5}; }
-    function pubPts(){ return [
-      {x: w*0.45, y: h*0.14},
-      {x: w*0.45, y: h*0.48},
-      {x: w*0.45, y: h*0.82}
-    ]; }
-    function graphPt(){ return {x: w*0.85, y: h*0.5}; }
+    var clientEl = stage.querySelector('.ae-node:not(.ae-pub):not(.ae-graph) .ae-circle');
+    var pubEls = stage.querySelectorAll('.ae-pub .ae-circle');
+    var graphEl = stage.querySelector('.ae-graph .ae-circle');
+
+    function centerOf(el){
+      var r = el.getBoundingClientRect();
+      var stageR = stage.getBoundingClientRect();
+      return { x: (r.left + r.right)/2 - stageR.left, y: (r.top + r.bottom)/2 - stageR.top };
+    }
+    function clientPt(){ return clientEl ? centerOf(clientEl) : {x: w*0.07, y: h*0.5}; }
+    function pubPts(){
+      if(pubEls && pubEls.length === 3){
+        return [centerOf(pubEls[0]), centerOf(pubEls[1]), centerOf(pubEls[2])];
+      }
+      return [
+        {x: w*0.45, y: h*0.14},
+        {x: w*0.45, y: h*0.48},
+        {x: w*0.45, y: h*0.82}
+      ];
+    }
+    function graphPt(){ return graphEl ? centerOf(graphEl) : {x: w*0.85, y: h*0.5}; }
 
     var particles = [];
     function spawn(){
