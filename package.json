@@ -2,10 +2,8 @@
   "name": "apex-digital-forge",
   "version": "1.0.0",
   "description": "Apex Digital Forge — White-Label SEO Backlink Agency Website",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "local-dev-server": "node server.js"
   },
   "keywords": [
     "seo",
