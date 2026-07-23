@@ -632,6 +632,23 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 @keyframes pbdrift1 { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(60px,40px) scale(1.1); } }
 @keyframes pbdrift2 { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-40px,-30px) scale(1.08); } }
 
+/* Site-wide aurora background (fixed, sits behind everything on every page) */
+.site-aurora { position: fixed; inset: 0; overflow: hidden; filter: blur(90px); opacity: .22; z-index: 0; pointer-events: none; }
+.site-aurora-blob { position: absolute; border-radius: 50%; mix-blend-mode: screen; }
+.sa1 { width: 46vw; height: 46vw; max-width: 620px; max-height: 620px; background: radial-gradient(circle, #ff5c35 0%, transparent 70%); top: -12%; left: -10%; animation: sadrift1 26s ease-in-out infinite; }
+.sa2 { width: 40vw; height: 40vw; max-width: 560px; max-height: 560px; background: radial-gradient(circle, #1d9e75 0%, transparent 70%); bottom: -14%; right: -8%; animation: sadrift2 30s ease-in-out infinite; }
+.sa3 { width: 34vw; height: 34vw; max-width: 480px; max-height: 480px; background: radial-gradient(circle, #7f77dd 0%, transparent 70%); top: 38%; right: 22%; animation: sadrift3 22s ease-in-out infinite; }
+@keyframes sadrift1 { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(6vw,4vw) scale(1.12); } }
+@keyframes sadrift2 { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-5vw,-4vw) scale(1.08); } }
+@keyframes sadrift3 { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-4vw,5vw) scale(0.92); } }
+.topbar, .page, footer { position: relative; z-index: 1; }
+
+/* Hero-only 3D perspective grid floor accent */
+.hero-grid-floor-wrap { position: absolute; inset: 0; overflow: hidden; perspective: 400px; z-index: 0; pointer-events: none; }
+.hero-grid-floor { position: absolute; bottom: -20%; left: -50%; width: 200%; height: 60%; background-image: linear-gradient(rgba(255,92,53,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,92,53,.22) 1px, transparent 1px); background-size: 60px 60px; transform: rotateX(75deg); animation: heroFloorMove 4s linear infinite; }
+@keyframes heroFloorMove { from { background-position: 0 0; } to { background-position: 0 60px; } }
+.hero-grid-fade { position: absolute; inset: 0; background: linear-gradient(to bottom, var(--dark) 0%, transparent 35%, transparent 65%, var(--dark) 100%); z-index: 1; pointer-events: none; }
+
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
@@ -714,6 +731,13 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 </head>
 <body>
 
+<!-- SITE-WIDE AURORA BACKGROUND -->
+<div class="site-aurora">
+  <div class="site-aurora-blob sa1"></div>
+  <div class="site-aurora-blob sa2"></div>
+  <div class="site-aurora-blob sa3"></div>
+</div>
+
 <!-- TOP BAR -->
 <div class="topbar">
   <span class="topbar-full">🎁 New clients: 20 free DA 50–90 backlinks — no payment, no contract, no obligation.</span>
@@ -759,7 +783,11 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 <div id="page-home" class="page active">
 
   <section class="hero">
-    <div>
+    <div class="hero-grid-floor-wrap">
+      <div class="hero-grid-floor"></div>
+    </div>
+    <div class="hero-grid-fade"></div>
+    <div style="position:relative;z-index:2;">
       <div class="hero-eyebrow">White-Label SEO & Link Building Agency</div>
       <h1>White Label SEO Agency — <em>On-Page, Links</em> & Technical.</h1>
       <p class="hero-sub">Apex Digital Forge is a premium white-label SEO agency trusted by agencies, businesses and freelancers worldwide. We deliver complete SEO — on-page optimization, technical fixes, and DA 50–90 verified backlinks — all under your brand. Live reporting, 7–10 day delivery, no contracts.</p>
@@ -2663,7 +2691,7 @@ document.addEventListener('DOMContentLoaded', function() {
         _subject: 'Free SEO Audit Request — ' + document.getElementById('auditUrl').value
       };
       try {
-        var res = await fetch('https://formspree.io/f/mdajvkzn', {
+        var res = await fetch('/api/seo-audit', {
           method: 'POST', headers: {'Content-Type':'application/json','Accept':'application/json'},
           body: JSON.stringify(data)
         });
@@ -2746,11 +2774,19 @@ async function submitForm(e) {
   btn.textContent = 'Sending...';
   btn.disabled = true;
   try {
-    var formData = new FormData(form);
-    var res = await fetch('https://formspree.io/f/mdajvkzn', {
+    var data = {
+      name: name,
+      email: email,
+      company: document.getElementById('fcompany').value.trim(),
+      phone: document.getElementById('fphone').value.trim(),
+      service: document.getElementById('fservice').value,
+      budget: document.getElementById('fbudget').value,
+      message: document.getElementById('fmessage').value.trim()
+    };
+    var res = await fetch('/api/contact', {
       method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
     });
     if (res.ok) {
       form.style.display = 'none';
