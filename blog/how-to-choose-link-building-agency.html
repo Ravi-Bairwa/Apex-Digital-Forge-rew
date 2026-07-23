@@ -1675,11 +1675,19 @@ async function submitForm(e) {
   btn.textContent = 'Sending...';
   btn.disabled = true;
   try {
-    var formData = new FormData(form);
-    var res = await fetch('https://formspree.io/f/mdajvkzn', {
+    var data = {
+      name: name,
+      email: email,
+      company: document.getElementById('fcompany').value.trim(),
+      phone: document.getElementById('fphone').value.trim(),
+      service: document.getElementById('fservice').value,
+      budget: document.getElementById('fbudget').value,
+      message: document.getElementById('fmessage').value.trim()
+    };
+    var res = await fetch('/api/contact', {
       method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
     });
     if (res.ok) {
       form.style.display = 'none';
