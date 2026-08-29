@@ -248,6 +248,46 @@
       "destination": "/seo-audit.html"
     },
     {
+      "source": "/blog/white-label-link-building-services-for-agencies",
+      "destination": "/blog/white-label-link-building-services-for-agencies.html"
+    },
+    {
+      "source": "/blog/white-label-link-building-agency-usa",
+      "destination": "/blog/white-label-link-building-agency-usa.html"
+    },
+    {
+      "source": "/blog/buy-backlinks-for-agencies",
+      "destination": "/blog/buy-backlinks-for-agencies.html"
+    },
+    {
+      "source": "/blog/niche-edit-link-building-service",
+      "destination": "/blog/niche-edit-link-building-service.html"
+    },
+    {
+      "source": "/blog/guest-post-service-for-seo-agencies",
+      "destination": "/blog/guest-post-service-for-seo-agencies.html"
+    },
+    {
+      "source": "/blog/reseller-seo-link-building",
+      "destination": "/blog/reseller-seo-link-building.html"
+    },
+    {
+      "source": "/blog/outsource-link-building-for-clients",
+      "destination": "/blog/outsource-link-building-for-clients.html"
+    },
+    {
+      "source": "/blog/affordable-white-label-seo-reseller",
+      "destination": "/blog/affordable-white-label-seo-reseller.html"
+    },
+    {
+      "source": "/blog/link-building-agency-for-small-agencies",
+      "destination": "/blog/link-building-agency-for-small-agencies.html"
+    },
+    {
+      "source": "/blog/da35-backlinks-service",
+      "destination": "/blog/da35-backlinks-service.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
