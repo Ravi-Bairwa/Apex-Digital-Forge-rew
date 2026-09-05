@@ -440,8 +440,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if(!stage || !canvas) return;
     var ctx = canvas.getContext('2d');
     var w, h;
-    function adfAccentRGB(){ return document.documentElement.getAttribute('data-theme')==='apex' ? '255,46,166' : '255,92,53'; }
-    function adfAccentHex(){ return document.documentElement.getAttribute('data-theme')==='apex' ? '#ff2ea6' : '#ff5c35'; }
+    function adfAccentRGB(){ var t=document.documentElement.getAttribute('data-theme'); if(t==='apex') return '255,46,166'; if(t==='light') return '22,163,74'; return '255,92,53'; }
+    function adfAccentHex(){ var t=document.documentElement.getAttribute('data-theme'); if(t==='apex') return '#ff2ea6'; if(t==='light') return '#16a34a'; return '#ff5c35'; }
 
     var clientEl = stage.querySelector('.ae-node:not(.ae-pub):not(.ae-graph) .ae-circle');
     var pubEls = stage.querySelectorAll('.ae-pub .ae-circle');
