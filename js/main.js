@@ -440,6 +440,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if(!stage || !canvas) return;
     var ctx = canvas.getContext('2d');
     var w, h;
+    function adfAccentRGB(){ return document.documentElement.getAttribute('data-theme')==='apex' ? '255,46,166' : '255,92,53'; }
+    function adfAccentHex(){ return document.documentElement.getAttribute('data-theme')==='apex' ? '#ff2ea6' : '#ff5c35'; }
 
     var clientEl = stage.querySelector('.ae-node:not(.ae-pub):not(.ae-graph) .ae-circle');
     var pubEls = stage.querySelectorAll('.ae-pub .ae-circle');
@@ -512,7 +514,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function tick(){
       ctx.clearRect(0,0,w,h);
       var client = cachedClient, pubs = cachedPubs, graph = cachedGraph;
-      pubs.forEach(function(p){ line(p, client, 0.1, 'rgba(255,92,53,ALPHA)'); });
+      pubs.forEach(function(p){ line(p, client, 0.1, 'rgba('+adfAccentRGB()+',ALPHA)'); });
       line(client, graph, 0.08, 'rgba(29,158,117,ALPHA)');
 
       particles.forEach(function(p){
@@ -536,8 +538,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var py = ey - Math.sin(angle)*boost;
         ctx.beginPath();
         ctx.arc(px, py, 2.6, 0, Math.PI*2);
-        ctx.fillStyle = p.leg === 1 ? 'rgba(255,92,53,0.9)' : 'rgba(29,158,117,0.9)';
-        ctx.shadowColor = p.leg === 1 ? '#ff5c35' : '#1d9e75';
+        ctx.fillStyle = p.leg === 1 ? 'rgba('+adfAccentRGB()+',0.9)' : 'rgba(29,158,117,0.9)';
+        ctx.shadowColor = p.leg === 1 ? adfAccentHex() : '#1d9e75';
         ctx.shadowBlur = 8;
         ctx.fill();
         ctx.shadowBlur = 0;
@@ -665,7 +667,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 })();
 
-var ADF_THEME_ORDER=['dark','light','apex'];
+var ADF_THEME_ORDER=['light','apex'];
 function toggleTheme(){
   var root=document.documentElement;
   var cur=root.getAttribute('data-theme');
