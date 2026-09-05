@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t||(t!=='light'&&t!=='dark'&&t!=='apex')){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM"></script>
 <script>
@@ -703,6 +703,65 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
 [data-theme="light"] .theme-toggle .icon-sun { display:block; }
 [data-theme="light"] .theme-toggle .icon-moon { display:none; }
 
+/* ═══ THIRD THEME: Apex (bold gradient / glass / premium) ═══ */
+[data-theme="apex"] {
+  color-scheme: dark;
+  --black: #0a0710;
+  --dark: #0f0a18;
+  --dark2: #170f24;
+  --dark3: #1e1530;
+  --white: #f5f3fa;
+  --muted: #9a8fb0;
+  --muted2: #b6acc9;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.15);
+  --apex-a: #8b2fe0;
+  --apex-b: #ff2ea6;
+  --apex-c: #ff7a35;
+}
+[data-theme="apex"] nav { background: rgba(15,10,24,0.88); }
+[data-theme="apex"] .mobile-menu { background: var(--dark); }
+
+/* Bold gradient headline emphasis + primary CTA, Apex only */
+[data-theme="apex"] .hero h1 em,
+[data-theme="apex"] .blog-hero h1 em {
+  background: linear-gradient(90deg, var(--apex-a), var(--apex-b) 55%, var(--apex-c));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="apex"] .btn-primary { background: linear-gradient(90deg, var(--apex-a), var(--apex-b)); border: none; }
+[data-theme="apex"] .btn-primary:hover { background: linear-gradient(90deg, var(--apex-b), var(--apex-a)); }
+[data-theme="apex"] .pkg-cta:hover,
+[data-theme="apex"] .pkg.hot .pkg-cta { background: linear-gradient(90deg, var(--apex-a), var(--apex-b)); }
+
+/* Subtle glass sheen on panels over the deep purple base */
+[data-theme="apex"] .hero-card,
+[data-theme="apex"] .hero-card-float,
+[data-theme="apex"] .stat-block,
+[data-theme="apex"] .split-visual,
+[data-theme="apex"] .svc-card,
+[data-theme="apex"] .anchor-item,
+[data-theme="apex"] .pkg,
+[data-theme="apex"] .custom-box,
+[data-theme="apex"] .logo-pill {
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* Bolder, more saturated aurora blobs for Apex */
+[data-theme="apex"] .site-aurora { opacity: .55; filter: blur(110px); }
+[data-theme="apex"] .sa1 { background: radial-gradient(circle, var(--apex-a) 0%, transparent 70%); }
+[data-theme="apex"] .sa2 { background: radial-gradient(circle, var(--apex-b) 0%, transparent 70%); }
+[data-theme="apex"] .sa3 { background: radial-gradient(circle, var(--apex-c) 0%, transparent 70%); }
+
+/* Third toggle icon */
+.theme-toggle .icon-apex { display:none; }
+[data-theme="apex"] .theme-toggle .icon-sun { display:none; }
+[data-theme="apex"] .theme-toggle .icon-moon { display:none; }
+[data-theme="apex"] .theme-toggle .icon-apex { display:block; }
+
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
@@ -822,7 +881,7 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
     <a href="/seo-audit" class="btn btn-dark" onclick="showPage('seo-audit', event)" style="font-size:12px;padding:7px 13px;white-space:nowrap;">Free SEO Audit</a>
     <a href="/contact" class="btn btn-primary" onclick="showPage('contact', event)" style="font-size:12px;padding:7px 16px;">Free Trial</a>
   </div>
-  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark theme" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cycle theme: dark, light, apex" title="Cycle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><svg class="icon-apex" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg></button>
 <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
@@ -1671,9 +1730,12 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <script>
+var ADF_THEME_ORDER=['dark','light','apex'];
 function toggleTheme(){
   var root=document.documentElement;
-  var next=root.getAttribute('data-theme')==='light'?'dark':'light';
+  var cur=root.getAttribute('data-theme');
+  var idx=ADF_THEME_ORDER.indexOf(cur);
+  var next=ADF_THEME_ORDER[(idx+1)%ADF_THEME_ORDER.length];
   root.setAttribute('data-theme',next);
   try{localStorage.setItem('adf-theme',next);}catch(e){}
 }
