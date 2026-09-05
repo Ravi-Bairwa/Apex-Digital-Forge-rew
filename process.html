@@ -1395,10 +1395,42 @@ document.addEventListener('DOMContentLoaded', function() {
     if(!stage || !canvas) return;
     var ctx = canvas.getContext('2d');
     var w, h;
+
+    var clientEl = stage.querySelector('.ae-node:not(.ae-pub):not(.ae-graph) .ae-circle');
+    var pubEls = stage.querySelectorAll('.ae-pub .ae-circle');
+    var graphEl = stage.querySelector('.ae-graph .ae-circle');
+
+    // Node positions only change on resize/font-load, never per frame.
+    // Caching them avoids calling getBoundingClientRect() (a forced layout
+    // read) on every animation frame and for every particle, which was
+    // the source of the visible lag/stutter.
+    var cachedClient, cachedPubs, cachedGraph;
+
+    function centerOf(el, stageR){
+      var r = el.getBoundingClientRect();
+      return { x: (r.left + r.right)/2 - stageR.left, y: (r.top + r.bottom)/2 - stageR.top };
+    }
+
+    function recalcPositions(){
+      var stageR = stage.getBoundingClientRect();
+      cachedClient = clientEl ? centerOf(clientEl, stageR) : {x: w*0.07, y: h*0.5};
+      if(pubEls && pubEls.length === 3){
+        cachedPubs = [centerOf(pubEls[0], stageR), centerOf(pubEls[1], stageR), centerOf(pubEls[2], stageR)];
+      } else {
+        cachedPubs = [
+          {x: w*0.45, y: h*0.14},
+          {x: w*0.45, y: h*0.48},
+          {x: w*0.45, y: h*0.82}
+        ];
+      }
+      cachedGraph = graphEl ? centerOf(graphEl, stageR) : {x: w*0.85, y: h*0.5};
+    }
+
     function resize(){
       var rect = stage.getBoundingClientRect();
       w = canvas.width = rect.width;
       h = canvas.height = rect.height;
+      recalcPositions();
     }
     resize();
     window.addEventListener('resize', resize);
@@ -1411,32 +1443,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(resize, 500);
     setTimeout(resize, 1500);
 
-    var clientEl = stage.querySelector('.ae-node:not(.ae-pub):not(.ae-graph) .ae-circle');
-    var pubEls = stage.querySelectorAll('.ae-pub .ae-circle');
-    var graphEl = stage.querySelector('.ae-graph .ae-circle');
-
-    function centerOf(el){
-      var r = el.getBoundingClientRect();
-      var stageR = stage.getBoundingClientRect();
-      return { x: (r.left + r.right)/2 - stageR.left, y: (r.top + r.bottom)/2 - stageR.top };
-    }
-    function clientPt(){ return clientEl ? centerOf(clientEl) : {x: w*0.07, y: h*0.5}; }
-    function pubPts(){
-      if(pubEls && pubEls.length === 3){
-        return [centerOf(pubEls[0]), centerOf(pubEls[1]), centerOf(pubEls[2])];
-      }
-      return [
-        {x: w*0.45, y: h*0.14},
-        {x: w*0.45, y: h*0.48},
-        {x: w*0.45, y: h*0.82}
-      ];
-    }
-    function graphPt(){ return graphEl ? centerOf(graphEl) : {x: w*0.85, y: h*0.5}; }
-
     var particles = [];
     function spawn(){
-      var pubs = pubPts();
-      var from = pubs[Math.floor(Math.random()*pubs.length)];
+      var from = cachedPubs[Math.floor(Math.random()*cachedPubs.length)];
       particles.push({ x: from.x, y: from.y, t: 0, speed: 0.006 + Math.random()*0.004, leg: 1 });
     }
     var spawnTimer = setInterval(spawn, 420);
@@ -1457,7 +1466,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var rafId;
     function tick(){
       ctx.clearRect(0,0,w,h);
-      var client = clientPt(), pubs = pubPts(), graph = graphPt();
+      var client = cachedClient, pubs = cachedPubs, graph = cachedGraph;
       pubs.forEach(function(p){ line(p, client, 0.1, 'rgba(255,92,53,ALPHA)'); });
       line(client, graph, 0.08, 'rgba(29,158,117,ALPHA)');
 
@@ -1470,9 +1479,8 @@ document.addEventListener('DOMContentLoaded', function() {
       particles = particles.filter(function(p){ return !p.done; });
 
       particles.forEach(function(p){
-        var pubs2 = pubPts();
         var from, to;
-        if(p.leg === 1){ from = p._from || (p._from = pubs2[Math.floor(Math.random()*pubs2.length)]); to = client; }
+        if(p.leg === 1){ from = p._from || (p._from = pubs[Math.floor(Math.random()*pubs.length)]); to = client; }
         else { from = client; to = graph; }
         var ex = from.x + (to.x - from.x) * p.t;
         var ey = from.y + (to.y - from.y) * p.t;
