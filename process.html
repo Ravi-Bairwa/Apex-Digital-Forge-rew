@@ -718,6 +718,7 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
   --apex-a: #8b2fe0;
   --apex-b: #ff2ea6;
   --apex-c: #ff7a35;
+  --accent: #ff2ea6;
 }
 [data-theme="apex"] nav { background: rgba(15,10,24,0.88); }
 [data-theme="apex"] .mobile-menu { background: var(--dark); }
@@ -761,6 +762,31 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
 [data-theme="apex"] .theme-toggle .icon-sun { display:none; }
 [data-theme="apex"] .theme-toggle .icon-moon { display:none; }
 [data-theme="apex"] .theme-toggle .icon-apex { display:block; }
+
+/* Recolor the remaining hardcoded orange-tinted glows/tags for Apex */
+[data-theme="apex"] .hero::before { background: radial-gradient(ellipse 60% 70% at 80% 50%, rgba(255,46,166,0.09) 0%, transparent 70%), radial-gradient(ellipse 40% 50% at 20% 80%, rgba(139,47,224,0.06) 0%, transparent 60%); }
+[data-theme="apex"] .card-da { background: rgba(255,46,166,0.14); }
+[data-theme="apex"] .pay-best { background: rgba(255,46,166,0.14); }
+[data-theme="apex"] .feature-icon { background: rgba(255,46,166,0.12); }
+[data-theme="apex"] .svc-num { color: rgba(255,46,166,0.5); }
+[data-theme="apex"] .process-step-num { color: rgba(255,46,166,0.5); }
+[data-theme="apex"] .custom-box::before { color: rgba(255,46,166,0.06); }
+[data-theme="apex"] .contact-icon { background: rgba(255,46,166,0.1); border-color: rgba(255,46,166,0.18); }
+[data-theme="apex"] .trial-callout,
+[data-theme="apex"] .trial-banner { background: rgba(255,46,166,0.06); border-color: rgba(255,46,166,0.18); }
+[data-theme="apex"] .blog-card:hover { border-color: rgba(255,46,166,0.4); }
+[data-theme="apex"] .blog-card-img::before { background: radial-gradient(ellipse at center, rgba(255,46,166,0.1), transparent 70%); }
+[data-theme="apex"] .blog-cta { background: linear-gradient(135deg, rgba(139,47,224,0.1), rgba(255,46,166,0.05)); border-color: rgba(255,46,166,0.22); }
+[data-theme="apex"] .hover-card:hover { border-color: rgba(255,46,166,.4) !important; }
+[data-theme="apex"] .pulse-glow-card::before { border-color: rgba(255,46,166,.5); }
+[data-theme="apex"] .scan-browser-beam { background: linear-gradient(90deg, transparent, var(--apex-b), transparent); box-shadow: 0 0 16px 2px rgba(255,46,166,.6); }
+[data-theme="apex"] .ae-node:hover .ae-circle { border-color: rgba(255,46,166,.6); box-shadow: 0 0 0 1px rgba(255,46,166,.15), 0 0 34px rgba(255,46,166,.35); }
+[data-theme="apex"] .ae-pub .ae-circle { border-color: rgba(255,46,166,.25); }
+[data-theme="apex"] .carousel-floor-glow { background: radial-gradient(ellipse, rgba(255,46,166,.16), transparent 70%); }
+[data-theme="apex"] .carousel-card:hover { border-color: rgba(255,46,166,.5); box-shadow: 0 0 46px rgba(255,46,166,.22); }
+[data-theme="apex"] .scan-beam { background: radial-gradient(circle, rgba(255,46,166,.9), rgba(255,46,166,0) 70%); }
+[data-theme="apex"] .scan-checkpoint.lit .scan-cp-icon { border-color: rgba(255,46,166,.5); box-shadow: 0 0 22px rgba(255,46,166,.22); }
+[data-theme="apex"] .hero-grid-floor { background-image: linear-gradient(rgba(255,46,166,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,46,166,.18) 1px, transparent 1px); }
 
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
@@ -1509,6 +1535,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if(!stage || !canvas) return;
     var ctx = canvas.getContext('2d');
     var w, h;
+    function adfAccentRGB(){ return document.documentElement.getAttribute('data-theme')==='apex' ? '255,46,166' : '255,92,53'; }
+    function adfAccentHex(){ return document.documentElement.getAttribute('data-theme')==='apex' ? '#ff2ea6' : '#ff5c35'; }
 
     var clientEl = stage.querySelector('.ae-node:not(.ae-pub):not(.ae-graph) .ae-circle');
     var pubEls = stage.querySelectorAll('.ae-pub .ae-circle');
@@ -1581,7 +1609,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function tick(){
       ctx.clearRect(0,0,w,h);
       var client = cachedClient, pubs = cachedPubs, graph = cachedGraph;
-      pubs.forEach(function(p){ line(p, client, 0.1, 'rgba(255,92,53,ALPHA)'); });
+      pubs.forEach(function(p){ line(p, client, 0.1, 'rgba('+adfAccentRGB()+',ALPHA)'); });
       line(client, graph, 0.08, 'rgba(29,158,117,ALPHA)');
 
       particles.forEach(function(p){
@@ -1605,8 +1633,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var py = ey - Math.sin(angle)*boost;
         ctx.beginPath();
         ctx.arc(px, py, 2.6, 0, Math.PI*2);
-        ctx.fillStyle = p.leg === 1 ? 'rgba(255,92,53,0.9)' : 'rgba(29,158,117,0.9)';
-        ctx.shadowColor = p.leg === 1 ? '#ff5c35' : '#1d9e75';
+        ctx.fillStyle = p.leg === 1 ? 'rgba('+adfAccentRGB()+',0.9)' : 'rgba(29,158,117,0.9)';
+        ctx.shadowColor = p.leg === 1 ? adfAccentHex() : '#1d9e75';
         ctx.shadowBlur = 8;
         ctx.fill();
         ctx.shadowBlur = 0;
