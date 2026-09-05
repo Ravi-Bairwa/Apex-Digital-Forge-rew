@@ -288,6 +288,10 @@
       "destination": "/blog/da35-backlinks-service.html"
     },
     {
+      "source": "/blog/seo-services-small-business",
+      "destination": "/blog/seo-services-small-business.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
