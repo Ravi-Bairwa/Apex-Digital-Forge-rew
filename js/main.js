@@ -432,7 +432,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-
 /* ═══ ANIMATED VISUALS: Authority Engine / Orbit / Timeline ═══ */
 (function(){
   function initAuthorityEngine(){
@@ -665,3 +664,13 @@ document.addEventListener('DOMContentLoaded', function() {
     initAll();
   }
 })();
+
+var ADF_THEME_ORDER=['dark','light','apex'];
+function toggleTheme(){
+  var root=document.documentElement;
+  var cur=root.getAttribute('data-theme');
+  var idx=ADF_THEME_ORDER.indexOf(cur);
+  var next=ADF_THEME_ORDER[(idx+1)%ADF_THEME_ORDER.length];
+  root.setAttribute('data-theme',next);
+  try{localStorage.setItem('adf-theme',next);}catch(e){}
+}

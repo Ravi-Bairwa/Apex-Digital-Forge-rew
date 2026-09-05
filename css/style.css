@@ -614,3 +614,115 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 .hero-grid-floor { position: absolute; bottom: -20%; left: -50%; width: 200%; height: 60%; background-image: linear-gradient(rgba(255,92,53,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,92,53,.22) 1px, transparent 1px); background-size: 60px 60px; transform: rotateX(75deg); animation: heroFloorMove 4s linear infinite; }
 @keyframes heroFloorMove { from { background-position: 0 0; } to { background-position: 0 60px; } }
 .hero-grid-fade { position: absolute; inset: 0; background: linear-gradient(to bottom, var(--dark) 0%, transparent 35%, transparent 65%, var(--dark) 100%); z-index: 1; pointer-events: none; }
+
+/* ═══ DUAL THEME: Aurora (dark) + Frosted (light) ═══ */
+:root { color-scheme: dark; }
+[data-theme="light"] {
+  color-scheme: light;
+  --black: #f6f5f1;
+  --dark: #ffffff;
+  --dark2: rgba(255,255,255,0.6);
+  --dark3: rgba(255,255,255,0.82);
+  --white: #16161f;
+  --muted: #6b6b7a;
+  --muted2: #4a4a5a;
+  --border: rgba(20,20,30,0.08);
+  --border2: rgba(20,20,30,0.14);
+}
+body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, color .4s ease, border-color .4s ease; }
+
+/* Frosted glass panels in light mode */
+[data-theme="light"] .hero-card,
+[data-theme="light"] .hero-card-float,
+[data-theme="light"] .stat-block,
+[data-theme="light"] .split-visual,
+[data-theme="light"] .svc-card,
+[data-theme="light"] .anchor-item,
+[data-theme="light"] .pkg,
+[data-theme="light"] .custom-box,
+[data-theme="light"] .logo-pill {
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 4px 24px rgba(20,20,30,0.05);
+}
+[data-theme="light"] nav { background: rgba(255,255,255,0.82); }
+
+/* Small hardcoded white-overlay accents need a light-mode counterpart */
+[data-theme="light"] .svc-tag,
+[data-theme="light"] .scan-cp-icon,
+[data-theme="light"] .carousel-card-icon { background: rgba(20,20,30,0.04); }
+[data-theme="light"] .compare-table tr:hover td { background: rgba(20,20,30,0.025); }
+[data-theme="light"] .ae-circle { background: linear-gradient(160deg, rgba(20,20,30,.05), rgba(20,20,30,.01)); }
+[data-theme="light"] .carousel-card { background: linear-gradient(160deg, rgba(20,20,30,.04), rgba(20,20,30,.01)); }
+
+/* Aurora blobs: screen-blend reads on dark, multiply reads as soft pastel tint on light */
+[data-theme="light"] .site-aurora { opacity: .4; }
+[data-theme="light"] .site-aurora-blob { mix-blend-mode: multiply; }
+
+/* Theme toggle control */
+.theme-toggle { display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; border:1px solid var(--border2); background:var(--dark2); cursor:pointer; transition:background .2s,border-color .2s; margin-left:6px; flex-shrink:0; }
+.theme-toggle:hover { background:var(--dark3); }
+.theme-toggle svg { width:16px; height:16px; color:var(--white); }
+.theme-toggle .icon-sun { display:none; }
+.theme-toggle .icon-moon { display:block; }
+[data-theme="light"] .theme-toggle .icon-sun { display:block; }
+[data-theme="light"] .theme-toggle .icon-moon { display:none; }
+
+/* ═══ THIRD THEME: Apex (bold gradient / glass / premium) ═══ */
+[data-theme="apex"] {
+  color-scheme: dark;
+  --black: #0a0710;
+  --dark: #0f0a18;
+  --dark2: #170f24;
+  --dark3: #1e1530;
+  --white: #f5f3fa;
+  --muted: #9a8fb0;
+  --muted2: #b6acc9;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.15);
+  --apex-a: #8b2fe0;
+  --apex-b: #ff2ea6;
+  --apex-c: #ff7a35;
+}
+[data-theme="apex"] nav { background: rgba(15,10,24,0.88); }
+[data-theme="apex"] .mobile-menu { background: var(--dark); }
+
+/* Bold gradient headline emphasis + primary CTA, Apex only */
+[data-theme="apex"] .hero h1 em,
+[data-theme="apex"] .blog-hero h1 em {
+  background: linear-gradient(90deg, var(--apex-a), var(--apex-b) 55%, var(--apex-c));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+[data-theme="apex"] .btn-primary { background: linear-gradient(90deg, var(--apex-a), var(--apex-b)); border: none; }
+[data-theme="apex"] .btn-primary:hover { background: linear-gradient(90deg, var(--apex-b), var(--apex-a)); }
+[data-theme="apex"] .pkg-cta:hover,
+[data-theme="apex"] .pkg.hot .pkg-cta { background: linear-gradient(90deg, var(--apex-a), var(--apex-b)); }
+
+/* Subtle glass sheen on panels over the deep purple base */
+[data-theme="apex"] .hero-card,
+[data-theme="apex"] .hero-card-float,
+[data-theme="apex"] .stat-block,
+[data-theme="apex"] .split-visual,
+[data-theme="apex"] .svc-card,
+[data-theme="apex"] .anchor-item,
+[data-theme="apex"] .pkg,
+[data-theme="apex"] .custom-box,
+[data-theme="apex"] .logo-pill {
+  background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* Bolder, more saturated aurora blobs for Apex */
+[data-theme="apex"] .site-aurora { opacity: .55; filter: blur(110px); }
+[data-theme="apex"] .sa1 { background: radial-gradient(circle, var(--apex-a) 0%, transparent 70%); }
+[data-theme="apex"] .sa2 { background: radial-gradient(circle, var(--apex-b) 0%, transparent 70%); }
+[data-theme="apex"] .sa3 { background: radial-gradient(circle, var(--apex-c) 0%, transparent 70%); }
+
+/* Third toggle icon */
+.theme-toggle .icon-apex { display:none; }
+[data-theme="apex"] .theme-toggle .icon-sun { display:none; }
+[data-theme="apex"] .theme-toggle .icon-moon { display:none; }
+[data-theme="apex"] .theme-toggle .icon-apex { display:block; }
