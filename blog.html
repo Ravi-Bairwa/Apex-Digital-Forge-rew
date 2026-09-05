@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM"></script>
 <script>
@@ -649,6 +650,59 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 @keyframes heroFloorMove { from { background-position: 0 0; } to { background-position: 0 60px; } }
 .hero-grid-fade { position: absolute; inset: 0; background: linear-gradient(to bottom, var(--dark) 0%, transparent 35%, transparent 65%, var(--dark) 100%); z-index: 1; pointer-events: none; }
 
+/* ═══ DUAL THEME: Aurora (dark) + Frosted (light) ═══ */
+:root { color-scheme: dark; }
+[data-theme="light"] {
+  color-scheme: light;
+  --black: #f6f5f1;
+  --dark: #ffffff;
+  --dark2: rgba(255,255,255,0.6);
+  --dark3: rgba(255,255,255,0.82);
+  --white: #16161f;
+  --muted: #6b6b7a;
+  --muted2: #4a4a5a;
+  --border: rgba(20,20,30,0.08);
+  --border2: rgba(20,20,30,0.14);
+}
+body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, color .4s ease, border-color .4s ease; }
+
+/* Frosted glass panels in light mode */
+[data-theme="light"] .hero-card,
+[data-theme="light"] .hero-card-float,
+[data-theme="light"] .stat-block,
+[data-theme="light"] .split-visual,
+[data-theme="light"] .svc-card,
+[data-theme="light"] .anchor-item,
+[data-theme="light"] .pkg,
+[data-theme="light"] .custom-box,
+[data-theme="light"] .logo-pill {
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 4px 24px rgba(20,20,30,0.05);
+}
+[data-theme="light"] nav { background: rgba(255,255,255,0.82); }
+
+/* Small hardcoded white-overlay accents need a light-mode counterpart */
+[data-theme="light"] .svc-tag,
+[data-theme="light"] .scan-cp-icon,
+[data-theme="light"] .carousel-card-icon { background: rgba(20,20,30,0.04); }
+[data-theme="light"] .compare-table tr:hover td { background: rgba(20,20,30,0.025); }
+[data-theme="light"] .ae-circle { background: linear-gradient(160deg, rgba(20,20,30,.05), rgba(20,20,30,.01)); }
+[data-theme="light"] .carousel-card { background: linear-gradient(160deg, rgba(20,20,30,.04), rgba(20,20,30,.01)); }
+
+/* Aurora blobs: screen-blend reads on dark, multiply reads as soft pastel tint on light */
+[data-theme="light"] .site-aurora { opacity: .4; }
+[data-theme="light"] .site-aurora-blob { mix-blend-mode: multiply; }
+
+/* Theme toggle control */
+.theme-toggle { display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; border:1px solid var(--border2); background:var(--dark2); cursor:pointer; transition:background .2s,border-color .2s; margin-left:6px; flex-shrink:0; }
+.theme-toggle:hover { background:var(--dark3); }
+.theme-toggle svg { width:16px; height:16px; color:var(--white); }
+.theme-toggle .icon-sun { display:none; }
+.theme-toggle .icon-moon { display:block; }
+[data-theme="light"] .theme-toggle .icon-sun { display:block; }
+[data-theme="light"] .theme-toggle .icon-moon { display:none; }
+
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
@@ -768,7 +822,8 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
     <a href="/seo-audit" class="btn btn-dark" onclick="showPage('seo-audit', event)" style="font-size:12px;padding:7px 13px;white-space:nowrap;">Free SEO Audit</a>
     <a href="/contact" class="btn btn-primary" onclick="showPage('contact', event)" style="font-size:12px;padding:7px 16px;">Free Trial</a>
   </div>
-  <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark theme" title="Toggle theme"><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button>
+<button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="javascript:void(0)" onclick="showPage('home', event);toggleMenu()">Home</a>
@@ -1878,5 +1933,13 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 
+<script>
+function toggleTheme(){
+  var root=document.documentElement;
+  var next=root.getAttribute('data-theme')==='light'?'dark':'light';
+  root.setAttribute('data-theme',next);
+  try{localStorage.setItem('adf-theme',next);}catch(e){}
+}
+</script>
 </body>
 </html>
