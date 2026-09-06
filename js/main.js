@@ -202,7 +202,49 @@ async function submitForm(e) {
   }
 }
 
-// Markdown to HTML converter
+// Quick lead capture widget ("Get It Now") - just email + website
+async function submitQuickLead(e, form) {
+  e.preventDefault();
+  var btn = form.querySelector('button[type="submit"]');
+  var origLabel = btn.textContent;
+  var email = form.querySelector('input[type="email"]').value.trim();
+  var website = form.querySelector('input[name="website"]').value.trim();
+  if (!email || !website) {
+    showAlert('Please enter both your email and your website.');
+    return;
+  }
+  if (!isValidEmail(email)) {
+    showAlert('Please enter a valid email address.');
+    return;
+  }
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    var res = await fetch('/api/quick-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email: email, website: website, source_page: window.location.pathname })
+    });
+    if (res.ok) {
+      var wrap = form.closest('.quick-cta');
+      if (wrap) {
+        var successEl = wrap.querySelector('.quick-cta-success');
+        form.style.display = 'none';
+        if (successEl) successEl.style.display = 'block';
+      }
+    } else {
+      showAlert('Something went wrong. Please email apexdigitalforge@gmail.com directly.');
+      btn.textContent = origLabel;
+      btn.disabled = false;
+    }
+  } catch (err) {
+    showAlert('Connection error. Please email apexdigitalforge@gmail.com directly.');
+    btn.textContent = origLabel;
+    btn.disabled = false;
+  }
+}
+
+
 function markdownToHtml(text) {
   if (!text) return '';
   var html = text;

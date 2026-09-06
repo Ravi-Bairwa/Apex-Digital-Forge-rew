@@ -273,6 +273,20 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .trial-banner p { font-size: 15px; color: var(--white); font-weight: 500; }
 .trial-banner p span { color: var(--accent); font-weight: 700; }
 
+/* Quick lead capture widget ("Get It Now" - just email + website) */
+.quick-cta { background: rgba(255,92,53,0.06); border: 1px solid rgba(255,92,53,0.18); border-radius: var(--radius-lg); padding: 28px 32px; margin: 48px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+.quick-cta-title { font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.quick-cta-sub { font-size: 14px; color: var(--muted2); line-height: 1.6; max-width: 420px; }
+.quick-cta-form { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.quick-cta-form input { background: var(--dark2); border: 1px solid var(--border2); border-radius: 8px; padding: 12px 14px; font-size: 14px; color: var(--white); font-family: inherit; width: 200px; }
+.quick-cta-form input::placeholder { color: var(--muted); }
+.quick-cta-success { font-size: 15px; font-weight: 600; color: var(--accent); display: none; }
+@media (max-width: 800px) {
+  .quick-cta { flex-direction: column; align-items: stretch; text-align: left; padding: 24px; }
+  .quick-cta-form { flex-direction: column; align-items: stretch; }
+  .quick-cta-form input { width: 100%; }
+}
+
 /* ─── CTA SECTION ─── */
 .cta-section { padding: 100px 5%; background: var(--dark); text-align: center; border-top: 1px solid var(--border); }
 .cta-section h2 { font-size: clamp(32px, 4vw, 56px); font-weight: 800; color: var(--white); margin-bottom: 20px; }
@@ -675,7 +689,8 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
 [data-theme="light"] .custom-box::before { color: rgba(22,163,74,0.05); }
 [data-theme="light"] .contact-icon { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.18); }
 [data-theme="light"] .trial-callout,
-[data-theme="light"] .trial-banner { background: rgba(22,163,74,0.06); border-color: rgba(22,163,74,0.18); }
+[data-theme="light"] .trial-banner,
+[data-theme="light"] .quick-cta { background: rgba(22,163,74,0.06); border-color: rgba(22,163,74,0.18); }
 [data-theme="light"] .blog-card:hover { border-color: rgba(22,163,74,0.4); }
 [data-theme="light"] .blog-card-img::before { background: radial-gradient(ellipse at center, rgba(22,163,74,0.08), transparent 70%); }
 [data-theme="light"] .blog-cta { background: linear-gradient(135deg, rgba(22,163,74,0.08), rgba(22,163,74,0.03)); border-color: rgba(22,163,74,0.2); }
@@ -765,7 +780,8 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
 [data-theme="apex"] .custom-box::before { color: rgba(255,46,166,0.06); }
 [data-theme="apex"] .contact-icon { background: rgba(255,46,166,0.1); border-color: rgba(255,46,166,0.18); }
 [data-theme="apex"] .trial-callout,
-[data-theme="apex"] .trial-banner { background: rgba(255,46,166,0.06); border-color: rgba(255,46,166,0.18); }
+[data-theme="apex"] .trial-banner,
+[data-theme="apex"] .quick-cta { background: rgba(255,46,166,0.06); border-color: rgba(255,46,166,0.18); }
 [data-theme="apex"] .blog-card:hover { border-color: rgba(255,46,166,0.4); }
 [data-theme="apex"] .blog-card-img::before { background: radial-gradient(ellipse at center, rgba(255,46,166,0.1), transparent 70%); }
 [data-theme="apex"] .blog-cta { background: linear-gradient(135deg, rgba(139,47,224,0.1), rgba(255,46,166,0.05)); border-color: rgba(255,46,166,0.22); }
