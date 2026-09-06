@@ -355,7 +355,7 @@ function openArticle(slug) {
   window.scrollTo(0, 0);
   if (window.aiArticles && window.aiArticles[slug]) {
     var art = window.aiArticles[slug];
-    content.innerHTML = '<div class="article-cat">' + art.category + '</div><h2 class="article-title">' + art.title + '</h2><div class="article-meta"><span>Ravi Bairwa</span><span>' + art.date + '</span><span>' + art.readTime + '</span></div><div class="article-body">' + markdownToHtml(art.content) + '</div>';
+    content.innerHTML = '<div class="article-cat">' + art.category + '</div><h1 class="article-title">' + art.title + '</h1><div class="article-meta"><span>Ravi Bairwa</span><span>' + art.date + '</span><span>' + art.readTime + '</span></div><div class="article-body">' + markdownToHtml(art.content) + '</div>';
     return;
   }
   var staticArticles = {
@@ -391,7 +391,7 @@ function openArticle(slug) {
   var art = staticArticles[slug];
   if (!art) { content.innerHTML = '<p style="color:#9999aa">Article not found.</p>'; return; }
   var articleText = staticContent[slug] || '';
-  content.innerHTML = '<div class="article-cat">' + art.category + '</div><h2 class="article-title">' + art.title + '</h2><div class="article-meta"><span>Ravi Bairwa</span><span>' + art.date + '</span><span>' + art.readTime + '</span></div><div class="article-body">' + markdownToHtml(articleText) + '</div>';
+  content.innerHTML = '<div class="article-cat">' + art.category + '</div><h1 class="article-title">' + art.title + '</h1><div class="article-meta"><span>Ravi Bairwa</span><span>' + art.date + '</span><span>' + art.readTime + '</span></div><div class="article-body">' + markdownToHtml(articleText) + '</div>';
 }
 
 // Close article view

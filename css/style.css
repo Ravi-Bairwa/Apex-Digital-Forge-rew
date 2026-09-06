@@ -79,8 +79,8 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 70% at 80% 50%, rgba(255,92,53,0.07) 0%, transparent 70%), radial-gradient(ellipse 40% 50% at 20% 80%, rgba(240,180,41,0.04) 0%, transparent 60%); pointer-events: none; }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
 .hero-eyebrow::before { content: ''; width: 24px; height: 2px; background: var(--accent); }
-.hero h1 { font-size: clamp(28px, 2.8vw, 44px); font-weight: 800; color: var(--white); margin-bottom: 20px; line-height: 1.15; }
-.hero h1 em { font-style: normal; color: var(--accent); }
+.hero h1, .hero .hero-heading { font-size: clamp(28px, 2.8vw, 44px); font-weight: 800; color: var(--white); margin-bottom: 20px; line-height: 1.15; }
+.hero h1 em, .hero .hero-heading em { font-style: normal; color: var(--accent); }
 .hero-sub { font-size: 14px; color: var(--muted2); max-width: 480px; line-height: 1.6; margin-bottom: 20px; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
 .hero-proof { display: flex; gap: 20px; padding-top: 16px; border-top: 1px solid var(--border); flex-wrap: wrap; }
@@ -369,7 +369,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 
   /* Hero */
   .hero { padding: 60px 5% 48px; }
-  .hero h1 { font-size: clamp(36px, 10vw, 56px); }
+  .hero h1, .hero .hero-heading { font-size: clamp(36px, 10vw, 56px); }
   .hero-sub { font-size: 15px; }
   .hero-actions { flex-direction: column; gap: 12px; }
   .hero-actions a { width: 100%; text-align: center; }
