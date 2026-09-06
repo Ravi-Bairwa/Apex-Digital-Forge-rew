@@ -779,3 +779,6 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
 [data-theme="apex"] .scan-beam { background: radial-gradient(circle, rgba(255,46,166,.9), rgba(255,46,166,0) 70%); }
 [data-theme="apex"] .scan-checkpoint.lit .scan-cp-icon { border-color: rgba(255,46,166,.5); box-shadow: 0 0 22px rgba(255,46,166,.22); }
 [data-theme="apex"] .hero-grid-floor { background-image: linear-gradient(rgba(255,46,166,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,46,166,.18) 1px, transparent 1px); }
+
+/* Rounded logo mark instead of a hard white square */
+img[src$="logo_apex.png"] { border-radius: 22%; }
