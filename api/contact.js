@@ -55,7 +55,6 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         from: 'Apex Digital Forge <onboarding@resend.dev>',
         to: ['apexdigitalforge@gmail.com'],
-        cc: ['apexdigitalforge@outlook.com'],
         reply_to: email,
         subject: `New Contact Lead — ${name}`,
         html

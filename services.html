@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v=3">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -301,6 +301,21 @@
 
   </section>
 
+  <section class="section" style="padding-top:0;padding-bottom:0;">
+    <div class="quick-cta">
+      <div>
+        <div class="quick-cta-title">Not sure which service fits?</div>
+        <p class="quick-cta-sub">Drop your email and website — we'll show you exactly which backlinks would move the needle. No commitment.</p>
+      </div>
+      <form class="quick-cta-form" onsubmit="submitQuickLead(event, this)">
+        <input type="email" name="email" placeholder="you@agency.com" required>
+        <input type="url" name="website" placeholder="yourwebsite.com" required>
+        <button type="submit" class="btn btn-primary">Get It Now →</button>
+      </form>
+      <div class="quick-cta-success">✓ Got it — we'll be in touch within a few hours.</div>
+    </div>
+  </section>
+
   <!-- GET IN TOUCH — bottom of services page -->
   <section class="section" style="padding-top:0;padding-bottom:80px;">
     <div style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
@@ -346,7 +361,6 @@
       <p class="footer-desc">Premium white-label backlink agency serving US, UK, AU, CA and global markets. 5,000+ publisher sites. DA 50–90 verified placements. 7–10 day delivery. Live reporting always.</p>
       <div class="footer-contact-small">
         apexdigitalforge@gmail.com<br>
-        apexdigitalforge@outlook.com<br>
         +91 82093 74032 (Primary)<br>
         +91 99280 06168 (Alternate)<br>
         www.apexdigitalforge.in<br>
@@ -357,7 +371,6 @@
         <a href="https://instagram.com/apexdigitalforge.in" target="_blank" class="social-btn">ig</a>
         <a href="https://wa.me/918209374032" target="_blank" rel="noopener" class="social-btn">w</a>
         <a href="mailto:apexdigitalforge@gmail.com" class="social-btn">@</a>
-        <a href="mailto:apexdigitalforge@outlook.com" class="social-btn" title="Outlook">✉</a>
       </div>
     </div>
     <div class="footer-col">
@@ -381,7 +394,6 @@
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
       <a href="mailto:apexdigitalforge@gmail.com">Gmail</a>
-      <a href="mailto:apexdigitalforge@outlook.com">Outlook</a>
       <a href="https://wa.me/918209374032" target="_blank" rel="noopener">WhatsApp Us (Primary)</a>
       <a href="https://wa.me/919928006168" target="_blank" rel="noopener">WhatsApp (Alternate)</a>
       <a href="https://linkedin.com/company/apex-digital-forge" target="_blank" rel="noopener">LinkedIn</a>
@@ -402,6 +414,6 @@
 </footer>
 
 
-<script src="/js/main.js"></script>
+<script src="/js/main.js?v=3"></script>
 </body>
 </html>

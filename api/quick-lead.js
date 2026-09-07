@@ -1,7 +1,7 @@
-// /api/seo-audit.js
-// Vercel Serverless Function — receives Free SEO Audit request submissions and
-// sends email notifications directly via Resend (https://resend.com), with no
-// third-party form service (e.g. Formspree) involved.
+// /api/quick-lead.js
+// Vercel Serverless Function — receives the lightweight "Get It Now" widget
+// submissions (just email + website URL) and emails them via Resend, same
+// pattern as api/contact.js and api/seo-audit.js.
 //
 // Requires an environment variable set in the Vercel project:
 //   RESEND_API_KEY = <your Resend API key>
@@ -14,15 +14,11 @@ module.exports = async function handler(req, res) {
 
   try {
     const body = req.body || {};
-    const websiteUrl = (body.website_url || '').toString().trim();
-    const name = (body.name || '').toString().trim();
     const email = (body.email || '').toString().trim();
-    const phone = (body.phone || '').toString().trim();
-    const budget = (body.budget || '').toString().trim();
-    const goal = (body.goal || '').toString().trim();
+    const website = (body.website || '').toString().trim();
 
-    if (!websiteUrl || !name || !email) {
-      res.status(400).json({ error: 'Website URL, name, and email are required.' });
+    if (!email || !website) {
+      res.status(400).json({ error: 'Email and website are required.' });
       return;
     }
 
@@ -34,13 +30,10 @@ module.exports = async function handler(req, res) {
     }
 
     const html = `
-      <h2>New Free SEO Audit Request</h2>
-      <p><strong>Website URL:</strong> ${escapeHtml(websiteUrl)}</p>
-      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <h2>New Quick Lead — "Get It Now" widget</h2>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
-      <p><strong>Phone:</strong> ${escapeHtml(phone || 'Not provided')}</p>
-      <p><strong>Monthly SEO Budget:</strong> ${escapeHtml(budget || 'Not specified')}</p>
-      <p><strong>Main SEO Goal:</strong> ${escapeHtml(goal || 'Not specified')}</p>
+      <p><strong>Website:</strong> ${escapeHtml(website)}</p>
+      <p><strong>Page:</strong> ${escapeHtml((body.source_page || 'Not provided'))}</p>
     `;
 
     const resendRes = await fetch('https://api.resend.com/emails', {
@@ -53,7 +46,7 @@ module.exports = async function handler(req, res) {
         from: 'Apex Digital Forge <onboarding@resend.dev>',
         to: ['apexdigitalforge@gmail.com'],
         reply_to: email,
-        subject: `Free SEO Audit Request — ${websiteUrl}`,
+        subject: `Quick Lead — ${website}`,
         html
       })
     });
@@ -67,7 +60,7 @@ module.exports = async function handler(req, res) {
 
     res.status(200).json({ success: true });
   } catch (err) {
-    console.error('SEO audit handler error:', err);
+    console.error('Quick lead handler error:', err);
     res.status(500).json({ error: 'Unexpected server error.' });
   }
 };
