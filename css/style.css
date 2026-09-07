@@ -212,7 +212,7 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .process-list { margin-top: 40px; }
 .process-item { display: flex; gap: 32px; padding: 36px 0; border-bottom: 1px solid var(--border); }
 .process-item:last-child { border-bottom: none; }
-.process-step-num { font-family: var(--font-heading); font-size: 52px; font-weight: 800; color: rgba(255,92,53,0.5); line-height: 1; width: 56px; flex-shrink: 0; }
+.process-step-num { font-family: var(--font-heading); font-size: 52px; font-weight: 800; color: rgba(255,92,53,0.5); line-height: 1; width: 88px; flex-shrink: 0; }
 .process-item h3 { font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .process-item p { font-size: 15px; color: var(--muted2); line-height: 1.75; }
 
