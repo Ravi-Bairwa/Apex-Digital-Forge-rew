@@ -110,7 +110,8 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .logo-strip { padding: 32px 5%; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--dark); }
 .logo-strip-label { text-align: center; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 24px; }
 .logo-strip-items { display: flex; gap: 48px; align-items: center; justify-content: center; flex-wrap: wrap; }
-.logo-pill { background: var(--dark3); border: 1px solid var(--border); border-radius: 6px; padding: 10px 20px; font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--muted2); }
+.logo-pill { background: var(--dark3); border: 1px solid var(--border); border-radius: 6px; padding: 10px 20px; font-family: var(--font-heading); font-size: 13px; font-weight: 600; color: var(--muted2); display: flex; flex-direction: column; align-items: center; gap: 3px; line-height: 1.3; }
+.logo-pill-firm { font-family: var(--font-body, inherit); font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: normal; text-transform: none; }
 
 /* ─── SECTIONS ─── */
 .section { padding: 100px 5%; }
