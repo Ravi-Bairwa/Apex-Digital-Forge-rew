@@ -53,7 +53,7 @@ module.exports = async function handler(req, res) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Apex Digital Forge <onboarding@resend.dev>',
+        from: 'Apex Digital Forge <hello@apexdigitalforge.in>',
         to: ['apexdigitalforge@gmail.com'],
         reply_to: email,
         subject: `New Contact Lead — ${name}`,
@@ -66,6 +66,31 @@ module.exports = async function handler(req, res) {
       console.error('Resend API error:', resendRes.status, errText);
       res.status(502).json({ error: 'Failed to send email.' });
       return;
+    }
+
+    // Best-effort auto-reply to the client - never blocks the main response
+    try {
+      const replyHtml = `
+        <h2>Thanks for reaching out, ${escapeHtml(name)}!</h2>
+        <p>We've received your inquiry and our team will get back to you within 2–5 hours.</p>
+        <p>If you'd like to add anything in the meantime, just reply directly to this email.</p>
+        <p>— The Apex Digital Forge Team</p>
+      `;
+      await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          from: 'Apex Digital Forge <hello@apexdigitalforge.in>',
+          to: [email],
+          subject: `We've got your message, ${name}!`,
+          html: replyHtml
+        })
+      });
+    } catch (replyErr) {
+      console.error('Client auto-reply failed (non-blocking):', replyErr);
     }
 
     res.status(200).json({ success: true });
