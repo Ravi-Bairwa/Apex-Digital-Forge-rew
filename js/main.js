@@ -415,20 +415,6 @@ document.addEventListener('DOMContentLoaded', function() {
   var firstSection = document.querySelector('.psection');
   if (firstTab) firstTab.classList.add('active');
   if (firstSection) firstSection.classList.add('active');
-  // Load page from clean URL path on initial visit
-  var rawPath = window.location.pathname.replace(/^\/+/, '').replace(/\/+$/, '');
-  var validPages = ['services', 'pricing', 'process', 'contact', 'blog', 'seo-audit', 'learn-seo'];
-  if (rawPath && validPages.indexOf(rawPath) !== -1) {
-    if (document.getElementById('page-' + rawPath)) {
-      showPage(rawPath);
-    }
-    window.history.replaceState({ page: rawPath }, '', '/' + rawPath);
-  } else {
-    if (document.getElementById('page-home')) {
-      showPage('home');
-    }
-    window.history.replaceState({ page: 'home' }, '', '/');
-  }
 });
 
 /* ═══ ANIMATED VISUALS: Authority Engine / Orbit / Timeline ═══ */
