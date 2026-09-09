@@ -1,12 +1,12 @@
 // /api/generate-article.js
-// Admin-only endpoint: generates a blog article with Claude, then publishes it
-// as a real permanent page by committing new/updated files straight to the
-// GitHub repo (which triggers Vercel's normal auto-deploy).
+// Admin-only endpoint: takes a title, category, and article content you
+// already wrote/pasted, and publishes it as a real permanent page by
+// committing new/updated files straight to the GitHub repo (which triggers
+// Vercel's normal auto-deploy).
 //
 // Requires these Vercel environment variables:
-//   ADMIN_SECRET      - a password only you know; sent as the x-admin-key header
-//   ANTHROPIC_API_KEY - from console.anthropic.com
-//   GITHUB_TOKEN      - a GitHub personal access token with repo write access
+//   ADMIN_SECRET - a password only you know; sent as the x-admin-key header
+//   GITHUB_TOKEN - a GitHub personal access token with repo write access
 
 const GITHUB_OWNER = 'Ravi-Bairwa';
 const GITHUB_REPO = 'Apex-Digital-Forge-rew';
@@ -42,54 +42,61 @@ module.exports = async function handler(req, res) {
 
   try {
     const body = req.body || {};
-    const topic = (body.topic || '').toString().trim();
+    const title = (body.title || '').toString().trim();
     const category = (body.category || '').toString().trim();
+    const rawContent = (body.content || '').toString().trim();
+    let metaDescription = (body.metaDescription || '').toString().trim();
 
-    if (!topic || topic.length < 5 || topic.length > 200) {
-      res.status(400).json({ error: 'Topic must be between 5 and 200 characters.' });
+    if (!title || title.length < 5 || title.length > 150) {
+      res.status(400).json({ error: 'Title must be between 5 and 150 characters.' });
       return;
     }
     if (!VALID_CATEGORIES.includes(category)) {
       res.status(400).json({ error: 'Invalid category.' });
       return;
     }
+    if (!rawContent || rawContent.length < 50) {
+      res.status(400).json({ error: 'Content is too short - paste the full article.' });
+      return;
+    }
 
-    const anthropicKey = process.env.ANTHROPIC_API_KEY;
     const githubToken = process.env.GITHUB_TOKEN;
-    if (!anthropicKey || !githubToken) {
-      console.error('Missing ANTHROPIC_API_KEY or GITHUB_TOKEN');
+    if (!githubToken) {
+      console.error('Missing GITHUB_TOKEN');
       res.status(500).json({ error: 'Server not configured.' });
       return;
     }
 
-    // --- 1. Generate the article with Claude ---
-    const generated = await generateArticleContent(topic, category, anthropicKey);
+    // --- 1. Convert the pasted text into article HTML ---
+    const articleHtml = textToHtml(rawContent);
+    if (!metaDescription) {
+      metaDescription = deriveExcerpt(rawContent, 155);
+    }
 
     // --- 2. Build a unique slug ---
     const existingSlugs = await listExistingSlugs(githubToken);
-    const slug = uniqueSlug(slugify(generated.title), existingSlugs);
+    const slug = uniqueSlug(slugify(title), existingSlugs);
 
     const dateStr = formatDate(new Date());
-    const readTime = estimateReadTime(generated.articleHtml);
-    const excerpt = generated.metaDescription;
+    const readTime = estimateReadTime(articleHtml);
+    const excerpt = deriveExcerpt(metaDescription || rawContent, 140);
     const emoji = CATEGORY_EMOJI[category];
 
     // --- 3. Clone the template article into a new real page ---
     const template = await ghGet(TEMPLATE_PATH, githubToken);
     const newPageHtml = buildArticlePage(template.content, {
-      slug, title: generated.title, metaDescription: generated.metaDescription,
-      category, dateStr, readTime, articleHtml: generated.articleHtml
+      slug, title, metaDescription, category, dateStr, readTime, articleHtml
     });
     await ghPut(`blog/${slug}.html`, newPageHtml, null,
-      `Publish new article: ${generated.title}`, githubToken);
+      `Publish new article: ${title}`, githubToken);
 
     // --- 4. Add the new card to blog.html's grid ---
     const blogHtml = await ghGet('blog.html', githubToken);
     const updatedBlogHtml = insertBlogCard(blogHtml.content, {
-      slug, title: generated.title, category, excerpt, emoji, dateStr, readTime
+      slug, title, category, excerpt, emoji, dateStr, readTime
     });
     await ghPut('blog.html', updatedBlogHtml, blogHtml.sha,
-      `Add blog card for: ${generated.title}`, githubToken);
+      `Add blog card for: ${title}`, githubToken);
 
     // --- 5. Add the clean-URL rewrite in vercel.json ---
     const vercelJson = await ghGet('vercel.json', githubToken);
@@ -115,52 +122,65 @@ module.exports = async function handler(req, res) {
   }
 };
 
-// ---------- Claude generation ----------
+// ---------- Text -> HTML conversion ----------
+// Lightweight markdown-ish converter: supports ## / ### headings, **bold**,
+// "- " bullet lists, and blank-line-separated paragraphs. Anyone pasting
+// plain text (no markdown at all) just gets clean paragraphs, which is fine.
 
-async function generateArticleContent(topic, category, apiKey) {
-  const prompt = `You are writing a blog article for Apex Digital Forge, a white-label SEO and link-building agency that serves other agencies.
+function textToHtml(raw) {
+  const lines = raw.replace(/\r\n/g, '\n').split('\n');
+  const htmlParts = [];
+  let listBuffer = [];
 
-Topic: "${topic}"
-Category: ${category}
-
-Write a professional, practical 600-900 word article body. Use <h2> and <h3> tags for headings, <p> for paragraphs, <strong> for emphasis, and <ul>/<li> for lists where it genuinely helps. Do not include an <h1> - the title is generated separately. Do not include any meta commentary.
-
-Respond with ONLY a valid JSON object, no markdown code fences, no preamble, in exactly this shape:
-{"title": "a compelling 50-70 character article title", "metaDescription": "a 140-160 character SEO meta description", "articleHtml": "the full article body as an HTML string using the tags described above"}`;
-
-  const resp = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'claude-sonnet-5',
-      max_tokens: 3000,
-      messages: [{ role: 'user', content: prompt }]
-    })
-  });
-
-  if (!resp.ok) {
-    const errText = await resp.text();
-    throw new Error(`Anthropic API error: ${resp.status} ${errText}`);
+  function flushList() {
+    if (listBuffer.length) {
+      htmlParts.push('<ul>' + listBuffer.map(function(li) { return '<li>' + inlineFormat(li) + '</li>'; }).join('') + '</ul>');
+      listBuffer = [];
+    }
   }
 
-  const data = await resp.json();
-  const text = data.content && data.content[0] ? data.content[0].text : '';
-  const cleaned = text.trim().replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/```\s*$/i, '');
+  let paragraphBuffer = [];
+  function flushParagraph() {
+    if (paragraphBuffer.length) {
+      htmlParts.push('<p>' + inlineFormat(paragraphBuffer.join(' ')) + '</p>');
+      paragraphBuffer = [];
+    }
+  }
 
-  let parsed;
-  try {
-    parsed = JSON.parse(cleaned);
-  } catch (e) {
-    throw new Error('Failed to parse article JSON from Claude response.');
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) { flushParagraph(); flushList(); continue; }
+
+    if (/^###\s+/.test(line)) {
+      flushParagraph(); flushList();
+      htmlParts.push('<h3>' + inlineFormat(line.replace(/^###\s+/, '')) + '</h3>');
+    } else if (/^##\s+/.test(line)) {
+      flushParagraph(); flushList();
+      htmlParts.push('<h2>' + inlineFormat(line.replace(/^##\s+/, '')) + '</h2>');
+    } else if (/^[-*]\s+/.test(line)) {
+      flushParagraph();
+      listBuffer.push(line.replace(/^[-*]\s+/, ''));
+    } else {
+      flushList();
+      paragraphBuffer.push(line);
+    }
   }
-  if (!parsed.title || !parsed.metaDescription || !parsed.articleHtml) {
-    throw new Error('Claude response missing required fields.');
-  }
-  return parsed;
+  flushParagraph();
+  flushList();
+
+  return htmlParts.join('\n');
+}
+
+function inlineFormat(text) {
+  let out = escapeHtml(text);
+  out = out.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  return out;
+}
+
+function deriveExcerpt(text, maxLen) {
+  const plain = text.replace(/<[^>]+>/g, ' ').replace(/[#*]/g, '').replace(/\s+/g, ' ').trim();
+  if (plain.length <= maxLen) return plain;
+  return plain.substring(0, maxLen - 1).replace(/\s+\S*$/, '') + '…';
 }
 
 // ---------- GitHub helpers ----------

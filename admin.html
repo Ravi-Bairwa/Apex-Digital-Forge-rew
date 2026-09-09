@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/css/style.css?v=7">
 <style>
   body { display:flex; align-items:center; justify-content:center; min-height:100vh; padding:24px; }
-  .admin-card { max-width:560px; width:100%; background:var(--dark2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:36px; }
+  .admin-card { max-width:640px; width:100%; background:var(--dark2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:36px; }
   .admin-card h1 { font-family:var(--font-heading); font-size:22px; margin-bottom:8px; }
   .admin-card p.sub { color:var(--muted2); font-size:14px; margin-bottom:24px; }
   .admin-field { margin-bottom:16px; }
@@ -17,6 +17,7 @@
     width:100%; background:var(--dark3); border:1px solid var(--border2); border-radius:8px;
     padding:12px 14px; font-size:14px; color:var(--white); font-family:inherit;
   }
+  .admin-field textarea { resize:vertical; line-height:1.6; }
   .admin-btn { width:100%; background:var(--accent); color:#fff; border:none; padding:14px; border-radius:var(--radius);
     font-family:var(--font-heading); font-size:15px; font-weight:700; cursor:pointer; margin-top:8px; }
   .admin-btn:disabled { opacity:.6; cursor:not-allowed; }
@@ -42,11 +43,11 @@
 </div>
 
 <div class="admin-card" id="genView">
-  <h1>Generate &amp; publish an article</h1>
-  <p class="sub">Writes a full article, creates a real permanent page, and adds it to the blog grid. Live in about 30-60 seconds.</p>
+  <h1>Publish an article</h1>
+  <p class="sub">Write or generate the article text yourself (e.g. ask Claude in a normal chat), then paste it here. This creates a real permanent page, adds it to the blog grid, and updates the sitemap - live in about 30-60 seconds.</p>
   <div class="admin-field">
-    <label>Topic</label>
-    <input type="text" id="genTopic" placeholder="e.g. How to build DA 60+ backlinks for e-commerce sites">
+    <label>Title</label>
+    <input type="text" id="genTitle" placeholder="e.g. How to Build DA 60+ Backlinks for E-commerce Sites">
   </div>
   <div class="admin-field">
     <label>Category</label>
@@ -58,7 +59,21 @@
       <option value="Case Study">Case Study</option>
     </select>
   </div>
-  <button class="admin-btn" id="genBtn" onclick="generateAndPublish()">Generate &amp; Publish</button>
+  <div class="admin-field">
+    <label>Meta description (optional - auto-generated from content if left blank)</label>
+    <input type="text" id="genMeta" placeholder="Short summary for search engines, ~150 characters">
+  </div>
+  <div class="admin-field">
+    <label>Content (paste your article - use ## for a heading, ### for a sub-heading, **text** for bold, "- " for a bullet list, blank lines between paragraphs)</label>
+    <textarea id="genContent" rows="14" placeholder="## Introduction
+
+Paste your article here...
+
+## Next Section
+
+More content..."></textarea>
+  </div>
+  <button class="admin-btn" id="genBtn" onclick="generateAndPublish()">Publish Article</button>
   <div class="admin-status" id="genStatus"></div>
 </div>
 
@@ -76,30 +91,36 @@
   }
 
   async function generateAndPublish() {
-    var topicEl = document.getElementById('genTopic');
+    var titleEl = document.getElementById('genTitle');
     var categoryEl = document.getElementById('genCategory');
+    var metaEl = document.getElementById('genMeta');
+    var contentEl = document.getElementById('genContent');
     var btn = document.getElementById('genBtn');
     var status = document.getElementById('genStatus');
-    var topic = topicEl.value.trim();
-    if (!topic) { topicEl.focus(); return; }
+    var title = titleEl.value.trim();
+    var content = contentEl.value.trim();
+    if (!title) { titleEl.focus(); return; }
+    if (!content) { contentEl.focus(); return; }
 
     var adminKey = sessionStorage.getItem(ADMIN_KEY_STORAGE) || '';
     btn.disabled = true;
-    btn.textContent = 'Writing and publishing...';
+    btn.textContent = 'Publishing...';
     status.className = 'admin-status show';
-    status.textContent = 'Writing your article and publishing it - this can take 20-40 seconds.';
+    status.textContent = 'Publishing your article - this takes a few seconds.';
 
     try {
       var res = await fetch('/api/generate-article', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey },
-        body: JSON.stringify({ topic: topic, category: categoryEl.value })
+        body: JSON.stringify({ title: title, category: categoryEl.value, content: content, metaDescription: metaEl.value.trim() })
       });
       var data = await res.json();
       if (res.ok && data.success) {
         status.className = 'admin-status show ok';
         status.innerHTML = 'Published! <a href="' + data.url + '" target="_blank">' + data.url + '</a> - ' + data.message;
-        topicEl.value = '';
+        titleEl.value = '';
+        metaEl.value = '';
+        contentEl.value = '';
       } else if (res.status === 401) {
         status.className = 'admin-status show err';
         status.textContent = 'Wrong password. Refresh this page and try again.';
@@ -113,15 +134,12 @@
       status.textContent = 'Connection error. Please try again.';
     }
     btn.disabled = false;
-    btn.textContent = 'Generate & Publish';
+    btn.textContent = 'Publish Article';
   }
 
   // Enter key shortcuts
   document.getElementById('adminPassword').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') unlock();
-  });
-  document.getElementById('genTopic').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') generateAndPublish();
   });
 </script>
 
