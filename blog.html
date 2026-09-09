@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=6">
+<link rel="stylesheet" href="/css/style.css?v=7">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -179,32 +179,6 @@
     </div>
 
     <div class="section" style="padding-top:40px;">
-
-      <!-- AI Generator -->
-      <div class="blog-generator" style="display:none;" id="adminGenerator">
-        <div style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:12px;">Generate a custom article instantly</div>
-        <p>Enter any SEO or agency topic — our AI writes a full professional article in seconds.</p>
-        <div class="gen-row">
-          <input type="text" class="gen-input" id="genTopic" placeholder="Enter any SEO or agency topic — e.g. How to build DA 60+ backlinks for e-commerce sites">
-          <select class="gen-select" id="genCategory">
-            <option value="Link Building">Link Building</option>
-            <option value="SEO Strategy">SEO Strategy</option>
-            <option value="Agency Growth">Agency Growth</option>
-            <option value="AI & Automation">AI &amp; Automation</option>
-            <option value="Case Study">Case Study</option>
-          </select>
-          <button class="gen-btn" id="genBtn" onclick="generateArticle()">Generate Article</button>
-        </div>
-        <div class="gen-status" id="genStatus">Writing your article... this takes 10–20 seconds.</div>
-        <div class="suggested-topics">
-          <span style="font-size:12px;color:var(--muted);margin-right:4px;">Try:</span>
-          <span class="topic-chip" onclick="setTopic(this)">Why DA 50+ backlinks outperform cheap links</span>
-          <span class="topic-chip" onclick="setTopic(this)">How to scale a link building agency in 2026</span>
-          <span class="topic-chip" onclick="setTopic(this)">White-label SEO — complete guide for agencies</span>
-          <span class="topic-chip" onclick="setTopic(this)">Guest posting vs niche edits — which wins</span>
-          <span class="topic-chip" onclick="setTopic(this)">How AI is changing SEO in 2026</span>
-        </div>
-      </div>
 
       <!-- Blog grid -->
       <div class="blog-grid" id="blogGrid">
@@ -493,20 +467,6 @@
     </div>
   </div>
 
-  <!-- Article view -->
-  <div class="article-view" id="articleView">
-    <div style="padding:0 0 0 0;max-width:760px;margin:0 auto;">
-      <button class="article-back" onclick="closearticle()">← Back to Blog</button>
-      <div id="articleContent"></div>
-      <div class="blog-cta">
-        <div class="cta-blog-title">Need premium backlinks for your clients?</div>
-        <p>DA 50–90 verified sites. Live reporting. 7–10 day delivery. Start with 20 free links.</p>
-        <a href="/contact" class="btn btn-primary" onclick="showPage('contact', event)">Get Free Trial</a>
-        <p style="margin-top:14px;"><a href="/seo-audit" onclick="showPage('seo-audit', event)" style="color:var(--muted2);font-size:13px;text-decoration:underline;">Or get a free SEO audit of your site →</a></p>
-      </div>
-    </div>
-  </div>
-
 </div>
 
 
@@ -573,6 +533,6 @@
 </footer>
 
 
-<script src="/js/main.js?v=6"></script>
+<script src="/js/main.js?v=7"></script>
 </body>
 </html>
