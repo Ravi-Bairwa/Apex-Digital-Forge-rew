@@ -50,7 +50,7 @@ module.exports = async function handler(req, res) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Apex Digital Forge <hello@apexdigitalforge.in>',
+        from: 'Apex Digital Forge <noreply@apexdigitalforge.in>',
         to: ['apexdigitalforge@gmail.com'],
         reply_to: email,
         subject: `Free SEO Audit Request — ${websiteUrl}`,
@@ -70,6 +70,7 @@ module.exports = async function handler(req, res) {
       const replyHtml = `
         <h2>Thanks for requesting a free SEO audit, ${escapeHtml(name)}!</h2>
         <p>We're reviewing <strong>${escapeHtml(websiteUrl)}</strong> now. You'll receive your full audit report within 24–48 hours.</p>
+        <p>This is an automated message — please don't reply to it. For anything else, email us directly at apexdigitalforge@gmail.com.</p>
         <p>— The Apex Digital Forge Team</p>
       `;
       await fetch('https://api.resend.com/emails', {
@@ -79,7 +80,7 @@ module.exports = async function handler(req, res) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          from: 'Apex Digital Forge <hello@apexdigitalforge.in>',
+          from: 'Apex Digital Forge <noreply@apexdigitalforge.in>',
           to: [email],
           subject: `Your free SEO audit request is in!`,
           html: replyHtml

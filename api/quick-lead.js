@@ -43,7 +43,7 @@ module.exports = async function handler(req, res) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'Apex Digital Forge <hello@apexdigitalforge.in>',
+        from: 'Apex Digital Forge <noreply@apexdigitalforge.in>',
         to: ['apexdigitalforge@gmail.com'],
         reply_to: email,
         subject: `Quick Lead — ${website}`,
@@ -63,6 +63,7 @@ module.exports = async function handler(req, res) {
       const replyHtml = `
         <h2>Thanks for reaching out!</h2>
         <p>We're taking a look at <strong>${escapeHtml(website)}</strong> now and will follow up with what we'd build within a few hours.</p>
+        <p>This is an automated message — please don't reply to it. For anything else, email us directly at apexdigitalforge@gmail.com.</p>
         <p>— The Apex Digital Forge Team</p>
       `;
       await fetch('https://api.resend.com/emails', {
@@ -72,7 +73,7 @@ module.exports = async function handler(req, res) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          from: 'Apex Digital Forge <hello@apexdigitalforge.in>',
+          from: 'Apex Digital Forge <noreply@apexdigitalforge.in>',
           to: [email],
           subject: `Got it — we're taking a look at your site`,
           html: replyHtml
