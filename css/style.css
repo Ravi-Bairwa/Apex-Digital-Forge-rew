@@ -144,6 +144,7 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .svc-card:hover { background: var(--dark3); }
 .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); }
 .svc-num { font-family: var(--font-heading); font-size: 42px; font-weight: 800; color: rgba(255,92,53,0.5); line-height: 1; margin-bottom: 16px; }
+.svc-card-featured { border-color: rgba(255,92,53,0.3); background: linear-gradient(135deg, var(--dark2) 0%, rgba(255,92,53,0.05) 100%); }
 .svc-card h3 { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
 .svc-card p { font-size: 14px; color: var(--muted2); line-height: 1.75; margin-bottom: 16px; }
 .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -213,6 +214,10 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .process-item { display: flex; gap: 32px; padding: 36px 0; border-bottom: 1px solid var(--border); }
 .process-item:last-child { border-bottom: none; }
 .process-step-num { font-family: var(--font-heading); font-size: 52px; font-weight: 800; color: rgba(255,92,53,0.5); line-height: 1; width: 88px; flex-shrink: 0; }
+.hiw-num { font-family: var(--font-heading); font-size: 36px; font-weight: 800; color: rgba(255,92,53,0.5); margin-bottom: 12px; }
+.audit-icon-badge { width: 40px; height: 40px; background: rgba(255,92,53,0.1); border: 1px solid rgba(255,92,53,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.seo-audit-banner-grid { background: linear-gradient(135deg,var(--dark2) 0%,rgba(255,92,53,0.08) 100%); border: 1px solid rgba(255,92,53,0.3); border-radius: var(--radius-lg); padding: 40px 48px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; }
+.seo-audit-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,92,53,0.12); border: 1px solid rgba(255,92,53,0.3); border-radius: 20px; padding: 4px 14px; margin-bottom: 16px; }
 .process-item h3 { font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
 .process-item p { font-size: 15px; color: var(--muted2); line-height: 1.75; }
 
@@ -691,6 +696,10 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
 [data-theme="light"] .feature-icon { background: rgba(22,163,74,0.1); }
 [data-theme="light"] .svc-num { color: rgba(22,163,74,0.35); }
 [data-theme="light"] .process-step-num { color: rgba(22,163,74,0.35); }
+[data-theme="light"] .hiw-num { color: rgba(22,163,74,0.35); }
+[data-theme="light"] .audit-icon-badge { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.3); }
+[data-theme="light"] .seo-audit-banner-grid { background: linear-gradient(135deg,#ffffff 0%,rgba(22,163,74,0.06) 100%); border-color: rgba(22,163,74,0.3); }
+[data-theme="light"] .seo-audit-pill { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.3); }
 [data-theme="light"] .custom-box::before { color: rgba(22,163,74,0.05); }
 [data-theme="light"] .contact-icon { background: rgba(22,163,74,0.1); border-color: rgba(22,163,74,0.18); }
 [data-theme="light"] .trial-callout,
@@ -763,6 +772,7 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
   border: 1px solid rgba(255,255,255,0.08);
   backdrop-filter: blur(6px);
 }
+[data-theme="apex"] .svc-card-featured { border-color: rgba(255,46,166,0.4); background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,46,166,0.08)); }
 
 /* Bolder, more saturated aurora blobs for Apex */
 [data-theme="apex"] .site-aurora { opacity: .55; filter: blur(110px); }
@@ -782,6 +792,10 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
 [data-theme="apex"] .feature-icon { background: rgba(255,46,166,0.12); }
 [data-theme="apex"] .svc-num { color: rgba(255,46,166,0.5); }
 [data-theme="apex"] .process-step-num { color: rgba(255,46,166,0.5); }
+[data-theme="apex"] .hiw-num { color: rgba(255,46,166,0.5); }
+[data-theme="apex"] .audit-icon-badge { background: rgba(255,46,166,0.1); border-color: rgba(255,46,166,0.3); }
+[data-theme="apex"] .seo-audit-banner-grid { background: linear-gradient(135deg,var(--dark2) 0%,rgba(255,46,166,0.1) 100%); border-color: rgba(255,46,166,0.35); }
+[data-theme="apex"] .seo-audit-pill { background: rgba(255,46,166,0.12); border-color: rgba(255,46,166,0.35); }
 [data-theme="apex"] .custom-box::before { color: rgba(255,46,166,0.06); }
 [data-theme="apex"] .contact-icon { background: rgba(255,46,166,0.1); border-color: rgba(255,46,166,0.18); }
 [data-theme="apex"] .trial-callout,
