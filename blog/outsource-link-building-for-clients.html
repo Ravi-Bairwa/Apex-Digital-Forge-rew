@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=9">
+<link rel="stylesheet" href="/css/style.css?v=10">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -157,12 +157,13 @@
 <a href="https://api.whatsapp.com/send?phone=918209374032" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.32 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.27 16.46 16.57 20.15 12.04 20.15ZM16.56 13.99C16.31 13.87 15.09 13.27 14.87 13.19C14.65 13.11 14.49 13.07 14.32 13.32C14.15 13.57 13.68 14.13 13.53 14.3C13.38 14.47 13.24 14.49 12.99 14.37C12.74 14.25 11.94 13.99 10.99 13.14C10.25 12.48 9.75 11.66 9.6 11.41C9.46 11.16 9.58 11.03 9.71 10.9C9.82 10.79 9.96 10.61 10.09 10.46C10.22 10.31 10.26 10.2 10.35 10.03C10.44 9.86 10.39 9.71 10.33 9.59C10.27 9.47 9.77 8.25 9.57 7.75C9.37 7.27 9.17 7.33 9.02 7.32C8.88 7.31 8.71 7.31 8.55 7.31C8.39 7.31 8.13 7.37 7.91 7.62C7.69 7.87 7.06 8.46 7.06 9.68C7.06 10.9 7.93 12.08 8.06 12.25C8.19 12.42 9.76 14.87 12.17 15.93C12.75 16.19 13.2 16.34 13.55 16.45C14.14 16.64 14.68 16.61 15.11 16.55C15.59 16.48 16.58 15.95 16.78 15.37C16.98 14.79 16.98 14.3 16.92 14.19C16.86 14.08 16.7 14.02 16.56 13.99Z"/></svg></a>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="javascript:void(0)" onclick="showPage('home', event);toggleMenu()">Home</a>
-  <a href="javascript:void(0)" onclick="showPage('services', event);toggleMenu()">Services</a>
-  <a href="javascript:void(0)" onclick="showPage('pricing', event);toggleMenu()">Pricing</a>
-  <a href="javascript:void(0)" onclick="showPage('process', event);toggleMenu()">How It Works</a>
-  <a href="javascript:void(0)" onclick="showPage('contact', event);toggleMenu()">Contact</a>
-  <a href="javascript:void(0)" onclick="showPage('blog', event);toggleMenu()">Blog</a>
+  <a href="javascript:void(0)" data-page="home" onclick="showPage('home', event);toggleMenu()">Home</a>
+  <a href="javascript:void(0)" data-page="services" onclick="showPage('services', event);toggleMenu()">Services</a>
+  <a href="javascript:void(0)" data-page="pricing" onclick="showPage('pricing', event);toggleMenu()">Pricing</a>
+  <a href="javascript:void(0)" data-page="process" onclick="showPage('process', event);toggleMenu()">How It Works</a>
+  <a href="javascript:void(0)" data-page="learn-seo" onclick="showPage('learn-seo', event);toggleMenu()">Learn SEO</a>
+  <a href="javascript:void(0)" data-page="contact" onclick="showPage('contact', event);toggleMenu()">Contact</a>
+  <a href="javascript:void(0)" data-page="blog" onclick="showPage('blog', event);toggleMenu()">Blog</a>
 </div>
 
 <!-- ═══ HOME ═══ -->
@@ -260,7 +261,7 @@
 </footer>
 
 
-<script src="/js/main.js?v=8"></script>
+<script src="/js/main.js?v=10"></script>
 
 </body>
 </html>

@@ -59,6 +59,7 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--dark); border-bottom: 1px solid var(--border); padding: 24px 5%; flex-direction: column; gap: 18px; z-index: 999; }
 .mobile-menu.open { display: flex; }
 .mobile-menu a { color: var(--muted2); font-size: 16px; font-weight: 500; }
+.mobile-menu a.active-nav { color: var(--accent); font-weight: 700; }
 
 /* ─── BUTTONS ─── */
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius); font-family: var(--font-heading); font-size: 14px; font-weight: 700; cursor: pointer; transition: .2s; border: none; }

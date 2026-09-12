@@ -2,55 +2,19 @@
    APEX DIGITAL FORGE — JavaScript
 ═══════════════════════════════ */
 
-// Page navigation
+// Page navigation — every page is its own real file now, so this just navigates there
 function showPage(page, e) {
-  var target = document.getElementById('page-' + page);
-  if (!target) {
-    // This page's content lives in its own file now — do a real navigation
-    if (e) { e.preventDefault(); }
-    var cleanPath = page === 'home' ? '/' : '/' + page;
-    window.location.href = cleanPath;
-    return;
-  }
-  if (e) { e.preventDefault(); e.stopPropagation(); }
-  // Update canonical tag dynamically per page
-  var canonicalTag = document.getElementById('canonical-tag');
-  if (canonicalTag) {
-    var base = 'https://www.apexdigitalforge.in';
-    canonicalTag.setAttribute('href', page === 'home' ? base + '/' : base + '/' + page);
-  }
-  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-  target.classList.add('active');
-  window.scrollTo(0, 0);
-  // Update nav active state
-  document.querySelectorAll('nav li a, .mobile-menu a').forEach(function(a) { a.classList.remove('active-nav'); });
-  var navLink = document.querySelector('[data-page="' + page + '"]');
-  if (navLink) navLink.classList.add('active-nav');
-  // Push clean URL — /services not /#services
-  if (window.history && window.history.pushState) {
-    var cleanPath = page === 'home' ? '/' : '/' + page;
-    if (window.location.pathname !== cleanPath) {
-      window.history.pushState({ page: page }, '', cleanPath);
-    }
-  }
+  if (e) { e.preventDefault(); }
+  window.location.href = page === 'home' ? '/' : '/' + page;
 }
 
-// Handle browser back/forward navigation
-window.addEventListener('popstate', function(e) {
-  var path = window.location.pathname.replace('/', '') || 'home';
-  var page = (e.state && e.state.page) ? e.state.page : path;
-  var target = document.getElementById('page-' + page);
-  if (!target) {
-    // Page content isn't in this file — reload to get the right page
-    window.location.reload();
-    return;
-  }
-  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
-  target.classList.add('active');
-  window.scrollTo(0, 0);
-  document.querySelectorAll('nav li a, .mobile-menu a').forEach(function(a) { a.classList.remove('nav-active'); });
-  var navLink = document.querySelector('[data-page="' + page + '"]');
-  if (navLink) navLink.classList.add('nav-active');
+// Highlight the current page in the nav (desktop + mobile) on every page load
+document.addEventListener('DOMContentLoaded', function() {
+  var path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+  var page = path === '' ? 'home' : path;
+  if (page.indexOf('blog/') === 0) page = 'blog';
+  var navLinks = document.querySelectorAll('[data-page="' + page + '"]');
+  navLinks.forEach(function(a) { a.classList.add('active-nav'); });
 });
 
 // Pricing tabs
