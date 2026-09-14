@@ -53,12 +53,12 @@ http://localhost:3000
 
 ## Deploy
 
-This project is hosted on **Replit** and served at [apexdigitalforge.in](https://www.apexdigitalforge.in).
+This project is hosted on **Vercel**, deployed from this GitHub repo, and served at [apexdigitalforge.in](https://www.apexdigitalforge.in).
 
 To deploy your own version:
 1. Fork this repo
-2. Import into Replit
-3. Set run command to `node server.js`
+2. Import into Vercel
+3. Vercel picks up `vercel.json` for routing/rewrites automatically
 4. Connect your custom domain
 
 ---
