@@ -408,6 +408,38 @@
       "destination": "/blog/seo-services-small-business.html"
     },
     {
+      "source": "/blog/seo-for-fitness-studios-and-gyms",
+      "destination": "/blog/seo-for-fitness-studios-and-gyms.html"
+    },
+    {
+      "source": "/blog/seo-for-restaurants-and-hospitality",
+      "destination": "/blog/seo-for-restaurants-and-hospitality.html"
+    },
+    {
+      "source": "/blog/seo-for-financial-advisors-and-accounting-firms",
+      "destination": "/blog/seo-for-financial-advisors-and-accounting-firms.html"
+    },
+    {
+      "source": "/blog/seo-for-insurance-agencies",
+      "destination": "/blog/seo-for-insurance-agencies.html"
+    },
+    {
+      "source": "/blog/seo-for-saas-companies",
+      "destination": "/blog/seo-for-saas-companies.html"
+    },
+    {
+      "source": "/blog/seo-for-auto-dealers-and-repair-shops",
+      "destination": "/blog/seo-for-auto-dealers-and-repair-shops.html"
+    },
+    {
+      "source": "/blog/seo-for-hotels-and-travel-companies",
+      "destination": "/blog/seo-for-hotels-and-travel-companies.html"
+    },
+    {
+      "source": "/blog/seo-for-online-coaches-and-course-creators",
+      "destination": "/blog/seo-for-online-coaches-and-course-creators.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
