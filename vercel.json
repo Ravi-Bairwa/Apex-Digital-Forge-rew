@@ -440,6 +440,38 @@
       "destination": "/blog/seo-for-online-coaches-and-course-creators.html"
     },
     {
+      "source": "/blog/seo-for-veterinary-clinics",
+      "destination": "/blog/seo-for-veterinary-clinics.html"
+    },
+    {
+      "source": "/blog/seo-for-b2b-manufacturers",
+      "destination": "/blog/seo-for-b2b-manufacturers.html"
+    },
+    {
+      "source": "/blog/seo-for-fashion-and-apparel-brands",
+      "destination": "/blog/seo-for-fashion-and-apparel-brands.html"
+    },
+    {
+      "source": "/blog/seo-for-shopify-stores",
+      "destination": "/blog/seo-for-shopify-stores.html"
+    },
+    {
+      "source": "/blog/seo-for-wedding-and-event-businesses",
+      "destination": "/blog/seo-for-wedding-and-event-businesses.html"
+    },
+    {
+      "source": "/blog/seo-for-moving-and-storage-companies",
+      "destination": "/blog/seo-for-moving-and-storage-companies.html"
+    },
+    {
+      "source": "/blog/seo-for-landscaping-and-lawn-care-companies",
+      "destination": "/blog/seo-for-landscaping-and-lawn-care-companies.html"
+    },
+    {
+      "source": "/blog/seo-for-nonprofits-and-associations",
+      "destination": "/blog/seo-for-nonprofits-and-associations.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
