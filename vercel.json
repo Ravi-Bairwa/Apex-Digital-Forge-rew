@@ -472,6 +472,38 @@
       "destination": "/blog/seo-for-nonprofits-and-associations.html"
     },
     {
+      "source": "/blog/seo-for-medical-spas-and-aesthetics",
+      "destination": "/blog/seo-for-medical-spas-and-aesthetics.html"
+    },
+    {
+      "source": "/blog/seo-for-hvac-and-plumbing-companies",
+      "destination": "/blog/seo-for-hvac-and-plumbing-companies.html"
+    },
+    {
+      "source": "/blog/seo-for-senior-care-and-assisted-living",
+      "destination": "/blog/seo-for-senior-care-and-assisted-living.html"
+    },
+    {
+      "source": "/blog/seo-for-photography-studios",
+      "destination": "/blog/seo-for-photography-studios.html"
+    },
+    {
+      "source": "/blog/broken-link-building-strategy",
+      "destination": "/blog/broken-link-building-strategy.html"
+    },
+    {
+      "source": "/blog/haro-link-building-guide",
+      "destination": "/blog/haro-link-building-guide.html"
+    },
+    {
+      "source": "/blog/how-to-report-seo-results-to-clients",
+      "destination": "/blog/how-to-report-seo-results-to-clients.html"
+    },
+    {
+      "source": "/blog/competitor-backlink-analysis-guide",
+      "destination": "/blog/competitor-backlink-analysis-guide.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
