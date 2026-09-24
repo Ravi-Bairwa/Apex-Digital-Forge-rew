@@ -160,6 +160,34 @@
   ],
   "rewrites": [
     {
+      "source": "/blog/near-me-seo-guide",
+      "destination": "/blog/near-me-seo-guide.html"
+    },
+    {
+      "source": "/blog/seo-services-jaipur",
+      "destination": "/blog/seo-services-jaipur.html"
+    },
+    {
+      "source": "/blog/seo-services-new-delhi",
+      "destination": "/blog/seo-services-new-delhi.html"
+    },
+    {
+      "source": "/blog/seo-services-mumbai",
+      "destination": "/blog/seo-services-mumbai.html"
+    },
+    {
+      "source": "/blog/seo-services-bangalore",
+      "destination": "/blog/seo-services-bangalore.html"
+    },
+    {
+      "source": "/blog/seo-services-hyderabad",
+      "destination": "/blog/seo-services-hyderabad.html"
+    },
+    {
+      "source": "/blog/seo-services-pune",
+      "destination": "/blog/seo-services-pune.html"
+    },
+    {
       "source": "/blog/seo-for-roofing-companies",
       "destination": "/blog/seo-for-roofing-companies.html"
     },
