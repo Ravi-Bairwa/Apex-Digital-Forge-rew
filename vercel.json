@@ -160,6 +160,38 @@
   ],
   "rewrites": [
     {
+      "source": "/blog/seo-for-roofing-companies",
+      "destination": "/blog/seo-for-roofing-companies.html"
+    },
+    {
+      "source": "/blog/seo-for-daycare-and-childcare-centers",
+      "destination": "/blog/seo-for-daycare-and-childcare-centers.html"
+    },
+    {
+      "source": "/blog/seo-for-chiropractors-and-physical-therapists",
+      "destination": "/blog/seo-for-chiropractors-and-physical-therapists.html"
+    },
+    {
+      "source": "/blog/seo-for-pest-control-companies",
+      "destination": "/blog/seo-for-pest-control-companies.html"
+    },
+    {
+      "source": "/blog/link-disavow-guide",
+      "destination": "/blog/link-disavow-guide.html"
+    },
+    {
+      "source": "/blog/internal-linking-strategy-guide",
+      "destination": "/blog/internal-linking-strategy-guide.html"
+    },
+    {
+      "source": "/blog/seo-agency-pricing-models",
+      "destination": "/blog/seo-agency-pricing-models.html"
+    },
+    {
+      "source": "/blog/schema-markup-guide-for-seo-agencies",
+      "destination": "/blog/schema-markup-guide-for-seo-agencies.html"
+    },
+    {
       "source": "/services",
       "destination": "/services.html"
     },
