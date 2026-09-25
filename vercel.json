@@ -564,6 +564,54 @@
       "destination": "/blog/competitor-backlink-analysis-guide.html"
     },
     {
+      "source": "/blog/seo-services-houston",
+      "destination": "/blog/seo-services-houston.html"
+    },
+    {
+      "source": "/blog/seo-services-phoenix",
+      "destination": "/blog/seo-services-phoenix.html"
+    },
+    {
+      "source": "/blog/seo-services-philadelphia",
+      "destination": "/blog/seo-services-philadelphia.html"
+    },
+    {
+      "source": "/blog/seo-services-san-diego",
+      "destination": "/blog/seo-services-san-diego.html"
+    },
+    {
+      "source": "/blog/seo-services-dallas",
+      "destination": "/blog/seo-services-dallas.html"
+    },
+    {
+      "source": "/blog/seo-services-austin",
+      "destination": "/blog/seo-services-austin.html"
+    },
+    {
+      "source": "/blog/seo-services-seattle",
+      "destination": "/blog/seo-services-seattle.html"
+    },
+    {
+      "source": "/blog/seo-services-boston",
+      "destination": "/blog/seo-services-boston.html"
+    },
+    {
+      "source": "/blog/seo-services-glasgow",
+      "destination": "/blog/seo-services-glasgow.html"
+    },
+    {
+      "source": "/blog/seo-services-bristol",
+      "destination": "/blog/seo-services-bristol.html"
+    },
+    {
+      "source": "/blog/seo-services-leeds",
+      "destination": "/blog/seo-services-leeds.html"
+    },
+    {
+      "source": "/blog/seo-services-edinburgh",
+      "destination": "/blog/seo-services-edinburgh.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
