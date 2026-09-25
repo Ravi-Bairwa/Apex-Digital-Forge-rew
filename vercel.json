@@ -160,6 +160,38 @@
   ],
   "rewrites": [
     {
+      "source": "/blog/seo-services-chennai",
+      "destination": "/blog/seo-services-chennai.html"
+    },
+    {
+      "source": "/blog/seo-services-kolkata",
+      "destination": "/blog/seo-services-kolkata.html"
+    },
+    {
+      "source": "/blog/seo-services-ahmedabad",
+      "destination": "/blog/seo-services-ahmedabad.html"
+    },
+    {
+      "source": "/blog/seo-for-cleaning-services",
+      "destination": "/blog/seo-for-cleaning-services.html"
+    },
+    {
+      "source": "/blog/seo-for-solar-installers",
+      "destination": "/blog/seo-for-solar-installers.html"
+    },
+    {
+      "source": "/blog/seo-for-interior-designers",
+      "destination": "/blog/seo-for-interior-designers.html"
+    },
+    {
+      "source": "/blog/core-web-vitals-guide",
+      "destination": "/blog/core-web-vitals-guide.html"
+    },
+    {
+      "source": "/blog/seo-client-onboarding-process",
+      "destination": "/blog/seo-client-onboarding-process.html"
+    },
+    {
       "source": "/blog/near-me-seo-guide",
       "destination": "/blog/near-me-seo-guide.html"
     },
