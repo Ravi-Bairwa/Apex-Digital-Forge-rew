@@ -2,4 +2,46 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
+# AI crawlers explicitly allowed (also covered by the wildcard above,
+# listed explicitly so intent is unambiguous if the wildcard rule
+# is ever tightened later)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
 Sitemap: https://www.apexdigitalforge.in/sitemap.xml
