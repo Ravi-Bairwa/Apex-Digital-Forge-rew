@@ -4,6 +4,16 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'changed (this push only) or all (full site catch-up)'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - changed
+          - all
 
 jobs:
   submit:
@@ -14,8 +24,9 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Get changed HTML files
+      - name: Get changed HTML files (push mode)
         id: changed
+        if: github.event_name == 'push'
         run: |
           CHANGED=$(git diff --name-only --diff-filter=ACM "${{ github.event.before }}" "${{ github.sha }}" -- '*.html' || true)
           {
@@ -24,12 +35,23 @@ jobs:
             echo 'EOF'
           } >> "$GITHUB_OUTPUT"
 
+      - name: Get all HTML files (manual full catch-up mode)
+        id: allfiles
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'all'
+        run: |
+          FILES=$(find . -maxdepth 2 -name '*.html' | sed 's|^\./||')
+          {
+            echo 'files<<EOF'
+            echo "$FILES"
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
       - name: Submit to IndexNow
-        if: steps.changed.outputs.files != ''
+        if: steps.changed.outputs.files != '' || steps.allfiles.outputs.files != ''
         env:
           INDEXNOW_KEY: 60879d789040a7b7bf953d7424331c06
           HOST: www.apexdigitalforge.in
-          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}${{ steps.allfiles.outputs.files }}
         run: |
           python3 << 'PYEOF'
           import os, json, urllib.request
@@ -39,7 +61,7 @@ jobs:
           changed = [f for f in os.environ["CHANGED_FILES"].splitlines() if f.strip()]
 
           if not changed:
-              print("No changed HTML files in this push. Skipping.")
+              print("No files to submit. Skipping.")
               raise SystemExit(0)
 
           urls = []
@@ -57,28 +79,30 @@ jobs:
               print("No mappable URLs found. Skipping.")
               raise SystemExit(0)
 
-          print("Submitting URLs to IndexNow:")
+          print(f"Submitting {len(urls)} URLs to IndexNow:")
           for u in urls:
               print(" -", u)
 
-          payload = {
-              "host": host,
-              "key": key,
-              "keyLocation": f"https://{host}/{key}.txt",
-              "urlList": urls,
-          }
-
-          req = urllib.request.Request(
-              "https://api.indexnow.org/indexnow",
-              data=json.dumps(payload).encode("utf-8"),
-              headers={"Content-Type": "application/json; charset=utf-8"},
-              method="POST",
-          )
-
-          try:
-              with urllib.request.urlopen(req, timeout=30) as resp:
-                  print("IndexNow response code:", resp.status)
-          except urllib.error.HTTPError as e:
-              print("IndexNow submission failed:", e.code, e.read().decode(errors="replace"))
-              raise SystemExit(1)
+          # IndexNow accepts up to 10,000 URLs per request; batch at 500 to be safe
+          BATCH = 500
+          for i in range(0, len(urls), BATCH):
+              batch = urls[i:i+BATCH]
+              payload = {
+                  "host": host,
+                  "key": key,
+                  "keyLocation": f"https://{host}/{key}.txt",
+                  "urlList": batch,
+              }
+              req = urllib.request.Request(
+                  "https://api.indexnow.org/indexnow",
+                  data=json.dumps(payload).encode("utf-8"),
+                  headers={"Content-Type": "application/json; charset=utf-8"},
+                  method="POST",
+              )
+              try:
+                  with urllib.request.urlopen(req, timeout=30) as resp:
+                      print(f"Batch {i//BATCH + 1}: IndexNow response code:", resp.status)
+              except urllib.error.HTTPError as e:
+                  print(f"Batch {i//BATCH + 1}: IndexNow submission failed:", e.code, e.read().decode(errors="replace"))
+                  raise SystemExit(1)
           PYEOF
