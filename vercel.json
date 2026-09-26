@@ -160,6 +160,22 @@
   ],
   "rewrites": [
     {
+      "source": "/blog/seo-agency-india",
+      "destination": "/blog/seo-agency-india.html"
+    },
+    {
+      "source": "/blog/ai-seo-agency",
+      "destination": "/blog/ai-seo-agency.html"
+    },
+    {
+      "source": "/blog/seo-company-vs-seo-agency",
+      "destination": "/blog/seo-company-vs-seo-agency.html"
+    },
+    {
+      "source": "/blog/outsource-seo-to-india",
+      "destination": "/blog/outsource-seo-to-india.html"
+    },
+    {
       "source": "/blog/seo-services-chennai",
       "destination": "/blog/seo-services-chennai.html"
     },
