@@ -644,6 +644,10 @@
       "destination": "/blog/seo-services-edinburgh.html"
     },
     {
+      "source": "/60879d789040a7b7bf953d7424331c06.txt",
+      "destination": "/60879d789040a7b7bf953d7424331c06.txt"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }

@@ -1,0 +1,84 @@
+name: Submit changed pages to IndexNow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout with history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Get changed HTML files
+        id: changed
+        run: |
+          CHANGED=$(git diff --name-only --diff-filter=ACM "${{ github.event.before }}" "${{ github.sha }}" -- '*.html' || true)
+          {
+            echo 'files<<EOF'
+            echo "$CHANGED"
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Submit to IndexNow
+        if: steps.changed.outputs.files != ''
+        env:
+          INDEXNOW_KEY: 60879d789040a7b7bf953d7424331c06
+          HOST: www.apexdigitalforge.in
+          CHANGED_FILES: ${{ steps.changed.outputs.files }}
+        run: |
+          python3 << 'PYEOF'
+          import os, json, urllib.request
+
+          host = os.environ["HOST"]
+          key = os.environ["INDEXNOW_KEY"]
+          changed = [f for f in os.environ["CHANGED_FILES"].splitlines() if f.strip()]
+
+          if not changed:
+              print("No changed HTML files in this push. Skipping.")
+              raise SystemExit(0)
+
+          urls = []
+          for f in changed:
+              if f.startswith("blog/") and f.endswith(".html"):
+                  slug = f[len("blog/"):-len(".html")]
+                  urls.append(f"https://{host}/blog/{slug}")
+              elif f == "index.html":
+                  urls.append(f"https://{host}/")
+              elif f.endswith(".html"):
+                  base = f[:-len(".html")]
+                  urls.append(f"https://{host}/{base}")
+
+          if not urls:
+              print("No mappable URLs found. Skipping.")
+              raise SystemExit(0)
+
+          print("Submitting URLs to IndexNow:")
+          for u in urls:
+              print(" -", u)
+
+          payload = {
+              "host": host,
+              "key": key,
+              "keyLocation": f"https://{host}/{key}.txt",
+              "urlList": urls,
+          }
+
+          req = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+
+          try:
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  print("IndexNow response code:", resp.status)
+          except urllib.error.HTTPError as e:
+              print("IndexNow submission failed:", e.code, e.read().decode(errors="replace"))
+              raise SystemExit(1)
+          PYEOF
