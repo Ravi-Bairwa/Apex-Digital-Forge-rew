@@ -160,6 +160,14 @@
   ],
   "rewrites": [
     {
+      "source": "/blog/chatgpt-seo-guide",
+      "destination": "/blog/chatgpt-seo-guide.html"
+    },
+    {
+      "source": "/blog/generative-engine-optimization-guide",
+      "destination": "/blog/generative-engine-optimization-guide.html"
+    },
+    {
       "source": "/blog/seo-agency-india",
       "destination": "/blog/seo-agency-india.html"
     },
