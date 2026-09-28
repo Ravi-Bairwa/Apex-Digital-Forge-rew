@@ -672,6 +672,38 @@
       "destination": "/60879d789040a7b7bf953d7424331c06.txt"
     },
     {
+      "source": "/blog/free-seo-audit-what-to-expect",
+      "destination": "/blog/free-seo-audit-what-to-expect.html"
+    },
+    {
+      "source": "/blog/google-business-profile-optimization-guide",
+      "destination": "/blog/google-business-profile-optimization-guide.html"
+    },
+    {
+      "source": "/blog/seo-for-electricians",
+      "destination": "/blog/seo-for-electricians.html"
+    },
+    {
+      "source": "/blog/amazon-seo-optimization-guide",
+      "destination": "/blog/amazon-seo-optimization-guide.html"
+    },
+    {
+      "source": "/blog/wordpress-seo-services",
+      "destination": "/blog/wordpress-seo-services.html"
+    },
+    {
+      "source": "/blog/b2b-seo-agency-services",
+      "destination": "/blog/b2b-seo-agency-services.html"
+    },
+    {
+      "source": "/blog/seo-copywriting-content-writing-service",
+      "destination": "/blog/seo-copywriting-content-writing-service.html"
+    },
+    {
+      "source": "/blog/programmatic-seo-guide",
+      "destination": "/blog/programmatic-seo-guide.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
