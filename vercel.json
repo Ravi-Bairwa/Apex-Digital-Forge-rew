@@ -160,6 +160,54 @@
   ],
   "rewrites": [
     {
+      "source": "/blog/why-google-business-profile-got-suspended",
+      "destination": "/blog/why-google-business-profile-got-suspended.html"
+    },
+    {
+      "source": "/blog/why-your-redesign-tanked-your-rankings",
+      "destination": "/blog/why-your-redesign-tanked-your-rankings.html"
+    },
+    {
+      "source": "/blog/why-two-pages-are-competing-for-the-same-keyword",
+      "destination": "/blog/why-two-pages-are-competing-for-the-same-keyword.html"
+    },
+    {
+      "source": "/blog/why-your-top-ranking-page-disappeared",
+      "destination": "/blog/why-your-top-ranking-page-disappeared.html"
+    },
+    {
+      "source": "/blog/why-clients-think-youre-doing-nothing",
+      "destination": "/blog/why-clients-think-youre-doing-nothing.html"
+    },
+    {
+      "source": "/blog/why-good-clients-fire-you-anyway",
+      "destination": "/blog/why-good-clients-fire-you-anyway.html"
+    },
+    {
+      "source": "/blog/why-clients-question-your-white-label-reports",
+      "destination": "/blog/why-clients-question-your-white-label-reports.html"
+    },
+    {
+      "source": "/blog/why-your-onboarding-is-costing-you-clients",
+      "destination": "/blog/why-your-onboarding-is-costing-you-clients.html"
+    },
+    {
+      "source": "/blog/why-youre-always-the-cheapest-option",
+      "destination": "/blog/why-youre-always-the-cheapest-option.html"
+    },
+    {
+      "source": "/blog/why-clients-ghost-you-after-proposal",
+      "destination": "/blog/why-clients-ghost-you-after-proposal.html"
+    },
+    {
+      "source": "/blog/why-you-cant-scale-past-4-clients",
+      "destination": "/blog/why-you-cant-scale-past-4-clients.html"
+    },
+    {
+      "source": "/blog/why-clients-keep-asking-for-free-extras",
+      "destination": "/blog/why-clients-keep-asking-for-free-extras.html"
+    },
+    {
       "source": "/blog/chatgpt-seo-guide",
       "destination": "/blog/chatgpt-seo-guide.html"
     },
