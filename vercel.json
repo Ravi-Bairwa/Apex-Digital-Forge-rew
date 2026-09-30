@@ -752,6 +752,14 @@
       "destination": "/blog/programmatic-seo-guide.html"
     },
     {
+      "source": "/blog/youtube-seo-guide",
+      "destination": "/blog/youtube-seo-guide.html"
+    },
+    {
+      "source": "/blog/what-is-a-backlink",
+      "destination": "/blog/what-is-a-backlink.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
