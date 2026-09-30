@@ -760,6 +760,10 @@
       "destination": "/blog/what-is-a-backlink.html"
     },
     {
+      "source": "/blog/geo-vs-seo-vs-aeo",
+      "destination": "/blog/geo-vs-seo-vs-aeo.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
