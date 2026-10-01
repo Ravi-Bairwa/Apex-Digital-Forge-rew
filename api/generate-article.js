@@ -1,12 +1,6 @@
 // /api/generate-article.js
-// Admin-only endpoint: takes a title, category, and article content you
-// already wrote/pasted, and publishes it as a real permanent page by
-// committing new/updated files straight to the GitHub repo (which triggers
-// Vercel's normal auto-deploy).
-//
-// Requires these Vercel environment variables:
-//   ADMIN_SECRET - a password only you know; sent as the x-admin-key header
-//   GITHUB_TOKEN - a GitHub personal access token with repo write access
+// Admin-only endpoint: publishes a supplied article into the GitHub repo.
+// Requires Vercel environment variables ADMIN_SECRET and GITHUB_TOKEN.
 
 const GITHUB_OWNER = 'Ravi-Bairwa';
 const GITHUB_REPO = 'Apex-Digital-Forge-rew';
@@ -28,7 +22,6 @@ module.exports = async function handler(req, res) {
     return;
   }
 
-  // --- Auth check (this is the real gate, not just hiding the button) ---
   const adminSecret = process.env.ADMIN_SECRET;
   if (!adminSecret) {
     console.error('ADMIN_SECRET is not set in environment variables');
@@ -67,30 +60,26 @@ module.exports = async function handler(req, res) {
       return;
     }
 
-    // --- 1. Convert the pasted text into article HTML ---
     const articleHtml = textToHtml(rawContent);
-    if (!metaDescription) {
-      metaDescription = deriveExcerpt(rawContent, 155);
-    }
+    if (!metaDescription) metaDescription = deriveExcerpt(rawContent, 155);
 
-    // --- 2. Build a unique slug ---
     const existingSlugs = await listExistingSlugs(githubToken);
     const slug = uniqueSlug(slugify(title), existingSlugs);
 
-    const dateStr = formatDate(new Date());
+    const now = new Date();
+    const dateStr = formatDate(now);
+    const dateIso = now.toISOString().substring(0, 10);
     const readTime = estimateReadTime(articleHtml);
     const excerpt = deriveExcerpt(metaDescription || rawContent, 140);
     const emoji = CATEGORY_EMOJI[category];
 
-    // --- 3. Clone the template article into a new real page ---
     const template = await ghGet(TEMPLATE_PATH, githubToken);
     const newPageHtml = buildArticlePage(template.content, {
-      slug, title, metaDescription, category, dateStr, readTime, articleHtml
+      slug, title, metaDescription, category, dateStr, dateIso, readTime, articleHtml
     });
     await ghPut(`blog/${slug}.html`, newPageHtml, null,
       `Publish new article: ${title}`, githubToken);
 
-    // --- 4. Add the new card to blog.html's grid ---
     const blogHtml = await ghGet('blog.html', githubToken);
     const updatedBlogHtml = insertBlogCard(blogHtml.content, {
       slug, title, category, excerpt, emoji, dateStr, readTime
@@ -98,13 +87,11 @@ module.exports = async function handler(req, res) {
     await ghPut('blog.html', updatedBlogHtml, blogHtml.sha,
       `Add blog card for: ${title}`, githubToken);
 
-    // --- 5. Add the clean-URL rewrite in vercel.json ---
     const vercelJson = await ghGet('vercel.json', githubToken);
     const updatedVercelJson = addRewrite(vercelJson.content, slug);
     await ghPut('vercel.json', updatedVercelJson, vercelJson.sha,
       `Add rewrite for /blog/${slug}`, githubToken);
 
-    // --- 6. Add the sitemap entry ---
     const sitemap = await ghGet('sitemap.xml', githubToken);
     const updatedSitemap = addSitemapEntry(sitemap.content, slug);
     await ghPut('sitemap.xml', updatedSitemap, sitemap.sha,
@@ -122,11 +109,6 @@ module.exports = async function handler(req, res) {
   }
 };
 
-// ---------- Text -> HTML conversion ----------
-// Lightweight markdown-ish converter: supports ## / ### headings, **bold**,
-// "- " bullet lists, and blank-line-separated paragraphs. Anyone pasting
-// plain text (no markdown at all) just gets clean paragraphs, which is fine.
-
 function textToHtml(raw) {
   const lines = raw.replace(/\r\n/g, '\n').split('\n');
   const htmlParts = [];
@@ -134,7 +116,9 @@ function textToHtml(raw) {
 
   function flushList() {
     if (listBuffer.length) {
-      htmlParts.push('<ul>' + listBuffer.map(function(li) { return '<li>' + inlineFormat(li) + '</li>'; }).join('') + '</ul>');
+      htmlParts.push('<ul>' + listBuffer.map(function(li) {
+        return '<li>' + inlineFormat(li) + '</li>';
+      }).join('') + '</ul>');
       listBuffer = [];
     }
   }
@@ -167,7 +151,6 @@ function textToHtml(raw) {
   }
   flushParagraph();
   flushList();
-
   return htmlParts.join('\n');
 }
 
@@ -182,8 +165,6 @@ function deriveExcerpt(text, maxLen) {
   if (plain.length <= maxLen) return plain;
   return plain.substring(0, maxLen - 1).replace(/\s+\S*$/, '') + '…';
 }
-
-// ---------- GitHub helpers ----------
 
 async function ghGet(path, token) {
   const resp = await fetch(`${GITHUB_API}/contents/${path}`, {
@@ -234,8 +215,6 @@ async function listExistingSlugs(token) {
     .map(function(it) { return it.name.replace(/\.html$/, ''); });
 }
 
-// ---------- Content helpers ----------
-
 function slugify(text) {
   return text.toLowerCase()
     .replace(/[^a-z0-9\s-]/g, '')
@@ -277,42 +256,64 @@ function buildArticlePage(templateHtml, data) {
   const url = `https://www.apexdigitalforge.in/blog/${data.slug}`;
   let html = templateHtml;
 
+  // Use generic replacements so generated pages do not depend on stale
+  // hard-coded values from the template article.
+  html = html.replace(/<title>[\s\S]*?<\/title>/,
+    `<title>${escapeHtml(data.title)} | Apex Digital Forge</title>`);
+  html = html.replace(/<meta name="description" content="[^"]*">/,
+    `<meta name="description" content="${escapeHtml(data.metaDescription)}">`);
+  html = html.replace(/<meta property="og:title" content="[^"]*">/,
+    `<meta property="og:title" content="${escapeHtml(data.title)} | Apex Digital Forge">`);
+  html = html.replace(/<meta property="og:description" content="[^"]*">/,
+    `<meta property="og:description" content="${escapeHtml(data.metaDescription)}">`);
+  html = html.replace(/<meta property="og:url" content="[^"]*">/,
+    `<meta property="og:url" content="${url}">`);
+  html = html.replace(/<link rel="canonical" href="[^"]*" id="canonical-tag">/,
+    `<link rel="canonical" href="${url}" id="canonical-tag">`);
+  html = html.replace(/<div class="article-cat">[\s\S]*?<\/div>/,
+    `<div class="article-cat">${escapeHtml(data.category)}</div>`);
+  html = html.replace(/<h1 class="article-title">[\s\S]*?<\/h1>/,
+    `<h1 class="article-title">${escapeHtml(data.title)}</h1>`);
   html = html.replace(
-    '<title>How AI is Changing SEO in 2026 | Apex Digital Forge</title>',
-    `<title>${escapeHtml(data.title)} | Apex Digital Forge</title>`
-  );
-  html = html.replace(
-    /<meta name="description" content="[^"]*">/,
-    `<meta name="description" content="${escapeHtml(data.metaDescription)}">`
-  );
-  html = html.replace(
-    /<meta property="og:title" content="[^"]*">/,
-    `<meta property="og:title" content="${escapeHtml(data.title)} | Apex Digital Forge">`
-  );
-  html = html.replace(
-    /<meta property="og:description" content="[^"]*">/,
-    `<meta property="og:description" content="${escapeHtml(data.metaDescription)}">`
-  );
-  html = html.replace(
-    /<meta property="og:url" content="[^"]*">/,
-    `<meta property="og:url" content="${url}">`
-  );
-  html = html.replace(
-    /<link rel="canonical" href="[^"]*" id="canonical-tag">/,
-    `<link rel="canonical" href="${url}" id="canonical-tag">`
-  );
-  html = html.replace(
-    '<div class="article-cat">AI & Automation</div>',
-    `<div class="article-cat">${escapeHtml(data.category)}</div>`
-  );
-  html = html.replace(
-    '<h1 class="article-title">How AI is Changing SEO in 2026 and What Agencies Need to Do Now</h1>',
-    `<h1 class="article-title">${escapeHtml(data.title)}</h1>`
-  );
-  html = html.replace(
-    '<div class="article-meta"><span>Ravi Bairwa</span><span>24 Apr 2026</span><span>5 min read</span></div>',
+    /<div class="article-meta"><span>Ravi Bairwa<\/span><span>[^<]*<\/span><span>[^<]*<\/span><\/div>/,
     `<div class="article-meta"><span>Ravi Bairwa</span><span>${data.dateStr}</span><span>${data.readTime}</span></div>`
   );
+
+  // Synchronize BlogPosting structured data with the generated page.
+  const schemaMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+  if (!schemaMatch) throw new Error('Could not locate JSON-LD schema block in template.');
+
+  let schema;
+  try {
+    schema = JSON.parse(schemaMatch[1]);
+  } catch (err) {
+    throw new Error('Template JSON-LD schema is invalid: ' + err.message);
+  }
+
+  const schemaItems = Array.isArray(schema) ? schema : [schema];
+  const blogPosting = schemaItems.find(function(item) {
+    return item && item['@type'] === 'BlogPosting';
+  });
+  if (!blogPosting) throw new Error('Could not locate BlogPosting schema in template.');
+
+  blogPosting.headline = data.title;
+  blogPosting.description = data.metaDescription;
+  blogPosting.url = url;
+  blogPosting.datePublished = data.dateIso;
+  blogPosting.dateModified = data.dateIso;
+  blogPosting.author = { '@type': 'Person', name: 'Ravi Bairwa' };
+  blogPosting.publisher = {
+    '@type': 'Organization',
+    name: 'Apex Digital Forge',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.apexdigitalforge.in/assets/favicon-192.png'
+    }
+  };
+  blogPosting.mainEntityOfPage = { '@type': 'WebPage', '@id': url };
+
+  const updatedSchema = JSON.stringify(schema, null, 2);
+  html = html.replace(schemaMatch[0], `<script type="application/ld+json">\n${updatedSchema}\n</script>`);
 
   const bodyStart = html.indexOf('<div class="article-body">');
   const bodyCloseMarker = '\n    </div>\n  </section>';
@@ -349,12 +350,12 @@ function insertBlogCard(blogHtml, data) {
 function addRewrite(vercelJsonText, slug) {
   const parsed = JSON.parse(vercelJsonText);
   const rewrites = parsed.rewrites || [];
-  const blogIdx = rewrites.findIndex(function(r) { return r.source === '/blog'; });
   const entry = { source: `/blog/${slug}`, destination: `/blog/${slug}.html` };
-  if (blogIdx !== -1) {
-    rewrites.splice(blogIdx + 1, 0, entry);
-  } else {
-    rewrites.push(entry);
+  const exists = rewrites.some(function(r) { return r.source === entry.source; });
+  if (!exists) {
+    const blogIdx = rewrites.findIndex(function(r) { return r.source === '/blog'; });
+    if (blogIdx !== -1) rewrites.splice(blogIdx + 1, 0, entry);
+    else rewrites.push(entry);
   }
   parsed.rewrites = rewrites;
   return JSON.stringify(parsed, null, 2) + '\n';
@@ -362,12 +363,8 @@ function addRewrite(vercelJsonText, slug) {
 
 function addSitemapEntry(sitemapText, slug) {
   const today = new Date().toISOString().substring(0, 10);
-  const entry = `  <url>
-    <loc>https://www.apexdigitalforge.in/blog/${slug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-</urlset>`;
-  return sitemapText.replace('</urlset>', entry);
+  const loc = `https://www.apexdigitalforge.in/blog/${slug}`;
+  if (sitemapText.includes(`<loc>${loc}</loc>`)) return sitemapText;
+  const entry = `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n`;
+  return sitemapText.replace('</urlset>', entry + '</urlset>');
 }
