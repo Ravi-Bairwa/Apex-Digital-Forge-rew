@@ -792,6 +792,10 @@
       "destination": "/blog/white-label-local-seo.html"
     },
     {
+      "source": "/blog/how-to-measure-seo-roi",
+      "destination": "/blog/how-to-measure-seo-roi.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
