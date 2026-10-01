@@ -776,6 +776,18 @@
       "destination": "/blog/local-seo-link-building.html"
     },
     {
+      "source": "/blog/white-label-seo-services",
+      "destination": "/blog/white-label-seo-services.html"
+    },
+    {
+      "source": "/blog/white-label-seo-pricing",
+      "destination": "/blog/white-label-seo-pricing.html"
+    },
+    {
+      "source": "/blog/seo-reseller-program",
+      "destination": "/blog/seo-reseller-program.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
