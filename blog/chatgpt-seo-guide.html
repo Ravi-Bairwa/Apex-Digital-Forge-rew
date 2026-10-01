@@ -259,8 +259,8 @@
 <img src="/assets/blog/ai-search.svg" alt="chatgpt seo" loading="lazy" style="width:100%;max-width:400px;height:auto;aspect-ratio:400/220;border-radius:16px;display:block;margin:0 auto 24px;"><p>ChatGPT SEO means optimizing content so ChatGPT's search and browsing features cite it directly, a mechanism documented in <a href="https://help.openai.com/en/articles/9237897-chatgpt-search" target="_blank" rel="noopener">OpenAI's own help documentation on ChatGPT search</a> rather than something separate from how the underlying web actually gets crawled and indexed.</p>
 
 <h2>How ChatGPT Actually Finds and Cites Content</h2>
-<p>ChatGPT's search feature works by querying live web sources through a combination of its own crawler (GPTBot) and, in some configurations, results from search partners — it isn't purely generating answers from static training data when search or browsing is active.</p>
-<p>This means standard technical SEO — crawlability, clean HTML structure, accurate metadata, an explicit robots.txt allowance for GPTBot — is a prerequisite for ChatGPT SEO, not a separate discipline layered on top of it.</p>
+<p>When ChatGPT search needs web information, OpenAI documents OAI-SearchBot as the crawler used to discover content for ChatGPT search. GPTBot is a separate OpenAI crawler associated with content that may be used for model training, while ChatGPT-User is associated with user-triggered browsing or actions.</p>
+<p>This means standard technical SEO — crawlability, clean HTML structure, accurate metadata, and avoiding an accidental block of OAI-SearchBot — is foundational for ChatGPT search visibility. Allowing GPTBot is a separate choice related to OpenAI's model-development crawling and should not be described as a prerequisite for ChatGPT search.</p>
 
 <h2>What Makes Content More Likely to Be Cited by ChatGPT</h2>
 <p>Direct, well-structured answers to specific questions — genuine FAQ sections, ideally backed by FAQPage schema — are the format ChatGPT search tends to lift most cleanly, since the model can extract a clear question-answer pair without needing to synthesize one from loose prose.</p>
@@ -273,10 +273,10 @@
 
 <h2>AI Overviews: A Different Mechanism Entirely</h2>
 <p>Google's AI Overviews pull from Google's own existing search index rather than a separate crawler or ranking system, meaning there's no distinct "AI Overviews SEO" apart from strong traditional Google SEO — a page that already ranks well organically is the one most likely to be pulled into an AI Overview for a related query.</p>
-<p>FAQPage and structured schema still help here specifically, since Google's systems use structured data as one signal for identifying content suited to a direct, synthesized answer format.</p>
+<p>Structured data should accurately describe the visible content on the page, but Google does not require special schema for AI Overviews or AI Mode. Standard Search eligibility and SEO fundamentals remain the foundation.</p>
 
 <h2>Common Mistakes When Optimizing for ChatGPT SEO</h2>
-<p>Blocking GPTBot in robots.txt, sometimes done reflexively to prevent AI training data scraping, also blocks the same crawler ChatGPT search uses to surface and cite content — a business wanting citation needs to allow this access explicitly rather than blocking it by default.</p>
+<p>Blocking OAI-SearchBot can prevent OpenAI from using a page for ChatGPT search results, while blocking GPTBot is a separate control concerning model-development crawling. A business should choose each rule based on the use it wants to permit rather than treating the two crawlers as interchangeable.</p>
 <p>Writing vague, marketing-toned content without specific facts or figures is a second common gap, since this style of writing gives an AI system little concrete to cite even when the page is technically accessible.</p>
 <p>Assuming a single dedicated "AI SEO" page fixes this site-wide is a third mistake — citation behavior responds to the specific content on the specific page relevant to a query, so this work benefits from spreading across a site's key pages rather than concentrating on one.</p>
 
@@ -284,7 +284,7 @@
 <p>The most direct check is manually asking ChatGPT, Perplexity, and Google directly about topics a business's content covers, and noting whether and how the site gets cited — treating this as an ongoing spot-check rather than a one-time test given how frequently these systems update.</p>
 
 <h2>How Apex Digital Forge Approaches This</h2>
-<p>Every client site gets an explicit robots.txt review confirming GPTBot, PerplexityBot, and Google-Extended access, paired with structured FAQ content built specifically to be extractable as clean question-answer pairs.</p>
+<p>Every client site gets an explicit robots.txt review covering the relevant crawlers — including OAI-SearchBot for ChatGPT search, PerplexityBot for Perplexity, and Google-Extended where its separate Google AI usage control is relevant — paired with clear, structured content that is useful to both people and retrieval systems.</p>
 
 <h2>Frequently Asked Questions About ChatGPT SEO</h2>
 <p>Does ChatGPT SEO require different content than regular SEO? Not entirely different, but it rewards more specific, structured, directly-answerable content than traditional SEO alone typically demands.</p>
@@ -293,7 +293,7 @@
 <p>How is success in ChatGPT SEO actually measured? Mostly through manual testing of relevant queries and, where available, referral traffic tracking from AI platforms — direct analytics for AI citation volume are still immature across the industry.</p>
 
 <h2>Getting Started</h2>
-<p>Start by confirming GPTBot and PerplexityBot are explicitly allowed in robots.txt, then audit existing content for genuine FAQ sections that could carry FAQPage schema, since these two steps address the most common and most fixable gaps.</p>
+<p>Start by confirming the relevant search crawlers are not accidentally blocked — including OAI-SearchBot and PerplexityBot — then audit existing content for clear answers, strong internal linking, accurate metadata, and structured data that genuinely matches the visible content.</p>
 <p>There's more detail in our guide to <a href="/blog/generative-engine-optimization-guide">Generative Engine Optimization: The Complete Guide</a>.</p><div style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);"><div style="font-weight:700;color:var(--white);margin-bottom:12px;">Keep Reading</div><ul style="list-style:none;padding:0;margin:0 0 16px 0;"><li style="margin-bottom:8px;"><a href="/blog/programmatic-seo-guide" style="color:var(--accent);text-decoration:underline;">Programmatic SEO: What It Actually Is and When It Backfires</a></li><li style="margin-bottom:8px;"><a href="/blog/generative-engine-optimization-guide" style="color:var(--accent);text-decoration:underline;">Generative Engine Optimization: The Complete Guide</a></li><li style="margin-bottom:8px;"><a href="/blog/ai-seo-2026" style="color:var(--accent);text-decoration:underline;">AI SEO 2026: Generative Engine Optimization Strategy</a></li></ul><a href="/services" onclick="showPage('services', event)" style="color:var(--accent);text-decoration:underline;font-weight:600;">Explore our full SEO service stack &rarr;</a></div>
     </div>
   </section>
