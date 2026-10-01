@@ -764,6 +764,18 @@
       "destination": "/blog/geo-vs-seo-vs-aeo.html"
     },
     {
+      "source": "/blog/digital-pr-link-building",
+      "destination": "/blog/digital-pr-link-building.html"
+    },
+    {
+      "source": "/blog/backlink-email-templates",
+      "destination": "/blog/backlink-email-templates.html"
+    },
+    {
+      "source": "/blog/local-seo-link-building",
+      "destination": "/blog/local-seo-link-building.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
