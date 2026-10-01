@@ -788,6 +788,10 @@
       "destination": "/blog/seo-reseller-program.html"
     },
     {
+      "source": "/blog/white-label-local-seo",
+      "destination": "/blog/white-label-local-seo.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
