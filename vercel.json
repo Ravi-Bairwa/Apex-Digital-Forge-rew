@@ -796,6 +796,30 @@
       "destination": "/blog/how-to-measure-seo-roi.html"
     },
     {
+      "source": "/blog/seo-services-atlanta",
+      "destination": "/blog/seo-services-atlanta.html"
+    },
+    {
+      "source": "/blog/seo-services-miami",
+      "destination": "/blog/seo-services-miami.html"
+    },
+    {
+      "source": "/blog/seo-services-denver",
+      "destination": "/blog/seo-services-denver.html"
+    },
+    {
+      "source": "/blog/seo-services-brisbane",
+      "destination": "/blog/seo-services-brisbane.html"
+    },
+    {
+      "source": "/blog/seo-services-calgary",
+      "destination": "/blog/seo-services-calgary.html"
+    },
+    {
+      "source": "/blog/seo-services-liverpool",
+      "destination": "/blog/seo-services-liverpool.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
