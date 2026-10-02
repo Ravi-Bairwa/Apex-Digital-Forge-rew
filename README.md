@@ -71,8 +71,6 @@ To deploy your own version:
 | Niche Edits | DA 50–70 | $14/link |
 | Homepage Links | DA 50–70 | $32/link |
 | News/Press Links | DA 50–80 | $24/link |
-| Web 2.0 Links | DA 20–40 | $3/link |
-| PBN Links | DA 20–40 | $10/link |
 | Local Citations | — | $12/10 pack |
 
 **Free Trial:** 20 DA 50–90 backlinks — zero payment, zero contract.
