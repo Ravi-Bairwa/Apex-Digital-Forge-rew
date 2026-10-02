@@ -820,6 +820,10 @@
       "destination": "/blog/seo-services-liverpool.html"
     },
     {
+      "source": "/blog/seo-services-surat",
+      "destination": "/blog/seo-services-surat.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
