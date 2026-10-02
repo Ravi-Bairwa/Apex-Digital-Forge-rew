@@ -43,6 +43,11 @@
       "permanent": true
     },
     {
+      "source": "/web-development.html",
+      "destination": "/web-development",
+      "permanent": true
+    },
+    {
       "source": "/pricing.html",
       "destination": "/pricing",
       "permanent": true
@@ -326,6 +331,10 @@
     {
       "source": "/services",
       "destination": "/services.html"
+    },
+    {
+      "source": "/web-development",
+      "destination": "/web-development.html"
     },
     {
       "source": "/pricing",

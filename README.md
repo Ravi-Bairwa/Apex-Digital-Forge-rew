@@ -72,6 +72,7 @@ To deploy your own version:
 | Homepage Links | DA 50–70 | $32/link |
 | News/Press Links | DA 50–80 | $24/link |
 | Local Citations | — | $12/10 pack |
+| Web Development | n/a | Custom quote (depends on website type and requirements) |
 
 **Free Trial:** 20 DA 50–90 backlinks — zero payment, zero contract.
 

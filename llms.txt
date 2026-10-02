@@ -13,6 +13,7 @@
 
 - [Home](https://www.apexdigitalforge.in/): Overview of services and value proposition
 - [Services](https://www.apexdigitalforge.in/services): Full breakdown of on-page, technical, off-page SEO, and GEO services
+- [Web Development](https://www.apexdigitalforge.in/web-development): SEO-ready website development (landing pages, business websites, e-commerce, custom builds), quoted to requirements
 - [Pricing](https://www.apexdigitalforge.in/pricing): White-label link building and SEO service packages
 - [How It Works](https://www.apexdigitalforge.in/process): The agency's delivery process for clients and white-label partners
 - [Free SEO Audit](https://www.apexdigitalforge.in/seo-audit): Free audit tool for prospective clients
@@ -23,6 +24,7 @@
 - White-label link building for SEO agencies (DA 50–90 verified backlinks, live reporting, 7–10 day delivery)
 - On-page and technical SEO for end businesses across industries (local services, healthcare, SaaS, ecommerce, real estate, and more)
 - Local SEO for businesses across India and internationally
+- Web development: SEO-ready websites for businesses, priced to requirements
 - Generative Engine Optimization (GEO) — helping brands appear in AI-powered search and answer engines
 
 ## Notes for AI Crawlers

@@ -75,16 +75,34 @@
       "jobTitle": "Founder"
     },
     "areaServed": [
-      {"@type": "Country", "name": "United States"},
-      {"@type": "Country", "name": "United Kingdom"},
-      {"@type": "Country", "name": "Australia"},
-      {"@type": "Country", "name": "Canada"},
-      {"@type": "Country", "name": "United Arab Emirates"},
-      {"@type": "Country", "name": "India"}
+      {
+        "@type": "Country",
+        "name": "United States"
+      },
+      {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      {
+        "@type": "Country",
+        "name": "Australia"
+      },
+      {
+        "@type": "Country",
+        "name": "Canada"
+      },
+      {
+        "@type": "Country",
+        "name": "United Arab Emirates"
+      },
+      {
+        "@type": "Country",
+        "name": "India"
+      }
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Link Building Services",
+      "name": "Services",
       "itemListElement": [
         {
           "@type": "Offer",
@@ -92,6 +110,14 @@
             "@type": "Service",
             "name": "White Label Link Building",
             "description": "DA 50-90 verified backlinks with live reporting for SEO agencies"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Development",
+            "description": "SEO-ready website development for businesses: landing pages, business websites, e-commerce stores and custom builds, quoted to requirements"
           }
         }
       ]
@@ -378,6 +404,13 @@
         <p style="font-size:14px;color:var(--muted2);line-height:1.6;">Site audits, Core Web Vitals, schema markup, crawl error fixes, sitemap, robots.txt, canonical tags, HTTPS, mobile usability — everything under the hood that Google rewards.</p>
       </div>
     </div>
+    <div class="hover-card" style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;">
+      <div style="flex:1;min-width:260px;">
+        <div class="svc-title">New: Web Development</div>
+        <p style="font-size:14px;color:var(--muted2);line-height:1.6;margin:0;">SEO-ready websites for businesses: landing pages, business websites, e-commerce and custom builds. Priced to your requirements, with the SEO foundations built in from day one.</p>
+      </div>
+      <a href="/web-development" class="btn btn-primary" onclick="showPage('web-development',event)">Explore Web Development →</a>
+    </div>
     <div style="text-align:center;margin-top:32px;">
       <a href="/services" class="btn btn-dark" onclick="showPage('services',event)">Explore All Services →</a>
     </div>
@@ -548,6 +581,7 @@
       <a href="/services" onclick="showPage('services', event)">Homepage Links</a>
       <a href="/services" onclick="showPage('services', event)">News and Press Links</a>
       <a href="/services" onclick="showPage('services', event)">Local Citations</a>
+      <a href="/web-development" onclick="showPage('web-development', event)">Web Development</a>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Contact</div>
