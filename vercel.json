@@ -824,6 +824,10 @@
       "destination": "/blog/seo-services-surat.html"
     },
     {
+      "source": "/blog/seo-services-indore",
+      "destination": "/blog/seo-services-indore.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
