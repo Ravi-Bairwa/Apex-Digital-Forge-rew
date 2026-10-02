@@ -828,6 +828,10 @@
       "destination": "/blog/seo-services-indore.html"
     },
     {
+      "source": "/blog/seo-services-gurgaon",
+      "destination": "/blog/seo-services-gurgaon.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
