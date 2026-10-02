@@ -257,7 +257,11 @@ function buildArticlePage(templateHtml, data) {
   let html = templateHtml;
 
   // Use generic replacements so generated pages do not depend on stale
-  // hard-coded values from the template article.
+  // hard-coded values from the template article. Regex, not a literal
+  // string: the template's own title/meta text gets edited for its own
+  // SEO reasons independently of this generator, and an exact-match
+  // .replace() fails silently if that text ever drifts — which it
+  // already has (title text and the date/read-time line both drifted).
   html = html.replace(/<title>[\s\S]*?<\/title>/,
     `<title>${escapeHtml(data.title)} | Apex Digital Forge</title>`);
   html = html.replace(/<meta name="description" content="[^"]*">/,
@@ -280,6 +284,10 @@ function buildArticlePage(templateHtml, data) {
   );
 
   // Synchronize BlogPosting structured data with the generated page.
+  // Parsed and mutated as real JSON rather than string-matched, so this
+  // can't be thrown off by unrelated template edits and can't accidentally
+  // touch the Organization/WebSite objects that share field names like
+  // "url" with BlogPosting.
   const schemaMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
   if (!schemaMatch) throw new Error('Could not locate JSON-LD schema block in template.');
 
@@ -290,7 +298,7 @@ function buildArticlePage(templateHtml, data) {
     throw new Error('Template JSON-LD schema is invalid: ' + err.message);
   }
 
-  const schemaItems = Array.isArray(schema) ? schema : [schema];
+  let schemaItems = Array.isArray(schema) ? schema : [schema];
   const blogPosting = schemaItems.find(function(item) {
     return item && item['@type'] === 'BlogPosting';
   });
@@ -311,6 +319,23 @@ function buildArticlePage(templateHtml, data) {
     }
   };
   blogPosting.mainEntityOfPage = { '@type': 'WebPage', '@id': url };
+  // The template's own header image is topic-specific (e.g. an AI-themed
+  // icon for the ai-seo-2026 article) and would be wrong on an unrelated
+  // generated topic, so fall back to the generic category icon instead
+  // of carrying the template's specific one forward.
+  if (blogPosting.image) {
+    blogPosting.image = 'https://www.apexdigitalforge.in/assets/blog/agency-general.svg';
+  }
+
+  // The template's FAQPage schema holds Q&As written for the AI-SEO-2026
+  // article specifically. The generator has no way to produce accurate
+  // FAQs for a new topic, so a stale, mismatched FAQPage block is worse
+  // than no FAQPage block at all — strip it rather than carry it forward.
+  if (Array.isArray(schema)) {
+    schema = schemaItems.filter(function(item) {
+      return !(item && item['@type'] === 'FAQPage');
+    });
+  }
 
   const updatedSchema = JSON.stringify(schema, null, 2);
   html = html.replace(schemaMatch[0], `<script type="application/ld+json">\n${updatedSchema}\n</script>`);
