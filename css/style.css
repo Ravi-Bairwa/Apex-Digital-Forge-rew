@@ -819,14 +819,20 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
 /* Rounded logo mark instead of a hard white square */
 img[src$="logo_apex.png"] { border-radius: 50%; width: 32px !important; height: 32px !important; object-fit: cover !important; }
 
-/* Nav: eight links plus two buttons need more room. Keep every label on one line,
-   tighten spacing, and use the compact menu below 1300px so nothing wraps or overflows. */
-.nav-brand { white-space: nowrap; font-size: 15px; }
-.nav-links { gap: 16px; flex-wrap: nowrap; }
-.nav-links a { font-size: 13.5px; white-space: nowrap; }
-.nav-right { gap: 8px; flex-shrink: 0; }
-.nav-right .btn { white-space: nowrap; }
-@media (max-width: 1300px) {
+/* Nav: one consistent full menu on every laptop and desktop (>1100px). Sizes scale with the
+   window so eight links and two buttons always fit on one row. The hamburger appears only
+   on tablets and phones (<=1100px), with the theme toggle sitting next to it. */
+@media (min-width: 1101px) {
+  nav { padding: 0 3%; }
+  .nav-brand { font-size: clamp(13px, 1.15vw, 16px); white-space: nowrap; }
+  .nav-links { gap: clamp(8px, 1vw, 18px); flex-wrap: nowrap; }
+  .nav-links a { font-size: clamp(12px, 1.05vw, 14px); white-space: nowrap; }
+  .nav-right { gap: clamp(6px, 0.6vw, 10px); flex-shrink: 0; }
+  .nav-right .btn { font-size: clamp(11px, 0.9vw, 12px) !important; padding: 7px clamp(9px, 0.9vw, 14px) !important; white-space: nowrap; }
+  .hamburger { display: none; }
+}
+@media (max-width: 1100px) {
   .nav-links, .nav-right { display: none; }
   .hamburger { display: flex; }
+  .theme-toggle { margin-left: auto; margin-right: 6px; }
 }
