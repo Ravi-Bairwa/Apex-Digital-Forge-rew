@@ -41,7 +41,7 @@ module.exports = async function handler(req, res) {
       <p><strong>Company / Agency:</strong> ${escapeHtml(company || 'Not provided')}</p>
       <p><strong>Phone / WhatsApp:</strong> ${escapeHtml(phone || 'Not provided')}</p>
       <p><strong>Service Interested In:</strong> ${escapeHtml(service || 'Not specified')}</p>
-      <p><strong>Monthly Budget:</strong> ${escapeHtml(budget || 'Not specified')}</p>
+      <p><strong>Budget:</strong> ${escapeHtml(budget || 'Not specified')}</p>
       <p><strong>Message:</strong></p>
       <p>${escapeHtml(message || 'Not provided').replace(/\n/g, '<br>')}</p>
     `;
