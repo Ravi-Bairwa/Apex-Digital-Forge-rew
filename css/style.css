@@ -819,8 +819,14 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
 /* Rounded logo mark instead of a hard white square */
 img[src$="logo_apex.png"] { border-radius: 50%; width: 32px !important; height: 32px !important; object-fit: cover !important; }
 
-/* Web Development added to the nav: use the compact menu below 1240px so eight links never overflow */
-@media (max-width: 1240px) {
+/* Nav: eight links plus two buttons need more room. Keep every label on one line,
+   tighten spacing, and use the compact menu below 1300px so nothing wraps or overflows. */
+.nav-brand { white-space: nowrap; font-size: 15px; }
+.nav-links { gap: 16px; flex-wrap: nowrap; }
+.nav-links a { font-size: 13.5px; white-space: nowrap; }
+.nav-right { gap: 8px; flex-shrink: 0; }
+.nav-right .btn { white-space: nowrap; }
+@media (max-width: 1300px) {
   .nav-links, .nav-right { display: none; }
   .hamburger { display: flex; }
 }
