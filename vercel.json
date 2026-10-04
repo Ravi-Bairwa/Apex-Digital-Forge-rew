@@ -861,6 +861,26 @@
       "destination": "/blog/ecommerce-website-development-checklist.html"
     },
     {
+      "source": "/blog/web-development-near-me",
+      "destination": "/blog/web-development-near-me.html"
+    },
+    {
+      "source": "/blog/web-development-company-jaipur",
+      "destination": "/blog/web-development-company-jaipur.html"
+    },
+    {
+      "source": "/blog/how-long-does-it-take-to-build-a-website",
+      "destination": "/blog/how-long-does-it-take-to-build-a-website.html"
+    },
+    {
+      "source": "/blog/wordpress-vs-custom-website",
+      "destination": "/blog/wordpress-vs-custom-website.html"
+    },
+    {
+      "source": "/blog/website-maintenance-what-is-included",
+      "destination": "/blog/website-maintenance-what-is-included.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
