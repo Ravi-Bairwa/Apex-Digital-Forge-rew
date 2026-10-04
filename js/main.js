@@ -459,4 +459,12 @@ function toggleTheme(){
   var next=ADF_THEME_ORDER[(idx+1)%ADF_THEME_ORDER.length];
   root.setAttribute('data-theme',next);
   try{localStorage.setItem('adf-theme',next);}catch(e){}
+  adfApplyThemeColor();
 }
+function adfApplyThemeColor(){
+  var t=document.documentElement.getAttribute('data-theme');
+  var m=document.querySelector('meta[name="theme-color"]');
+  if(!m){m=document.createElement('meta');m.setAttribute('name','theme-color');document.head.appendChild(m);}
+  m.setAttribute('content',t==='light'?'#ffffff':'#0a0710');
+}
+adfApplyThemeColor();
