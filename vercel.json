@@ -841,6 +841,26 @@
       "destination": "/blog/seo-services-gurgaon.html"
     },
     {
+      "source": "/blog/website-development-cost",
+      "destination": "/blog/website-development-cost.html"
+    },
+    {
+      "source": "/blog/seo-friendly-website-development",
+      "destination": "/blog/seo-friendly-website-development.html"
+    },
+    {
+      "source": "/blog/website-redesign-seo-checklist",
+      "destination": "/blog/website-redesign-seo-checklist.html"
+    },
+    {
+      "source": "/blog/landing-page-vs-website",
+      "destination": "/blog/landing-page-vs-website.html"
+    },
+    {
+      "source": "/blog/ecommerce-website-development-checklist",
+      "destination": "/blog/ecommerce-website-development-checklist.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
