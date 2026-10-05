@@ -866,3 +866,43 @@ img[src$="logo_apex.png"] { border-radius: 50%; width: 32px !important; height: 
   .cc4 { transform: rotateY(270deg) translateZ(125px); }
 }
 .ae-stage { overflow-x: clip; }
+
+/* Services mega-menu */
+.nav-links li.has-dropdown { position: relative; }
+.nav-links li.has-dropdown > a::after { content: '▾'; font-size: 10px; margin-left: 4px; opacity: .6; }
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 16px;
+  background: var(--dark2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  grid-template-columns: repeat(3, 190px);
+  gap: 32px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+}
+.nav-links li.has-dropdown:hover .nav-dropdown { display: grid; }
+.nav-dropdown-col h4 {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+.nav-dropdown-col a {
+  display: block;
+  font-size: 13px;
+  color: var(--muted2);
+  padding: 7px 0;
+  white-space: nowrap;
+}
+.nav-dropdown-col a:hover { color: var(--white); }
+/* No extra breakpoint needed: .nav-links (and this dropdown with it) is
+   already hidden below 1101px by the existing nav media query above,
+   replaced by the hamburger / mobile-menu panel. */

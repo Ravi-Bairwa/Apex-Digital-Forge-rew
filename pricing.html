@@ -212,7 +212,31 @@
   </a>
   <ul class="nav-links">
     <li><a href="/" data-page="home" onclick="showPage('home', event)">Home</a></li>
-    <li><a href="/services" data-page="services" onclick="showPage('services', event)">Services</a></li>
+    <li class="has-dropdown"><a href="/services" data-page="services" onclick="showPage('services', event)">Services</a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-col">
+          <h4>SEO Services</h4>
+          <a href="/services" data-page="services" onclick="showPage('services', event)">On-Page SEO</a>
+          <a href="/services" data-page="services" onclick="showPage('services', event)">Technical SEO</a>
+          <a href="/services" data-page="services" onclick="showPage('services', event)">Link Building</a>
+        </div>
+        <div class="nav-dropdown-col">
+          <h4>Specialized SEO</h4>
+          <a href="/blog/local-seo-for-small-business">Local SEO</a>
+          <a href="/blog/seo-for-ecommerce-stores">Ecommerce SEO</a>
+          <a href="/blog/amazon-seo-optimization-guide">Amazon SEO</a>
+          <a href="/blog/b2b-seo-agency-services">B2B SEO</a>
+          <a href="/blog/ai-seo-2026">AI SEO / GEO</a>
+        </div>
+        <div class="nav-dropdown-col">
+          <h4>For Agencies & More</h4>
+          <a href="/blog/white-label-link-building-services">White-Label SEO</a>
+          <a href="/web-development" data-page="web-development" onclick="showPage('web-development', event)">Web Development</a>
+          <a href="/pricing" data-page="pricing" onclick="showPage('pricing', event)">Pricing</a>
+          <a href="/seo-audit" data-page="seo-audit" onclick="showPage('seo-audit', event)">Free SEO Audit</a>
+        </div>
+      </div>
+    </li>
     <li><a href="/web-development" data-page="web-development" onclick="showPage('web-development', event)">Web Development</a></li>
     <li><a href="/pricing" data-page="pricing" onclick="showPage('pricing', event)">Pricing</a></li>
     <li><a href="/process" data-page="process" onclick="showPage('process', event)">How It Works</a></li>
