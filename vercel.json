@@ -881,6 +881,26 @@
       "destination": "/blog/website-maintenance-what-is-included.html"
     },
     {
+      "source": "/blog/seo-services-montreal",
+      "destination": "/blog/seo-services-montreal.html"
+    },
+    {
+      "source": "/blog/seo-services-cardiff",
+      "destination": "/blog/seo-services-cardiff.html"
+    },
+    {
+      "source": "/blog/seo-services-las-vegas",
+      "destination": "/blog/seo-services-las-vegas.html"
+    },
+    {
+      "source": "/blog/seo-services-washington-dc",
+      "destination": "/blog/seo-services-washington-dc.html"
+    },
+    {
+      "source": "/blog/seo-services-perth",
+      "destination": "/blog/seo-services-perth.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
