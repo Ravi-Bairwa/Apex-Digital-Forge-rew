@@ -901,6 +901,34 @@
       "destination": "/blog/seo-services-perth.html"
     },
     {
+      "source": "/blog/why-is-my-organic-traffic-dropping",
+      "destination": "/blog/why-is-my-organic-traffic-dropping.html"
+    },
+    {
+      "source": "/blog/google-core-update-traffic-drop",
+      "destination": "/blog/google-core-update-traffic-drop.html"
+    },
+    {
+      "source": "/blog/why-is-my-website-not-showing-on-google",
+      "destination": "/blog/why-is-my-website-not-showing-on-google.html"
+    },
+    {
+      "source": "/blog/discovered-vs-crawled-currently-not-indexed",
+      "destination": "/blog/discovered-vs-crawled-currently-not-indexed.html"
+    },
+    {
+      "source": "/blog/impressions-but-no-clicks-search-console",
+      "destination": "/blog/impressions-but-no-clicks-search-console.html"
+    },
+    {
+      "source": "/blog/website-traffic-but-no-leads",
+      "destination": "/blog/website-traffic-but-no-leads.html"
+    },
+    {
+      "source": "/blog/why-is-seo-taking-so-long",
+      "destination": "/blog/why-is-seo-taking-so-long.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
