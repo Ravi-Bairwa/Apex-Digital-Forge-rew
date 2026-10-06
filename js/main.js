@@ -36,7 +36,7 @@ function showSvcTab(tab, btn) {
 
 function activateServiceHash() {
   var hash = window.location.hash.replace(/^#/, '');
-  if (!hash.indexOf('svcp-')) return;
+  if (hash.indexOf('svcp-') !== 0) return;
   var pane = document.getElementById(hash);
   if (!pane) return;
   document.querySelectorAll('.svcpane').forEach(function(s) { s.classList.remove('active'); });
