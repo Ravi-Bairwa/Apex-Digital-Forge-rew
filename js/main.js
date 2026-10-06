@@ -5,7 +5,11 @@
 // Page navigation — every page is its own real file now, so this just navigates there
 function showPage(page, e) {
   if (e) { e.preventDefault(); }
-  window.location.href = page === 'home' ? '/' : '/' + page;
+  var target = page === 'home' ? '/' : '/' + page;
+  if (e && e.currentTarget && e.currentTarget.getAttribute('href')) {
+    target = e.currentTarget.getAttribute('href');
+  }
+  window.location.href = target;
 }
 
 // Highlight the current page in the nav (desktop + mobile) on every page load
