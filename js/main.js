@@ -18,12 +18,29 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Pricing tabs
-function showPricing(tab) {
+function showPricing(tab, updateHash) {
   document.querySelectorAll('.psection').forEach(function(s) { s.classList.remove('active'); });
   document.querySelectorAll('.ptab').forEach(function(t) { t.classList.remove('active'); });
   var section = document.getElementById('ps-' + tab);
   if (section) section.classList.add('active');
-  if (event && event.target) event.target.classList.add('active');
+  var button = Array.prototype.find.call(document.querySelectorAll('.ptab'), function(t) {
+    return (t.getAttribute('onclick') || '').indexOf("showPricing('" + tab + "'") !== -1;
+  });
+  if (button) button.classList.add('active');
+  if (updateHash) window.history.replaceState(null, '', '#'+updateHash);
+}
+function activatePricingHash() {
+  var hash = window.location.hash.replace(/^#/, '');
+  var map = {
+    agencies: 'agencies',
+    businesses: 'businesses',
+    freelancers: 'freelancers',
+    'link-building': 'a-india',
+    webdev: 'webdev',
+    custom: 'custom'
+  };
+  var tab = map[hash];
+  if (tab) showPricing(tab, false);
 }
 
 function showSvcTab(tab, btn) {
@@ -48,6 +65,10 @@ function activateServiceHash() {
 }
 
 document.addEventListener('DOMContentLoaded', activateServiceHash);
+if (window.location.pathname === '/pricing' || window.location.pathname === '/pricing/') {
+  document.addEventListener('DOMContentLoaded', activatePricingHash);
+  window.addEventListener('hashchange', activatePricingHash);
+}
 window.addEventListener('hashchange', activateServiceHash);
 
 // SEO Audit form submission

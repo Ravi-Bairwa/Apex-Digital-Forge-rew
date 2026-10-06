@@ -213,39 +213,24 @@
   <ul class="nav-links">
     <li><a href="/" data-page="home" onclick="showPage('home', event)">Home</a></li>
     <li class="has-dropdown"><a href="/services" data-page="services" onclick="showPage('services', event)">Services</a>
-      <div class="nav-dropdown nav-mega-menu">
-        <div class="nav-dropdown-main">
-          <div class="nav-dropdown-col nav-dropdown-primary">
-            <div class="nav-dropdown-kicker">Core SEO</div>
-            <h4>Search foundations</h4>
-            <a href="/services#svcp-onpage" data-page="services"><span class="nav-item-title">On-Page SEO</span><span class="nav-item-desc">Content, metadata and page structure</span></a>
-            <a href="/services#svcp-technical" data-page="services"><span class="nav-item-title">Technical SEO</span><span class="nav-item-desc">Crawlability, indexation and performance</span></a>
-            <a href="/services#svcp-linkbuilding" data-page="services"><span class="nav-item-title">Link Building</span><span class="nav-item-desc">Relevant authority and publisher placements</span></a>
+      <div class="nav-dropdown services-menu">
+        <div class="services-menu-grid">
+          <div class="services-menu-col">
+            <div class="services-menu-label">SEO Services</div>
+            <a href="/pricing#businesses" data-page="pricing" onclick="showPage('pricing', event)">SEO for Businesses</a>
+            <a href="/pricing#agencies" data-page="pricing" onclick="showPage('pricing', event)">White-Label SEO</a>
+            <a href="/pricing#link-building" data-page="pricing" onclick="showPage('pricing', event)">Link Building</a>
           </div>
-          <div class="nav-dropdown-col">
-            <div class="nav-dropdown-kicker">Specialized SEO</div>
-            <h4>Built around the searcher</h4>
-            <a href="/services#svc-local" data-page="services"><span class="nav-item-title">Local SEO</span><span class="nav-item-desc">Visibility for local and regional searches</span></a>
-            <a href="/services#svc-ecommerce" data-page="services"><span class="nav-item-title">Ecommerce SEO</span><span class="nav-item-desc">Category, product and commercial search</span></a>
-            <a href="/services#svc-amazon" data-page="services"><span class="nav-item-title">Amazon SEO</span><span class="nav-item-desc">Product discovery within Amazon search</span></a>
-            <a href="/services#svc-b2b" data-page="services"><span class="nav-item-title">B2B SEO</span><span class="nav-item-desc">Search strategy for complex buying journeys</span></a>
-            <a href="/services#svc-geo" data-page="services"><span class="nav-item-title">AI SEO / GEO</span><span class="nav-item-desc">Optimize content for AI-driven discovery</span></a>
-          </div>
-          <div class="nav-dropdown-col">
-            <div class="nav-dropdown-kicker">For Agencies</div>
-            <h4>White-label delivery</h4>
-            <a href="/services#svc-whitelabel" data-page="services"><span class="nav-item-title">White-Label SEO</span><span class="nav-item-desc">Client-ready SEO delivery under your brand</span></a>
-            <a href="/services#svcp-linkbuilding" data-page="services"><span class="nav-item-title">White-Label Link Building</span><span class="nav-item-desc">Publisher outreach and placement delivery</span></a>
-            <a href="/services#svcp-technical" data-page="services"><span class="nav-item-title">White-Label Technical SEO</span><span class="nav-item-desc">Audits and implementation support</span></a>
-            <a href="/pricing" data-page="pricing" onclick="showPage('pricing', event)"><span class="nav-item-title">Agency Pricing</span><span class="nav-item-desc">Review packages and custom options</span></a>
+          <div class="services-menu-col">
+            <div class="services-menu-label">Solutions</div>
+            <a href="/pricing#freelancers" data-page="pricing" onclick="showPage('pricing', event)">SEO for Freelancers</a>
+            <a href="/pricing#webdev" data-page="pricing" onclick="showPage('pricing', event)">Web Development</a>
+            <a href="/pricing#custom" data-page="pricing" onclick="showPage('pricing', event)">Custom SEO Plan</a>
           </div>
         </div>
-        <div class="nav-dropdown-footer">
-          <div>
-            <strong>Not sure which service fits?</strong>
-            <span>Start with a practical SEO audit and identify the highest-priority opportunities.</span>
-          </div>
-          <a href="/seo-audit" data-page="seo-audit" onclick="showPage('seo-audit', event)" class="nav-dropdown-cta">Start Free SEO Audit <span aria-hidden="true">→</span></a>
+        <div class="services-menu-footer">
+          <span>Compare packages and choose the right scope for your project.</span>
+          <a href="/pricing" data-page="pricing" onclick="showPage('pricing', event)">View all pricing <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </li>
