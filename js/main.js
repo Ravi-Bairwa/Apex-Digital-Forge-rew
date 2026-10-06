@@ -34,6 +34,22 @@ function showSvcTab(tab, btn) {
   if (btn) btn.classList.add('active');
 }
 
+function activateServiceHash() {
+  var hash = window.location.hash.replace(/^#/, '');
+  if (hash.indexOf('svcp-') !== 0) return;
+  var pane = document.getElementById(hash);
+  if (!pane) return;
+  document.querySelectorAll('.svcpane').forEach(function(s) { s.classList.remove('active'); });
+  pane.classList.add('active');
+  var tab = document.querySelector('.svctab[onclick*="' + hash.replace('svcp-', '') + '"]');
+  document.querySelectorAll('.svctab').forEach(function(t) { t.classList.remove('active'); });
+  if (tab) tab.classList.add('active');
+  pane.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+document.addEventListener('DOMContentLoaded', activateServiceHash);
+window.addEventListener('hashchange', activateServiceHash);
+
 // SEO Audit form submission
 document.addEventListener('DOMContentLoaded', function() {
   var auditForm = document.getElementById('auditForm');
