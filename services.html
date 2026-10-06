@@ -213,27 +213,39 @@
   <ul class="nav-links">
     <li><a href="/" data-page="home" onclick="showPage('home', event)">Home</a></li>
     <li class="has-dropdown"><a href="/services" data-page="services" onclick="showPage('services', event)">Services</a>
-      <div class="nav-dropdown">
-        <div class="nav-dropdown-col">
-          <h4>SEO Services</h4>
-          <a href="/services#svcp-onpage" data-page="services">On-Page SEO</a>
-          <a href="/services#svcp-technical" data-page="services">Technical SEO</a>
-          <a href="/services#svcp-linkbuilding" data-page="services">Link Building</a>
+      <div class="nav-dropdown nav-mega-menu">
+        <div class="nav-dropdown-main">
+          <div class="nav-dropdown-col nav-dropdown-primary">
+            <div class="nav-dropdown-kicker">Core SEO</div>
+            <h4>Search foundations</h4>
+            <a href="/services#svcp-onpage" data-page="services"><span class="nav-item-title">On-Page SEO</span><span class="nav-item-desc">Content, metadata and page structure</span></a>
+            <a href="/services#svcp-technical" data-page="services"><span class="nav-item-title">Technical SEO</span><span class="nav-item-desc">Crawlability, indexation and performance</span></a>
+            <a href="/services#svcp-linkbuilding" data-page="services"><span class="nav-item-title">Link Building</span><span class="nav-item-desc">Relevant authority and publisher placements</span></a>
+          </div>
+          <div class="nav-dropdown-col">
+            <div class="nav-dropdown-kicker">Specialized SEO</div>
+            <h4>Built around the searcher</h4>
+            <a href="/services#svc-local" data-page="services"><span class="nav-item-title">Local SEO</span><span class="nav-item-desc">Visibility for local and regional searches</span></a>
+            <a href="/services#svc-ecommerce" data-page="services"><span class="nav-item-title">Ecommerce SEO</span><span class="nav-item-desc">Category, product and commercial search</span></a>
+            <a href="/services#svc-amazon" data-page="services"><span class="nav-item-title">Amazon SEO</span><span class="nav-item-desc">Product discovery within Amazon search</span></a>
+            <a href="/services#svc-b2b" data-page="services"><span class="nav-item-title">B2B SEO</span><span class="nav-item-desc">Search strategy for complex buying journeys</span></a>
+            <a href="/services#svc-geo" data-page="services"><span class="nav-item-title">AI SEO / GEO</span><span class="nav-item-desc">Optimize content for AI-driven discovery</span></a>
+          </div>
+          <div class="nav-dropdown-col">
+            <div class="nav-dropdown-kicker">For Agencies</div>
+            <h4>White-label delivery</h4>
+            <a href="/services#svc-whitelabel" data-page="services"><span class="nav-item-title">White-Label SEO</span><span class="nav-item-desc">Client-ready SEO delivery under your brand</span></a>
+            <a href="/services#svcp-linkbuilding" data-page="services"><span class="nav-item-title">White-Label Link Building</span><span class="nav-item-desc">Publisher outreach and placement delivery</span></a>
+            <a href="/services#svcp-technical" data-page="services"><span class="nav-item-title">White-Label Technical SEO</span><span class="nav-item-desc">Audits and implementation support</span></a>
+            <a href="/pricing" data-page="pricing" onclick="showPage('pricing', event)"><span class="nav-item-title">Agency Pricing</span><span class="nav-item-desc">Review packages and custom options</span></a>
+          </div>
         </div>
-        <div class="nav-dropdown-col">
-          <h4>Specialized SEO</h4>
-          <a href="/blog/local-seo-for-small-business">Local SEO</a>
-          <a href="/blog/seo-for-ecommerce-stores">Ecommerce SEO</a>
-          <a href="/blog/amazon-seo-optimization-guide">Amazon SEO</a>
-          <a href="/blog/b2b-seo-agency-services">B2B SEO</a>
-          <a href="/blog/ai-seo-2026">AI SEO / GEO</a>
-        </div>
-        <div class="nav-dropdown-col">
-          <h4>For Agencies & More</h4>
-          <a href="/blog/white-label-link-building-services">White-Label SEO</a>
-          <a href="/web-development" data-page="web-development" onclick="showPage('web-development', event)">Web Development</a>
-          <a href="/pricing" data-page="pricing" onclick="showPage('pricing', event)">Pricing</a>
-          <a href="/seo-audit" data-page="seo-audit" onclick="showPage('seo-audit', event)">Free SEO Audit</a>
+        <div class="nav-dropdown-footer">
+          <div>
+            <strong>Not sure which service fits?</strong>
+            <span>Start with a practical SEO audit and identify the highest-priority opportunities.</span>
+          </div>
+          <a href="/seo-audit" data-page="seo-audit" onclick="showPage('seo-audit', event)" class="nav-dropdown-cta">Start Free SEO Audit <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </li>
@@ -315,6 +327,20 @@
       <p>New: <span>Web development — SEO-ready websites built to your requirements.</span> Pricing is quoted to your website type.</p>
       <a href="/web-development" class="btn btn-dark" onclick="showPage('web-development', event)">Explore Web Development</a>
     </div>
+
+    <section class="service-specialties" aria-labelledby="specialized-seo-title">
+      <div class="sec-eyebrow">Specialized SEO</div>
+      <h2 id="specialized-seo-title" class="sec-title" style="font-size:36px;">SEO services built around your market</h2>
+      <p class="sec-sub">Choose a specialized SEO track when your business, sales cycle or search environment needs more than a general SEO programme.</p>
+      <div class="specialty-grid">
+        <article id="svc-local" class="specialty-card"><div class="specialty-card-label">Local</div><h3>Local SEO</h3><p>Improve local search visibility with location-focused content, on-site signals, internal linking and local search strategy.</p></article>
+        <article id="svc-ecommerce" class="specialty-card"><div class="specialty-card-label">Commerce</div><h3>Ecommerce SEO</h3><p>Strengthen category and product discovery with search-focused architecture, content and technical optimization.</p></article>
+        <article id="svc-amazon" class="specialty-card"><div class="specialty-card-label">Marketplace</div><h3>Amazon SEO</h3><p>Optimize product listings and supporting content to improve discoverability within Amazon's search environment.</p></article>
+        <article id="svc-b2b" class="specialty-card"><div class="specialty-card-label">B2B</div><h3>B2B SEO</h3><p>Build search visibility around complex products, services, decision-makers and longer buying journeys.</p></article>
+        <article id="svc-geo" class="specialty-card"><div class="specialty-card-label">AI Search</div><h3>AI SEO / GEO</h3><p>Structure useful, factual content and entity signals to support discovery across AI-powered search experiences.</p></article>
+        <article id="svc-whitelabel" class="specialty-card"><div class="specialty-card-label">Agencies</div><h3>White-Label SEO</h3><p>Extend your agency's delivery capacity with client-ready SEO support that can operate under your brand.</p></article>
+      </div>
+    </section>
 
     <div class="svctabs" style="margin-top:48px;">
       <button class="svctab active" onclick="showSvcTab('linkbuilding', this)">🔗 Link Building</button>

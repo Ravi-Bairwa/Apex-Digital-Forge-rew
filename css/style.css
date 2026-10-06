@@ -937,6 +937,178 @@ img[src$="logo_apex.png"] { border-radius: 50%; width: 32px !important; height: 
   background: rgba(255,255,255,.98);
   box-shadow: 0 20px 48px rgba(15,23,42,.14);
 }
+.nav-mega-menu {
+  width: min(1180px, calc(100vw - 40px));
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  border-radius: 14px;
+}
+.nav-dropdown-main {
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr 1fr;
+  gap: 0;
+}
+.nav-dropdown-col {
+  padding: 28px 30px;
+  min-width: 0;
+}
+.nav-dropdown-col + .nav-dropdown-col {
+  border-left: 1px solid var(--border);
+}
+.nav-dropdown-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 7px;
+}
+.nav-dropdown-col h4 {
+  color: var(--white);
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+  margin: 0 0 14px;
+}
+.nav-dropdown-col a {
+  margin: 0 -10px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  white-space: normal;
+  text-decoration: none;
+  transition: background .16s ease, color .16s ease, transform .16s ease;
+}
+.nav-dropdown-col a:hover {
+  color: var(--white);
+  background: rgba(255,255,255,.055);
+  transform: translateX(2px);
+}
+.nav-item-title {
+  display: block;
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.nav-item-desc {
+  display: block;
+  color: var(--muted2);
+  font-size: 11px;
+  line-height: 1.45;
+  margin-top: 2px;
+}
+.nav-dropdown-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 24px;
+  background: rgba(255,255,255,.035);
+  border-top: 1px solid var(--border);
+}
+.nav-dropdown-footer strong {
+  display: block;
+  color: var(--white);
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+.nav-dropdown-footer span {
+  color: var(--muted2);
+  font-size: 11px;
+}
+.nav-dropdown-cta {
+  flex: 0 0 auto;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px !important;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff !important;
+  font-size: 11px !important;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform .16s ease, opacity .16s ease;
+}
+.nav-dropdown-cta:hover {
+  color: #fff !important;
+  background: var(--accent);
+  transform: translateY(-1px);
+  opacity: .92;
+}
+[data-theme="light"] .nav-dropdown-footer {
+  background: rgba(15,23,42,.035);
+}
+[data-theme="light"] .nav-dropdown-col + .nav-dropdown-col {
+  border-left-color: var(--border);
+}
+.service-specialties {
+  margin-top: 72px;
+  scroll-margin-top: 100px;
+}
+.specialty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+.specialty-card {
+  padding: 24px;
+  background: var(--dark2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  scroll-margin-top: 100px;
+}
+.specialty-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 9px;
+}
+.specialty-card h3 {
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+.specialty-card p {
+  color: var(--muted2);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+@media (max-width: 1100px) {
+  .nav-mega-menu {
+    width: min(1000px, calc(100vw - 32px));
+  }
+  .nav-dropdown-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nav-dropdown-col:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .specialty-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .nav-dropdown-main,
+  .specialty-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-dropdown-col + .nav-dropdown-col {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .nav-dropdown-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
 /* No extra breakpoint needed: .nav-links (and this dropdown with it) is
    already hidden below 1101px by the existing nav media query above,
    replaced by the hamburger / mobile-menu panel. */
