@@ -23,7 +23,9 @@ function showPricing(tab, updateHash) {
   document.querySelectorAll('.ptab').forEach(function(t) { t.classList.remove('active'); });
   var section = document.getElementById('ps-' + tab);
   if (section) section.classList.add('active');
-  var button = document.querySelector('.ptab[onclick*="showPricing(\\'' + tab + '\\'")');
+  var button = Array.prototype.find.call(document.querySelectorAll('.ptab'), function(t) {
+    return (t.getAttribute('onclick') || '').indexOf("showPricing('" + tab + "'") !== -1;
+  });
   if (button) button.classList.add('active');
   if (updateHash) window.history.replaceState(null, '', '#'+updateHash);
 }
