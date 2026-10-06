@@ -889,7 +889,7 @@ img[src$="logo_apex.png"] { border-radius: 50%; width: 32px !important; height: 
 .nav-dropdown {
   display: grid;
   position: absolute;
-  top: calc(100% + 10px);
+  top: calc(100% - 1px);
   left: 50%;
   width: min(1100px, calc(100vw - 48px));
   transform: translate(-50%, 0);
