@@ -929,6 +929,34 @@
       "destination": "/blog/why-is-seo-taking-so-long.html"
     },
     {
+      "source": "/blog/how-to-increase-organic-traffic",
+      "destination": "/blog/how-to-increase-organic-traffic.html"
+    },
+    {
+      "source": "/blog/how-to-get-on-the-first-page-of-google",
+      "destination": "/blog/how-to-get-on-the-first-page-of-google.html"
+    },
+    {
+      "source": "/blog/do-backlinks-still-matter",
+      "destination": "/blog/do-backlinks-still-matter.html"
+    },
+    {
+      "source": "/blog/why-is-my-competitor-ranking-higher-than-me",
+      "destination": "/blog/why-is-my-competitor-ranking-higher-than-me.html"
+    },
+    {
+      "source": "/blog/what-is-organic-traffic",
+      "destination": "/blog/what-is-organic-traffic.html"
+    },
+    {
+      "source": "/blog/seo-vs-ppc",
+      "destination": "/blog/seo-vs-ppc.html"
+    },
+    {
+      "source": "/blog/seo-audit-score-explained",
+      "destination": "/blog/seo-audit-score-explained.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
