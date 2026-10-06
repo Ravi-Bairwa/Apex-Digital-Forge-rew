@@ -871,21 +871,15 @@ img[src$="logo_apex.png"] { border-radius: 50%; width: 32px !important; height: 
 .nav-links li.has-dropdown { position: static; }
 .nav-links li.has-dropdown > a::after { content: '▾'; font-size: 10px; margin-left: 5px; opacity: .6; }
 
-/* Keep a continuous hover corridor between the Services trigger and menu. */
-.nav-links li.has-dropdown::after {
+/* Keep the hover path continuous between the Services trigger and dropdown. */
+.nav-dropdown::before {
   content: '';
   position: absolute;
-  left: 50%;
-  top: 100%;
-  width: 320px;
+  top: -18px;
+  left: 0;
+  right: 0;
   height: 18px;
-  transform: translateX(-50%);
 }
-.nav-links li.has-dropdown:hover::after,
-.nav-links li.has-dropdown:focus-within::after {
-  pointer-events: auto;
-}
-
 .nav-dropdown {
   display: grid;
   position: absolute;
