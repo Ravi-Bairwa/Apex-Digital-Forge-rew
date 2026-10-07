@@ -476,7 +476,42 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach(function(s){ obs.observe(s); });
   }
 
-  function initAll(){
+  function initServicesDropdown(){
+  document.querySelectorAll('.nav-links > li > a[href="/services"]').forEach(function(link){
+    var item = link.parentElement;
+    if(!item || item.classList.contains('has-dropdown') || item.querySelector('.nav-dropdown')) return;
+
+    item.classList.add('has-dropdown');
+    var dropdown = document.createElement('div');
+    dropdown.className = 'nav-dropdown';
+    dropdown.innerHTML =
+      '<div class="nav-dropdown-col">' +
+        '<h4>SEO Services</h4>' +
+        '<a href="/services#svcp-onpage" data-page="services">On-Page SEO</a>' +
+        '<a href="/services#svcp-technical" data-page="services">Technical SEO</a>' +
+        '<a href="/services#svcp-linkbuilding" data-page="services">Link Building</a>' +
+      '</div>' +
+      '<div class="nav-dropdown-col">' +
+        '<h4>Specialized SEO</h4>' +
+        '<a href="/blog/local-seo-for-small-business">Local SEO</a>' +
+        '<a href="/blog/seo-for-ecommerce-stores">Ecommerce SEO</a>' +
+        '<a href="/blog/amazon-seo-optimization-guide">Amazon SEO</a>' +
+        '<a href="/blog/b2b-seo-agency-services">B2B SEO</a>' +
+        '<a href="/blog/ai-seo-2026">AI SEO / GEO</a>' +
+      '</div>' +
+      '<div class="nav-dropdown-col">' +
+        '<h4>For Agencies & More</h4>' +
+        '<a href="/blog/white-label-link-building-services">White-Label SEO</a>' +
+        '<a href="/web-development" data-page="web-development" onclick="showPage(\'web-development\', event)">Web Development</a>' +
+        '<a href="/pricing" data-page="pricing" onclick="showPage(\'pricing\', event)">Pricing</a>' +
+        '<a href="/seo-audit" data-page="seo-audit" onclick="showPage(\'seo-audit\', event)">Free SEO Audit</a>' +
+      '</div>';
+    item.appendChild(dropdown);
+  });
+}
+
+function initAll(){
+    initServicesDropdown();
     initAuthorityEngine();
     initScanBeam();
     initCountUp();
