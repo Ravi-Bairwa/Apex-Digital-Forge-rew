@@ -7,7 +7,7 @@
 
 ## About
 
-Apex Digital Forge is India's leading white-label SEO backlink agency. We offer premium DA 50–90 backlinks, guest posts, niche edits, homepage links, press release links, and full SEO packages for agencies and direct clients worldwide.
+Apex Digital Forge is India's leading white-label SEO backlink agency. We offer DA 50–90 placements available, guest posts, niche edits, homepage links, press release links, and full SEO packages for agencies and direct clients worldwide.
 
 **Contact:**
 - Email: apexdigitalforge@gmail.com
