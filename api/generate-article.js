@@ -270,6 +270,11 @@ function buildArticlePage(templateHtml, data) {
     `<meta property="og:title" content="${escapeHtml(data.title)} | Apex Digital Forge">`);
   html = html.replace(/<meta property="og:description" content="[^"]*">/,
     `<meta property="og:description" content="${escapeHtml(data.metaDescription)}">`);
+  // Keep generated Twitter metadata aligned with the article's own SEO metadata.
+  html = html.replace(/<meta name="twitter:title" content="[^"]*">/,
+    `<meta name="twitter:title" content="${escapeHtml(data.title)} | Apex Digital Forge">`);
+  html = html.replace(/<meta name="twitter:description" content="[^"]*">/,
+    `<meta name="twitter:description" content="${escapeHtml(data.metaDescription)}">`);
   html = html.replace(/<meta property="og:url" content="[^"]*">/,
     `<meta property="og:url" content="${url}">`);
   html = html.replace(/<link rel="canonical" href="[^"]*" id="canonical-tag">/,
