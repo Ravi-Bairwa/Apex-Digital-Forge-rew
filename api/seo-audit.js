@@ -69,7 +69,7 @@ module.exports = async function handler(req, res) {
     try {
       const replyHtml = `
         <h2>Thanks for requesting a free SEO audit, ${escapeHtml(name)}!</h2>
-        <p>We're reviewing <strong>${escapeHtml(websiteUrl)}</strong> now. You'll receive your full audit report within 24–48 hours.</p>
+        <p>We're reviewing <strong>${escapeHtml(websiteUrl)}</strong> now. We'll confirm the audit scope and estimated delivery timing separately.</p>
         <p>This is an automated message — please don't reply to it. For anything else, email us directly at apexdigitalforge@gmail.com.</p>
         <p>— The Apex Digital Forge Team</p>
       `;
