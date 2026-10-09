@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
           msg.style.background = 'rgba(34,197,94,0.1)';
           msg.style.border = '1px solid rgba(34,197,94,0.3)';
           msg.style.color = '#4ade80';
-          msg.textContent = '✓ Audit request received! We\'ll send your report within 24–48 hours.';
+          msg.textContent = '✓ Audit request received! We\'ll confirm the audit scope and estimated delivery timing.';
           auditForm.reset();
         } else {
           throw new Error('Failed');
