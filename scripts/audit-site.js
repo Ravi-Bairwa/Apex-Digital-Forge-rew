@@ -132,9 +132,26 @@ for (const url of sitemapUrls) {
   if (h1Count > 1) report('warning', url, 'Multiple H1 headings found (' + h1Count + ').');
 
   const jsonLdBlocks = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
+  const schemaTypes = new Set();
+  function collectSchemaTypes(value) {
+    if (!value || typeof value !== 'object') return;
+    if (value['@type']) {
+      const types = Array.isArray(value['@type']) ? value['@type'] : [value['@type']];
+      for (const type of types) schemaTypes.add(type);
+    }
+    if (Array.isArray(value)) for (const item of value) collectSchemaTypes(item);
+    if (value['@graph']) collectSchemaTypes(value['@graph']);
+  }
   for (let i = 0; i < jsonLdBlocks.length; i++) {
-    try { JSON.parse(jsonLdBlocks[i][1]); }
+    try { collectSchemaTypes(JSON.parse(jsonLdBlocks[i][1])); }
     catch { report('error', url, 'Invalid JSON-LD in schema block #' + (i + 1) + '.'); }
+  }
+  if (!jsonLdBlocks.length) report('warning', url, 'No JSON-LD structured data found.');
+  if (url.includes('/blog/') && !['BlogPosting', 'Article', 'NewsArticle'].some(type => schemaTypes.has(type))) {
+    report('warning', url, 'No Article/BlogPosting schema found for this blog article.');
+  }
+  if (!url.endsWith('/blog') && !schemaTypes.has('Organization')) {
+    report('warning', url, 'No Organization schema found.');
   }
 
   // Check local links and assets in the original HTML source. Ignore mailto:, tel:, data: and JS links.
