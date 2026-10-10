@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Apex Digital Forge — White-Label SEO Backlink Agency Website",
   "scripts": {
-    "local-dev-server": "node server.js"
+    "local-dev-server": "node server.js",
+    "audit:site": "node scripts/audit-site.js"
   },
   "keywords": [
     "seo",
