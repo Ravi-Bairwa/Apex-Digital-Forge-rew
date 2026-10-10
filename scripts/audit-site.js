@@ -31,8 +31,18 @@ function allTags(html, name) {
 function firstMeta(html, key, value) {
   return allTags(html, 'meta').find(a => (a[key] || '').toLowerCase() === value.toLowerCase()) || {};
 }
+function decodeEntities(s) {
+  return String(s || '')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&apos;|&#39;|&#x27;/gi, "'")
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)));
+}
 function cleanText(s) {
-  return String(s || '').replace(/<[^>]*>/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+  return decodeEntities(String(s || '').replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim();
 }
 function sourcePathForUrl(raw) {
   const u = new URL(raw);
@@ -115,7 +125,7 @@ for (const url of sitemapUrls) {
   if (!title) report('error', url, 'Missing or empty <title>.');
   else if (title.length > 70) report('warning', url, 'Title exceeds 70 characters (' + title.length + ').');
   if (!description.trim()) report('error', url, 'Missing or empty meta description.');
-  else if (description.trim().length < 70 || description.trim().length > 170) report('warning', url, 'Meta description length is ' + description.trim().length + ' characters (review 70–170).');
+  else if (decodeEntities(description.trim()).length < 70 || decodeEntities(description.trim()).length > 170) report('warning', url, 'Meta description length is ' + decodeEntities(description.trim()).length + ' characters (review 70–170).');
   if (!canonical) report('error', url, 'Missing canonical link.');
   else {
     try {
