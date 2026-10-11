@@ -92,6 +92,8 @@ for (const url of sitemapUrls) {
   seenUrls.add(url);
 }
 const routeToCanonical = new Map();
+const titleToUrl = new Map();
+const descriptionToUrl = new Map();
 for (const url of sitemapUrls) {
   try {
     const u = new URL(url);
@@ -120,12 +122,25 @@ for (const url of sitemapUrls) {
   const canonical = allTags(html, 'link').find(a => (a.rel || '').toLowerCase().split(/\s+/).includes('canonical'))?.href || '';
   const ogTitle = firstMeta(html, 'property', 'og:title').content || '';
   const twitterTitle = firstMeta(html, 'name', 'twitter:title').content || '';
+  const ogDescription = firstMeta(html, 'property', 'og:description').content || '';
+  const ogUrl = firstMeta(html, 'property', 'og:url').content || '';
+  const twitterCard = firstMeta(html, 'name', 'twitter:card').content || '';
   const h1Count = (html.match(/<h1\b/gi) || []).length;
 
   if (!title) report('error', url, 'Missing or empty <title>.');
-  else if (title.length > 70) report('warning', url, 'Title exceeds 70 characters (' + title.length + ').');
+  else {
+    const normalizedTitle = title.toLowerCase();
+    if (titleToUrl.has(normalizedTitle)) report('warning', url, 'Duplicate title also used by ' + titleToUrl.get(normalizedTitle) + '.');
+    else titleToUrl.set(normalizedTitle, url);
+  }
+  if (title && title.length > 70) report('warning', url, 'Title exceeds 70 characters (' + title.length + ').');
   if (!description.trim()) report('error', url, 'Missing or empty meta description.');
-  else if (decodeEntities(description.trim()).length < 70 || decodeEntities(description.trim()).length > 170) report('warning', url, 'Meta description length is ' + decodeEntities(description.trim()).length + ' characters (review 70–170).');
+  else {
+    const normalizedDescription = decodeEntities(description.trim()).toLowerCase().replace(/\\s+/g, ' ');
+    if (descriptionToUrl.has(normalizedDescription)) report('warning', url, 'Duplicate meta description also used by ' + descriptionToUrl.get(normalizedDescription) + '.');
+    else descriptionToUrl.set(normalizedDescription, url);
+  }
+  if (description.trim() && (decodeEntities(description.trim()).length < 70 || decodeEntities(description.trim()).length > 170)) report('warning', url, 'Meta description length is ' + decodeEntities(description.trim()).length + ' characters (review 70–170).');
   if (!canonical) report('error', url, 'Missing canonical link.');
   else {
     try {
@@ -137,7 +152,18 @@ for (const url of sitemapUrls) {
     } catch { report('error', url, 'Invalid canonical URL: ' + canonical); }
   }
   if (!ogTitle.trim()) report('error', url, 'Missing Open Graph title.');
+  if (!ogDescription.trim()) report('error', url, 'Missing Open Graph description.');
+  if (!ogUrl.trim()) report('error', url, 'Missing Open Graph URL.');
+  else {
+    try {
+      const actualOgUrl = new URL(ogUrl, url);
+      if (!SITE_HOSTS.has(actualOgUrl.hostname) || normalizePath(actualOgUrl.pathname) !== normalizePath(new URL(url).pathname) || actualOgUrl.search || actualOgUrl.hash) {
+        report('error', url, 'Open Graph URL does not match the sitemap route: ' + ogUrl);
+      }
+    } catch { report('error', url, 'Invalid Open Graph URL: ' + ogUrl); }
+  }
   if (!twitterTitle.trim()) report('error', url, 'Missing Twitter title.');
+  if (!twitterCard.trim()) report('error', url, 'Missing Twitter card type.');
   if (h1Count === 0) report('warning', url, 'No H1 heading found.');
   if (h1Count > 1) report('warning', url, 'Multiple H1 headings found (' + h1Count + ').');
 
