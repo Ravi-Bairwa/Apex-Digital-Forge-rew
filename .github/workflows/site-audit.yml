@@ -19,5 +19,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+      - name: Check JavaScript syntax
+        run: |
+          node --check api/contact.js
+          node --check scripts/audit-site.js
       - name: Run sitemap-wide SEO audit
         run: npm run audit:site
