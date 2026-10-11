@@ -152,6 +152,7 @@ for (const url of sitemapUrls) {
     } catch { report('error', url, 'Invalid canonical URL: ' + canonical); }
   }
   if (!ogTitle.trim()) report('error', url, 'Missing Open Graph title.');
+  else if (decodeEntities(ogTitle.trim()) !== title) report('warning', url, 'Open Graph title differs from <title>.');
   if (!ogDescription.trim()) report('error', url, 'Missing Open Graph description.');
   if (!ogUrl.trim()) report('error', url, 'Missing Open Graph URL.');
   else {
@@ -163,6 +164,7 @@ for (const url of sitemapUrls) {
     } catch { report('error', url, 'Invalid Open Graph URL: ' + ogUrl); }
   }
   if (!twitterTitle.trim()) report('error', url, 'Missing Twitter title.');
+  else if (decodeEntities(twitterTitle.trim()) !== title) report('warning', url, 'Twitter title differs from <title>.');
   if (!twitterCard.trim()) report('error', url, 'Missing Twitter card type.');
   if (h1Count === 0) report('warning', url, 'No H1 heading found.');
   if (h1Count > 1) report('warning', url, 'Multiple H1 headings found (' + h1Count + ').');
