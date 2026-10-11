@@ -136,7 +136,7 @@ for (const url of sitemapUrls) {
   if (title && title.length > 70) report('warning', url, 'Title exceeds 70 characters (' + title.length + ').');
   if (!description.trim()) report('error', url, 'Missing or empty meta description.');
   else {
-    const normalizedDescription = decodeEntities(description.trim()).toLowerCase().replace(/\\s+/g, ' ');
+    const normalizedDescription = decodeEntities(description.trim()).toLowerCase().replace(/\s+/g, ' ');
     if (descriptionToUrl.has(normalizedDescription)) report('warning', url, 'Duplicate meta description also used by ' + descriptionToUrl.get(normalizedDescription) + '.');
     else descriptionToUrl.set(normalizedDescription, url);
   }
