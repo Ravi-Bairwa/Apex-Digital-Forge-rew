@@ -72,7 +72,7 @@ module.exports = async function handler(req, res) {
     try {
       const replyHtml = `
         <h2>Thanks for reaching out, ${escapeHtml(name)}!</h2>
-        <p>We've received your inquiry and our team will get back to you within 2–5 hours.</p>
+        <p>We've received your inquiry. We review messages during business hours and will follow up as soon as we can.</p>
         <p>This is an automated message — please don't reply to it. If you'd like to add anything in the meantime, email us directly at apexdigitalforge@gmail.com.</p>
         <p>— The Apex Digital Forge Team</p>
       `;
