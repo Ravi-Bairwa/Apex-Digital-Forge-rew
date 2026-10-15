@@ -445,7 +445,7 @@ footer { background: var(--dark); border-top: 1px solid var(--border); padding: 
 
 /* Nav active state */
 .nav-links a.active-nav { color: var(--white); }
-.nav-links a.active-nav::after { content: ''; display: block; height: 2px; background: var(--accent); margin-top: 2px; border-radius: 2px; }
+.nav-links a.active-nav { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
 
 
 /* ─── BLOG PAGE ─── */
@@ -1020,3 +1020,9 @@ img[src$="logo_apex.png"] { border-radius: 50%; width: 32px !important; height: 
 /* No extra breakpoint needed: .nav-links (and this dropdown with it) is
    already hidden below 1101px by the existing nav media query above,
    replaced by the hamburger / mobile-menu panel. */
+
+/* Nav consistency: keep logo, links and buttons from colliding on any page */
+nav { gap: clamp(12px, 1.6vw, 28px); }
+.nav-logo { flex-shrink: 0; }
+.nav-links { min-width: 0; }
+.nav-right .btn { white-space: nowrap; }
