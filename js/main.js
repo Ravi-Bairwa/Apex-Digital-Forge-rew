@@ -486,13 +486,13 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdown.className = 'nav-dropdown';
     dropdown.innerHTML =
       '<div class="nav-dropdown-col">' +
-        '<h4>SEO Services</h4>' +
+        '<div class=\"nav-dd-title\">SEO Services</div>' +
         '<a href="/services#svcp-onpage" data-page="services">On-Page SEO</a>' +
         '<a href="/services#svcp-technical" data-page="services">Technical SEO</a>' +
         '<a href="/services#svcp-linkbuilding" data-page="services">Link Building</a>' +
       '</div>' +
       '<div class="nav-dropdown-col">' +
-        '<h4>Specialized SEO</h4>' +
+        '<div class=\"nav-dd-title\">Specialized SEO</div>' +
         '<a href="/blog/local-seo-for-small-business">Local SEO</a>' +
         '<a href="/blog/seo-for-ecommerce-stores">Ecommerce SEO</a>' +
         '<a href="/blog/amazon-seo-optimization-guide">Amazon SEO</a>' +
@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded', function() {
         '<a href="/blog/ai-seo-2026">AI SEO / GEO</a>' +
       '</div>' +
       '<div class="nav-dropdown-col">' +
-        '<h4>For Agencies & More</h4>' +
+        '<div class=\"nav-dd-title\">For Agencies & More</div>' +
         '<a href="/blog/white-label-link-building-services">White-Label SEO</a>' +
         '<a href="/web-development" data-page="web-development" onclick="showPage(\'web-development\', event)">Web Development</a>' +
         '<a href="/pricing" data-page="pricing" onclick="showPage(\'pricing\', event)">Pricing</a>' +
