@@ -955,10 +955,6 @@
     {
       "source": "/blog/seo-audit-score-explained",
       "destination": "/blog/seo-audit-score-explained.html"
-    },
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/index.html"
     }
   ]
 }

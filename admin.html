@@ -117,7 +117,7 @@ More content..."></textarea>
       var data = await res.json();
       if (res.ok && data.success) {
         status.className = 'admin-status show ok';
-        status.innerHTML = 'Published! <a href="' + data.url + '" target="_blank">' + data.url + '</a> - ' + data.message;
+        status.innerHTML = 'Published! <a href="' + data.url + '" target="_blank" rel="noopener">' + data.url + '</a> - ' + data.message;
         titleEl.value = '';
         metaEl.value = '';
         contentEl.value = '';
