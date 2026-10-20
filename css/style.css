@@ -123,10 +123,10 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .sec-sub { font-size: 17px; color: var(--muted2); max-width: 540px; line-height: 1.8; }
 
 /* ─── STATS ROW ─── */
-.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 60px; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-.stat-block { padding: 36px 28px; background: var(--dark2); text-align: center; }
+.stats-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2px; margin-top: 60px; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.stat-block { padding: 32px 18px; background: var(--dark2); text-align: center; min-width: 0; }
 .stat-block:not(:last-child) { border-right: 1px solid var(--border); }
-.stat-big { font-family: var(--font-heading); font-size: 48px; font-weight: 800; color: var(--white); line-height: 1; margin-bottom: 8px; }
+.stat-big { font-family: var(--font-heading); font-size: clamp(18px, 1.9vw, 26px); font-weight: 800; color: var(--white); line-height: 1.15; margin-bottom: 10px; overflow-wrap: anywhere; }
 .stat-big span { color: var(--accent); }
 .stat-desc { font-size: 14px; color: var(--muted); }
 
