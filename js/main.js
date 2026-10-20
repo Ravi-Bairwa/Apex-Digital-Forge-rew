@@ -544,26 +544,3 @@ function adfApplyThemeColor(){
   m.setAttribute('content',t==='light'?'#ffffff':'#0a0710');
 }
 adfApplyThemeColor();
-
-
-/* Keep backlink-trial CTA wording consistent across all static pages. */
-(function(){
-  function updateBacklinkTrialCtas(){
-    document.querySelectorAll('.topbar-full-link').forEach(function(link){
-      if(link.textContent.trim()==='Check trial availability') link.textContent='Claim Free Backlinks';
-    });
-    document.querySelectorAll('.topbar-short-link').forEach(function(link){
-      var label=link.textContent.trim();
-      if(label==='Ask about a trial' || label==='Get Trial') link.textContent='Free Trial Backlinks';
-    });
-    document.querySelectorAll('a[href="/contact"]').forEach(function(link){
-      var label=link.textContent.trim();
-      if(label==='Ask About Trial Availability' || label==='Ask About Trial') link.textContent='Claim Free Backlinks';
-    });
-  }
-  if(document.readyState==='loading'){
-    document.addEventListener('DOMContentLoaded', updateBacklinkTrialCtas);
-  } else {
-    updateBacklinkTrialCtas();
-  }
-})();
