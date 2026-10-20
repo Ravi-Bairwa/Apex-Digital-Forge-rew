@@ -817,7 +817,8 @@ body, nav, .mobile-menu, .site-aurora { transition: background-color .4s ease, c
 [data-theme="apex"] .hero-grid-floor { background-image: linear-gradient(rgba(255,46,166,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,46,166,.18) 1px, transparent 1px); }
 
 /* Rounded logo mark instead of a hard white square */
-img[src$="logo_apex.png"] { border-radius: 50%; width: 32px !important; height: 32px !important; object-fit: cover !important; }
+img[src$="logo_apex.png"],
+img[src$="logo_apex.webp"] { border-radius: 50%; width: 32px !important; height: 32px !important; object-fit: cover !important; }
 
 /* Nav: one consistent full menu on every laptop and desktop (>1100px). Sizes scale with the
    window so eight links and two buttons always fit on one row. The hamburger appears only
