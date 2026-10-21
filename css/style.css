@@ -1029,3 +1029,23 @@ nav { gap: clamp(12px, 1.6vw, 28px); }
 .nav-logo { flex-shrink: 0; }
 .nav-links { min-width: 0; }
 .nav-right .btn { white-space: nowrap; }
+
+/* Mobile polish and light-theme readability (Oct 21) */
+@media (max-width: 640px) {
+  .topbar { padding: 4px 4%; font-size: 12px; }
+  .topbar a:not(.topbar-full-link) { display: inline-block; padding: 7px 3px; }
+}
+@media (max-width: 480px) {
+  .proof-num { font-size: clamp(20px, 6.2vw, 26px); white-space: nowrap; }
+  .seo-audit-banner-grid { padding: 28px 20px; }
+  .seo-audit-banner-grid h2 { font-size: 22px !important; }
+  .ae-graph { left: 74% !important; }
+  .ae-label { font-size: 11px; }
+}
+[data-theme="light"] .card-da-gold { background: rgba(217,119,6,0.14); color: #92400e; }
+[data-theme="light"] .yes { color: #15803d; }
+[data-theme="light"] [style*="color:#4ade80"] { color: #15803d !important; }
+[data-theme="light"] [style*="color:#10b981"] { color: #047857 !important; }
+[data-theme="light"] [style*="color:#f59e0b"] { color: #b45309 !important; }
+[data-theme="light"] a[href*="clutch.co"], [data-theme="light"] a[href*="goodfirms.co"], [data-theme="light"] a[href*="crunchbase.com"] { color: #475569 !important; border-color: #cbd5e1 !important; }
+@media (max-width: 640px) { input, select, textarea { font-size: 16px !important; } }
