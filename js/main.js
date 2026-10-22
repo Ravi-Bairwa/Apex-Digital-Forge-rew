@@ -544,3 +544,41 @@ function adfApplyThemeColor(){
   m.setAttribute('content',t==='light'?'#ffffff':'#0a0710');
 }
 adfApplyThemeColor();
+
+
+// Regional pricing: visitors in India see INR rates, everyone else sees USD rates.
+// Elements with data-usd / data-inr swap their text; .geo-intl-only is hidden in India.
+(function () {
+  var style = document.createElement('style');
+  style.textContent = 'html[data-region="IN"] .geo-intl-only{display:none !important}';
+  document.head.appendChild(style);
+
+  function apply(region) {
+    document.documentElement.setAttribute('data-region', region);
+    var key = region === 'IN' ? 'data-inr' : 'data-usd';
+    document.querySelectorAll('[data-usd][data-inr]').forEach(function (el) {
+      el.textContent = el.getAttribute(key);
+    });
+  }
+  function guess() {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if (tz === 'Asia/Kolkata' || tz === 'Asia/Calcutta') return 'IN';
+    } catch (e) {}
+    return 'INTL';
+  }
+  function cached() {
+    try { return sessionStorage.getItem('adf_region'); } catch (e) { return null; }
+  }
+  function run() {
+    if (!document.querySelector('[data-usd][data-inr]')) return;
+    apply(cached() || guess());
+    fetch('/api/geo', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
+      if (!d || !d.country) return;
+      var region = d.country === 'IN' ? 'IN' : 'INTL';
+      try { sessionStorage.setItem('adf_region', region); } catch (e) {}
+      apply(region);
+    }).catch(function () {});
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
