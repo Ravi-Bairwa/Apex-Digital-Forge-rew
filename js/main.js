@@ -21,31 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
   navLinks.forEach(function(a) { a.classList.add('active-nav'); });
 });
 
-// Pricing tabs
-function showPricing(tab, updateHash) {
-  document.querySelectorAll('.psection').forEach(function(s) { s.classList.remove('active'); });
-  document.querySelectorAll('.ptab').forEach(function(t) { t.classList.remove('active'); });
-  var section = document.getElementById('ps-' + tab);
-  if (section) section.classList.add('active');
-  var button = Array.prototype.find.call(document.querySelectorAll('.ptab'), function(t) {
-    return (t.getAttribute('onclick') || '').indexOf("showPricing('" + tab + "'") !== -1;
-  });
-  if (button) button.classList.add('active');
-  if (updateHash) window.history.replaceState(null, '', '#'+updateHash);
-}
-function activatePricingHash() {
-  var hash = window.location.hash.replace(/^#/, '');
-  var map = {
-    agencies: 'agencies',
-    businesses: 'businesses',
-    freelancers: 'freelancers',
-    'link-building': 'a-india',
-    webdev: 'webdev',
-    custom: 'custom'
-  };
-  var tab = map[hash];
-  if (tab) showPricing(tab, false);
-}
+// Pricing is a single page now (no tabs). Kept as a safe no-op so old links and cached pages don't error.
+function showPricing(tab, updateHash) {}
+function activatePricingHash() {}
 
 function showSvcTab(tab, btn) {
   document.querySelectorAll('.svcpane').forEach(function(s) { s.classList.remove('active'); });
