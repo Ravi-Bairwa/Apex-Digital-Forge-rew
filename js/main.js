@@ -509,9 +509,9 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdown.innerHTML =
       '<div class="nav-dropdown-col">' +
         '<div class=\"nav-dd-title\">SEO Services</div>' +
-        '<a href="/services#svcp-onpage" data-page="services">On-Page SEO</a>' +
-        '<a href="/services#svcp-technical" data-page="services">Technical SEO</a>' +
-        '<a href="/services#svcp-linkbuilding" data-page="services">Link Building</a>' +
+        '<a href="/seo-services#svcp-onpage" data-page="seo-services">On-Page SEO</a>' +
+        '<a href="/seo-services#svcp-technical" data-page="seo-services">Technical SEO</a>' +
+        '<a href="/seo-services#svcp-linkbuilding" data-page="seo-services">Link Building</a>' +
       '</div>' +
       '<div class="nav-dropdown-col">' +
         '<div class=\"nav-dd-title\">Specialized SEO</div>' +
