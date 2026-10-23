@@ -56,7 +56,9 @@ module.exports = async function handler(req, res) {
         from: 'Apex Digital Forge <noreply@apexdigitalforge.in>',
         to: ['apexdigitalforge@gmail.com'],
         reply_to: email,
-        subject: `New Contact Lead — ${name}`,
+        subject: service === 'White-Label Partnership'
+          ? `New White-Label Partnership Lead — ${name}`
+          : `New Contact Lead — ${name}`,
         html
       })
     });
