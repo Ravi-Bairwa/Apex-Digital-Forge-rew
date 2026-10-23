@@ -171,6 +171,11 @@
       "source": "/seo-audit.html",
       "destination": "/seo-audit",
       "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -985,6 +990,10 @@
     {
       "source": "/refund-policy",
       "destination": "/refund-policy.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
     }
   ]
 }
