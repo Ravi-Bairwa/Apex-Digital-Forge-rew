@@ -286,13 +286,13 @@
 
     <!-- FOR BUSINESSES -->
     <div id="ps-businesses" class="psection active">
-      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">Direct SEO for businesses who want to rank higher and get more customers. We handle everything — on-page, off-page, and technical — so you can focus on running your business. No lock-in contracts. Free audit before you pay anything.<span class="geo-intl-only"> Priced in USD on the same retainer structure US agencies use, at about 30% below typical US agency rates.</span></p>
+      <p style="color:var(--muted);font-size:14px;margin-bottom:24px;">Direct SEO for businesses who want to rank higher and get more customers. We handle everything — on-page, off-page, and technical — so you can focus on running your business. No lock-in contracts. Free audit before you pay anything.</p>
       <div class="pkg-grid">
         <div class="pkg">
           <div class="pkg-tier">Starter</div>
           <div class="pkg-name">Foundation</div>
           <div class="pkg-price"><b style="font:inherit;color:inherit" data-usd="$1,050" data-inr="₹19,999">$1,050</b> <span>/mo</span></div>
-          <div class="pkg-inr" data-usd="≈ ₹87,000/month · typical US agency rate ~$1,500" data-inr="+ 18% GST extra">≈ ₹87,000/month · typical US agency rate ~$1,500</div>
+          <div class="pkg-inr" data-usd="Billed monthly · no lock-in contract" data-inr="+ 18% GST extra">Billed monthly · no lock-in contract</div>
           <div class="pkg-divider"></div>
           <div class="pkg-row">Keyword research — low-competition keywords first for faster ranking</div>
           <div class="pkg-row">Meta title & description — every page on your website</div>
@@ -316,7 +316,7 @@
           <div class="pkg-tier">Growth</div>
           <div class="pkg-name">Business Growth</div>
           <div class="pkg-price"><b style="font:inherit;color:inherit" data-usd="$1,950" data-inr="₹29,999">$1,950</b> <span>/mo</span></div>
-          <div class="pkg-inr" data-usd="≈ ₹1,62,000/month · typical US agency rate ~$2,800" data-inr="+ 18% GST extra">≈ ₹1,62,000/month · typical US agency rate ~$2,800</div>
+          <div class="pkg-inr" data-usd="Billed monthly · no lock-in contract" data-inr="+ 18% GST extra">Billed monthly · no lock-in contract</div>
           <div class="pkg-divider"></div>
           <div class="pkg-row">Keyword Mapping + Topical Mapping — structured growth from low to high volume</div>
           <div class="pkg-row">CTR-focused meta titles & descriptions — entire website</div>
@@ -339,7 +339,7 @@
           <div class="pkg-tier">Premium</div>
           <div class="pkg-name">Dominate</div>
           <div class="pkg-price"><b style="font:inherit;color:inherit" data-usd="$2,950" data-inr="₹39,999">$2,950</b> <span>/mo</span></div>
-          <div class="pkg-inr" data-usd="≈ ₹2,45,000/month · typical US agency rate ~$4,200" data-inr="+ 18% GST extra">≈ ₹2,45,000/month · typical US agency rate ~$4,200</div>
+          <div class="pkg-inr" data-usd="Billed monthly · no lock-in contract" data-inr="+ 18% GST extra">Billed monthly · no lock-in contract</div>
           <div class="pkg-divider"></div>
           <div class="pkg-row">Full topical authority strategy — complete keyword universe covered</div>
           <div class="pkg-row">New pages built to fill topical authority gaps</div>
@@ -362,7 +362,6 @@
       <div class="trial-banner geo-intl-only" style="margin-top:24px;flex-direction:column;align-items:flex-start;">
         <p><span><strong>Also available:</strong> Comprehensive SEO audit from <strong>$3,500</strong> one-time (the free mini-audit is still available first) · Hourly SEO consulting at <strong>$104/hr</strong>.</span></p>
       </div>
-      <p class="geo-intl-only" style="color:var(--muted);font-size:12px;margin-top:14px;">Benchmark: typical US agency rates are based on 2026 industry pricing surveys (Ahrefs, GoodFirms). Business plans are billed in USD; INR billing available for Indian clients.</p>
       <p style="color:var(--muted);font-size:12px;margin-top:14px;">INR clients: + 18% GST on all Indian invoices.</p>
     </div>
 
@@ -386,6 +385,34 @@
             <div class="custom-item"><div class="custom-item-label">Niche Focus</div><div class="custom-item-val">Dedicated</div></div>
             <div class="custom-item"><div class="custom-item-label">Pricing</div><div class="custom-item-val">Scope-based</div></div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div id="white-label-contact" class="contact-form" style="margin-top:48px;display:flex;gap:48px;flex-wrap:wrap;align-items:flex-start;">
+      <div style="flex:1;min-width:260px;">
+        <div class="sec-eyebrow" style="margin-bottom:14px;">White-Label Partnership</div>
+        <h2 style="font-family:'Syne',sans-serif;font-size:30px;font-weight:800;color:var(--white);margin-bottom:14px;">Contact for white-label partnership</h2>
+        <p style="color:var(--muted2);font-size:15px;line-height:1.8;">Want us to do white-label SEO work for you? We deliver under your brand, so your clients never know we exist. Send us your name and email, add a message if you like, and we'll get back to you with partner rates.</p>
+      </div>
+      <div style="flex:1;min-width:280px;">
+        <form id="partnerFormWrap" onsubmit="submitPartnerForm(event)" novalidate>
+          <div class="form-group">
+            <label for="pname">Name</label>
+            <input type="text" id="pname" name="name" placeholder="Your name" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="pemail">Email</label>
+            <input type="email" id="pemail" name="email" placeholder="you@agency.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="pmessage">Message <span style="text-transform:none;letter-spacing:0;font-weight:400;">(optional)</span></label>
+            <textarea id="pmessage" name="message" rows="4" placeholder="Tell us about your agency and what you need"></textarea>
+          </div>
+          <button type="submit" id="partnerBtn" class="btn btn-primary btn-lg" style="width:100%;">Send</button>
+        </form>
+        <div id="partnerSuccess" class="form-success" style="padding:28px;">
+          <h3>Message sent ✓</h3>
+          <p style="color:var(--muted2);font-size:14px;line-height:1.7;margin:0;">Thanks for reaching out. We'll get back to you soon.</p>
         </div>
       </div>
     </div>
@@ -501,6 +528,6 @@
 </footer>
 
 
-<script src="/js/main.js?v=14"></script>
+<script src="/js/main.js?v=15"></script>
 </body>
 </html>

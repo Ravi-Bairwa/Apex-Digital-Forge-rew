@@ -185,6 +185,50 @@ async function submitForm(e) {
   }
 }
 
+// White-label partnership form on the pricing page (name + email required, message optional)
+async function submitPartnerForm(e) {
+  e.preventDefault();
+  var btn = document.getElementById('partnerBtn');
+  var form = document.getElementById('partnerFormWrap');
+  var success = document.getElementById('partnerSuccess');
+  var name = document.getElementById('pname').value.trim();
+  var email = document.getElementById('pemail').value.trim();
+  if (!name || !email) {
+    showAlert('Please fill in your name and email.');
+    return;
+  }
+  if (!isValidEmail(email)) {
+    showAlert('Please enter a valid email address.');
+    return;
+  }
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    var res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        service: 'White-Label Partnership',
+        message: document.getElementById('pmessage').value.trim()
+      })
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      success.style.display = 'block';
+    } else {
+      showAlert('Something went wrong. Please email apexdigitalforge@gmail.com directly.');
+      btn.textContent = 'Send';
+      btn.disabled = false;
+    }
+  } catch (err) {
+    showAlert('Connection error. Please email apexdigitalforge@gmail.com directly.');
+    btn.textContent = 'Send';
+    btn.disabled = false;
+  }
+}
+
 // Quick lead capture widget ("Get It Now") - just email + website
 async function submitQuickLead(e, form) {
   e.preventDefault();
