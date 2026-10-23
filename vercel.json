@@ -38,6 +38,11 @@
       "permanent": true
     },
     {
+      "source": "/white-label-seo.html",
+      "destination": "/white-label-seo",
+      "permanent": true
+    },
+    {
       "source": "/services.html",
       "destination": "/services",
       "permanent": true
@@ -327,6 +332,10 @@
     {
       "source": "/blog/schema-markup-guide-for-seo-agencies",
       "destination": "/blog/schema-markup-guide-for-seo-agencies.html"
+    },
+    {
+      "source": "/white-label-seo",
+      "destination": "/white-label-seo.html"
     },
     {
       "source": "/services",
