@@ -40,153 +40,160 @@
 <meta name="theme-color" content="#0a0710">
 <meta name="version" content="2.1">
 <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
-      "width": 192,
-      "height": 192
-    },
-    "image": "https://www.apexdigitalforge.in/assets/og-image.png",
-    "description": "Apex Digital Forge is an SEO agency that also builds websites for businesses. Websites are built SEO-ready and quoted to your requirements.",
-    "email": "apexdigitalforge@gmail.com",
-    "telephone": "+918209374032",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Capital High Street",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "302033",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/apex-digital-forge",
-      "https://www.instagram.com/apexdigitalforge.in",
-      "https://x.com/ApexDigitalForg"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Ravi Bairwa",
-      "jobTitle": "Founder"
-    },
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "United States"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.apexdigitalforge.in/#organization",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
+        "width": 192,
+        "height": 192
       },
-      {
-        "@type": "Country",
-        "name": "United Kingdom"
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "description": "Apex Digital Forge is an SEO agency that also builds websites for businesses. Websites are built SEO-ready and quoted to your requirements.",
+      "email": "apexdigitalforge@gmail.com",
+      "telephone": "+918209374032",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Capital High Street",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "postalCode": "302033",
+        "addressCountry": "IN"
       },
-      {
-        "@type": "Country",
-        "name": "Australia"
+      "sameAs": [
+        "https://www.linkedin.com/company/apex-digital-forge",
+        "https://www.instagram.com/apexdigitalforge.in",
+        "https://x.com/ApexDigitalForg"
+      ],
+      "founder": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
       },
-      {
-        "@type": "Country",
-        "name": "Canada"
-      },
-      {
-        "@type": "Country",
-        "name": "United Arab Emirates"
-      },
-      {
-        "@type": "Country",
-        "name": "India"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services",
-      "itemListElement": [
+      "areaServed": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Web Development",
-            "description": "SEO-ready website development for businesses: landing pages, business websites, e-commerce stores and custom builds, quoted to requirements"
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Development",
+              "description": "SEO-ready website development for businesses: landing pages, business websites, e-commerce stores and custom builds, quoted to requirements"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.apexdigitalforge.in/#website",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "description": "SEO agency and web development for businesses.",
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.apexdigitalforge.in/#founder",
+      "name": "Ravi Bairwa",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a website cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the type of website, the number of pages, the features you need and any integrations, so we quote after understanding your requirements. There is no fixed price list because a landing page and an online store are very different projects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a website take to build?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Timelines depend on the scope, the amount of content and how quickly feedback arrives. We confirm an estimated timeline in the quote before work begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my new website be SEO-ready?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every build includes the technical and on-page foundations: clean URLs, heading structure, schema markup, sitemap, robots.txt, speed-conscious development and analytics setup. Ongoing SEO such as content and link building is a separate service you can add."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you redesign my existing website without losing my rankings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We plan redirects, keep valuable URLs and content where it makes sense, and check the site after launch. No one can guarantee rankings through a redesign, but a careful migration keeps the risk low."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer SEO after the website is live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Many clients start with the website and add SEO afterwards, and our services page covers on-page, technical and off-page SEO and GEO."
           }
         }
       ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Web Development",
+      "name": "Web Development Services",
+      "url": "https://www.apexdigitalforge.in/web-development",
+      "description": "SEO-ready website development for businesses: landing pages, business websites, e-commerce stores and custom builds, quoted to requirements.",
+      "provider": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "@id": "https://www.apexdigitalforge.in/web-development#service"
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in",
-    "description": "SEO agency and web development for businesses.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.apexdigitalforge.in/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much does a website cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It depends on the type of website, the number of pages, the features you need and any integrations, so we quote after understanding your requirements. There is no fixed price list because a landing page and an online store are very different projects."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does a website take to build?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Timelines depend on the scope, the amount of content and how quickly feedback arrives. We confirm an estimated timeline in the quote before work begins."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will my new website be SEO-ready?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Every build includes the technical and on-page foundations: clean URLs, heading structure, schema markup, sitemap, robots.txt, speed-conscious development and analytics setup. Ongoing SEO such as content and link building is a separate service you can add."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you redesign my existing website without losing my rankings?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We plan redirects, keep valuable URLs and content where it makes sense, and check the site after launch. No one can guarantee rankings through a redesign, but a careful migration keeps the risk low."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you offer SEO after the website is live?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Many clients start with the website and add SEO afterwards, and our services page covers on-page, technical and off-page SEO and GEO."
-        }
-      }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Web Development",
-    "name": "Web Development Services",
-    "url": "https://www.apexdigitalforge.in/web-development",
-    "description": "SEO-ready website development for businesses: landing pages, business websites, e-commerce stores and custom builds, quoted to requirements.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Apex Digital Forge",
-      "url": "https://www.apexdigitalforge.in"
-    }
-  }
-]
+  ]
+}
 </script>
 </head>
 <body>

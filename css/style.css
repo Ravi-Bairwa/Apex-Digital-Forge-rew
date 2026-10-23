@@ -230,6 +230,9 @@ nav { position: sticky; top: 0; z-index: 1000; background: rgba(6,6,10,0.97); ba
 .form-success-title { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
 .cta-blog-title { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
 .svc-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+/* h3 card titles: keep the same look they had as divs */
+h3.svc-title, h3.feature-title { line-height: inherit; letter-spacing: inherit; }
+
 .pay-title { font-family: var(--font-heading); font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
 /* ─── FEATURED BLOG ─── */
 .featured-blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
