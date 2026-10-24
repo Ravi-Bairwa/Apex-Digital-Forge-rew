@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
 <script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t||(t!=='light'&&t!=='apex')){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'apex';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM"></script>
+<!-- Google tag (gtag.js) - script loads after first interaction or shortly after page load -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-JVNJK7KTEM');
+  (function(){
+    var loaded = false;
+    function load(){
+      if (loaded) return; loaded = true;
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM';
+      document.head.appendChild(s);
+    }
+    ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ addEventListener(e, load, {once:true, passive:true}); });
+    addEventListener('load', function(){ setTimeout(load, 2500); });
+  })();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,10 +39,9 @@
 <link rel="canonical" href="https://www.apexdigitalforge.in/blog/seo-for-fashion-and-apparel-brands" id="canonical-tag">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css?v=21">
+<link rel="preload" href="/assets/fonts/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=22">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -186,6 +195,7 @@
   ]
 }
 </script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 
@@ -359,7 +369,7 @@
 </footer>
 
 
-<script src="/js/main.js?v=17"></script>
+<script defer src="/js/main.js?v=18"></script>
 
 </body>
 </html>

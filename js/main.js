@@ -346,7 +346,8 @@ document.addEventListener('DOMContentLoaded', function() {
       var from = cachedPubs[Math.floor(Math.random()*cachedPubs.length)];
       particles.push({ x: from.x, y: from.y, t: 0, speed: 0.006 + Math.random()*0.004, leg: 1 });
     }
-    var spawnTimer = setInterval(spawn, 420);
+    var spawnTimer = null, running = false, inView = true;
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     var mx = -1000, my = -1000;
     stage.addEventListener('mousemove', function(e){
@@ -396,9 +397,33 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.shadowBlur = 0;
       });
 
+      if (running) rafId = requestAnimationFrame(tick);
+    }
+    // Only animate while the hero is on screen and the tab is visible
+    function startAnim(){
+      if (running || !inView || document.hidden || reduceMotion) return;
+      running = true;
+      spawnTimer = setInterval(spawn, 420);
       rafId = requestAnimationFrame(tick);
     }
-    tick();
+    function stopAnim(){
+      running = false;
+      clearInterval(spawnTimer);
+      cancelAnimationFrame(rafId);
+    }
+    tick(); // draw the first frame (static if motion is reduced)
+    if (!reduceMotion) {
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function(entries){
+          inView = entries[0].isIntersecting;
+          if (inView) startAnim(); else stopAnim();
+        }).observe(stage);
+      }
+      document.addEventListener('visibilitychange', function(){
+        if (document.hidden) stopAnim(); else startAnim();
+      });
+      startAnim();
+    }
   }
 
   function initScanBeam(){
