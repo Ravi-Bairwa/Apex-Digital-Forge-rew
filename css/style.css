@@ -1052,3 +1052,15 @@ nav { gap: clamp(12px, 1.6vw, 28px); }
 [data-theme="light"] [style*="color:#f59e0b"] { color: #b45309 !important; }
 [data-theme="light"] a[href*="clutch.co"], [data-theme="light"] a[href*="goodfirms.co"], [data-theme="light"] a[href*="crunchbase.com"] { color: #475569 !important; border-color: #cbd5e1 !important; }
 @media (max-width: 640px) { input, select, textarea { font-size: 16px !important; } }
+
+/* ── Photo banners: gently tinted with the active theme, framed like the cards, faded into the page ── */
+.photo-frame { position: relative; margin: 36px 0 0; border-radius: 24px; overflow: hidden; isolation: isolate; border: 1px solid var(--border2); background: var(--dark2); box-shadow: 0 36px 80px -44px rgba(0,0,0,.6); }
+.photo-frame img { display: block; width: 100%; height: auto; filter: saturate(.9) contrast(1.05) brightness(.86); }
+.photo-frame::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(115deg, var(--apex-a, var(--accent2)) 0%, var(--apex-b, var(--accent)) 100%); opacity: .16; }
+.photo-frame::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(to top, var(--dark) 0%, rgba(0,0,0,0) 40%), radial-gradient(125% 100% at 50% 40%, rgba(0,0,0,0) 58%, rgba(0,0,0,.34) 100%); opacity: .6; }
+[data-theme="apex"] .photo-frame { box-shadow: 0 40px 90px -48px rgba(255,46,166,.4), 0 0 0 1px rgba(139,47,224,.1); }
+[data-theme="light"] .photo-frame { box-shadow: 0 30px 70px -44px rgba(15,23,42,.3); }
+[data-theme="light"] .photo-frame img { filter: saturate(.95) contrast(1.02) brightness(.97); }
+[data-theme="light"] .photo-frame::before { opacity: .08; }
+[data-theme="light"] .photo-frame::after { opacity: .16; }
+@media (max-width: 640px) { .photo-frame { border-radius: 16px; margin-top: 24px; } }
