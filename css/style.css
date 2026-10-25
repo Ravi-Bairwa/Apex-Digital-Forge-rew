@@ -1053,16 +1053,10 @@ nav { gap: clamp(12px, 1.6vw, 28px); }
 [data-theme="light"] a[href*="clutch.co"], [data-theme="light"] a[href*="goodfirms.co"], [data-theme="light"] a[href*="crunchbase.com"] { color: #475569 !important; border-color: #cbd5e1 !important; }
 @media (max-width: 640px) { input, select, textarea { font-size: 16px !important; } }
 
-/* ── Photos: small, framed like the cards, tinted gently with the active theme, placed beside the page heading ── */
-.photo-frame { position: relative; margin: 0; border-radius: 20px; overflow: hidden; isolation: isolate; border: 1px solid var(--border2); background: var(--dark2); box-shadow: 0 28px 60px -38px rgba(0,0,0,.6); }
-.photo-frame img { display: block; width: 100%; height: auto; filter: saturate(.9) contrast(1.05) brightness(.88); }
-.photo-frame::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(115deg, var(--apex-a, var(--accent2)) 0%, var(--apex-b, var(--accent)) 100%); opacity: .16; }
-.photo-frame::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(to top, var(--dark) 0%, rgba(0,0,0,0) 38%); opacity: .45; }
-[data-theme="apex"] .photo-frame { box-shadow: 0 32px 70px -42px rgba(255,46,166,.4), 0 0 0 1px rgba(139,47,224,.1); }
-[data-theme="light"] .photo-frame { box-shadow: 0 24px 56px -40px rgba(15,23,42,.3); }
-[data-theme="light"] .photo-frame img { filter: saturate(.95) contrast(1.02) brightness(.97); }
-[data-theme="light"] .photo-frame::before { opacity: .08; }
-[data-theme="light"] .photo-frame::after { opacity: .12; }
+/* ── Photos: small, framed like the cards, natural colours (no tint), placed beside the page heading ── */
+.photo-frame { position: relative; margin: 0; border-radius: 20px; overflow: hidden; border: 1px solid var(--border2); background: var(--dark2); box-shadow: 0 24px 56px -36px rgba(0,0,0,.6); }
+.photo-frame img { display: block; width: 100%; height: auto; }
+[data-theme="light"] .photo-frame { box-shadow: 0 20px 48px -36px rgba(15,23,42,.3); }
 .hero-split { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .8fr); gap: 56px; align-items: center; }
 .hero-split.flip { grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); }
 .hero-split.flip .photo-frame { order: -1; }
