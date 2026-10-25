@@ -2,25 +2,35 @@
 <html lang="en">
 <head>
 <script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t||(t!=='light'&&t!=='apex')){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'apex';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM"></script>
+<!-- Google tag (gtag.js) - script loads after first interaction or shortly after page load -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-JVNJK7KTEM');
+  (function(){
+    var loaded = false;
+    function load(){
+      if (loaded) return; loaded = true;
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM';
+      document.head.appendChild(s);
+    }
+    ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ addEventListener(e, load, {once:true, passive:true}); });
+    addEventListener('load', function(){ setTimeout(load, 2500); });
+  })();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SEO Services for Small Business (2026) | Apex Digital Forge</title>
-<meta name="description" content="The 5 SEO services that actually move the needle for small businesses, and what to avoid spending on.">
+<meta name="description" content="The 5 SEO services that actually move the needle for small businesses, and which common services to skip when your budget is limited.">
 <meta property="og:title" content="SEO Services for Small Business (2026) | Apex Digital Forge">
-<meta property="og:description" content="The 5 SEO services that actually move the needle for small businesses, and what to avoid spending on.">
+<meta property="og:description" content="The 5 SEO services that actually move the needle for small businesses, and which common services to skip when your budget is limited.">
 <meta property="og:url" content="https://www.apexdigitalforge.in/blog/seo-services-small-business">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="SEO Services for Small Business (2026) | Apex Digital Forge">
-<meta name="twitter:description" content="The 5 SEO services that actually move the needle for small businesses, and what to avoid spending on.">
+<meta name="twitter:description" content="The 5 SEO services that actually move the needle for small businesses, and which common services to skip when your budget is limited.">
 <meta property="og:image" content="https://www.apexdigitalforge.in/assets/og-image.png">
 <meta name="twitter:image" content="https://www.apexdigitalforge.in/assets/og-image.png">
 <meta name="robots" content="index, follow">
@@ -29,10 +39,9 @@
 <link rel="canonical" href="https://www.apexdigitalforge.in/blog/seo-services-small-business" id="canonical-tag">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css?v=23">
+<link rel="preload" href="/assets/fonts/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=24">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -40,121 +49,178 @@
 <meta name="theme-color" content="#0a0710">
 <meta name="version" content="2.1">
 <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
-      "width": 192,
-      "height": 192
-    },
-    "image": "https://www.apexdigitalforge.in/assets/og-image.png",
-    "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. Publisher options are assessed for niche fit and site quality; delivery estimates and reporting details are confirmed per order.",
-    "email": "apexdigitalforge@gmail.com",
-    "telephone": "+918209374032",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Capital High Street",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "302033",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/apex-digital-forge",
-      "https://www.instagram.com/apexdigitalforge.in",
-      "https://x.com/ApexDigitalForg"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Ravi Bairwa",
-      "jobTitle": "Founder"
-    },
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "United States"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.apexdigitalforge.in/#organization",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
+        "width": 192,
+        "height": 192
       },
-      {
-        "@type": "Country",
-        "name": "United Kingdom"
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. Publisher options are assessed for niche fit and site quality; delivery estimates and reporting details are confirmed per order.",
+      "email": "apexdigitalforge@gmail.com",
+      "telephone": "+918209374032",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Capital High Street",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "postalCode": "302033",
+        "addressCountry": "IN"
       },
-      {
-        "@type": "Country",
-        "name": "Australia"
+      "sameAs": [
+        "https://www.linkedin.com/company/apex-digital-forge",
+        "https://www.instagram.com/apexdigitalforge.in",
+        "https://x.com/ApexDigitalForg"
+      ],
+      "founder": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
       },
-      {
-        "@type": "Country",
-        "name": "Canada"
-      },
-      {
-        "@type": "Country",
-        "name": "United Arab Emirates"
-      },
-      {
-        "@type": "Country",
-        "name": "India"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Link Building Services",
-      "itemListElement": [
+      "areaServed": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "White Label Link Building",
-            "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality."
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Link Building Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "White Label Link Building",
+              "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.apexdigitalforge.in/#website",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality",
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.apexdigitalforge.in/#founder",
+      "name": "Ravi Bairwa",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "url": "https://www.apexdigitalforge.in/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/ravi-bairwa-8a117924a"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "SEO Services for Small Business in 2026: What You Actually Need",
+      "description": "The 5 SEO services that actually move the needle for small businesses, and which common services to skip when your budget is limited.",
+      "url": "https://www.apexdigitalforge.in/blog/seo-services-small-business",
+      "datePublished": "2026-07-16",
+      "dateModified": "2026-10-25",
+      "author": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
+      },
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.apexdigitalforge.in/blog/seo-services-small-business"
+      },
+      "image": "https://www.apexdigitalforge.in/assets/blog/local-business.svg",
+      "isPartOf": {
+        "@id": "https://www.apexdigitalforge.in/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.apexdigitalforge.in/blog/seo-services-small-business#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What SEO services does a small business need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most small businesses need a technical audit and fixes, on-page optimization and, if they serve a local area, local SEO. Link building and content creation add to this once the foundations are in place."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do SEO services for small business cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rough ranges are covered above: around $500 to $1,200 per month for a foundational local package, and more when content and link building are included. Prices vary by market and scope, so compare what is included rather than the price alone."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does SEO take to work for a small business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many small businesses see measurable improvement within three to six months, and technical fixes can show effects sooner. Results depend on your competition and where you are starting from."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a small business do SEO itself?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Basics such as a complete Google Business Profile and clear page titles can be done in-house. Technical issues, link building and consistent content are where many owners bring in help."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is local SEO or general SEO better for a small business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your customers come from a specific area, local SEO usually comes first. If you serve a wide area or sell online, content and link building matter more. Many businesses need both."
           }
         }
       ]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in",
-    "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.apexdigitalforge.in/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "SEO Services for Small Business in 2026: What You Actually Need",
-    "description": "The 5 SEO services that actually move the needle for small businesses, and what to avoid spending on.",
-    "url": "https://www.apexdigitalforge.in/blog/seo-services-small-business",
-    "datePublished": "2026-07-16",
-    "dateModified": "2026-07-16",
-    "author": {
-      "@type": "Person",
-      "name": "Ravi Bairwa"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Apex Digital Forge",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.apexdigitalforge.in/blog/seo-services-small-business"
-    },
-    "image": "https://www.apexdigitalforge.in/assets/blog/local-business.svg"
-  }
-]
+  ]
+}
 </script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 
@@ -243,13 +309,13 @@
     <a href="/blog" onclick="showPage('blog', event)" style="display:inline-block;margin-bottom:24px;color:var(--muted2);font-size:13px;text-decoration:none;">&larr; Back to Blog</a>
     <div class="article-cat">SEO Strategy</div>
     <h1 class="article-title">SEO Services for Small Business in 2026: What You Actually Need</h1>
-    <div class="article-meta"><span>Ravi Bairwa</span><time datetime="2026-07-16">16 Jul 2026</time><span>9 min read</span></div>
+    <div class="article-meta"><span>By <a href="/about" rel="author">Ravi Bairwa</a></span><time datetime="2026-07-16">16 Jul 2026</time><span>9 min read</span></div>
     <div class="article-body">
 <img src="/assets/blog/local-business.svg" alt="SEO services for small business" loading="lazy" style="width:100%;max-width:400px;height:auto;aspect-ratio:400/220;border-radius:16px;display:block;margin:0 auto 24px;">
 <p>SEO services for small business should start with the fundamentals documented in <a href="https://support.google.com/business/?hl=en" target="_blank" rel="noopener">Google's Business Profile Help Center</a> before moving on to anything more advanced.</p>
 
 <h2>SEO Services for Small Business: Why 2026 Makes This Non-Negotiable</h2>
-<p>Over 50 percent of all website traffic comes from organic search. For most small businesses, that means Google is either sending you customers every day — or sending them to your competitors instead.</p>
+<p>Organic search is one of the largest sources of website traffic for many businesses. For most small businesses, that means Google is either sending you customers every day — or sending them to your competitors instead.</p>
 <p>In 2026, with AI-generated answers, local map packs, and voice search all pulling attention before the first organic result, showing up in search is harder than it was three years ago and more important than it has ever been.</p>
 <p>The good news is that small businesses have a genuine structural advantage over large brands in local and niche search. A focused, well-executed SEO strategy built around what your specific customers actually search for can consistently outrank national competitors who are trying to rank for everything.</p>
 <p>This guide covers exactly what SEO services a small business needs in 2026, what to expect from each, and how to tell whether you are spending your budget on things that actually move the needle.</p>
@@ -262,23 +328,62 @@
 <p>For a small business with five to twenty key pages, a one-time on-page optimization pass can produce meaningful ranking improvements within six to twelve weeks, particularly for local and niche keywords where competition is lower.</p>
 <h3>3. Local SEO</h3>
 <p>If your customers are in a specific city or region, local SEO is the highest-ROI service available to you. The core elements are Google Business Profile optimization, consistent NAP (name, address, phone) citations across directories, location-specific page content, and genuine customer reviews.</p>
-<p>Businesses with 50 or more Google reviews receive significantly more traffic and calls than those with fewer than ten, regardless of their organic rankings.</p>
+<p>A profile with plenty of genuine, recent reviews generally earns more trust and clicks than one with very few.</p>
 <p>For the full checklist — Google Business Profile setup, citation consistency, and review strategy — see our <a href="/blog/local-seo-for-small-business">local SEO guide for small business</a>.</p>
 <h3>4. Link Building</h3>
 <p>Backlinks remain one of the strongest ranking signals Google uses. For a small business, you do not need hundreds of backlinks. A focused campaign of ten to twenty high-quality links from real, relevant websites can meaningfully improve rankings for your core keywords. Focus on relevance and real traffic, not just quantity and DA scores.</p>
 <h3>5. SEO Content Creation</h3>
-<p>Publishing content your potential customers are actively searching for is the most sustainable way to grow organic traffic over time. In 2026, content quality matters more than quantity. Google rewards content that demonstrates genuine first-hand expertise. A single well-written, specific, genuinely useful article outperforms ten generic keyword-stuffed posts every time.</p>
+<p>Publishing content your potential customers are actively searching for is the most sustainable way to grow organic traffic over time. In 2026, content quality matters more than quantity. Google rewards content that demonstrates genuine first-hand expertise. A single well-written, specific, genuinely useful article often outperforms ten generic keyword-stuffed posts.</p>
 <h2>What Small Businesses Should NOT Spend On</h2>
 <p><strong>Generic packages with inflated link counts.</strong> Packages promising 50 or 100 backlinks per month at a low price almost always deliver low-quality links from sites with no real traffic.</p>
 <p><strong>Keyword-stuffed content at volume.</strong> Publishing 30 thin articles per month targeting every keyword variation rarely builds real authority.</p>
 <p><strong>Guaranteed rankings.</strong> No legitimate agency can guarantee a specific ranking. Any agency that does is either misleading you or using risky tactics that could cause penalties later.</p>
 <h2>How Long Does SEO Take?</h2>
-<p>Most small businesses see measurable improvements between three and six months after consistent SEO work begins. Local SEO can move faster, particularly if your Google Business Profile was previously unoptimized. Technical fixes can produce ranking improvements within four to eight weeks.</p>
+<p>Many small businesses see measurable improvements between three and six months after consistent SEO work begins. Local SEO can move faster, particularly if your Google Business Profile was previously unoptimized. Technical fixes can produce ranking improvements within four to eight weeks.</p>
 <h2>How Much Should a Small Business Spend?</h2>
-<p>A foundational local SEO package typically runs $500 to $1,200 per month. A more comprehensive package including content creation and link building runs $1,200 to $2,500 per month. Be cautious of pricing below $500 — at that level, the work volume required to produce real results is nearly impossible to deliver sustainably.</p>
+<p>As a rough guide, a foundational local SEO package often runs $500 to $1,200 per month. A more comprehensive package including content creation and link building runs $1,200 to $2,500 per month. Be cautious of pricing below $500 — at that level, the work volume required to produce real results is nearly impossible to deliver sustainably. Prices vary by market, scope and provider, so use these ranges only as a starting point when comparing quotes.</p>
+<h2>Which SEO Service Should You Start With?</h2>
+<p>The right starting point depends on how customers find you today. Use these situations as a rough guide rather than a fixed rule.</p>
+<h3>Customers search for you by city or neighborhood</h3>
+<p>Start with local SEO: an optimized Google Business Profile, consistent citations and a steady flow of genuine reviews. Our <a href="/blog/local-seo-for-small-business">local SEO guide for small businesses</a> walks through the checklist.</p>
+<h3>Your website is new or has never been audited</h3>
+<p>Start with a technical audit and on-page fixes so Google can crawl and understand your pages. A <a href="/seo-audit">free SEO audit</a> is a low-risk way to see what is holding the site back.</p>
+<h3>You already appear on page two or three</h3>
+<p>Pages that are close to page one usually benefit most from stronger content, better internal links and a small number of relevant backlinks. In Google Search Console, look for queries where you rank between positions 8 and 20, because these are your nearest wins.</p>
+<h3>You sell nationally or online</h3>
+<p>Once the technical basics are in place, prioritize content built around what your customers search for, backed by quality link building.</p>
+<h2>What the First 90 Days of SEO Usually Look Like</h2>
+<p>Timelines vary by site and competition, but an early program often follows this pattern.</p>
+<h3>Month 1: audit, fixes and tracking</h3>
+<p>Technical issues are found and fixed, and Google Search Console and analytics are set up so progress can be measured.</p>
+<h3>Month 2: on-page work and local foundations</h3>
+<p>Key pages get clearer titles, headings and internal links, and the Google Business Profile and citations are cleaned up.</p>
+<h3>Month 3: content and links</h3>
+<p>New content and a small number of relevant link placements begin. Rising impressions and better positions usually show up before clicks and leads do. If results feel slow, read <a href="/blog/why-is-seo-taking-so-long">why SEO can take longer than expected</a>.</p>
+<h2>Questions to Ask Before Hiring an SEO Provider</h2>
+<ul style="padding-left:22px;line-height:1.7;margin-bottom:16px;">
+<li>What exactly is included each month, and what is a one-time fix?</li>
+<li>How are links earned, and can I see every placement?</li>
+<li>How will you report progress, and how often?</li>
+<li>Do you guarantee rankings? A good provider will not.</li>
+<li>Who does the work, and who will I speak to?</li>
+<li>What are the contract terms, and how do I cancel?</li>
+</ul>
+<p>Once you have quotes, <a href="/pricing">compare SEO pricing and plans</a> against these answers rather than judging on price alone.</p>
 <h2>How Apex Digital Forge Helps</h2>
 <p>Apex Digital Forge offers full-service SEO for small businesses — covering technical SEO audits and fixes, on-page optimization, local SEO, and DA 50–90 placements available, with publisher sites selected for niche fit and site quality. Reporting format and frequency are confirmed for each engagement.</p>
 <p>We also offer a free SEO audit to help businesses identify issues that may be limiting their search visibility. Audit scope and delivery timing are confirmed when you enquire.</p>
+<h2>Frequently Asked Questions About SEO for Small Businesses</h2>
+<h3>What SEO services does a small business need?</h3>
+<p>Most small businesses need a technical audit and fixes, on-page optimization and, if they serve a local area, local SEO. Link building and content creation add to this once the foundations are in place.</p>
+<h3>How much do SEO services for small business cost?</h3>
+<p>Rough ranges are covered above: around $500 to $1,200 per month for a foundational local package, and more when content and link building are included. Prices vary by market and scope, so compare what is included rather than the price alone.</p>
+<h3>How long does SEO take to work for a small business?</h3>
+<p>Many small businesses see measurable improvement within three to six months, and technical fixes can show effects sooner. Results depend on your competition and where you are starting from.</p>
+<h3>Can a small business do SEO itself?</h3>
+<p>Yes. Basics such as a complete Google Business Profile and clear page titles can be done in-house. Technical issues, link building and consistent content are where many owners bring in help.</p>
+<h3>Is local SEO or general SEO better for a small business?</h3>
+<p>If your customers come from a specific area, local SEO usually comes first. If you serve a wide area or sell online, content and link building matter more. Many businesses need both.</p>
 <h2>The Bottom Line</h2>
 <p>SEO for small businesses in 2026 does not require a huge budget or a complex strategy. Get the fundamentals right: a technically clean website, pages that match what your customers are searching for, a well-optimized Google Business Profile, and a consistent program of quality backlinks.</p>
 <p>Done well and done consistently, this builds a compounding organic presence that reduces dependence on paid advertising and delivers leads for years.</p>
@@ -324,6 +429,7 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
+      <a href="/about" onclick="showPage('about', event)">About</a>
       <a href="/process" onclick="showPage('process', event)">How It Works</a>
       <a href="/learn-seo" onclick="showPage('learn-seo', event)">Learn SEO</a>
       <a href="/blog" onclick="showPage('blog', event)">Blog</a>
@@ -338,7 +444,7 @@
 </footer>
 
 
-<script src="/js/main.js?v=17"></script>
+<script defer src="/js/main.js?v=18"></script>
 
 </body>
 </html>

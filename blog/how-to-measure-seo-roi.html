@@ -2,24 +2,34 @@
 <html lang="en">
 <head>
 <script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t||(t!=='light'&&t!=='apex')){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'apex';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM"></script>
+<!-- Google tag (gtag.js) - script loads after first interaction or shortly after page load -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-JVNJK7KTEM');
+  (function(){
+    var loaded = false;
+    function load(){
+      if (loaded) return; loaded = true;
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM';
+      document.head.appendChild(s);
+    }
+    ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ addEventListener(e, load, {once:true, passive:true}); });
+    addEventListener('load', function(){ setTimeout(load, 2500); });
+  })();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Measure SEO ROI: Formula & Example | Apex Digital Forge</title>
+<title>Measure SEO ROI: Formula &amp; Example | Apex Digital Forge</title>
 <meta name="description" content="How to measure SEO ROI: the formula, what to count as cost and return, how to handle attribution and time lag, and the mistakes that inflate or hide results.">
-<meta property="og:title" content="How to Measure SEO ROI: Formula & Example | Apex Digital Forge">
+<meta property="og:title" content="Measure SEO ROI: Formula &amp; Example | Apex Digital Forge">
 <meta property="og:description" content="How to measure SEO ROI: the formula, what to count as cost and return, how to handle attribution and time lag, and the mistakes that inflate or hide results.">
 <meta property="og:url" content="https://www.apexdigitalforge.in/blog/how-to-measure-seo-roi">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How to Measure SEO ROI: Formula & Example | Apex Digital Forge">
+<meta name="twitter:title" content="Measure SEO ROI: Formula &amp; Example | Apex Digital Forge">
 <meta name="twitter:description" content="How to measure SEO ROI: the formula, what to count as cost and return, how to handle attribution and time lag, and the mistakes that inflate or hide results.">
 <meta property="og:image" content="https://www.apexdigitalforge.in/assets/og-image.png">
 <meta name="twitter:image" content="https://www.apexdigitalforge.in/assets/og-image.png">
@@ -29,10 +39,9 @@
 <link rel="canonical" href="https://www.apexdigitalforge.in/blog/how-to-measure-seo-roi" id="canonical-tag">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css?v=23">
+<link rel="preload" href="/assets/fonts/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=24">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -40,151 +49,161 @@
 <meta name="theme-color" content="#0a0710">
 <meta name="version" content="2.1">
 <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
-      "width": 192,
-      "height": 192
-    },
-    "image": "https://www.apexdigitalforge.in/assets/og-image.png",
-    "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. DA 50–90 placement options are available, with publisher selection based on niche fit and site quality.",
-    "email": "apexdigitalforge@gmail.com",
-    "telephone": "+918209374032",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Capital High Street",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "302033",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/apex-digital-forge",
-      "https://www.instagram.com/apexdigitalforge.in",
-      "https://x.com/ApexDigitalForg"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Ravi Bairwa",
-      "jobTitle": "Founder"
-    },
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "United States"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.apexdigitalforge.in/#organization",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
+        "width": 192,
+        "height": 192
       },
-      {
-        "@type": "Country",
-        "name": "United Kingdom"
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. DA 50–90 placement options are available, with publisher selection based on niche fit and site quality.",
+      "email": "apexdigitalforge@gmail.com",
+      "telephone": "+918209374032",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Capital High Street",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "postalCode": "302033",
+        "addressCountry": "IN"
       },
-      {
-        "@type": "Country",
-        "name": "Australia"
+      "sameAs": [
+        "https://www.linkedin.com/company/apex-digital-forge",
+        "https://www.instagram.com/apexdigitalforge.in",
+        "https://x.com/ApexDigitalForg"
+      ],
+      "founder": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
       },
-      {
-        "@type": "Country",
-        "name": "Canada"
-      },
-      {
-        "@type": "Country",
-        "name": "United Arab Emirates"
-      },
-      {
-        "@type": "Country",
-        "name": "India"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Link Building Services",
-      "itemListElement": [
+      "areaServed": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "White Label Link Building",
-            "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality"
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Link Building Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "White Label Link Building",
+              "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.apexdigitalforge.in/#website",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality",
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.apexdigitalforge.in/#founder",
+      "name": "Ravi Bairwa",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "url": "https://www.apexdigitalforge.in/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/ravi-bairwa-8a117924a"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "How to Measure SEO ROI: The Formula, a Worked Example, and the Traps to Avoid",
+      "description": "How to measure SEO ROI: the formula, what to count as cost and return, how to handle attribution and time lag, and the mistakes that inflate or hide results.",
+      "url": "https://www.apexdigitalforge.in/blog/how-to-measure-seo-roi",
+      "datePublished": "2026-10-02",
+      "dateModified": "2026-10-02",
+      "author": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
+      },
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.apexdigitalforge.in/blog/how-to-measure-seo-roi"
+      },
+      "image": "https://www.apexdigitalforge.in/assets/blog/growth-scale.svg",
+      "isPartOf": {
+        "@id": "https://www.apexdigitalforge.in/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a good SEO ROI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no universal figure. It depends on your margins, customer value and time horizon, so compare it with what you would earn from other marketing spend rather than with a generic benchmark."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to see a return from SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Returns usually trail ranking improvements by a few months, and the timing varies with competition and site history, so judge results over a long enough window to cover that lag."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate SEO ROI for a lead generation business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Multiply leads from organic search by your close rate and average customer value to estimate revenue, then use the formula with your total SEO cost."
           }
         }
       ]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in",
-    "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.apexdigitalforge.in/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "How to Measure SEO ROI: The Formula, a Worked Example, and the Traps to Avoid",
-    "description": "How to measure SEO ROI: the formula, what to count as cost and return, how to handle attribution and time lag, and the mistakes that inflate or hide results.",
-    "url": "https://www.apexdigitalforge.in/blog/how-to-measure-seo-roi",
-    "datePublished": "2026-10-02",
-    "dateModified": "2026-10-02",
-    "author": {
-      "@type": "Person",
-      "name": "Ravi Bairwa"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Apex Digital Forge",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.apexdigitalforge.in/blog/how-to-measure-seo-roi"
-    },
-    "image": "https://www.apexdigitalforge.in/assets/blog/growth-scale.svg"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is a good SEO ROI?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "There is no universal figure. It depends on your margins, customer value and time horizon, so compare it with what you would earn from other marketing spend rather than with a generic benchmark."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does it take to see a return from SEO?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Returns usually trail ranking improvements by a few months, and the timing varies with competition and site history, so judge results over a long enough window to cover that lag."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I calculate SEO ROI for a lead generation business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Multiply leads from organic search by your close rate and average customer value to estimate revenue, then use the formula with your total SEO cost."
-        }
-      }
-    ]
-  }
-]
+  ]
+}
 </script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 
@@ -273,7 +292,7 @@
     <a href="/blog" onclick="showPage('blog', event)" style="display:inline-block;margin-bottom:24px;color:var(--muted2);font-size:13px;text-decoration:none;">&larr; Back to Blog</a>
     <div class="article-cat">SEO Strategy</div>
     <h1 class="article-title">How to Measure SEO ROI: The Formula, a Worked Example, and the Traps to Avoid</h1>
-    <div class="article-meta"><span>Ravi Bairwa</span><time datetime="2026-10-02">2 Oct 2026</time><span>8 min read</span></div>
+    <div class="article-meta"><span>By <a href="/about" rel="author">Ravi Bairwa</a></span><time datetime="2026-10-02">2 Oct 2026</time><span>8 min read</span></div>
     <div class="article-body">
 <img src="/assets/blog/growth-scale.svg" alt="how to measure SEO ROI" loading="lazy" style="width:100%;max-width:400px;height:auto;aspect-ratio:400/220;border-radius:16px;display:block;margin:0 auto 24px;">
 <p>SEO ROI compares what organic search earns you with what you spend to get it. The arithmetic takes a minute. The hard part is deciding what counts as SEO revenue, what counts as SEO cost, and over what period to judge it, and most disputed ROI figures go wrong on those three questions rather than on the maths.</p>
@@ -365,6 +384,7 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
+      <a href="/about" onclick="showPage('about', event)">About</a>
       <a href="/process" onclick="showPage('process', event)">How It Works</a>
       <a href="/learn-seo" onclick="showPage('learn-seo', event)">Learn SEO</a>
       <a href="/blog" onclick="showPage('blog', event)">Blog</a>
@@ -379,7 +399,7 @@
 </footer>
 
 
-<script src="/js/main.js?v=17"></script>
+<script defer src="/js/main.js?v=18"></script>
 
 </body>
 </html>

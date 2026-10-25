@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
 <script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t||(t!=='light'&&t!=='apex')){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'apex';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM"></script>
+<!-- Google tag (gtag.js) - script loads after first interaction or shortly after page load -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-JVNJK7KTEM');
+  (function(){
+    var loaded = false;
+    function load(){
+      if (loaded) return; loaded = true;
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM';
+      document.head.appendChild(s);
+    }
+    ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ addEventListener(e, load, {once:true, passive:true}); });
+    addEventListener('load', function(){ setTimeout(load, 2500); });
+  })();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,10 +39,9 @@
 <link rel="canonical" href="https://www.apexdigitalforge.in/blog/white-label-link-building-agency-uk" id="canonical-tag">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css?v=23">
+<link rel="preload" href="/assets/fonts/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=24">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -40,151 +49,161 @@
 <meta name="theme-color" content="#0a0710">
 <meta name="version" content="2.1">
 <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
-      "width": 192,
-      "height": 192
-    },
-    "image": "https://www.apexdigitalforge.in/assets/og-image.png",
-    "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. Publisher options are assessed for niche fit and site quality; available metrics and delivery estimates are confirmed per order.",
-    "email": "apexdigitalforge@gmail.com",
-    "telephone": "+918209374032",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Capital High Street",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "302033",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/apex-digital-forge",
-      "https://www.instagram.com/apexdigitalforge.in",
-      "https://x.com/ApexDigitalForg"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Ravi Bairwa",
-      "jobTitle": "Founder"
-    },
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "United States"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.apexdigitalforge.in/#organization",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
+        "width": 192,
+        "height": 192
       },
-      {
-        "@type": "Country",
-        "name": "United Kingdom"
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. Publisher options are assessed for niche fit and site quality; available metrics and delivery estimates are confirmed per order.",
+      "email": "apexdigitalforge@gmail.com",
+      "telephone": "+918209374032",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Capital High Street",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "postalCode": "302033",
+        "addressCountry": "IN"
       },
-      {
-        "@type": "Country",
-        "name": "Australia"
+      "sameAs": [
+        "https://www.linkedin.com/company/apex-digital-forge",
+        "https://www.instagram.com/apexdigitalforge.in",
+        "https://x.com/ApexDigitalForg"
+      ],
+      "founder": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
       },
-      {
-        "@type": "Country",
-        "name": "Canada"
-      },
-      {
-        "@type": "Country",
-        "name": "United Arab Emirates"
-      },
-      {
-        "@type": "Country",
-        "name": "India"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Link Building Services",
-      "itemListElement": [
+      "areaServed": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "White Label Link Building",
-            "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality."
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Link Building Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "White Label Link Building",
+              "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.apexdigitalforge.in/#website",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality",
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.apexdigitalforge.in/#founder",
+      "name": "Ravi Bairwa",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "url": "https://www.apexdigitalforge.in/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/ravi-bairwa-8a117924a"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "White Label Link Building Agency UK: What British Agencies Should Look For",
+      "description": "A white label link building agency UK agencies can trust needs genuinely UK-hosted publishers and British English as standard, not a relabeled global network.",
+      "url": "https://www.apexdigitalforge.in/blog/white-label-link-building-agency-uk",
+      "datePublished": "2026-09-12",
+      "dateModified": "2026-10-02",
+      "author": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
+      },
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.apexdigitalforge.in/blog/white-label-link-building-agency-uk"
+      },
+      "image": "https://www.apexdigitalforge.in/assets/blog/white-label-transfer.svg",
+      "isPartOf": {
+        "@id": "https://www.apexdigitalforge.in/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do links need to come from UK-based publishers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For clients targeting UK search, a UK publication with a UK audience is usually the more relevant choice, though it is one signal among many and quality still comes first."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a paid placement need to be labelled in the UK?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CAP Code rules 2.1 and 2.4 require advertising and advertorials to be obviously identifiable, and responsibility sits with both marketer and publisher. Whether a given placement counts as advertorial depends on the arrangement, so check with the publisher and take advice when unsure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long before a UK client sees ranking movement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Typically two to four months, depending on how competitive the industry and region are."
           }
         }
       ]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in",
-    "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.apexdigitalforge.in/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "White Label Link Building Agency UK: What British Agencies Should Look For",
-    "description": "A white label link building agency UK agencies can trust needs genuinely UK-hosted publishers and British English as standard, not a relabeled global network.",
-    "url": "https://www.apexdigitalforge.in/blog/white-label-link-building-agency-uk",
-    "datePublished": "2026-09-12",
-    "dateModified": "2026-10-02",
-    "author": {
-      "@type": "Person",
-      "name": "Ravi Bairwa"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Apex Digital Forge",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.apexdigitalforge.in/blog/white-label-link-building-agency-uk"
-    },
-    "image": "https://www.apexdigitalforge.in/assets/blog/white-label-transfer.svg"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Do links need to come from UK-based publishers?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For clients targeting UK search, a UK publication with a UK audience is usually the more relevant choice, though it is one signal among many and quality still comes first."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does a paid placement need to be labelled in the UK?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "CAP Code rules 2.1 and 2.4 require advertising and advertorials to be obviously identifiable, and responsibility sits with both marketer and publisher. Whether a given placement counts as advertorial depends on the arrangement, so check with the publisher and take advice when unsure."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long before a UK client sees ranking movement?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Typically two to four months, depending on how competitive the industry and region are."
-        }
-      }
-    ]
-  }
-]
+  ]
+}
 </script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 
@@ -273,7 +292,7 @@
     <a href="/blog" onclick="showPage('blog', event)" style="display:inline-block;margin-bottom:24px;color:var(--muted2);font-size:13px;text-decoration:none;">&larr; Back to Blog</a>
     <div class="article-cat">Link Building</div>
     <h1 class="article-title">White Label Link Building Agency UK: What British Agencies Should Look For</h1>
-    <div class="article-meta"><span>Ravi Bairwa</span><time datetime="2026-09-12">12 Sep 2026</time><span>7 min read</span></div>
+    <div class="article-meta"><span>By <a href="/about" rel="author">Ravi Bairwa</a></span><time datetime="2026-09-12">12 Sep 2026</time><span>7 min read</span></div>
     <div class="article-body">
 <img src="/assets/blog/white-label-transfer.svg" alt="white label link building agency UK" loading="lazy" style="width:100%;max-width:400px;height:auto;aspect-ratio:400/220;border-radius:16px;display:block;margin:0 auto 24px;">
 <p>A white label link building agency UK agencies can rely on has to get three things right that a generic global provider often does not: genuinely UK-relevant publishers, British English as standard, and placements labelled in line with UK advertising rules. This guide covers what to check on each, and what to ask before you send a provider your first brief.</p>
@@ -348,6 +367,7 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
+      <a href="/about" onclick="showPage('about', event)">About</a>
       <a href="/process" onclick="showPage('process', event)">How It Works</a>
       <a href="/learn-seo" onclick="showPage('learn-seo', event)">Learn SEO</a>
       <a href="/blog" onclick="showPage('blog', event)">Blog</a>
@@ -362,7 +382,7 @@
 </footer>
 
 
-<script src="/js/main.js?v=17"></script>
+<script defer src="/js/main.js?v=18"></script>
 
 </body>
 </html>

@@ -3,11 +3,11 @@
   "framework": null,
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/:path((?!css/|js/|assets/).*)",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "no-store, must-revalidate"
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     },
@@ -170,6 +170,11 @@
     {
       "source": "/seo-audit.html",
       "destination": "/seo-audit",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
       "permanent": true
     }
   ],
@@ -985,6 +990,10 @@
     {
       "source": "/refund-policy",
       "destination": "/refund-policy.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
     }
   ]
 }

@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
 <script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t||(t!=='light'&&t!=='apex')){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'apex';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM"></script>
+<!-- Google tag (gtag.js) - script loads after first interaction or shortly after page load -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-JVNJK7KTEM');
+  (function(){
+    var loaded = false;
+    function load(){
+      if (loaded) return; loaded = true;
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM';
+      document.head.appendChild(s);
+    }
+    ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ addEventListener(e, load, {once:true, passive:true}); });
+    addEventListener('load', function(){ setTimeout(load, 2500); });
+  })();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,10 +39,9 @@
 <link rel="canonical" href="https://www.apexdigitalforge.in/blog/do-backlinks-still-matter" id="canonical-tag">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css?v=23">
+<link rel="preload" href="/assets/fonts/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=24">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -40,151 +49,161 @@
 <meta name="theme-color" content="#0a0710">
 <meta name="version" content="2.1">
 <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
-      "width": 192,
-      "height": 192
-    },
-    "image": "https://www.apexdigitalforge.in/assets/og-image.png",
-    "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. Publisher options are assessed for niche fit and site quality; delivery estimates and reporting details are confirmed per order.",
-    "email": "apexdigitalforge@gmail.com",
-    "telephone": "+918209374032",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Capital High Street",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "302033",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/apex-digital-forge",
-      "https://www.instagram.com/apexdigitalforge.in",
-      "https://x.com/ApexDigitalForg"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Ravi Bairwa",
-      "jobTitle": "Founder"
-    },
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "United States"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.apexdigitalforge.in/#organization",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
+        "width": 192,
+        "height": 192
       },
-      {
-        "@type": "Country",
-        "name": "United Kingdom"
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. Publisher options are assessed for niche fit and site quality; delivery estimates and reporting details are confirmed per order.",
+      "email": "apexdigitalforge@gmail.com",
+      "telephone": "+918209374032",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Capital High Street",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "postalCode": "302033",
+        "addressCountry": "IN"
       },
-      {
-        "@type": "Country",
-        "name": "Australia"
+      "sameAs": [
+        "https://www.linkedin.com/company/apex-digital-forge",
+        "https://www.instagram.com/apexdigitalforge.in",
+        "https://x.com/ApexDigitalForg"
+      ],
+      "founder": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
       },
-      {
-        "@type": "Country",
-        "name": "Canada"
-      },
-      {
-        "@type": "Country",
-        "name": "United Arab Emirates"
-      },
-      {
-        "@type": "Country",
-        "name": "India"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Link Building Services",
-      "itemListElement": [
+      "areaServed": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "White Label Link Building",
-            "description": "DA 50–90 placement options may be available; publisher selection depends on niche fit, site quality, and campaign availability."
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Link Building Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "White Label Link Building",
+              "description": "DA 50–90 placement options may be available; publisher selection depends on niche fit, site quality, and campaign availability."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.apexdigitalforge.in/#website",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality",
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.apexdigitalforge.in/#founder",
+      "name": "Ravi Bairwa",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "url": "https://www.apexdigitalforge.in/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/ravi-bairwa-8a117924a"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Do Backlinks Still Matter for SEO? An Honest Answer",
+      "description": "Do backlinks still matter in 2026? What Google says about links, how much they count, which links are worth earning and when content alone is enough.",
+      "url": "https://www.apexdigitalforge.in/blog/do-backlinks-still-matter",
+      "datePublished": "2026-10-06",
+      "dateModified": "2026-10-06",
+      "author": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
+      },
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.apexdigitalforge.in/blog/do-backlinks-still-matter"
+      },
+      "image": "https://www.apexdigitalforge.in/assets/blog/link-building.svg",
+      "isPartOf": {
+        "@id": "https://www.apexdigitalforge.in/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are backlinks still a ranking factor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Google describes links as one of many signals, and they help it discover pages and judge which ones others consider worth citing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I rank without backlinks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For low-competition searches it is sometimes possible, but for competitive searches links and mentions from relevant sites usually matter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many backlinks do I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no fixed number. Compare your link profile with the pages ranking for your target searches, and aim for relevant, credible links instead of a count."
           }
         }
       ]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in",
-    "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.apexdigitalforge.in/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Do Backlinks Still Matter for SEO? An Honest Answer",
-    "description": "Do backlinks still matter in 2026? What Google says about links, how much they count, which links are worth earning and when content alone is enough.",
-    "url": "https://www.apexdigitalforge.in/blog/do-backlinks-still-matter",
-    "datePublished": "2026-10-06",
-    "dateModified": "2026-10-06",
-    "author": {
-      "@type": "Person",
-      "name": "Ravi Bairwa"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Apex Digital Forge",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.apexdigitalforge.in/blog/do-backlinks-still-matter"
-    },
-    "image": "https://www.apexdigitalforge.in/assets/blog/link-building.svg"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Are backlinks still a ranking factor?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Google describes links as one of many signals, and they help it discover pages and judge which ones others consider worth citing."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I rank without backlinks?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For low-competition searches it is sometimes possible, but for competitive searches links and mentions from relevant sites usually matter."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How many backlinks do I need?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "There is no fixed number. Compare your link profile with the pages ranking for your target searches, and aim for relevant, credible links instead of a count."
-        }
-      }
-    ]
-  }
-]
+  ]
+}
 </script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 
@@ -273,7 +292,7 @@
     <a href="/blog" onclick="showPage('blog', event)" style="display:inline-block;margin-bottom:24px;color:var(--muted2);font-size:13px;text-decoration:none;">&larr; Back to Blog</a>
     <div class="article-cat">SEO Basics</div>
     <h1 class="article-title">Do Backlinks Still Matter for SEO? An Honest Answer</h1>
-    <div class="article-meta"><span>Ravi Bairwa</span><time datetime="2026-10-06">6 Oct 2026</time><span>9 min read</span></div>
+    <div class="article-meta"><span>By <a href="/about" rel="author">Ravi Bairwa</a></span><time datetime="2026-10-06">6 Oct 2026</time><span>9 min read</span></div>
     <div class="article-body">
 <img src="/assets/blog/link-building.svg" alt="Do Backlinks Still Matter for SEO? An Honest Answer" loading="lazy" style="width:100%;max-width:400px;height:auto;aspect-ratio:400/220;border-radius:16px;display:block;margin:0 auto 24px;">
 <p>Backlinks still matter, but they are not a magic lever, and the old advice of "more links, higher rankings" no longer holds. This guide gives an honest answer: what Google says about links, when links make the difference, when they do not, and what to do about it.</p>
@@ -358,6 +377,7 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
+      <a href="/about" onclick="showPage('about', event)">About</a>
       <a href="/process" onclick="showPage('process', event)">How It Works</a>
       <a href="/learn-seo" onclick="showPage('learn-seo', event)">Learn SEO</a>
       <a href="/blog" onclick="showPage('blog', event)">Blog</a>
@@ -372,7 +392,7 @@
 </footer>
 
 
-<script src="/js/main.js?v=17"></script>
+<script defer src="/js/main.js?v=18"></script>
 
 </body>
 </html>

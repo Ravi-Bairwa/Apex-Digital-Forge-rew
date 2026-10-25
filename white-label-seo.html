@@ -2,25 +2,35 @@
 <html lang="en">
 <head>
 <script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t||(t!=='light'&&t!=='apex')){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'apex';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM"></script>
+<!-- Google tag (gtag.js) - script loads after first interaction or shortly after page load -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-JVNJK7KTEM');
+  (function(){
+    var loaded = false;
+    function load(){
+      if (loaded) return; loaded = true;
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM';
+      document.head.appendChild(s);
+    }
+    ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ addEventListener(e, load, {once:true, passive:true}); });
+    addEventListener('load', function(){ setTimeout(load, 2500); });
+  })();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>White-Label SEO Services for Agencies & Resellers | Apex Digital Forge</title>
-<meta name="description" content="White-label SEO fulfillment for agencies and resellers: technical SEO, on-page, link building and reporting delivered under your brand. Contact us for partner rates.">
-<meta property="og:title" content="White-Label SEO Services for Agencies & Resellers | Apex Digital Forge">
-<meta property="og:description" content="White-label SEO fulfillment for agencies and resellers: technical SEO, on-page, link building and reporting delivered under your brand. Contact us for partner rates.">
+<title>White-Label SEO Services for Agencies & Resellers</title>
+<meta name="description" content="White-label SEO fulfillment for agencies and resellers: technical, on-page, link building and reporting delivered under your brand. Contact for partner rates.">
+<meta property="og:title" content="White-Label SEO Services for Agencies & Resellers">
+<meta property="og:description" content="White-label SEO fulfillment for agencies and resellers: technical, on-page, link building and reporting delivered under your brand. Contact for partner rates.">
 <meta property="og:url" content="https://www.apexdigitalforge.in/white-label-seo">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="White-Label SEO Services for Agencies & Resellers | Apex Digital Forge">
-<meta name="twitter:description" content="White-label SEO fulfillment for agencies and resellers: technical SEO, on-page, link building and reporting delivered under your brand. Contact us for partner rates.">
+<meta name="twitter:title" content="White-Label SEO Services for Agencies & Resellers">
+<meta name="twitter:description" content="White-label SEO fulfillment for agencies and resellers: technical, on-page, link building and reporting delivered under your brand. Contact for partner rates.">
 <meta property="og:image" content="https://www.apexdigitalforge.in/assets/og-image.png">
 <meta name="twitter:image" content="https://www.apexdigitalforge.in/assets/og-image.png">
 <meta name="robots" content="index, follow">
@@ -29,10 +39,9 @@
 <link rel="canonical" href="https://www.apexdigitalforge.in/white-label-seo" id="canonical-tag">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css?v=23">
+<link rel="preload" href="/assets/fonts/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=24">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -40,98 +49,203 @@
 <meta name="theme-color" content="#0a0710">
 <meta name="version" content="2.1">
 <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "White-Label SEO Services",
-    "serviceType": "White-label SEO",
-    "url": "https://www.apexdigitalforge.in/white-label-seo",
-    "provider": {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "Organization",
+      "@id": "https://www.apexdigitalforge.in/#organization",
       "name": "Apex Digital Forge",
-      "url": "https://www.apexdigitalforge.in"
-    },
-    "audience": {
-      "@type": "Audience",
-      "audienceType": "SEO agencies, marketing agencies, freelancers and resellers"
-    },
-    "description": "White-label SEO fulfillment for agencies and resellers: technical SEO, on-page optimization, link building and reporting delivered under the partner's brand."
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://www.apexdigitalforge.in/"
+      "url": "https://www.apexdigitalforge.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
+        "width": 192,
+        "height": 192
       },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "White-Label SEO",
-        "item": "https://www.apexdigitalforge.in/white-label-seo"
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. DA 50–90 placement options are available, with publisher selection based on niche fit and site quality.",
+      "email": "apexdigitalforge@gmail.com",
+      "telephone": "+918209374032",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Capital High Street",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "postalCode": "302033",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/apex-digital-forge",
+        "https://www.instagram.com/apexdigitalforge.in",
+        "https://x.com/ApexDigitalForg"
+      ],
+      "founder": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "White Label Link Building",
+              "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Development",
+              "description": "SEO-ready website development for businesses: landing pages, business websites, e-commerce stores and custom builds, quoted to requirements"
+            }
+          }
+        ]
       }
-    ]
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is white-label SEO?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "White-label SEO means we do the SEO work and you present it to your client as your own. Reports and deliverables are formatted so you can forward them under your brand, and your client never sees our name."
-        }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.apexdigitalforge.in/#website",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "description": "SEO services for businesses and white-label link building for agencies.",
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
       },
-      {
-        "@type": "Question",
-        "name": "Will my clients know you exist?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. We work as a fully white-label partner, so all communication and reporting is under your brand. We never contact your clients directly unless you ask us to."
-        }
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.apexdigitalforge.in/#founder",
+      "name": "Ravi Bairwa",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
       },
-      {
-        "@type": "Question",
-        "name": "What does white-label SEO cover?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Technical SEO, on-page optimization, keyword and topical mapping, link building with DA 50–90 placement options selected for niche fit and site quality, local SEO, and reporting. Scope is confirmed for each partner before work begins."
-        }
+      "url": "https://www.apexdigitalforge.in/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/ravi-bairwa-8a117924a"
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "White-Label SEO Services",
+      "serviceType": "White-label SEO",
+      "url": "https://www.apexdigitalforge.in/white-label-seo",
+      "provider": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
       },
-      {
-        "@type": "Question",
-        "name": "Do you guarantee rankings?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Nobody can honestly guarantee a specific Google ranking position. We confirm what is being delivered, how it is delivered and how it is reported, and we are open about what is and is not within our control."
-        }
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "SEO agencies, marketing agencies, freelancers and resellers"
       },
-      {
-        "@type": "Question",
-        "name": "How is white-label pricing set?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Partner rates are quoted by scope and volume, such as how many client campaigns you run and which services you need. Send us a message through the form on this page and we will reply with partner rates."
+      "description": "White-label SEO fulfillment for agencies and resellers: technical SEO, on-page optimization, link building and reporting delivered under the partner's brand.",
+      "@id": "https://www.apexdigitalforge.in/white-label-seo#service"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.apexdigitalforge.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "White-Label SEO",
+          "item": "https://www.apexdigitalforge.in/white-label-seo"
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Who is white-label SEO for?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "SEO agencies, web and marketing agencies adding SEO to their offer, freelancers and consultants, and resellers, serving clients in the US, UK, Canada, Australia, UAE and elsewhere."
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is white-label SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "White-label SEO means we do the SEO work and you present it to your client as your own. Reports and deliverables are formatted so you can forward them under your brand, and your client never sees our name."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my clients know you exist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We work as a fully white-label partner, so all communication and reporting is under your brand. We never contact your clients directly unless you ask us to."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does white-label SEO cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Technical SEO, on-page optimization, keyword and topical mapping, link building with DA 50–90 placement options selected for niche fit and site quality, local SEO, and reporting. Scope is confirmed for each partner before work begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you guarantee rankings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Nobody can honestly guarantee a specific Google ranking position. We confirm what is being delivered, how it is delivered and how it is reported, and we are open about what is and is not within our control."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is white-label pricing set?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partner rates are quoted by scope and volume, such as how many client campaigns you run and which services you need. Send us a message through the form on this page and we will reply with partner rates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is white-label SEO for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SEO agencies, web and marketing agencies adding SEO to their offer, freelancers and consultants, and resellers, serving clients in the US, UK, Canada, Australia, UAE and elsewhere."
+          }
         }
-      }
-    ]
-  }
-]
+      ]
+    }
+  ]
+}
 </script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 <!-- SITE-WIDE AURORA BACKGROUND -->
@@ -357,6 +471,12 @@
   </section>
 
   <section class="section" style="padding-top:0;">
+    <div class="sec-eyebrow">Guides for Agencies</div>
+    <h2 class="sec-title" style="font-size:36px;">Learn how white-label link building works</h2>
+    <ul style="list-style:none;padding:0;margin:16px 0 0;max-width:800px;"><li style="margin-bottom:10px;"><a href="/blog/outsource-link-building" style="color:var(--accent);text-decoration:underline;">How agencies outsource link building</a></li><li style="margin-bottom:10px;"><a href="/blog/white-label-link-building-services" style="color:var(--accent);text-decoration:underline;">White-label link building services explained</a></li><li style="margin-bottom:10px;"><a href="/blog/link-building-companies-comparison" style="color:var(--accent);text-decoration:underline;">Link building companies compared by type</a></li><li style="margin-bottom:10px;"><a href="/blog/white-label-local-seo" style="color:var(--accent);text-decoration:underline;">White-label local SEO for agencies</a></li><li style="margin-bottom:10px;"><a href="/blog/white-label-seo-pricing" style="color:var(--accent);text-decoration:underline;">White-label SEO pricing and packages</a></li></ul>
+  </section>
+
+  <section class="section" style="padding-top:0;">
     <div class="sec-eyebrow">FAQ</div>
     <h2 class="sec-title" style="font-size:36px;">White-label SEO questions</h2>
     <div style="max-width:800px;margin-top:8px;">
@@ -417,6 +537,7 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
+      <a href="/about" onclick="showPage('about', event)">About</a>
       <a href="/process" onclick="showPage('process', event)">How It Works</a>
       <a href="/learn-seo" onclick="showPage('learn-seo', event)">Learn SEO</a>
       <a href="/blog" onclick="showPage('blog', event)">Blog</a>
@@ -431,6 +552,6 @@
 </footer>
 
 
-<script src="/js/main.js?v=17"></script>
+<script defer src="/js/main.js?v=18"></script>
 </body>
 </html>

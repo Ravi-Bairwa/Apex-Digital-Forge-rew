@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
 <script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t||(t!=='light'&&t!=='apex')){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'apex';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM"></script>
+<!-- Google tag (gtag.js) - script loads after first interaction or shortly after page load -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-JVNJK7KTEM');
+  (function(){
+    var loaded = false;
+    function load(){
+      if (loaded) return; loaded = true;
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM';
+      document.head.appendChild(s);
+    }
+    ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ addEventListener(e, load, {once:true, passive:true}); });
+    addEventListener('load', function(){ setTimeout(load, 2500); });
+  })();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,10 +39,9 @@
 <link rel="canonical" href="https://www.apexdigitalforge.in/blog/seo-for-ecommerce-stores" id="canonical-tag">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css?v=23">
+<link rel="preload" href="/assets/fonts/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=24">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -40,135 +49,145 @@
 <meta name="theme-color" content="#0a0710">
 <meta name="version" content="2.1">
 <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
-      "width": 192,
-      "height": 192
-    },
-    "image": "https://www.apexdigitalforge.in/assets/og-image.png",
-    "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. DA 50–90 placement options are available, with publisher selection based on niche fit and site quality.",
-    "email": "apexdigitalforge@gmail.com",
-    "telephone": "+918209374032",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Capital High Street",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "302033",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/apex-digital-forge",
-      "https://www.instagram.com/apexdigitalforge.in",
-      "https://x.com/ApexDigitalForg"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Ravi Bairwa",
-      "jobTitle": "Founder"
-    },
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "United States"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.apexdigitalforge.in/#organization",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
+        "width": 192,
+        "height": 192
       },
-      {
-        "@type": "Country",
-        "name": "United Kingdom"
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. DA 50–90 placement options are available, with publisher selection based on niche fit and site quality.",
+      "email": "apexdigitalforge@gmail.com",
+      "telephone": "+918209374032",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Capital High Street",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "postalCode": "302033",
+        "addressCountry": "IN"
       },
-      {
-        "@type": "Country",
-        "name": "Australia"
+      "sameAs": [
+        "https://www.linkedin.com/company/apex-digital-forge",
+        "https://www.instagram.com/apexdigitalforge.in",
+        "https://x.com/ApexDigitalForg"
+      ],
+      "founder": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
       },
-      {
-        "@type": "Country",
-        "name": "Canada"
-      },
-      {
-        "@type": "Country",
-        "name": "United Arab Emirates"
-      },
-      {
-        "@type": "Country",
-        "name": "India"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Link Building Services",
-      "itemListElement": [
+      "areaServed": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "White Label Link Building",
-            "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality"
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Link Building Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "White Label Link Building",
+              "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.apexdigitalforge.in/#website",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality",
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.apexdigitalforge.in/#founder",
+      "name": "Ravi Bairwa",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "url": "https://www.apexdigitalforge.in/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/ravi-bairwa-8a117924a"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "SEO for Ecommerce Stores: What Actually Moves Rankings",
+      "description": "A practical guide to SEO for online stores — product page optimization, category structure, and the technical issues that actually cap ecommerce rankings.",
+      "url": "https://www.apexdigitalforge.in/blog/seo-for-ecommerce-stores",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-09-14",
+      "author": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
+      },
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.apexdigitalforge.in/blog/seo-for-ecommerce-stores"
+      },
+      "image": "https://www.apexdigitalforge.in/assets/blog/ecommerce.svg",
+      "isPartOf": {
+        "@id": "https://www.apexdigitalforge.in/#website"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should every product have unique copy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ideally yes, but if resources are limited, prioritize the highest-traffic category and collection pages first, since these typically carry more overall search weight than any single product page. How long until a new ecommerce site sees meaningful organic traffic? Usually four to six months, depending on competition within the specific product category."
           }
         }
       ]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in",
-    "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.apexdigitalforge.in/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "SEO for Ecommerce Stores: What Actually Moves Rankings",
-    "description": "A practical guide to SEO for online stores — product page optimization, category structure, and the technical issues that actually cap ecommerce rankings.",
-    "url": "https://www.apexdigitalforge.in/blog/seo-for-ecommerce-stores",
-    "datePublished": "2026-09-14",
-    "dateModified": "2026-09-14",
-    "author": {
-      "@type": "Person",
-      "name": "Ravi Bairwa"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Apex Digital Forge",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.apexdigitalforge.in/blog/seo-for-ecommerce-stores"
-    },
-    "image": "https://www.apexdigitalforge.in/assets/blog/ecommerce.svg"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Should every product have unique copy?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ideally yes, but if resources are limited, prioritize the highest-traffic category and collection pages first, since these typically carry more overall search weight than any single product page. How long until a new ecommerce site sees meaningful organic traffic? Usually four to six months, depending on competition within the specific product category."
-        }
-      }
-    ]
-  }
-]
+  ]
+}
 </script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 
@@ -257,7 +276,7 @@
     <a href="/blog" onclick="showPage('blog', event)" style="display:inline-block;margin-bottom:24px;color:var(--muted2);font-size:13px;text-decoration:none;">&larr; Back to Blog</a>
     <div class="article-cat">Industry SEO</div>
     <h1 class="article-title">SEO for Ecommerce Stores: What Actually Moves Rankings</h1>
-    <div class="article-meta"><span>Ravi Bairwa</span><time datetime="2026-09-14">14 Sep 2026</time><span>4 min read</span></div>
+    <div class="article-meta"><span>By <a href="/about" rel="author">Ravi Bairwa</a></span><time datetime="2026-09-14">14 Sep 2026</time><span>4 min read</span></div>
     <div class="article-body">
 <img src="/assets/blog/ecommerce.svg" alt="SEO for ecommerce stores" loading="lazy" style="width:100%;max-width:400px;height:auto;aspect-ratio:400/220;border-radius:16px;display:block;margin:0 auto 24px;">
 <p>SEO for ecommerce stores depends on the technical fundamentals covered in <a href="https://developers.google.com/search/docs" target="_blank" rel="noopener">Google's own SEO documentation</a>, since duplicate and thin category pages are the most common issue holding stores back, so cleaning them up is often what moves rankings.</p>
@@ -294,7 +313,7 @@
 <p>It's also worth revisiting category and collection pages after each major sales season, since search behavior and trending product terms shift throughout the year and a static page gradually loses ground to more actively maintained competitors.</p>
 <p>We unpack this further in our guide to <a href="/blog/technical-seo-audit-checklist-what-actually-moves-rankings-in-2026">Technical SEO Audit Checklist</a>.</p>
 <div data-cta-block style="margin-top:36px;padding:24px;border:1px solid var(--border);border-radius:14px;"><strong style="display:block;margin-bottom:16px;color:var(--white);font-size:17px;">Need SEO or white-label link building?</strong><div style="display:flex;gap:12px;flex-wrap:wrap;"><a href="/contact" class="btn btn-primary" onclick="showPage('contact', event)">Ask About Trial</a><a href="/seo-audit" class="btn btn-dark" onclick="showPage('seo-audit', event)">Get a Free SEO Audit</a></div></div>
-<div style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);"><div style="font-weight:700;color:var(--white);margin-bottom:12px;">Keep Reading</div><ul style="list-style:none;padding:0;margin:0 0 16px 0;"><li style="margin-bottom:8px;"><a href="/blog/amazon-seo-optimization-guide" style="color:var(--accent);text-decoration:underline;">Amazon SEO: How A9/A10 Ranking Actually Differs From Google</a></li><li style="margin-bottom:8px;"><a href="/blog/technical-seo-audit-checklist-what-actually-moves-rankings-in-2026" style="color:var(--accent);text-decoration:underline;">Technical SEO Audit Checklist</a></li><li style="margin-bottom:8px;"><a href="/blog/anchor-text-strategy" style="color:var(--accent);text-decoration:underline;">The Perfect Anchor Text Distribution Strategy</a></li><li style="margin-bottom:8px;"><a href="/blog/ecommerce-website-development-checklist" style="color:var(--accent);text-decoration:underline;">E-commerce Website Development: What to Plan Before You Build</a></li></ul><a href="/services" onclick="showPage('services', event)" style="color:var(--accent);text-decoration:underline;font-weight:600;">Explore our full SEO service stack &rarr;</a></div>
+<div style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);"><div style="font-weight:700;color:var(--white);margin-bottom:12px;">Keep Reading</div><ul style="list-style:none;padding:0;margin:0 0 16px 0;"><li style="margin-bottom:8px;"><a href="/blog/amazon-seo-optimization-guide" style="color:var(--accent);text-decoration:underline;">Amazon SEO: How A9/A10 Ranking Actually Differs From Google</a></li><li style="margin-bottom:8px;"><a href="/blog/technical-seo-audit-checklist-what-actually-moves-rankings-in-2026" style="color:var(--accent);text-decoration:underline;">Technical SEO Audit Checklist</a></li><li style="margin-bottom:8px;"><a href="/blog/anchor-text-strategy" style="color:var(--accent);text-decoration:underline;">The Perfect Anchor Text Distribution Strategy</a></li><li style="margin-bottom:8px;"><a href="/blog/ecommerce-website-development-checklist" style="color:var(--accent);text-decoration:underline;">E-commerce Website Development: What to Plan Before You Build</a></li><li style="margin-bottom:8px;"><a href="/seo-services#industries" style="color:var(--accent);text-decoration:underline;">SEO services by industry</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-shopify-stores" style="color:var(--accent);text-decoration:underline;">Shopify SEO</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-fashion-and-apparel-brands" style="color:var(--accent);text-decoration:underline;">SEO for Fashion Brands</a></li></ul><a href="/services" onclick="showPage('services', event)" style="color:var(--accent);text-decoration:underline;font-weight:600;">Explore our full SEO service stack &rarr;</a></div>
     </div>
   </section>
 </div>
@@ -329,6 +348,7 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
+      <a href="/about" onclick="showPage('about', event)">About</a>
       <a href="/process" onclick="showPage('process', event)">How It Works</a>
       <a href="/learn-seo" onclick="showPage('learn-seo', event)">Learn SEO</a>
       <a href="/blog" onclick="showPage('blog', event)">Blog</a>
@@ -343,7 +363,7 @@
 </footer>
 
 
-<script src="/js/main.js?v=17"></script>
+<script defer src="/js/main.js?v=18"></script>
 
 </body>
 </html>

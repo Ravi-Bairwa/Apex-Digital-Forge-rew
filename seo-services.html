@@ -2,24 +2,34 @@
 <html lang="en">
 <head>
 <script>(function(){try{var t=localStorage.getItem('adf-theme');if(!t||(t!=='light'&&t!=='apex')){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'apex';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM"></script>
+<!-- Google tag (gtag.js) - script loads after first interaction or shortly after page load -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-JVNJK7KTEM');
+  (function(){
+    var loaded = false;
+    function load(){
+      if (loaded) return; loaded = true;
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JVNJK7KTEM';
+      document.head.appendChild(s);
+    }
+    ['pointerdown','keydown','scroll','touchstart'].forEach(function(e){ addEventListener(e, load, {once:true, passive:true}); });
+    addEventListener('load', function(){ setTimeout(load, 2500); });
+  })();
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEO Services: Link Building, On-Page & Technical SEO | Apex Digital Forge</title>
+<title>SEO Services: Link Building, On-Page & Technical SEO</title>
 <meta name="description" content="SEO services for businesses: link building, on-page SEO, technical SEO, local SEO and GEO. Choose a service or request a free SEO audit.">
-<meta property="og:title" content="SEO Services: Link Building, On-Page & Technical SEO | Apex Digital Forge">
+<meta property="og:title" content="SEO Services: Link Building, On-Page & Technical SEO">
 <meta property="og:description" content="Complete SEO for businesses: on-page, technical and off-page link building, handled for you.">
 <meta property="og:url" content="https://www.apexdigitalforge.in/seo-services">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SEO Services: Link Building, On-Page & Technical SEO | Apex Digital Forge">
+<meta name="twitter:title" content="SEO Services: Link Building, On-Page & Technical SEO">
 <meta name="twitter:description" content="SEO services for businesses: link building with DA 50–90 placement options, on-page SEO, technical SEO, local SEO and GEO.">
 <meta property="og:image" content="https://www.apexdigitalforge.in/assets/og-image.png">
 <meta name="twitter:image" content="https://www.apexdigitalforge.in/assets/og-image.png">
@@ -29,10 +39,9 @@
 <link rel="canonical" href="https://www.apexdigitalforge.in/seo-services" id="canonical-tag">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"></noscript>
-<link rel="stylesheet" href="/css/style.css?v=23">
+<link rel="preload" href="/assets/fonts/syne-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/style.css?v=24">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -40,149 +49,163 @@
 <meta name="theme-color" content="#0a0710">
 <meta name="version" content="2.1">
 <script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
-      "width": 192,
-      "height": 192
-    },
-    "image": "https://www.apexdigitalforge.in/assets/og-image.png",
-    "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. DA 50–90 placement options are available, with publisher selection based on niche fit and site quality.",
-    "email": "apexdigitalforge@gmail.com",
-    "telephone": "+918209374032",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Capital High Street",
-      "addressLocality": "Jaipur",
-      "addressRegion": "Rajasthan",
-      "postalCode": "302033",
-      "addressCountry": "IN"
-    },
-    "sameAs": [
-      "https://www.linkedin.com/company/apex-digital-forge",
-      "https://www.instagram.com/apexdigitalforge.in",
-      "https://x.com/ApexDigitalForg"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Ravi Bairwa",
-      "jobTitle": "Founder"
-    },
-    "areaServed": [
-      {
-        "@type": "Country",
-        "name": "United States"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.apexdigitalforge.in/#organization",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.apexdigitalforge.in/assets/favicon-192.png",
+        "width": 192,
+        "height": 192
       },
-      {
-        "@type": "Country",
-        "name": "United Kingdom"
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "description": "Apex Digital Forge provides SEO services for businesses and white-label SEO and link building for agencies. DA 50–90 placement options are available, with publisher selection based on niche fit and site quality.",
+      "email": "apexdigitalforge@gmail.com",
+      "telephone": "+918209374032",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Capital High Street",
+        "addressLocality": "Jaipur",
+        "addressRegion": "Rajasthan",
+        "postalCode": "302033",
+        "addressCountry": "IN"
       },
-      {
-        "@type": "Country",
-        "name": "Australia"
+      "sameAs": [
+        "https://www.linkedin.com/company/apex-digital-forge",
+        "https://www.instagram.com/apexdigitalforge.in",
+        "https://x.com/ApexDigitalForg"
+      ],
+      "founder": {
+        "@id": "https://www.apexdigitalforge.in/#founder"
       },
-      {
-        "@type": "Country",
-        "name": "Canada"
-      },
-      {
-        "@type": "Country",
-        "name": "United Arab Emirates"
-      },
-      {
-        "@type": "Country",
-        "name": "India"
-      }
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services",
-      "itemListElement": [
+      "areaServed": [
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "White Label Link Building",
-            "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality."
+          "@type": "Country",
+          "name": "United States"
+        },
+        {
+          "@type": "Country",
+          "name": "United Kingdom"
+        },
+        {
+          "@type": "Country",
+          "name": "Australia"
+        },
+        {
+          "@type": "Country",
+          "name": "Canada"
+        },
+        {
+          "@type": "Country",
+          "name": "United Arab Emirates"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "White Label Link Building",
+              "description": "DA 50–90 placement options for SEO agencies, with publisher selection based on niche fit and site quality."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Development",
+              "description": "SEO-ready website development for businesses: landing pages, business websites, e-commerce stores and custom builds, quoted to requirements"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.apexdigitalforge.in/#website",
+      "name": "Apex Digital Forge",
+      "url": "https://www.apexdigitalforge.in/",
+      "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality.",
+      "image": "https://www.apexdigitalforge.in/assets/og-image.png",
+      "publisher": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.apexdigitalforge.in/#founder",
+      "name": "Ravi Bairwa",
+      "jobTitle": "Founder",
+      "worksFor": {
+        "@id": "https://www.apexdigitalforge.in/#organization"
+      },
+      "url": "https://www.apexdigitalforge.in/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/ravi-bairwa-8a117924a"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you work with businesses directly, or only agencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. Businesses in the US, UK, Canada, Australia, and UAE hire us directly for SEO. Agencies outsource link building and technical SEO to us on a fully white-label basis — your clients never see our name, and your agency takes full credit."
           }
         },
         {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Web Development",
-            "description": "SEO-ready website development for businesses: landing pages, business websites, e-commerce stores and custom builds, quoted to requirements"
+          "@type": "Question",
+          "name": "What's included in GEO (Generative Engine Optimization)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Structured Q&A content, FAQ schema, E-E-A-T signals, brand-mention development, and citation-focused content designed to improve discoverability across AI search experiences. Citations or mentions in ChatGPT, Perplexity, Google AI Overviews, and Gemini are not guaranteed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is white-label link building actually delivered?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You submit a target URL, anchor text, and niche. We review available publisher options for niche fit and site quality, then confirm the placement details, estimated delivery window, and reporting format for the order."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you guarantee specific rankings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Nobody can honestly guarantee a specific Google ranking position, since that depends on factors outside any single agency's control. DA 50–90 placement options may be available; publisher details, metrics that can be verified, and reporting scope are confirmed for each campaign."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I mix on-page, off-page, technical, and GEO services together?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — most clients combine services rather than picking just one. The pricing page breaks down which packages bundle which pillars, or you can request a custom mix through the contact page."
           }
         }
       ]
     }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Apex Digital Forge",
-    "url": "https://www.apexdigitalforge.in",
-    "description": "SEO services for businesses and white-label link building for agencies, with publisher placements selected for niche fit and site quality.",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.apexdigitalforge.in/blog?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Do you work with businesses directly, or only agencies?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Both. Businesses in the US, UK, Canada, Australia, and UAE hire us directly for SEO. Agencies outsource link building and technical SEO to us on a fully white-label basis — your clients never see our name, and your agency takes full credit."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What's included in GEO (Generative Engine Optimization)?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Structured Q&A content, FAQ schema, E-E-A-T signals, brand-mention development, and citation-focused content designed to improve discoverability across AI search experiences. Citations or mentions in ChatGPT, Perplexity, Google AI Overviews, and Gemini are not guaranteed."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is white-label link building actually delivered?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You submit a target URL, anchor text, and niche. We review available publisher options for niche fit and site quality, then confirm the placement details, estimated delivery window, and reporting format for the order."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you guarantee specific rankings?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Nobody can honestly guarantee a specific Google ranking position, since that depends on factors outside any single agency's control. DA 50–90 placement options may be available; publisher details, metrics that can be verified, and reporting scope are confirmed for each campaign."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I mix on-page, off-page, technical, and GEO services together?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes — most clients combine services rather than picking just one. The pricing page breaks down which packages bundle which pillars, or you can request a custom mix through the contact page."
-        }
-      }
-    ]
-  }
-]
+  ]
+}
 </script>
+<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 
@@ -420,6 +443,13 @@
       </div>
     </div>
 
+  <section class="section" id="industries" style="padding-top:0;">
+    <div class="sec-eyebrow">Industries</div>
+    <h2 class="sec-title" style="font-size:36px;">SEO services by industry</h2>
+    <p style="color:var(--muted2);max-width:800px;line-height:1.7;">Guides on what search visibility looks like for different types of business.</p>
+    <ul style="list-style:none;padding:0;margin:20px 0 0;columns:3 240px;column-gap:32px;"><li style="margin-bottom:8px;"><a href="/blog/seo-for-roofing-companies" style="color:var(--accent);text-decoration:underline;">SEO for Roofing Companies</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-electricians" style="color:var(--accent);text-decoration:underline;">SEO for Electricians</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-hvac-and-plumbing-companies" style="color:var(--accent);text-decoration:underline;">SEO for HVAC and Plumbing Companies</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-cleaning-services" style="color:var(--accent);text-decoration:underline;">SEO for Cleaning Services</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-pest-control-companies" style="color:var(--accent);text-decoration:underline;">SEO for Pest Control</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-landscaping-and-lawn-care-companies" style="color:var(--accent);text-decoration:underline;">SEO for Landscaping Companies</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-solar-installers" style="color:var(--accent);text-decoration:underline;">SEO for Solar Installers</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-moving-and-storage-companies" style="color:var(--accent);text-decoration:underline;">SEO for Moving Companies</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-home-services-businesses" style="color:var(--accent);text-decoration:underline;">SEO for Home Services Businesses</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-auto-dealers-and-repair-shops" style="color:var(--accent);text-decoration:underline;">SEO for Auto Dealers and Repair Shops</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-dental-and-healthcare-practices" style="color:var(--accent);text-decoration:underline;">SEO for Dental Practices</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-chiropractors-and-physical-therapists" style="color:var(--accent);text-decoration:underline;">SEO for Chiropractors</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-medical-spas-and-aesthetics" style="color:var(--accent);text-decoration:underline;">SEO for Medical Spas</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-veterinary-clinics" style="color:var(--accent);text-decoration:underline;">SEO for Veterinary Clinics</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-senior-care-and-assisted-living" style="color:var(--accent);text-decoration:underline;">SEO for Senior Care Facilities</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-daycare-and-childcare-centers" style="color:var(--accent);text-decoration:underline;">SEO for Daycare Centers</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-law-firms" style="color:var(--accent);text-decoration:underline;">SEO for Law Firms</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-financial-advisors-and-accounting-firms" style="color:var(--accent);text-decoration:underline;">SEO for Financial Advisors</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-insurance-agencies" style="color:var(--accent);text-decoration:underline;">SEO for Insurance Agencies</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-real-estate-agents" style="color:var(--accent);text-decoration:underline;">SEO for Real Estate Agents</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-restaurants-and-hospitality" style="color:var(--accent);text-decoration:underline;">SEO for Restaurants</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-hotels-and-travel-companies" style="color:var(--accent);text-decoration:underline;">SEO for Hotels</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-wedding-and-event-businesses" style="color:var(--accent);text-decoration:underline;">SEO for Wedding Businesses</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-fitness-studios-and-gyms" style="color:var(--accent);text-decoration:underline;">SEO for Gyms and Fitness Studios</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-interior-designers" style="color:var(--accent);text-decoration:underline;">SEO for Interior Designers</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-photography-studios" style="color:var(--accent);text-decoration:underline;">SEO for Photography Studios</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-ecommerce-stores" style="color:var(--accent);text-decoration:underline;">SEO for Ecommerce Stores</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-shopify-stores" style="color:var(--accent);text-decoration:underline;">Shopify SEO</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-fashion-and-apparel-brands" style="color:var(--accent);text-decoration:underline;">SEO for Fashion Brands</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-saas-companies" style="color:var(--accent);text-decoration:underline;">SEO for SaaS Companies</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-b2b-manufacturers" style="color:var(--accent);text-decoration:underline;">SEO for B2B Manufacturers</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-online-coaches-and-course-creators" style="color:var(--accent);text-decoration:underline;">SEO for Online Coaches</a></li><li style="margin-bottom:8px;"><a href="/blog/seo-for-nonprofits-and-associations" style="color:var(--accent);text-decoration:underline;">SEO for Nonprofits</a></li></ul>
+  </section>
+
   <section class="section">
     <div class="sec-eyebrow">FAQ</div>
     <h2 class="sec-title" style="font-size:36px;">Frequently asked questions</h2>
@@ -527,6 +557,7 @@
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
+      <a href="/about" onclick="showPage('about', event)">About</a>
       <a href="/process" onclick="showPage('process', event)">How It Works</a>
       <a href="/learn-seo" onclick="showPage('learn-seo', event)">Learn SEO</a>
       <a href="/blog" onclick="showPage('blog', event)">Blog</a>
@@ -541,6 +572,6 @@
 </footer>
 
 
-<script src="/js/main.js?v=17"></script>
+<script defer src="/js/main.js?v=18"></script>
 </body>
 </html>
