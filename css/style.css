@@ -1059,5 +1059,18 @@ nav { gap: clamp(12px, 1.6vw, 28px); }
 [data-theme="light"] a[href*="clutch.co"], [data-theme="light"] a[href*="goodfirms.co"], [data-theme="light"] a[href*="crunchbase.com"] { color: #475569 !important; border-color: #cbd5e1 !important; }
 @media (max-width: 640px) { input, select, textarea { font-size: 16px !important; } }
 
+/* ── Photos: small, framed like the cards, natural colours (no tint), placed beside the page heading ── */
+.photo-frame { position: relative; margin: 0; border-radius: 20px; overflow: hidden; border: 1px solid var(--border2); background: var(--dark2); box-shadow: 0 24px 56px -36px rgba(0,0,0,.6); }
+.photo-frame img { display: block; width: 100%; height: auto; }
+[data-theme="light"] .photo-frame { box-shadow: 0 20px 48px -36px rgba(15,23,42,.3); }
+.hero-split { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .8fr); gap: 56px; align-items: center; }
+.hero-split.flip { grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); }
+.hero-split.flip .photo-frame { order: -1; }
+.hero-split .photo-frame { width: 100%; max-width: 420px; justify-self: end; }
+.hero-split.flip .photo-frame { justify-self: start; }
+@media (max-width: 860px) {
+  .hero-split, .hero-split.flip { grid-template-columns: 1fr; gap: 28px; }
+  .hero-split .photo-frame, .hero-split.flip .photo-frame { order: 2; max-width: 360px; justify-self: start; }
+}
 /* byline author link */
 .article-meta a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
