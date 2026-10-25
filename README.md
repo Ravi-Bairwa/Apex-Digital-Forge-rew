@@ -12,7 +12,7 @@ Apex Digital Forge provides white-label link-building and SEO services for agenc
 **Contact:**
 - Email: apexdigitalforge@gmail.com
 - WhatsApp: +91 99280 06168
-- Location: Jaipur, Rajasthan, India
+- Location: New York, USA
 
 ---
 
@@ -89,4 +89,4 @@ To deploy your own version:
 
 ---
 
-*© 2026 Apex Digital Forge — Ravi Bairwa, Jaipur, India*
+*© 2026 Apex Digital Forge — Ravi Bairwa, New York, USA*
