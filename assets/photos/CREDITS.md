@@ -12,4 +12,3 @@ Free-to-use stock photos (Unsplash License / Pexels License: commercial use allo
 | pricing.webp | Jakub Zerdzicki (Unsplash) |
 | contact.webp | Mart Production (Pexels) |
 | process.webp | Jakub Zerdzicki (Unsplash) |
-| learn-seo.webp | Domenico Loia (Unsplash) |

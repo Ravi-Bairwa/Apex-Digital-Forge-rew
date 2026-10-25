@@ -1053,14 +1053,22 @@ nav { gap: clamp(12px, 1.6vw, 28px); }
 [data-theme="light"] a[href*="clutch.co"], [data-theme="light"] a[href*="goodfirms.co"], [data-theme="light"] a[href*="crunchbase.com"] { color: #475569 !important; border-color: #cbd5e1 !important; }
 @media (max-width: 640px) { input, select, textarea { font-size: 16px !important; } }
 
-/* ── Photo banners: gently tinted with the active theme, framed like the cards, faded into the page ── */
-.photo-frame { position: relative; margin: 36px 0 0; border-radius: 24px; overflow: hidden; isolation: isolate; border: 1px solid var(--border2); background: var(--dark2); box-shadow: 0 36px 80px -44px rgba(0,0,0,.6); }
-.photo-frame img { display: block; width: 100%; height: auto; filter: saturate(.9) contrast(1.05) brightness(.86); }
+/* ── Photos: small, framed like the cards, tinted gently with the active theme, placed beside the page heading ── */
+.photo-frame { position: relative; margin: 0; border-radius: 20px; overflow: hidden; isolation: isolate; border: 1px solid var(--border2); background: var(--dark2); box-shadow: 0 28px 60px -38px rgba(0,0,0,.6); }
+.photo-frame img { display: block; width: 100%; height: auto; filter: saturate(.9) contrast(1.05) brightness(.88); }
 .photo-frame::before { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(115deg, var(--apex-a, var(--accent2)) 0%, var(--apex-b, var(--accent)) 100%); opacity: .16; }
-.photo-frame::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(to top, var(--dark) 0%, rgba(0,0,0,0) 40%), radial-gradient(125% 100% at 50% 40%, rgba(0,0,0,0) 58%, rgba(0,0,0,.34) 100%); opacity: .6; }
-[data-theme="apex"] .photo-frame { box-shadow: 0 40px 90px -48px rgba(255,46,166,.4), 0 0 0 1px rgba(139,47,224,.1); }
-[data-theme="light"] .photo-frame { box-shadow: 0 30px 70px -44px rgba(15,23,42,.3); }
+.photo-frame::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(to top, var(--dark) 0%, rgba(0,0,0,0) 38%); opacity: .45; }
+[data-theme="apex"] .photo-frame { box-shadow: 0 32px 70px -42px rgba(255,46,166,.4), 0 0 0 1px rgba(139,47,224,.1); }
+[data-theme="light"] .photo-frame { box-shadow: 0 24px 56px -40px rgba(15,23,42,.3); }
 [data-theme="light"] .photo-frame img { filter: saturate(.95) contrast(1.02) brightness(.97); }
 [data-theme="light"] .photo-frame::before { opacity: .08; }
-[data-theme="light"] .photo-frame::after { opacity: .16; }
-@media (max-width: 640px) { .photo-frame { border-radius: 16px; margin-top: 24px; } }
+[data-theme="light"] .photo-frame::after { opacity: .12; }
+.hero-split { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .8fr); gap: 56px; align-items: center; }
+.hero-split.flip { grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); }
+.hero-split.flip .photo-frame { order: -1; }
+.hero-split .photo-frame { width: 100%; max-width: 420px; justify-self: end; }
+.hero-split.flip .photo-frame { justify-self: start; }
+@media (max-width: 860px) {
+  .hero-split, .hero-split.flip { grid-template-columns: 1fr; gap: 28px; }
+  .hero-split .photo-frame, .hero-split.flip .photo-frame { order: 2; max-width: 360px; justify-self: start; }
+}
