@@ -164,6 +164,44 @@
 }
 </script>
 <script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
+<style>
+/* Client feedback: varied card shapes so no two testimonials look alike */
+.tm-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;margin-top:32px}
+.tm{position:relative;margin:0;padding:28px;border-radius:20px;background:var(--dark3);border:1px solid var(--border);display:flex;flex-direction:column;justify-content:space-between;gap:22px;overflow:hidden;transition:transform .25s ease,border-color .25s ease}
+.tm:hover{transform:translateY(-3px);border-color:var(--border2)}
+.tm blockquote{margin:0;color:var(--muted2);font-size:15px;line-height:1.75;position:relative;z-index:1}
+.tm-mark{position:absolute;top:6px;right:20px;font-family:Georgia,serif;font-size:84px;line-height:1;color:var(--apex-b,var(--accent));opacity:.12;pointer-events:none}
+.tm figcaption{display:flex;align-items:center;gap:12px;position:relative;z-index:1}
+.tm-avatar{flex:none;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff;background:linear-gradient(135deg,var(--g1),var(--g2))}
+.tm-who{display:flex;flex-direction:column;line-height:1.3}
+.tm-who strong{color:var(--white);font-size:14px}
+.tm-who span{color:var(--muted2);font-size:13px}
+.tm:nth-child(1){--g1:var(--apex-a,var(--accent2));--g2:var(--apex-b,var(--accent))}
+.tm:nth-child(2){--g1:var(--apex-b,var(--accent));--g2:var(--apex-c,var(--gold))}
+.tm:nth-child(3){--g1:var(--apex-c,var(--gold));--g2:var(--apex-a,var(--accent2))}
+.tm:nth-child(4){--g1:var(--apex-a,var(--accent2));--g2:var(--apex-c,var(--gold))}
+.tm:nth-child(5){--g1:var(--apex-b,var(--accent));--g2:var(--apex-a,var(--accent2))}
+.tm:nth-child(6){--g1:var(--apex-c,var(--gold));--g2:var(--apex-b,var(--accent))}
+/* 1: large featured quote */
+.tm-feature{grid-column:span 7;padding:38px;background:linear-gradient(150deg,var(--dark3),var(--dark2));border-color:var(--border2);box-shadow:0 34px 80px -54px var(--apex-b,var(--accent))}
+.tm-feature blockquote{font-size:22px;line-height:1.55;color:var(--white);font-weight:600}
+.tm-feature .tm-mark{font-size:150px;top:10px;right:28px;opacity:.22}
+.tm-feature .tm-avatar{width:50px;height:50px;font-size:19px}
+/* 2: accent top bar */
+.tm-b{grid-column:span 5;border-top:3px solid var(--apex-b,var(--accent))}
+/* 3: plain, tall quote mark */
+.tm-c{grid-column:span 4}
+/* 4: accent left bar */
+.tm-d{grid-column:span 4;border-left:3px solid var(--apex-a,var(--accent2))}
+/* 5: offset, soft gradient wash */
+.tm-e{grid-column:span 4;background:linear-gradient(200deg,var(--dark2),var(--dark3));margin-top:14px}
+/* 6: wide strip, quote left, person right */
+.tm-wide{grid-column:span 12;flex-direction:row;align-items:center;gap:36px;padding:26px 34px;background:linear-gradient(90deg,var(--dark3),var(--dark2))}
+.tm-wide blockquote{flex:1;font-size:17px}
+.tm-wide figcaption{flex:none;padding-left:32px;border-left:1px solid var(--border2)}
+.tm-wide .tm-mark{display:none}
+@media (max-width:900px){.tm-feature,.tm-b,.tm-c,.tm-d,.tm-e,.tm-wide{grid-column:span 12}.tm-e{margin-top:0}.tm-feature{padding:28px}.tm-feature blockquote{font-size:19px}.tm-wide{flex-direction:column;align-items:flex-start;gap:20px}.tm-wide figcaption{padding-left:0;border-left:0}}
+</style>
 </head>
 <body>
 
@@ -586,14 +624,38 @@
   <div class="reveal-on-scroll">
     <div class="sec-eyebrow">Client Feedback</div>
     <h2 class="sec-title" style="font-size:clamp(24px,3vw,40px);">What our clients say.</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:28px;">
-<figure style="margin:0;padding:24px;background:var(--dark3);border:1px solid var(--border);border-radius:14px;"><blockquote style="margin:0 0 16px;color:var(--muted2);line-height:1.7;font-size:15px;">&ldquo;Apex Digital Forge built our website and worked on our SEO, and our site now ranks for the searches that matter to our business. They were easy to work with throughout.&rdquo;</blockquote><figcaption style="color:var(--white);font-weight:700;font-size:14px;">Alex<span style="display:block;color:var(--muted2);font-weight:400;font-size:13px;">CEO, Nova Growth Partners</span></figcaption></figure>
-<figure style="margin:0;padding:24px;background:var(--dark3);border:1px solid var(--border);border-radius:14px;"><blockquote style="margin:0 0 16px;color:var(--muted2);line-height:1.7;font-size:15px;">&ldquo;Apex Digital Forge handled our website build and the SEO that followed, and the site now ranks better in search. Clear communication and solid delivery.&rdquo;</blockquote><figcaption style="color:var(--white);font-weight:700;font-size:14px;">Brian<span style="display:block;color:var(--muted2);font-weight:400;font-size:13px;">CMO, Thames Media Group</span></figcaption></figure>
-<figure style="margin:0;padding:24px;background:var(--dark3);border:1px solid var(--border);border-radius:14px;"><blockquote style="margin:0 0 16px;color:var(--muted2);line-height:1.7;font-size:15px;">&ldquo;We worked with Apex Digital Forge on our website and SEO. They built it properly and helped it rank, and we were kept informed along the way.&rdquo;</blockquote><figcaption style="color:var(--white);font-weight:700;font-size:14px;">Dean<span style="display:block;color:var(--muted2);font-weight:400;font-size:13px;">Marketing Head, Maple Leaf Marketing</span></figcaption></figure>
-<figure style="margin:0;padding:24px;background:var(--dark3);border:1px solid var(--border);border-radius:14px;"><blockquote style="margin:0 0 16px;color:var(--muted2);line-height:1.7;font-size:15px;">&ldquo;Apex Digital Forge built our website and app and did the SEO to get the site ranking. A dependable team to work with.&rdquo;</blockquote><figcaption style="color:var(--white);font-weight:700;font-size:14px;">Stevan<span style="display:block;color:var(--muted2);font-weight:400;font-size:13px;">CEO, Outback Digital Co.</span></figcaption></figure>
-<figure style="margin:0;padding:24px;background:var(--dark3);border:1px solid var(--border);border-radius:14px;"><blockquote style="margin:0 0 16px;color:var(--muted2);line-height:1.7;font-size:15px;">&ldquo;Apex Digital Forge delivered our website and the SEO behind it, and the site now ranks in search. Professional, responsive and straightforward.&rdquo;</blockquote><figcaption style="color:var(--white);font-weight:700;font-size:14px;">Abdullah<span style="display:block;color:var(--muted2);font-weight:400;font-size:13px;">Founder, Desert Rose Agency</span></figcaption></figure>
-<figure style="margin:0;padding:24px;background:var(--dark3);border:1px solid var(--border);border-radius:14px;"><blockquote style="margin:0 0 16px;color:var(--muted2);line-height:1.7;font-size:15px;">&ldquo;We had Apex Digital Forge build our website and take care of SEO, and it's now ranking. They did what they said they would.&rdquo;</blockquote><figcaption style="color:var(--white);font-weight:700;font-size:14px;">Abhinav<span style="display:block;color:var(--muted2);font-weight:400;font-size:13px;">Founder, Sharma Digital Co.</span></figcaption></figure>
-    </div>
+    <div class="tm-grid">
+<figure class="tm tm-feature" style="--n:1;">
+  <span class="tm-mark" aria-hidden="true">&ldquo;</span>
+  <blockquote>&ldquo;Apex Digital Forge built our website and worked on our SEO, and our site now ranks for the searches that matter to our business. They were easy to work with throughout.&rdquo;</blockquote>
+  <figcaption><span class="tm-avatar" aria-hidden="true">A</span><span class="tm-who"><strong>Alex</strong><span>CEO, Nova Growth Partners</span></span></figcaption>
+</figure>
+<figure class="tm tm-card tm-b" style="--n:2;">
+  <span class="tm-mark" aria-hidden="true">&ldquo;</span>
+  <blockquote>&ldquo;Apex Digital Forge handled our website build and the SEO that followed, and the site now ranks better in search. Clear communication and solid delivery.&rdquo;</blockquote>
+  <figcaption><span class="tm-avatar" aria-hidden="true">B</span><span class="tm-who"><strong>Brian</strong><span>CMO, Thames Media Group</span></span></figcaption>
+</figure>
+<figure class="tm tm-card tm-c" style="--n:3;">
+  <span class="tm-mark" aria-hidden="true">&ldquo;</span>
+  <blockquote>&ldquo;We worked with Apex Digital Forge on our website and SEO. They built it properly and helped it rank, and we were kept informed along the way.&rdquo;</blockquote>
+  <figcaption><span class="tm-avatar" aria-hidden="true">D</span><span class="tm-who"><strong>Dean</strong><span>Marketing Head, Maple Leaf Marketing</span></span></figcaption>
+</figure>
+<figure class="tm tm-card tm-d" style="--n:4;">
+  <span class="tm-mark" aria-hidden="true">&ldquo;</span>
+  <blockquote>&ldquo;Apex Digital Forge built our website and app and did the SEO to get the site ranking. A dependable team to work with.&rdquo;</blockquote>
+  <figcaption><span class="tm-avatar" aria-hidden="true">S</span><span class="tm-who"><strong>Stevan</strong><span>CEO, Outback Digital Co.</span></span></figcaption>
+</figure>
+<figure class="tm tm-card tm-e" style="--n:5;">
+  <span class="tm-mark" aria-hidden="true">&ldquo;</span>
+  <blockquote>&ldquo;Apex Digital Forge delivered our website and the SEO behind it, and the site now ranks in search. Professional, responsive and straightforward.&rdquo;</blockquote>
+  <figcaption><span class="tm-avatar" aria-hidden="true">A</span><span class="tm-who"><strong>Abdullah</strong><span>Founder, Desert Rose Agency</span></span></figcaption>
+</figure>
+<figure class="tm tm-wide" style="--n:6;">
+  <span class="tm-mark" aria-hidden="true">&ldquo;</span>
+  <blockquote>&ldquo;We had Apex Digital Forge build our website and take care of SEO, and it's now ranking. They did what they said they would.&rdquo;</blockquote>
+  <figcaption><span class="tm-avatar" aria-hidden="true">A</span><span class="tm-who"><strong>Abhinav</strong><span>Founder, Sharma Digital Co.</span></span></figcaption>
+</figure>
+</div>
   </div>
 </section>
 
