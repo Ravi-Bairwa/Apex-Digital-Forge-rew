@@ -48,6 +48,11 @@
       "permanent": true
     },
     {
+      "source": "/guest-posts.html",
+      "destination": "/guest-posts",
+      "permanent": true
+    },
+    {
       "source": "/services.html",
       "destination": "/services",
       "permanent": true
@@ -350,6 +355,10 @@
     {
       "source": "/seo-services",
       "destination": "/seo-services.html"
+    },
+    {
+      "source": "/guest-posts",
+      "destination": "/guest-posts.html"
     },
     {
       "source": "/services",
