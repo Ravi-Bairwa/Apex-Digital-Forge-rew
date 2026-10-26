@@ -1,0 +1,5 @@
+{
+  "_readme": "Guest post catalog. One object per website in 'sites'. Prices are per guest post. priceINR is optional; if EVERY site has it, visitors in India see and pay in INR. 'link' is 'dofollow' or 'nofollow'. 'traffic' is estimated monthly visits (a number). Keep ids unique and URL-safe.",
+  "discountContentProvided": 0.2,
+  "sites": []
+}
