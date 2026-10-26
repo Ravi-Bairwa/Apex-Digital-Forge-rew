@@ -60,6 +60,7 @@ function sourcePathForUrl(raw) {
   };
   if (fixed[route]) return fixed[route];
   if (route.startsWith('blog/')) return route + '.html';
+  if (exists(route + '.html')) return route + '.html';
   return route;
 }
 function localSourcePath(raw, baseUrl) {
