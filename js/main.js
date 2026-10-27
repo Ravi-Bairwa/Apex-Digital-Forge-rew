@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var navLinks = document.querySelectorAll('[data-page="' + page + '"]');
   navLinks.forEach(function(a) { a.classList.add('active-nav'); });
   // Service sub-pages keep the top-level "Services" item highlighted
-  if (page === 'seo-services' || page === 'white-label-seo' || page === 'web-development') {
+  if (page === 'seo-services' || page === 'white-label-seo' || page === 'web-development' || page === 'guest-posts') {
     document.querySelectorAll('.nav-links > li > a[data-page="services"], .mobile-menu a[data-page="services"]').forEach(function(a) { a.classList.add('active-nav'); });
   }
 });

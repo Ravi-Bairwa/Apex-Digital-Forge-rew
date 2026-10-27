@@ -1,393 +1,490 @@
 {
- "_readme": "PRIVATE (server only, never served to browsers). Maps each site id to the partner network number that supplies it and the partner price from the partner sheet.",
+ "_readme": "PRIVATE (server only, never served to browsers). Maps each site id to the partner network number that supplies it, the partner price (sheet Discounted Price) and the partner list price (sheet Our Prices).",
  "sites": {
   "msn-com": {
    "partner": 101,
-   "partnerPrice": 90.0
+   "partnerPrice": 90.0,
+   "listPrice": 110.0
   },
   "barchart-com": {
    "partner": 101,
-   "partnerPrice": 80.0
+   "partnerPrice": 80.0,
+   "listPrice": 100.0
   },
   "goodmenproject-com": {
    "partner": 101,
-   "partnerPrice": 80.0
+   "partnerPrice": 80.0,
+   "listPrice": 100.0
   },
   "entrepreneursbreak-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "programminginsider-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "blazingmenu-org": {
    "partner": 101,
-   "partnerPrice": 30.0
+   "partnerPrice": 30.0,
+   "listPrice": 40.0
   },
   "techbullion-com": {
    "partner": 101,
-   "partnerPrice": 45.0
+   "partnerPrice": 45.0,
+   "listPrice": 50.0
   },
   "ventsmagazine-co-uk": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "urbansplatter-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "usawire-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "omgflix-co-uk": {
    "partner": 101,
-   "partnerPrice": 30.0
+   "partnerPrice": 30.0,
+   "listPrice": 40.0
   },
   "blogstrove-com": {
    "partner": 101,
-   "partnerPrice": 30.0
+   "partnerPrice": 30.0,
+   "listPrice": 40.0
   },
   "londondaily-news": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "openpr-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "bignewsnetwork-com": {
    "partner": 101,
-   "partnerPrice": 55.0
+   "partnerPrice": 55.0,
+   "listPrice": 60.0
   },
   "ipsnews-net": {
    "partner": 101,
-   "partnerPrice": 45.0
+   "partnerPrice": 45.0,
+   "listPrice": 50.0
   },
   "dgmnews-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "1883magazine-com": {
    "partner": 101,
-   "partnerPrice": 100.0
+   "partnerPrice": 100.0,
+   "listPrice": 120.0
   },
   "todaynews-co-uk": {
    "partner": 101,
-   "partnerPrice": 70.0
+   "partnerPrice": 70.0,
+   "listPrice": 80.0
   },
   "thepinnaclelist-com": {
    "partner": 101,
-   "partnerPrice": 80.0
+   "partnerPrice": 80.0,
+   "listPrice": 100.0
   },
   "indiacsr-in": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "crispme-com": {
    "partner": 101,
-   "partnerPrice": 35.0
+   "partnerPrice": 35.0,
+   "listPrice": 40.0
   },
   "trans4mind-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "textilevaluechain-in": {
    "partner": 101,
-   "partnerPrice": 45.0
+   "partnerPrice": 45.0,
+   "listPrice": 50.0
   },
   "benzinga-com": {
    "partner": 101,
-   "partnerPrice": 130.0
+   "partnerPrice": 130.0,
+   "listPrice": 150.0
   },
   "azbigmedia-com": {
    "partner": 101,
-   "partnerPrice": 150.0
+   "partnerPrice": 150.0,
+   "listPrice": 170.0
   },
   "theglobeandmail-com": {
    "partner": 101,
-   "partnerPrice": 120.0
+   "partnerPrice": 120.0,
+   "listPrice": 150.0
   },
   "hackatronic-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "digitaljournal-com": {
    "partner": 101,
-   "partnerPrice": 80.0
+   "partnerPrice": 80.0,
+   "listPrice": 100.0
   },
   "apnews-com": {
    "partner": 101,
-   "partnerPrice": 150.0
+   "partnerPrice": 150.0,
+   "listPrice": 170.0
   },
   "markets-businessinsider-com": {
    "partner": 101,
-   "partnerPrice": 220.0
+   "partnerPrice": 220.0,
+   "listPrice": 250.0
   },
   "finance-yahoo-com": {
    "partner": 101,
-   "partnerPrice": 320.0
+   "partnerPrice": 320.0,
+   "listPrice": 350.0
   },
   "newsmax-com": {
    "partner": 101,
-   "partnerPrice": 120.0
+   "partnerPrice": 120.0,
+   "listPrice": 150.0
   },
   "bigtechnology-com": {
    "partner": 101,
-   "partnerPrice": 220.0
+   "partnerPrice": 220.0,
+   "listPrice": 250.0
   },
   "nyweekly-com": {
    "partner": 101,
-   "partnerPrice": 80.0
+   "partnerPrice": 80.0,
+   "listPrice": 100.0
   },
   "gulfnews-com": {
    "partner": 101,
-   "partnerPrice": 1100.0
+   "partnerPrice": 1100.0,
+   "listPrice": 1200.0
   },
   "khaleejtimes-com": {
    "partner": 101,
-   "partnerPrice": 1100.0
+   "partnerPrice": 1100.0,
+   "listPrice": 1200.0
   },
   "bmmagazine-co-uk": {
    "partner": 101,
-   "partnerPrice": 250.0
+   "partnerPrice": 250.0,
+   "listPrice": 300.0
   },
   "bbntimes-com": {
    "partner": 101,
-   "partnerPrice": 250.0
+   "partnerPrice": 250.0,
+   "listPrice": 300.0
   },
   "editorialge-com": {
    "partner": 101,
-   "partnerPrice": 220.0
+   "partnerPrice": 220.0,
+   "listPrice": 250.0
   },
   "technology-org": {
    "partner": 101,
-   "partnerPrice": 270.0
+   "partnerPrice": 270.0,
+   "listPrice": 300.0
   },
   "thehansindia-com": {
    "partner": 101,
-   "partnerPrice": 130.0
+   "partnerPrice": 130.0,
+   "listPrice": 150.0
   },
   "mirrorreview-com": {
    "partner": 101,
-   "partnerPrice": 80.0
+   "partnerPrice": 80.0,
+   "listPrice": 100.0
   },
   "techicy-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "axeetech-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "imcgrupo-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "icrowdnewswire-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "onyamagazine-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "meganewsmagazines-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "thenewsgod-com": {
    "partner": 101,
-   "partnerPrice": 60.0
+   "partnerPrice": 60.0,
+   "listPrice": 70.0
   },
   "womensbeautyoffers-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "bestadvicezone-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "earthnworld-com": {
    "partner": 101,
-   "partnerPrice": 60.0
+   "partnerPrice": 60.0,
+   "listPrice": 70.0
   },
   "ccr-mag-com": {
    "partner": 101,
-   "partnerPrice": 45.0
+   "partnerPrice": 45.0,
+   "listPrice": 55.0
   },
   "timebusinessnews-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "metapress-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "mindsetterz-com": {
    "partner": 101,
-   "partnerPrice": 30.0
+   "partnerPrice": 30.0,
+   "listPrice": 40.0
   },
   "repairdaily-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "geekalabama-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "mindmybusinessnyc-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 55.0
   },
   "kulfiy-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "technewsoutlets-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "blognewsly-co-uk": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "newszine-co-uk": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "newstrap-co-uk": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "factnews-co-uk": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "fawanews-org-uk": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "dailynewsmagazine-co-uk": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "newslone-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "tynmagazine-com": {
    "partner": 101,
-   "partnerPrice": 55.0
+   "partnerPrice": 55.0,
+   "listPrice": 65.0
   },
   "thehypemagazine-com": {
    "partner": 101,
-   "partnerPrice": 60.0
+   "partnerPrice": 60.0,
+   "listPrice": 70.0
   },
   "newpelican-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "breakingac-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "ocnjdaily-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "gisuser-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "tuffermagazine-co-uk": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "theromanmagazine-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "onrec-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 55.0
   },
   "grammarschooling-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "englishrulebook-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "bgomagazine-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "lyricblooms-com": {
    "partner": 101,
-   "partnerPrice": 55.0
+   "partnerPrice": 55.0,
+   "listPrice": 65.0
   },
   "punzlife-com": {
    "partner": 101,
-   "partnerPrice": 45.0
+   "partnerPrice": 45.0,
+   "listPrice": 55.0
   },
   "mhealer-co-uk": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "onlinethreatalerts-com": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "vertechlimited-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "internetvibes-net": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "solutionhow-com": {
    "partner": 101,
-   "partnerPrice": 45.0
+   "partnerPrice": 45.0,
+   "listPrice": 55.0
   },
   "psychreg-org": {
    "partner": 101,
-   "partnerPrice": 45.0
+   "partnerPrice": 45.0,
+   "listPrice": 55.0
   },
   "thekatynews-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "sharingknowledge-world-edu": {
    "partner": 101,
-   "partnerPrice": 50.0
+   "partnerPrice": 50.0,
+   "listPrice": 60.0
   },
   "lifeinsaudiarabia-net": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "techlogitic-net": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "e-architect-com": {
    "partner": 101,
-   "partnerPrice": 70.0
+   "partnerPrice": 70.0,
+   "listPrice": 80.0
   },
   "greenrecord-co-uk": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "carnosyn-com": {
    "partner": 101,
-   "partnerPrice": 40.0
+   "partnerPrice": 40.0,
+   "listPrice": 50.0
   },
   "youthkiawaaz-com": {
    "partner": 101,
-   "partnerPrice": 55.0
+   "partnerPrice": 55.0,
+   "listPrice": 65.0
   }
  }
 }
