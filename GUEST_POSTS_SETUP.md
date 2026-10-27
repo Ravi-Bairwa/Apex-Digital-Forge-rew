@@ -12,9 +12,11 @@ Edit `data/guest-sites.json`. One object per site in `sites`:
 - The 20% content discount is `discountContentProvided` (0.2).
 - Prices are always recalculated on the server from this file, so edits take effect everywhere.
 
-## Going live
-The page is hidden from search (`noindex`) and not linked in the menu or sitemap while the list is empty.
-When the list is filled: remove the `noindex` meta tag in `guest-posts.html`, add `/guest-posts` to the menu and `sitemap.xml`.
+## Live
+The page is in the menu (Services > Guest Posts), the footer and the sitemap.
+
+## Adding a partner file
+`python3 scripts/import_partner_sheet.py file.xlsx <partner_number> 0.35` : selling price = sheet "Discounted Price" + 35%, rounded up to a whole dollar. Partner number and partner price stay in `api/_partners.json` (server only).
 
 ## Emails (needs RESEND_API_KEY, already used by the contact form)
 - Checkout started: owner gets the full cart and customer details BEFORE payment.

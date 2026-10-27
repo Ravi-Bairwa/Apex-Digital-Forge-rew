@@ -13,7 +13,7 @@
     "Press Release"
    ],
    "link": "dofollow",
-   "priceUSD": 110.0
+   "priceUSD": 122.0
   },
   {
    "id": "markets-businessinsider-com",
@@ -26,7 +26,7 @@
     "Press Release"
    ],
    "link": "nofollow",
-   "priceUSD": 250.0
+   "priceUSD": 297.0
   },
   {
    "id": "finance-yahoo-com",
@@ -39,7 +39,7 @@
     "Press Release"
    ],
    "link": "nofollow",
-   "priceUSD": 350.0
+   "priceUSD": 432.0
   },
   {
    "id": "apnews-com",
@@ -52,7 +52,7 @@
     "Press Release"
    ],
    "link": "mixed",
-   "priceUSD": 170.0
+   "priceUSD": 203.0
   },
   {
    "id": "theglobeandmail-com",
@@ -65,7 +65,7 @@
     "Press Release"
    ],
    "link": "nofollow",
-   "priceUSD": 150.0
+   "priceUSD": 162.0
   },
   {
    "id": "gulfnews-com",
@@ -78,7 +78,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 1200.0
+   "priceUSD": 1485.0
   },
   {
    "id": "benzinga-com",
@@ -91,7 +91,7 @@
     "Press Release"
    ],
    "link": "dofollow",
-   "priceUSD": 150.0
+   "priceUSD": 176.0
   },
   {
    "id": "digitaljournal-com",
@@ -104,7 +104,7 @@
     "Press Release"
    ],
    "link": "nofollow",
-   "priceUSD": 100.0
+   "priceUSD": 108.0
   },
   {
    "id": "khaleejtimes-com",
@@ -118,7 +118,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 1200.0
+   "priceUSD": 1485.0
   },
   {
    "id": "newsmax-com",
@@ -131,7 +131,7 @@
     "Press Release"
    ],
    "link": "dofollow",
-   "priceUSD": 150.0
+   "priceUSD": 162.0
   },
   {
    "id": "ipsnews-net",
@@ -144,7 +144,7 @@
     "Press Release"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 61.0
   },
   {
    "id": "goodmenproject-com",
@@ -157,7 +157,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 100.0
+   "priceUSD": 108.0
   },
   {
    "id": "e-architect-com",
@@ -170,7 +170,7 @@
     "Home"
    ],
    "link": "dofollow",
-   "priceUSD": 80.0
+   "priceUSD": 95.0
   },
   {
    "id": "thehansindia-com",
@@ -183,7 +183,7 @@
     "News"
    ],
    "link": "nofollow",
-   "priceUSD": 150.0
+   "priceUSD": 176.0
   },
   {
    "id": "editorialge-com",
@@ -196,7 +196,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 250.0
+   "priceUSD": 297.0
   },
   {
    "id": "earthnworld-com",
@@ -209,7 +209,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 70.0
+   "priceUSD": 81.0
   },
   {
    "id": "techbullion-com",
@@ -222,7 +222,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 61.0
   },
   {
    "id": "azbigmedia-com",
@@ -235,7 +235,7 @@
     "Press Release"
    ],
    "link": "dofollow",
-   "priceUSD": 170.0
+   "priceUSD": 203.0
   },
   {
    "id": "bbntimes-com",
@@ -248,7 +248,7 @@
     "Technology"
    ],
    "link": "dofollow",
-   "priceUSD": 300.0
+   "priceUSD": 338.0
   },
   {
    "id": "metapress-com",
@@ -261,7 +261,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "bignewsnetwork-com",
@@ -274,7 +274,7 @@
     "Press Release"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 75.0
   },
   {
    "id": "kulfiy-com",
@@ -287,7 +287,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "openpr-com",
@@ -300,7 +300,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "sharingknowledge-world-edu",
@@ -313,7 +313,7 @@
     "Education"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "barchart-com",
@@ -326,7 +326,7 @@
     "Press Release"
    ],
    "link": "dofollow",
-   "priceUSD": 100.0
+   "priceUSD": 108.0
   },
   {
    "id": "bmmagazine-co-uk",
@@ -340,7 +340,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 300.0
+   "priceUSD": 338.0
   },
   {
    "id": "entrepreneursbreak-com",
@@ -353,7 +353,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "imcgrupo-com",
@@ -367,7 +367,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "mirrorreview-com",
@@ -380,7 +380,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 100.0
+   "priceUSD": 108.0
   },
   {
    "id": "solutionhow-com",
@@ -393,7 +393,7 @@
     "Digital Marketing"
    ],
    "link": "dofollow",
-   "priceUSD": 55.0
+   "priceUSD": 61.0
   },
   {
    "id": "thehypemagazine-com",
@@ -406,7 +406,7 @@
     "Media"
    ],
    "link": "dofollow",
-   "priceUSD": 70.0
+   "priceUSD": 81.0
   },
   {
    "id": "youthkiawaaz-com",
@@ -419,7 +419,7 @@
     "Trending"
    ],
    "link": "dofollow",
-   "priceUSD": 65.0
+   "priceUSD": 75.0
   },
   {
    "id": "technology-org",
@@ -432,7 +432,7 @@
     "Technology"
    ],
    "link": "dofollow",
-   "priceUSD": 300.0
+   "priceUSD": 365.0
   },
   {
    "id": "timebusinessnews-com",
@@ -445,7 +445,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "programminginsider-com",
@@ -458,7 +458,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "thepinnaclelist-com",
@@ -471,7 +471,7 @@
     "Home"
    ],
    "link": "dofollow",
-   "priceUSD": 100.0
+   "priceUSD": 108.0
   },
   {
    "id": "bestadvicezone-com",
@@ -484,7 +484,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "bgomagazine-com",
@@ -497,7 +497,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "nyweekly-com",
@@ -510,7 +510,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 100.0
+   "priceUSD": 108.0
   },
   {
    "id": "thenewsgod-com",
@@ -523,7 +523,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 70.0
+   "priceUSD": 81.0
   },
   {
    "id": "dgmnews-com",
@@ -536,7 +536,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "factnews-co-uk",
@@ -549,7 +549,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "londondaily-news",
@@ -562,7 +562,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "onyamagazine-com",
@@ -575,7 +575,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "repairdaily-com",
@@ -588,7 +588,7 @@
     "Home"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "bigtechnology-com",
@@ -601,7 +601,7 @@
     "Technology"
    ],
    "link": "dofollow",
-   "priceUSD": 250.0
+   "priceUSD": 297.0
   },
   {
    "id": "englishrulebook-com",
@@ -614,7 +614,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "lyricblooms-com",
@@ -627,7 +627,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 65.0
+   "priceUSD": 75.0
   },
   {
    "id": "usawire-com",
@@ -640,7 +640,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "ventsmagazine-co-uk",
@@ -653,7 +653,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "meganewsmagazines-com",
@@ -666,7 +666,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "mindmybusinessnyc-com",
@@ -679,7 +679,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 55.0
+   "priceUSD": 68.0
   },
   {
    "id": "psychreg-org",
@@ -692,7 +692,7 @@
     "Health"
    ],
    "link": "dofollow",
-   "priceUSD": 55.0
+   "priceUSD": 61.0
   },
   {
    "id": "womensbeautyoffers-com",
@@ -705,7 +705,7 @@
     "Fashion"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "1883magazine-com",
@@ -718,7 +718,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 120.0
+   "priceUSD": 135.0
   },
   {
    "id": "grammarschooling-com",
@@ -732,7 +732,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "mindsetterz-com",
@@ -745,7 +745,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 40.0
+   "priceUSD": 41.0
   },
   {
    "id": "onrec-com",
@@ -758,7 +758,7 @@
     "News"
    ],
    "link": "dofollow",
-   "priceUSD": 55.0
+   "priceUSD": 68.0
   },
   {
    "id": "punzlife-com",
@@ -771,7 +771,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 55.0
+   "priceUSD": 61.0
   },
   {
    "id": "trans4mind-com",
@@ -784,7 +784,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "greenrecord-co-uk",
@@ -797,7 +797,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "onlinethreatalerts-com",
@@ -810,7 +810,7 @@
     "Trending"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "thekatynews-com",
@@ -823,7 +823,7 @@
     "News"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "vertechlimited-com",
@@ -837,7 +837,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "axeetech-com",
@@ -850,7 +850,7 @@
     "Technology"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "tynmagazine-com",
@@ -863,7 +863,7 @@
     "Magazine"
    ],
    "link": "dofollow",
-   "priceUSD": 65.0
+   "priceUSD": 75.0
   },
   {
    "id": "gisuser-com",
@@ -876,7 +876,7 @@
     "News"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "icrowdnewswire-com",
@@ -889,7 +889,7 @@
     "Press Release"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "ocnjdaily-com",
@@ -902,7 +902,7 @@
     "Politics"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "urbansplatter-com",
@@ -915,7 +915,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "indiacsr-in",
@@ -928,7 +928,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "todaynews-co-uk",
@@ -941,7 +941,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 80.0
+   "priceUSD": 95.0
   },
   {
    "id": "mhealer-co-uk",
@@ -954,7 +954,7 @@
     "News"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "blazingmenu-org",
@@ -967,7 +967,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 40.0
+   "priceUSD": 41.0
   },
   {
    "id": "breakingac-com",
@@ -981,7 +981,7 @@
     "Sports"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "ccr-mag-com",
@@ -994,7 +994,7 @@
     "Magazine"
    ],
    "link": "dofollow",
-   "priceUSD": 55.0
+   "priceUSD": 61.0
   },
   {
    "id": "dailynewsmagazine-co-uk",
@@ -1008,7 +1008,7 @@
     "Sports"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "newszine-co-uk",
@@ -1021,7 +1021,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "techicy-com",
@@ -1034,7 +1034,7 @@
     "Technology"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "techlogitic-net",
@@ -1047,7 +1047,7 @@
     "Technology"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "tuffermagazine-co-uk",
@@ -1060,7 +1060,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "blognewsly-co-uk",
@@ -1073,7 +1073,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "crispme-com",
@@ -1087,7 +1087,7 @@
     "Business"
    ],
    "link": "dofollow",
-   "priceUSD": 40.0
+   "priceUSD": 48.0
   },
   {
    "id": "newstrap-co-uk",
@@ -1100,7 +1100,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "technewsoutlets-com",
@@ -1113,7 +1113,7 @@
     "Technology"
    ],
    "link": "dofollow",
-   "priceUSD": 60.0
+   "priceUSD": 68.0
   },
   {
    "id": "theromanmagazine-com",
@@ -1126,7 +1126,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "lifeinsaudiarabia-net",
@@ -1139,7 +1139,7 @@
     "Travel"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "newslone-com",
@@ -1152,7 +1152,7 @@
     "Technology"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "textilevaluechain-in",
@@ -1165,7 +1165,7 @@
     "Textile"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 61.0
   },
   {
    "id": "carnosyn-com",
@@ -1179,7 +1179,7 @@
     "Fitness"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "fawanews-org-uk",
@@ -1192,7 +1192,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "omgflix-co-uk",
@@ -1205,7 +1205,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 40.0
+   "priceUSD": 41.0
   },
   {
    "id": "blogstrove-com",
@@ -1218,7 +1218,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 40.0
+   "priceUSD": 41.0
   },
   {
    "id": "geekalabama-com",
@@ -1231,7 +1231,7 @@
     "Social"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "internetvibes-net",
@@ -1244,7 +1244,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "newpelican-com",
@@ -1257,7 +1257,7 @@
     "General"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   },
   {
    "id": "hackatronic-com",
@@ -1270,7 +1270,7 @@
     "Electronics"
    ],
    "link": "dofollow",
-   "priceUSD": 50.0
+   "priceUSD": 54.0
   }
  ]
 }

@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
 """Import a partner's spreadsheet into the guest post catalog.
 
-Usage:  python3 scripts/import_partner_sheet.py <file.xlsx> <partner_number>
+Usage:  python3 scripts/import_partner_sheet.py <file.xlsx> <partner_number> [markup]
+
+markup (e.g. 0.35) sets the selling price to the sheet's "Discounted Price" + that markup, rounded UP to a whole dollar.
+Without markup the selling price is the sheet's "Our Prices".
 
 Columns expected: Websites URL, DA, PA, DR, Traffic, Link Type, Categories, Our Prices, Discounted Price.
 - Public catalog   : data/guest-sites.json  (what customers see; NO partner info)
 - Private mapping  : api/_partners.json     (server only: which partner supplies each site + partner price)
 Rows for sites already in the catalog (same domain) are skipped, so re-running or adding a second partner file is safe.
 """
-import sys, re, json, os, openpyxl
+import sys, re, json, os, math, openpyxl
 
 FIX = {'eletronics': 'Electronics', 'homw': 'Home', 'tech': 'Technology', 'technology': 'Technology'}
 LINK = {'do follow': 'dofollow', 'dofollow': 'dofollow', 'no follow': 'nofollow', 'nofollow': 'nofollow', 'mix': 'mixed', 'mixed': 'mixed'}
@@ -32,7 +35,7 @@ def cats(x):
         if c not in out: out.append(c)
     return out or ['General']
 
-def main(path, partner):
+def main(path, partner, markup=None):
     here = os.path.dirname(os.path.abspath(__file__)); root = os.path.dirname(here)
     pub_path = os.path.join(root, 'data', 'guest-sites.json'); prv_path = os.path.join(root, 'api', '_partners.json')
     pub = json.load(open(pub_path, encoding='utf-8'))
@@ -42,7 +45,8 @@ def main(path, partner):
     added, skipped = 0, []
     for r in ws.iter_rows(min_row=2, values_only=True):
         if not any(r): continue
-        name = dom(r[0]); price = num(r[7])
+        name = dom(r[0]); price = num(r[7]); cost = num(r[8])
+        if markup is not None and cost: price = float(math.ceil(round(cost * (1 + markup), 6)))
         if not name or not price: skipped.append((name, 'missing price')); continue
         if name in have: skipped.append((name, 'duplicate domain (kept first)')); continue
         sid = re.sub(r'[^a-z0-9]+', '-', name).strip('-')
@@ -52,7 +56,7 @@ def main(path, partner):
         if tr is None: skipped.append((name, 'traffic %r unreadable, left blank' % r[4]))
         pub['sites'].append({'id': sid, 'name': name, 'da': int(r[1] or 0), 'pa': int(r[2] or 0), 'dr': int(r[3] or 0),
                              'traffic': tr, 'niches': cats(r[6]), 'link': link, 'priceUSD': price})
-        prv['sites'][sid] = {'partner': int(partner), 'partnerPrice': num(r[8])}
+        prv['sites'][sid] = {'partner': int(partner), 'partnerPrice': cost, 'listPrice': num(r[7])}
         have.add(name); added += 1
     pub['sites'].sort(key=lambda s: (-s['da'], s['name']))
     json.dump(pub, open(pub_path, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
@@ -60,4 +64,4 @@ def main(path, partner):
     print('added', added, '| skipped', len(skipped)); [print('  skipped:', s) for s in skipped]
 
 if __name__ == '__main__':
-    main(sys.argv[1], sys.argv[2])
+    main(sys.argv[1], sys.argv[2], float(sys.argv[3]) if len(sys.argv) > 3 else None)
