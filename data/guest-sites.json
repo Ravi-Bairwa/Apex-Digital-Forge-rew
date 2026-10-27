@@ -1,5 +1,1276 @@
 {
-  "_readme": "Guest post catalog. One object per website in 'sites'. Prices are per guest post. priceINR is optional; if EVERY site has it, visitors in India see and pay in INR. 'link' is 'dofollow' or 'nofollow'. 'traffic' is estimated monthly visits (a number). Keep ids unique and URL-safe.",
-  "discountContentProvided": 0.2,
-  "sites": []
+ "_readme": "Guest post catalog (public). One object per website in 'sites'. priceUSD is per guest post. priceINR is optional; if EVERY site has it, visitors in India see and pay in INR. link is dofollow, nofollow or mixed. traffic is monthly visits (null if unknown). niches is a list of categories. Partner info lives in api/_partners.json (private). Add sites with scripts/import_partner_sheet.py.",
+ "discountContentProvided": 0.2,
+ "sites": [
+  {
+   "id": "msn-com",
+   "name": "msn.com",
+   "da": 95,
+   "pa": 79,
+   "dr": 92,
+   "traffic": 271000000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "dofollow",
+   "priceUSD": 110.0
+  },
+  {
+   "id": "markets-businessinsider-com",
+   "name": "markets.businessinsider.com",
+   "da": 94,
+   "pa": 71,
+   "dr": 92,
+   "traffic": 10400000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "nofollow",
+   "priceUSD": 250.0
+  },
+  {
+   "id": "finance-yahoo-com",
+   "name": "finance.yahoo.com",
+   "da": 93,
+   "pa": 79,
+   "dr": 94,
+   "traffic": 225000000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "nofollow",
+   "priceUSD": 350.0
+  },
+  {
+   "id": "apnews-com",
+   "name": "apnews.com",
+   "da": 92,
+   "pa": 76,
+   "dr": 92,
+   "traffic": 161000000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "mixed",
+   "priceUSD": 170.0
+  },
+  {
+   "id": "theglobeandmail-com",
+   "name": "theglobeandmail.com",
+   "da": 92,
+   "pa": 74,
+   "dr": 90,
+   "traffic": 24100000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "nofollow",
+   "priceUSD": 150.0
+  },
+  {
+   "id": "gulfnews-com",
+   "name": "gulfnews.com",
+   "da": 90,
+   "pa": 68,
+   "dr": 86,
+   "traffic": 8520000,
+   "niches": [
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 1200.0
+  },
+  {
+   "id": "benzinga-com",
+   "name": "benzinga.com",
+   "da": 88,
+   "pa": 68,
+   "dr": 87,
+   "traffic": 33600000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "dofollow",
+   "priceUSD": 150.0
+  },
+  {
+   "id": "digitaljournal-com",
+   "name": "digitaljournal.com",
+   "da": 88,
+   "pa": 67,
+   "dr": 85,
+   "traffic": 6660000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "nofollow",
+   "priceUSD": 100.0
+  },
+  {
+   "id": "khaleejtimes-com",
+   "name": "khaleejtimes.com",
+   "da": 86,
+   "pa": 66,
+   "dr": 84,
+   "traffic": 6630000,
+   "niches": [
+    "Technology",
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 1200.0
+  },
+  {
+   "id": "newsmax-com",
+   "name": "newsmax.com",
+   "da": 85,
+   "pa": 69,
+   "dr": 81,
+   "traffic": 13700000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "dofollow",
+   "priceUSD": 150.0
+  },
+  {
+   "id": "ipsnews-net",
+   "name": "ipsnews.net",
+   "da": 83,
+   "pa": 61,
+   "dr": 79,
+   "traffic": 2130,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "goodmenproject-com",
+   "name": "goodmenproject.com",
+   "da": 82,
+   "pa": 64,
+   "dr": 79,
+   "traffic": 678000,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 100.0
+  },
+  {
+   "id": "e-architect-com",
+   "name": "e-architect.com",
+   "da": 81,
+   "pa": 54,
+   "dr": 78,
+   "traffic": 9220,
+   "niches": [
+    "Home"
+   ],
+   "link": "dofollow",
+   "priceUSD": 80.0
+  },
+  {
+   "id": "thehansindia-com",
+   "name": "thehansindia.com",
+   "da": 78,
+   "pa": 60,
+   "dr": 77,
+   "traffic": 2870000,
+   "niches": [
+    "News"
+   ],
+   "link": "nofollow",
+   "priceUSD": 150.0
+  },
+  {
+   "id": "editorialge-com",
+   "name": "editorialge.com",
+   "da": 77,
+   "pa": 54,
+   "dr": 80,
+   "traffic": 566000,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 250.0
+  },
+  {
+   "id": "earthnworld-com",
+   "name": "earthnworld.com",
+   "da": 75,
+   "pa": 52,
+   "dr": 34,
+   "traffic": 7980,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 70.0
+  },
+  {
+   "id": "techbullion-com",
+   "name": "techbullion.com",
+   "da": 73,
+   "pa": 61,
+   "dr": 81,
+   "traffic": 15700,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "azbigmedia-com",
+   "name": "azbigmedia.com",
+   "da": 72,
+   "pa": 58,
+   "dr": 78,
+   "traffic": 2120000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "dofollow",
+   "priceUSD": 170.0
+  },
+  {
+   "id": "bbntimes-com",
+   "name": "bbntimes.com",
+   "da": 72,
+   "pa": 53,
+   "dr": 71,
+   "traffic": 200000,
+   "niches": [
+    "Technology"
+   ],
+   "link": "dofollow",
+   "priceUSD": 300.0
+  },
+  {
+   "id": "metapress-com",
+   "name": "metapress.com",
+   "da": 72,
+   "pa": 58,
+   "dr": 80,
+   "traffic": 7900,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "bignewsnetwork-com",
+   "name": "bignewsnetwork.com",
+   "da": 70,
+   "pa": 57,
+   "dr": 77,
+   "traffic": 116000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "kulfiy-com",
+   "name": "kulfiy.com",
+   "da": 70,
+   "pa": 50,
+   "dr": 74,
+   "traffic": 9220,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "openpr-com",
+   "name": "openpr.com",
+   "da": 70,
+   "pa": 58,
+   "dr": 81,
+   "traffic": 115000,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "sharingknowledge-world-edu",
+   "name": "sharingknowledge.world.edu",
+   "da": 67,
+   "pa": 46,
+   "dr": 54,
+   "traffic": 3780,
+   "niches": [
+    "Education"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "barchart-com",
+   "name": "barchart.com",
+   "da": 66,
+   "pa": 59,
+   "dr": 81,
+   "traffic": 16400000,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "dofollow",
+   "priceUSD": 100.0
+  },
+  {
+   "id": "bmmagazine-co-uk",
+   "name": "bmmagazine.co.uk",
+   "da": 66,
+   "pa": 58,
+   "dr": 77,
+   "traffic": 384000,
+   "niches": [
+    "Technology",
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 300.0
+  },
+  {
+   "id": "entrepreneursbreak-com",
+   "name": "entrepreneursbreak.com",
+   "da": 65,
+   "pa": 53,
+   "dr": 58,
+   "traffic": 3800,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "imcgrupo-com",
+   "name": "imcgrupo.com",
+   "da": 65,
+   "pa": 49,
+   "dr": 64,
+   "traffic": 4710,
+   "niches": [
+    "Technology",
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "mirrorreview-com",
+   "name": "mirrorreview.com",
+   "da": 65,
+   "pa": 47,
+   "dr": 67,
+   "traffic": 111000,
+   "niches": [
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 100.0
+  },
+  {
+   "id": "solutionhow-com",
+   "name": "solutionhow.com",
+   "da": 65,
+   "pa": 44,
+   "dr": 40,
+   "traffic": 1500,
+   "niches": [
+    "Digital Marketing"
+   ],
+   "link": "dofollow",
+   "priceUSD": 55.0
+  },
+  {
+   "id": "thehypemagazine-com",
+   "name": "thehypemagazine.com",
+   "da": 65,
+   "pa": 49,
+   "dr": 72,
+   "traffic": 51500,
+   "niches": [
+    "Media"
+   ],
+   "link": "dofollow",
+   "priceUSD": 70.0
+  },
+  {
+   "id": "youthkiawaaz-com",
+   "name": "youthkiawaaz.com",
+   "da": 65,
+   "pa": 55,
+   "dr": 70,
+   "traffic": 1420,
+   "niches": [
+    "Trending"
+   ],
+   "link": "dofollow",
+   "priceUSD": 65.0
+  },
+  {
+   "id": "technology-org",
+   "name": "technology.org",
+   "da": 61,
+   "pa": 52,
+   "dr": 74,
+   "traffic": 326000,
+   "niches": [
+    "Technology"
+   ],
+   "link": "dofollow",
+   "priceUSD": 300.0
+  },
+  {
+   "id": "timebusinessnews-com",
+   "name": "timebusinessnews.com",
+   "da": 61,
+   "pa": 55,
+   "dr": 71,
+   "traffic": 1500,
+   "niches": [
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "programminginsider-com",
+   "name": "programminginsider.com",
+   "da": 60,
+   "pa": 56,
+   "dr": 71,
+   "traffic": 402000,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "thepinnaclelist-com",
+   "name": "thepinnaclelist.com",
+   "da": 60,
+   "pa": 51,
+   "dr": 59,
+   "traffic": 174000,
+   "niches": [
+    "Home"
+   ],
+   "link": "dofollow",
+   "priceUSD": 100.0
+  },
+  {
+   "id": "bestadvicezone-com",
+   "name": "bestadvicezone.com",
+   "da": 59,
+   "pa": 43,
+   "dr": 27,
+   "traffic": 899,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "bgomagazine-com",
+   "name": "bgomagazine.com",
+   "da": 59,
+   "pa": 14,
+   "dr": 53,
+   "traffic": 23800,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "nyweekly-com",
+   "name": "nyweekly.com",
+   "da": 59,
+   "pa": 51,
+   "dr": 78,
+   "traffic": 73600,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 100.0
+  },
+  {
+   "id": "thenewsgod-com",
+   "name": "thenewsgod.com",
+   "da": 59,
+   "pa": 51,
+   "dr": 50,
+   "traffic": 3470,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 70.0
+  },
+  {
+   "id": "dgmnews-com",
+   "name": "dgmnews.com",
+   "da": 58,
+   "pa": 47,
+   "dr": 63,
+   "traffic": 4650,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "factnews-co-uk",
+   "name": "factnews.co.uk",
+   "da": 58,
+   "pa": 34,
+   "dr": 28,
+   "traffic": 5500,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "londondaily-news",
+   "name": "londondaily.news",
+   "da": 58,
+   "pa": 49,
+   "dr": 73,
+   "traffic": 5240,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "onyamagazine-com",
+   "name": "onyamagazine.com",
+   "da": 58,
+   "pa": 46,
+   "dr": 58,
+   "traffic": 8730,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "repairdaily-com",
+   "name": "repairdaily.com",
+   "da": 58,
+   "pa": 49,
+   "dr": 26,
+   "traffic": 2400,
+   "niches": [
+    "Home"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "bigtechnology-com",
+   "name": "bigtechnology.com",
+   "da": 57,
+   "pa": 45,
+   "dr": 71,
+   "traffic": 94100,
+   "niches": [
+    "Technology"
+   ],
+   "link": "dofollow",
+   "priceUSD": 250.0
+  },
+  {
+   "id": "englishrulebook-com",
+   "name": "englishrulebook.com",
+   "da": 56,
+   "pa": 33,
+   "dr": 25,
+   "traffic": 16700,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "lyricblooms-com",
+   "name": "lyricblooms.com",
+   "da": 56,
+   "pa": 29,
+   "dr": 51,
+   "traffic": 62400,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 65.0
+  },
+  {
+   "id": "usawire-com",
+   "name": "usawire.com",
+   "da": 56,
+   "pa": 49,
+   "dr": 72,
+   "traffic": 2880,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "ventsmagazine-co-uk",
+   "name": "ventsmagazine.co.uk",
+   "da": 56,
+   "pa": 52,
+   "dr": 59,
+   "traffic": 5880,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "meganewsmagazines-com",
+   "name": "meganewsmagazines.com",
+   "da": 55,
+   "pa": 44,
+   "dr": 15,
+   "traffic": 2240,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "mindmybusinessnyc-com",
+   "name": "mindmybusinessnyc.com",
+   "da": 55,
+   "pa": 40,
+   "dr": 39,
+   "traffic": 1150,
+   "niches": [
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 55.0
+  },
+  {
+   "id": "psychreg-org",
+   "name": "psychreg.org",
+   "da": 55,
+   "pa": 51,
+   "dr": 73,
+   "traffic": 2330,
+   "niches": [
+    "Health"
+   ],
+   "link": "dofollow",
+   "priceUSD": 55.0
+  },
+  {
+   "id": "womensbeautyoffers-com",
+   "name": "womensbeautyoffers.com",
+   "da": 55,
+   "pa": 46,
+   "dr": 24,
+   "traffic": 3780,
+   "niches": [
+    "Fashion"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "1883magazine-com",
+   "name": "1883magazine.com",
+   "da": 54,
+   "pa": 52,
+   "dr": 69,
+   "traffic": 147000,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 120.0
+  },
+  {
+   "id": "grammarschooling-com",
+   "name": "grammarschooling.com",
+   "da": 54,
+   "pa": 27,
+   "dr": 28,
+   "traffic": 30800,
+   "niches": [
+    "Technology",
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "mindsetterz-com",
+   "name": "mindsetterz.com",
+   "da": 54,
+   "pa": 44,
+   "dr": 24,
+   "traffic": 1030,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 40.0
+  },
+  {
+   "id": "onrec-com",
+   "name": "onrec.com",
+   "da": 54,
+   "pa": 52,
+   "dr": 72,
+   "traffic": null,
+   "niches": [
+    "News"
+   ],
+   "link": "dofollow",
+   "priceUSD": 55.0
+  },
+  {
+   "id": "punzlife-com",
+   "name": "punzlife.com",
+   "da": 54,
+   "pa": 27,
+   "dr": 46,
+   "traffic": 16200,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 55.0
+  },
+  {
+   "id": "trans4mind-com",
+   "name": "trans4mind.com",
+   "da": 54,
+   "pa": 57,
+   "dr": 70,
+   "traffic": 326000,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "greenrecord-co-uk",
+   "name": "greenrecord.co.uk",
+   "da": 53,
+   "pa": 49,
+   "dr": 37,
+   "traffic": 1070,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "onlinethreatalerts-com",
+   "name": "onlinethreatalerts.com",
+   "da": 53,
+   "pa": 50,
+   "dr": 41,
+   "traffic": 21700,
+   "niches": [
+    "Trending"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "thekatynews-com",
+   "name": "thekatynews.com",
+   "da": 53,
+   "pa": 51,
+   "dr": 54,
+   "traffic": 2050,
+   "niches": [
+    "News"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "vertechlimited-com",
+   "name": "vertechlimited.com",
+   "da": 53,
+   "pa": 42,
+   "dr": 51,
+   "traffic": 3930,
+   "niches": [
+    "Technology",
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "axeetech-com",
+   "name": "axeetech.com",
+   "da": 52,
+   "pa": 50,
+   "dr": 35,
+   "traffic": 9470,
+   "niches": [
+    "Technology"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "tynmagazine-com",
+   "name": "tynmagazine.com",
+   "da": 51,
+   "pa": 52,
+   "dr": 62,
+   "traffic": 89900,
+   "niches": [
+    "Magazine"
+   ],
+   "link": "dofollow",
+   "priceUSD": 65.0
+  },
+  {
+   "id": "gisuser-com",
+   "name": "gisuser.com",
+   "da": 50,
+   "pa": 37,
+   "dr": 67,
+   "traffic": 50700,
+   "niches": [
+    "News"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "icrowdnewswire-com",
+   "name": "icrowdnewswire.com",
+   "da": 50,
+   "pa": 54,
+   "dr": 55,
+   "traffic": 9870,
+   "niches": [
+    "Press Release"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "ocnjdaily-com",
+   "name": "ocnjdaily.com",
+   "da": 49,
+   "pa": 50,
+   "dr": 68,
+   "traffic": 48600,
+   "niches": [
+    "Politics"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "urbansplatter-com",
+   "name": "urbansplatter.com",
+   "da": 48,
+   "pa": 50,
+   "dr": 61,
+   "traffic": 9120,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "indiacsr-in",
+   "name": "indiacsr.in",
+   "da": 46,
+   "pa": 48,
+   "dr": 68,
+   "traffic": 71200,
+   "niches": [
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "todaynews-co-uk",
+   "name": "todaynews.co.uk",
+   "da": 45,
+   "pa": 44,
+   "dr": 56,
+   "traffic": 17200,
+   "niches": [
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 80.0
+  },
+  {
+   "id": "mhealer-co-uk",
+   "name": "mhealer.co.uk",
+   "da": 44,
+   "pa": 37,
+   "dr": 36,
+   "traffic": 6520,
+   "niches": [
+    "News"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "blazingmenu-org",
+   "name": "blazingmenu.org",
+   "da": 42,
+   "pa": 37,
+   "dr": 18,
+   "traffic": 4880,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 40.0
+  },
+  {
+   "id": "breakingac-com",
+   "name": "breakingac.com",
+   "da": 42,
+   "pa": 46,
+   "dr": 59,
+   "traffic": 84200,
+   "niches": [
+    "News",
+    "Sports"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "ccr-mag-com",
+   "name": "ccr-mag.com",
+   "da": 41,
+   "pa": 46,
+   "dr": 65,
+   "traffic": 1080,
+   "niches": [
+    "Magazine"
+   ],
+   "link": "dofollow",
+   "priceUSD": 55.0
+  },
+  {
+   "id": "dailynewsmagazine-co-uk",
+   "name": "dailynewsmagazine.co.uk",
+   "da": 41,
+   "pa": 37,
+   "dr": 40,
+   "traffic": 7800,
+   "niches": [
+    "Technology",
+    "Sports"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "newszine-co-uk",
+   "name": "newszine.co.uk",
+   "da": 41,
+   "pa": 39,
+   "dr": 50,
+   "traffic": 2500,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "techicy-com",
+   "name": "techicy.com",
+   "da": 41,
+   "pa": 45,
+   "dr": 40,
+   "traffic": 4230,
+   "niches": [
+    "Technology"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "techlogitic-net",
+   "name": "techlogitic.net",
+   "da": 41,
+   "pa": 47,
+   "dr": 34,
+   "traffic": 4270,
+   "niches": [
+    "Technology"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "tuffermagazine-co-uk",
+   "name": "tuffermagazine.co.uk",
+   "da": 41,
+   "pa": 35,
+   "dr": 70,
+   "traffic": 11200,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "blognewsly-co-uk",
+   "name": "blognewsly.co.uk",
+   "da": 40,
+   "pa": 32,
+   "dr": 44,
+   "traffic": 6000,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "crispme-com",
+   "name": "crispme.com",
+   "da": 40,
+   "pa": 49,
+   "dr": 35,
+   "traffic": 40600,
+   "niches": [
+    "Technology",
+    "Business"
+   ],
+   "link": "dofollow",
+   "priceUSD": 40.0
+  },
+  {
+   "id": "newstrap-co-uk",
+   "name": "newstrap.co.uk",
+   "da": 40,
+   "pa": 34,
+   "dr": 30,
+   "traffic": 3900,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "technewsoutlets-com",
+   "name": "technewsoutlets.com",
+   "da": 40,
+   "pa": 38,
+   "dr": 67,
+   "traffic": 23600,
+   "niches": [
+    "Technology"
+   ],
+   "link": "dofollow",
+   "priceUSD": 60.0
+  },
+  {
+   "id": "theromanmagazine-com",
+   "name": "theromanmagazine.com",
+   "da": 40,
+   "pa": 50,
+   "dr": 52,
+   "traffic": 24900,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "lifeinsaudiarabia-net",
+   "name": "lifeinsaudiarabia.net",
+   "da": 38,
+   "pa": 50,
+   "dr": 44,
+   "traffic": 20400,
+   "niches": [
+    "Travel"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "newslone-com",
+   "name": "newslone.com",
+   "da": 38,
+   "pa": 49,
+   "dr": 30,
+   "traffic": 2900,
+   "niches": [
+    "Technology"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "textilevaluechain-in",
+   "name": "textilevaluechain.in",
+   "da": 38,
+   "pa": 48,
+   "dr": 57,
+   "traffic": 38400,
+   "niches": [
+    "Textile"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "carnosyn-com",
+   "name": "carnosyn.com",
+   "da": 37,
+   "pa": 42,
+   "dr": 53,
+   "traffic": 3290,
+   "niches": [
+    "Health",
+    "Fitness"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "fawanews-org-uk",
+   "name": "fawanews.org.uk",
+   "da": 35,
+   "pa": 33,
+   "dr": 59,
+   "traffic": 10600,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "omgflix-co-uk",
+   "name": "omgflix.co.uk",
+   "da": 35,
+   "pa": 31,
+   "dr": 20,
+   "traffic": 7880,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 40.0
+  },
+  {
+   "id": "blogstrove-com",
+   "name": "blogstrove.com",
+   "da": 34,
+   "pa": 43,
+   "dr": 41,
+   "traffic": 2880,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 40.0
+  },
+  {
+   "id": "geekalabama-com",
+   "name": "geekalabama.com",
+   "da": 32,
+   "pa": 42,
+   "dr": 27,
+   "traffic": 1120,
+   "niches": [
+    "Social"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "internetvibes-net",
+   "name": "internetvibes.net",
+   "da": 32,
+   "pa": 51,
+   "dr": 53,
+   "traffic": 5700,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "newpelican-com",
+   "name": "newpelican.com",
+   "da": 30,
+   "pa": 34,
+   "dr": 51,
+   "traffic": 46000,
+   "niches": [
+    "General"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  },
+  {
+   "id": "hackatronic-com",
+   "name": "hackatronic.com",
+   "da": 24,
+   "pa": 34,
+   "dr": 32,
+   "traffic": 9280,
+   "niches": [
+    "Electronics"
+   ],
+   "link": "dofollow",
+   "priceUSD": 50.0
+  }
+ ]
 }

@@ -39,7 +39,7 @@ module.exports = async function handler(req, res) {
       await L.sendMail({
         to: L.OWNER_EMAIL, replyTo: c.email,
         subject: `Unpaid cart to follow up — ${c.name || c.email} — ${L.fmt(order.total, order.currency)}`,
-        html: `<h2>Guest post bucket left without paying</h2><p>This visitor entered their email and left the page. Worth a follow-up.${where}</p>${L.customerBlock(c)}${L.linesTable(order)}`
+        html: `<h2>Guest post bucket left without paying</h2><p>This visitor entered their email and left the page. Worth a follow-up.${where}</p>${L.customerBlock(c)}${L.linesTable(order, true)}`
       });
       res.status(200).json({ ok: true }); return;
     }
@@ -48,10 +48,10 @@ module.exports = async function handler(req, res) {
     await L.sendMail({
       to: L.OWNER_EMAIL, replyTo: c.email,
       subject: `Guest post order started (${id}) — ${c.name} — ${L.fmt(order.total, order.currency)}`,
-      html: `<h2>Checkout started — payment not confirmed yet</h2><p>Order ${id}${where}. If you don't see a "PAID" email for this order, follow up with the customer.</p>${L.customerBlock(c)}${L.linesTable(order)}`
+      html: `<h2>Checkout started — payment not confirmed yet</h2><p>Order ${id}${where}. If you don't see a "PAID" email for this order, follow up with the customer.</p>${L.customerBlock(c)}${L.linesTable(order, true)}`
     });
 
-    const meta = { orderId: id, name: c.name, email: c.email, phone: c.phone, content: c.contentProvided ? 'customer' : 'apex', total: L.fmt(order.total, order.currency), items: order.lines.map(l => `${l.name} x${l.qty}`).join(', ').slice(0, 450) };
+    const meta = { orderId: id, name: c.name, email: c.email, phone: c.phone, content: c.contentProvided ? 'customer' : 'apex', total: L.fmt(order.total, order.currency), items: order.lines.map(l => `${l.name} x${l.qty} [partner ${l.partner || '?'}]`).join(', ').slice(0, 450) };
     let payUrl = null;
     try {
       if (process.env.STRIPE_SECRET_KEY) payUrl = await stripeSession(order, c, meta);

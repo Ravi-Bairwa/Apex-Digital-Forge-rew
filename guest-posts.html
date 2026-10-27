@@ -49,7 +49,7 @@
 <meta name="theme-color" content="#0a0710">
 <meta name="version" content="2.1">
 <meta name="robots" content="noindex, follow">
-<link rel="stylesheet" href="/css/guest-posts.css?v=1">
+<link rel="stylesheet" href="/css/guest-posts.css?v=2">
 </head>
 <body>
 <!-- SITE-WIDE AURORA BACKGROUND -->
@@ -139,17 +139,22 @@
     <p class="sec-sub">See every site's DA, PA, traffic, niche and link type, press + to add it to your bucket, choose how many posts you want, and check out. Write the content yourself and get 20% off instantly.</p>
     <div id="gpBanner" class="gp-banner" style="display:none;"></div>
 
+    <div class="gp-filterlabel">Category / niche</div>
+    <div class="gp-chips" id="gpChips" role="group" aria-label="Filter by category"></div>
     <div class="gp-toolbar">
       <input type="search" id="gpSearch" placeholder="Search websites" aria-label="Search websites">
-      <select id="gpNiche" aria-label="Niche"><option value="">All niches</option></select>
-      <select id="gpLink" aria-label="Link type"><option value="">Dofollow &amp; nofollow</option><option value="dofollow">Dofollow only</option><option value="nofollow">Nofollow only</option></select>
-      <input type="number" id="gpDa" min="0" max="100" placeholder="Min DA" aria-label="Minimum DA">
-      <select id="gpSort" aria-label="Sort"><option value="da">Sort: DA high to low</option><option value="price">Sort: Price low to high</option><option value="traffic">Sort: Traffic high to low</option><option value="name">Sort: Name A to Z</option></select>
+      <select id="gpLink" aria-label="Link type"><option value="">All link types</option><option value="dofollow">Dofollow</option><option value="nofollow">Nofollow</option><option value="mixed">Mixed</option></select>
+      <input type="number" id="gpDaMin" min="0" max="100" placeholder="DA from" aria-label="Minimum DA">
+      <input type="number" id="gpDaMax" min="0" max="100" placeholder="DA to" aria-label="Maximum DA">
+      <input type="number" id="gpPMin" min="0" placeholder="Price from" aria-label="Minimum price">
+      <input type="number" id="gpPMax" min="0" placeholder="Price to" aria-label="Maximum price">
+      <select id="gpSort" aria-label="Sort"><option value="category">Group by category, DA high to low</option><option value="da">DA high to low</option><option value="price">Price low to high</option><option value="priceDesc">Price high to low</option><option value="traffic">Traffic high to low</option><option value="name">Name A to Z</option></select>
+      <button type="button" class="gp-reset" id="gpReset">Reset filters</button>
     </div>
     <div class="gp-meta"><span id="gpCountLine"></span><span>Prices are per guest post. Content writing is included unless you provide your own.</span></div>
     <div class="gp-tablewrap">
       <table class="gp-table">
-        <thead><tr><th aria-label="Add"></th><th>Website</th><th>DA</th><th>PA</th><th>Traffic / mo</th><th>Niche</th><th>Link</th><th>Price</th></tr></thead>
+        <thead><tr><th aria-label="Add"></th><th>Website</th><th>DA</th><th>PA</th><th>DR</th><th>Traffic / mo</th><th>Category</th><th>Link</th><th>Price</th></tr></thead>
         <tbody id="gpBody"></tbody>
       </table>
       <div id="gpEmpty" class="gp-empty" style="display:none;"></div>
@@ -224,6 +229,6 @@
 
 
 <script defer src="/js/main.js?v=18"></script>
-<script src="/js/guest-posts.js?v=1" defer></script>
+<script src="/js/guest-posts.js?v=2" defer></script>
 </body>
 </html>
