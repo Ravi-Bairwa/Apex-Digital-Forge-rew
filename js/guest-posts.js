@@ -5,7 +5,7 @@
   var KEY = 'adf_gp_v1';
   var MAXQ = 20;
   var catalog = { sites: [], discountContentProvided: 0.2 };
-  var state = { cart: {}, content: false, region: 'INTL', done: false, beaconSig: '' };
+  var state = { cart: {}, content: false, region: 'INTL', done: false, beaconSig: '', cat: '' };
 
   function load() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { return {}; } }
   function save() {
@@ -28,7 +28,10 @@
   function unitMinor(s) { return Math.round(Number(currency() === 'INR' ? s.priceINR : s.priceUSD) * 100); }
   function unitPaid(s) { var u = unitMinor(s); return state.content ? Math.round(u * (1 - (Number(catalog.discountContentProvided) || 0.2))) : u; }
   function site(id) { return catalog.sites.filter(function (s) { return s.id === id; })[0]; }
-  function kfmt(n) { n = Number(n) || 0; return n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M' : n >= 1e3 ? (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'K' : String(n); }
+  function cats(s) { return (s.niches && s.niches.length ? s.niches : [s.niche || 'General']); }
+  function linkLabel(l) { return l === 'dofollow' ? 'Dofollow' : l === 'nofollow' ? 'Nofollow' : 'Mixed'; }
+  function linkCls(l) { return l === 'dofollow' ? 'do' : l === 'nofollow' ? 'no' : 'mx'; }
+  function kfmt(n) { if (n == null) return '—'; n = Number(n) || 0; return n >= 1e6 ? (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M' : n >= 1e3 ? (n / 1e3).toFixed(1).replace(/\.0$/, '') + 'K' : String(n); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 
   function totals() {
@@ -41,19 +44,39 @@
   }
 
   /* ---------- table ---------- */
+  function num(id) { var v = $(id).value; return v === '' ? null : Number(v); }
   function filtered() {
-    var q = $('gpSearch').value.trim().toLowerCase(), n = $('gpNiche').value, l = $('gpLink').value, da = Number($('gpDa').value) || 0;
+    var q = $('gpSearch').value.trim().toLowerCase(), l = $('gpLink').value;
+    var daMin = num('gpDaMin'), daMax = num('gpDaMax'), pMin = num('gpPMin'), pMax = num('gpPMax');
     var rows = catalog.sites.filter(function (s) {
-      return (!q || (s.name + ' ' + s.niche).toLowerCase().indexOf(q) > -1) && (!n || s.niche === n) && (!l || s.link === l) && Number(s.da) >= da;
+      var price = unitMinor(s) / 100;
+      return (!q || (s.name + ' ' + cats(s).join(' ')).toLowerCase().indexOf(q) > -1) &&
+        (!state.cat || cats(s).indexOf(state.cat) > -1) && (!l || s.link === l) &&
+        (daMin == null || Number(s.da) >= daMin) && (daMax == null || Number(s.da) <= daMax) &&
+        (pMin == null || price >= pMin) && (pMax == null || price <= pMax);
     });
     var by = $('gpSort').value;
     rows.sort(function (a, b) {
-      if (by === 'price') return unitMinor(a) - unitMinor(b);
+      if (by === 'price') return unitMinor(a) - unitMinor(b) || b.da - a.da;
+      if (by === 'priceDesc') return unitMinor(b) - unitMinor(a) || b.da - a.da;
       if (by === 'traffic') return (b.traffic || 0) - (a.traffic || 0);
       if (by === 'name') return a.name.localeCompare(b.name);
+      if (by === 'category') return cats(a)[0].localeCompare(cats(b)[0]) || (b.da || 0) - (a.da || 0);
       return (b.da || 0) - (a.da || 0);
     });
     return rows;
+  }
+  function renderChips() {
+    var box = $('gpChips'); box.textContent = '';
+    var counts = {}; catalog.sites.forEach(function (s) { cats(s).forEach(function (c) { counts[c] = (counts[c] || 0) + 1; }); });
+    var mk = function (label, val, n) {
+      var b = el('button', 'gp-chip' + (state.cat === val ? ' on' : ''), label); b.type = 'button';
+      if (n != null) b.appendChild(el('em', null, String(n)));
+      b.onclick = function () { state.cat = val; renderChips(); renderTable(); };
+      box.appendChild(b);
+    };
+    mk('All', '', catalog.sites.length);
+    Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a] || a.localeCompare(b); }).forEach(function (c) { mk(c, c, counts[c]); });
   }
   function renderTable() {
     var body = $('gpBody'); body.textContent = '';
@@ -62,15 +85,22 @@
     var empty = $('gpEmpty');
     if (!rows.length) {
       empty.style.display = 'block';
-      empty.textContent = catalog.sites.length ? 'No websites match these filters.' : 'Our publisher list is being updated. Please check back soon, or contact us and we will send you available sites.';
+      empty.textContent = catalog.sites.length ? 'No websites match these filters. Try widening the DA or price range.' : 'Our publisher list is being updated. Please check back soon, or contact us and we will send you available sites.';
     } else empty.style.display = 'none';
+    var group = $('gpSort').value === 'category', last = null;
     rows.forEach(function (s) {
+      if (group && cats(s)[0] !== last) {
+        last = cats(s)[0];
+        var n = rows.filter(function (x) { return cats(x)[0] === last; }).length;
+        var gr = el('tr', 'gp-group'), gt = el('td', null, last); gt.colSpan = 9; gt.appendChild(el('span', null, n + (n === 1 ? ' website' : ' websites')));
+        gr.appendChild(gt); body.appendChild(gr);
+      }
       var tr = el('tr');
       var tdAdd = el('td', 'c-add'); tdAdd.appendChild(addControl(s)); tr.appendChild(tdAdd);
       var tdN = el('td', 'c-name'); tdN.setAttribute('data-l', 'Website'); tdN.appendChild(el('span', 'gp-name', s.name)); tr.appendChild(tdN);
-      [['DA', s.da], ['PA', s.pa], ['Traffic / mo', kfmt(s.traffic)]].forEach(function (p) { var td = el('td'); td.setAttribute('data-l', p[0]); td.appendChild(el('span', 'gp-num', String(p[1]))); tr.appendChild(td); });
-      var tdNi = el('td'); tdNi.setAttribute('data-l', 'Niche'); tdNi.appendChild(el('span', 'gp-niche', s.niche)); tr.appendChild(tdNi);
-      var tdL = el('td'); tdL.setAttribute('data-l', 'Link'); tdL.appendChild(el('span', 'gp-link ' + (s.link === 'dofollow' ? 'do' : 'no'), s.link === 'dofollow' ? 'Dofollow' : 'Nofollow')); tr.appendChild(tdL);
+      [['DA', s.da], ['PA', s.pa], ['DR', s.dr == null ? '—' : s.dr], ['Traffic / mo', kfmt(s.traffic)]].forEach(function (p) { var td = el('td'); td.setAttribute('data-l', p[0]); td.appendChild(el('span', 'gp-num', String(p[1]))); tr.appendChild(td); });
+      var tdNi = el('td'); tdNi.setAttribute('data-l', 'Category'); cats(s).forEach(function (c) { tdNi.appendChild(el('span', 'gp-niche', c)); tdNi.appendChild(document.createTextNode(' ')); }); tr.appendChild(tdNi);
+      var tdL = el('td'); tdL.setAttribute('data-l', 'Link'); tdL.appendChild(el('span', 'gp-link ' + linkCls(s.link), linkLabel(s.link))); tr.appendChild(tdL);
       var tdP = el('td'); tdP.setAttribute('data-l', 'Price'); tdP.appendChild(el('span', 'gp-price', money(unitMinor(s)))); tr.appendChild(tdP);
       body.appendChild(tr);
     });
@@ -99,7 +129,7 @@
     ids.forEach(function (id) {
       var s = site(id), q = state.cart[id], row = el('div', 'gp-item');
       var left = el('div'); left.appendChild(el('div', 'gp-name', s.name));
-      left.appendChild(el('small', null, 'DA ' + s.da + ' · PA ' + s.pa + ' · ' + (s.link === 'dofollow' ? 'Dofollow' : 'Nofollow') + ' · ' + money(unitPaid(s)) + ' each'));
+      left.appendChild(el('small', null, 'DA ' + s.da + ' · PA ' + s.pa + ' · ' + linkLabel(s.link) + ' · ' + money(unitPaid(s)) + ' each'));
       var rm = el('button', 'gp-rm', 'Remove'); rm.type = 'button'; rm.onclick = function () { setQty(id, 0); };
       left.appendChild(document.createElement('br')); left.appendChild(rm);
       var right = el('div'); right.style.textAlign = 'right';
@@ -174,7 +204,8 @@
       bn.textContent = 'Thank you! If your payment went through, a confirmation email is on its way and we will start on your guest posts.';
       state.cart = {}; state.done = true; save();
     }
-    ['gpSearch', 'gpNiche', 'gpLink', 'gpDa', 'gpSort'].forEach(function (id) { $(id).addEventListener('input', renderTable); $(id).addEventListener('change', renderTable); });
+    ['gpSearch', 'gpLink', 'gpDaMin', 'gpDaMax', 'gpPMin', 'gpPMax', 'gpSort'].forEach(function (id) { $(id).addEventListener('input', renderTable); $(id).addEventListener('change', renderTable); });
+    $('gpReset').addEventListener('click', function () { ['gpSearch', 'gpLink', 'gpDaMin', 'gpDaMax', 'gpPMin', 'gpPMax'].forEach(function (id) { $(id).value = ''; }); $('gpSort').value = 'category'; state.cat = ''; renderChips(); renderTable(); });
     $('gpContent').addEventListener('change', function () { state.content = this.checked; save(); renderAll(); });
     ['gpName', 'gpEmail', 'gpPhone', 'gpNotes'].forEach(function (id) { $(id).addEventListener('input', save); });
     $('gpFab').addEventListener('click', function () { openDrawer(true); });
@@ -187,12 +218,10 @@
 
     fetch('/data/guest-sites.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (c) {
       catalog = c; catalog.sites = (c.sites || []).filter(function (s) { return s && s.id && s.name && Number(s.priceUSD) > 0; });
-      var niches = {}; catalog.sites.forEach(function (s) { if (s.niche) niches[s.niche] = 1; });
-      Object.keys(niches).sort().forEach(function (n) { var o = el('option', null, n); o.value = n; $('gpNiche').appendChild(o); });
       Object.keys(state.cart).forEach(function (id) { if (!site(id)) delete state.cart[id]; });
       $('gpFab').style.display = catalog.sites.length ? '' : 'none';
-      renderAll();
-      fetch('/api/geo', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (g) { if (g && g.country) { state.region = g.country === 'IN' ? 'IN' : 'INTL'; renderAll(); } }).catch(function () {});
+      renderChips(); renderAll();
+      fetch('/api/geo', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (g) { if (g && g.country) { state.region = g.country === 'IN' ? 'IN' : 'INTL'; renderChips(); renderAll(); } }).catch(function () {});
     }).catch(function () { $('gpEmpty').style.display = 'block'; $('gpEmpty').textContent = 'The website list could not be loaded. Please refresh the page.'; });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
