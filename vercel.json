@@ -181,6 +181,11 @@
       "source": "/about.html",
       "destination": "/about",
       "permanent": true
+    },
+    {
+      "source": "/blog/seo-for-fashion-and-apparel",
+      "destination": "/blog/seo-for-fashion-and-apparel-brands",
+      "permanent": true
     }
   ],
   "rewrites": [
