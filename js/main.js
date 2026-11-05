@@ -549,6 +549,7 @@ document.addEventListener('DOMContentLoaded', function() {
         '<a href="/blog/amazon-seo-optimization-guide">Amazon SEO</a>' +
         '<a href="/blog/b2b-seo-agency-services">B2B SEO</a>' +
         '<a href="/blog/ai-seo-2026">AI SEO / GEO</a>' +
+        '<a href="/blog/answer-engine-optimization-aeo-guide">AEO Guide</a>' +
       '</div>' +
       '<div class="nav-dropdown-col">' +
         '<div class=\"nav-dd-title\">For Agencies & More</div>' +
