@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var navLinks = document.querySelectorAll('[data-page="' + page + '"]');
   navLinks.forEach(function(a) { a.classList.add('active-nav'); });
   // Service sub-pages keep the top-level "Services" item highlighted
-  if (page === 'seo-services' || page === 'white-label-seo' || page === 'web-development') {
+  if (page === 'seo-services' || page === 'white-label-seo' || page === 'web-development' || page === 'ai-automation' || page === 'ai-agents' || page === 'lead-generation-systems') {
     document.querySelectorAll('.nav-links > li > a[data-page="services"], .mobile-menu a[data-page="services"]').forEach(function(a) { a.classList.add('active-nav'); });
   }
 });
@@ -552,9 +552,12 @@ document.addEventListener('DOMContentLoaded', function() {
         '<a href="/blog/answer-engine-optimization-aeo-guide">AEO Guide</a>' +
       '</div>' +
       '<div class="nav-dropdown-col">' +
-        '<div class=\"nav-dd-title\">For Agencies & More</div>' +
+        '<div class=\"nav-dd-title\">For Agencies, Web & AI</div>' +
         '<a href="/blog/white-label-link-building-services">White-Label SEO</a>' +
         '<a href="/web-development" data-page="web-development" onclick="showPage(\'web-development\', event)">Web Development</a>' +
+        '<a href="/ai-automation" data-page="ai-automation" onclick="showPage(\'ai-automation\', event)">AI Automation</a>' +
+        '<a href="/ai-agents" data-page="ai-agents" onclick="showPage(\'ai-agents\', event)">AI Agents</a>' +
+        '<a href="/lead-generation-systems" data-page="lead-generation-systems" onclick="showPage(\'lead-generation-systems\', event)">Lead Generation Systems</a>' +
         '<a href="/pricing" data-page="pricing" onclick="showPage(\'pricing\', event)">Pricing</a>' +
         '<a href="/seo-audit" data-page="seo-audit" onclick="showPage(\'seo-audit\', event)">Free SEO Audit</a>' +
       '</div>';

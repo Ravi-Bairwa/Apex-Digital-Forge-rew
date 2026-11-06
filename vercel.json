@@ -63,6 +63,21 @@
       "permanent": true
     },
     {
+      "source": "/ai-automation.html",
+      "destination": "/ai-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-agents.html",
+      "destination": "/ai-agents",
+      "permanent": true
+    },
+    {
+      "source": "/lead-generation-systems.html",
+      "destination": "/lead-generation-systems",
+      "permanent": true
+    },
+    {
       "source": "/pricing.html",
       "destination": "/pricing",
       "permanent": true
@@ -372,6 +387,18 @@
     {
       "source": "/web-development",
       "destination": "/web-development.html"
+    },
+    {
+      "source": "/ai-automation",
+      "destination": "/ai-automation.html"
+    },
+    {
+      "source": "/ai-agents",
+      "destination": "/ai-agents.html"
+    },
+    {
+      "source": "/lead-generation-systems",
+      "destination": "/lead-generation-systems.html"
     },
     {
       "source": "/pricing",
@@ -900,6 +927,30 @@
     {
       "source": "/blog/web-development-near-me",
       "destination": "/blog/web-development-near-me.html"
+    },
+    {
+      "source": "/blog/ai-automation-for-small-business",
+      "destination": "/blog/ai-automation-for-small-business.html"
+    },
+    {
+      "source": "/blog/what-to-automate-first-in-your-business",
+      "destination": "/blog/what-to-automate-first-in-your-business.html"
+    },
+    {
+      "source": "/blog/what-is-an-ai-agent-for-business",
+      "destination": "/blog/what-is-an-ai-agent-for-business.html"
+    },
+    {
+      "source": "/blog/ai-agent-vs-chatbot-vs-automation",
+      "destination": "/blog/ai-agent-vs-chatbot-vs-automation.html"
+    },
+    {
+      "source": "/blog/lead-generation-system-for-b2b-founders",
+      "destination": "/blog/lead-generation-system-for-b2b-founders.html"
+    },
+    {
+      "source": "/blog/ai-lead-qualification-and-follow-up",
+      "destination": "/blog/ai-lead-qualification-and-follow-up.html"
     },
     {
       "source": "/blog/web-development-company-jaipur",
