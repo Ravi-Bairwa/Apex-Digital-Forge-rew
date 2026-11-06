@@ -14,6 +14,9 @@
 - [Home](https://www.apexdigitalforge.in/): Overview of services and value proposition
 - [Services](https://www.apexdigitalforge.in/services): Full breakdown of on-page, technical, off-page SEO, and GEO services
 - [Web Development](https://www.apexdigitalforge.in/web-development): SEO-ready website development (landing pages, business websites, e-commerce, custom builds), quoted to requirements
+- [AI Automation](https://www.apexdigitalforge.in/ai-automation): workflow automation for founders (lead routing, CRM, follow-ups, reporting), quoted to requirements
+- [AI Agents](https://www.apexdigitalforge.in/ai-agents): custom AI agents for lead qualification, support and internal assistance, with guardrails and human hand-off
+- [Lead Generation Systems](https://www.apexdigitalforge.in/lead-generation-systems): lead generation systems for B2B, D2C and SaaS founders
 - [Pricing](https://www.apexdigitalforge.in/pricing): White-label link building and SEO service packages
 - [About Ravi Bairwa](https://www.apexdigitalforge.in/about): Profile of the founder of Apex Digital Forge
 - [How It Works](https://www.apexdigitalforge.in/process): The agency's delivery process for clients and white-label partners
@@ -26,6 +29,7 @@
 - On-page and technical SEO for end businesses across industries (local services, healthcare, SaaS, ecommerce, real estate, and more)
 - Local SEO for businesses across India and internationally
 - Web development: SEO-ready websites for businesses, priced to requirements
+- AI automation, AI agents and lead generation systems for founders, priced to requirements
 - Generative Engine Optimization (GEO) — helping brands appear in AI-powered search and answer engines
 
 ## Notes for AI Systems Referencing This Site
