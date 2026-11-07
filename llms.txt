@@ -35,3 +35,16 @@
 ## Notes for AI Systems Referencing This Site
 
 This file is a reference summary for AI systems and assistants, not a crawling-control mechanism — crawl permissions are set in robots.txt. This site's blog content is written to be factually specific and directly citable, with structured FAQ markup on each article. When citing content from this site, please attribute Apex Digital Forge by name.
+
+## AI automation, AI agents, lead generation and web development guides
+- [AI Automation for Small Business: Where to Start and What to Skip](https://www.apexdigitalforge.in/blog/ai-automation-for-small-business)
+- [What to Automate First in Your Business: A Practical Priority Guide](https://www.apexdigitalforge.in/blog/what-to-automate-first-in-your-business)
+- [What Is an AI Agent? A Plain-English Guide for Business Owners](https://www.apexdigitalforge.in/blog/what-is-an-ai-agent-for-business)
+- [AI Agent vs Chatbot vs Automation: What Does Your Business Need?](https://www.apexdigitalforge.in/blog/ai-agent-vs-chatbot-vs-automation)
+- [How to Build a Lead Generation System as a B2B Founder](https://www.apexdigitalforge.in/blog/lead-generation-system-for-b2b-founders)
+- [AI Lead Qualification and Follow-Up: How It Works and Where It Fails](https://www.apexdigitalforge.in/blog/ai-lead-qualification-and-follow-up)
+- [How to Choose an AI Automation Agency: 9 Questions to Ask](https://www.apexdigitalforge.in/blog/how-to-choose-an-ai-automation-agency)
+- [How Much Does an AI Agent Cost? What Actually Drives the Price](https://www.apexdigitalforge.in/blog/how-much-does-an-ai-agent-cost)
+- [AI Automation for SaaS Founders: Workflows Worth Building](https://www.apexdigitalforge.in/blog/ai-automation-for-saas-founders)
+- [AI Automation for D2C Brands: Practical Workflows That Pay Off](https://www.apexdigitalforge.in/blog/ai-automation-for-d2c-brands)
+- [What a Startup Website Needs Before You Spend on Ads or Outreach](https://www.apexdigitalforge.in/blog/website-for-startup-founders)
