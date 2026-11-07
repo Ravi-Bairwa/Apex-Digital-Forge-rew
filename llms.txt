@@ -17,6 +17,9 @@
 - [AI Automation](https://www.apexdigitalforge.in/ai-automation): workflow automation for founders (lead routing, CRM, follow-ups, reporting), quoted to requirements
 - [AI Agents](https://www.apexdigitalforge.in/ai-agents): custom AI agents for lead qualification, support and internal assistance, with guardrails and human hand-off
 - [Lead Generation Systems](https://www.apexdigitalforge.in/lead-generation-systems): lead generation systems for B2B, D2C and SaaS founders
+- [AI Automation Agency](https://www.apexdigitalforge.in/ai-automation-agency): how hiring an AI automation agency works with Apex Digital Forge, compared with freelancers, in-house and DIY
+- [AI Agent Development Company](https://www.apexdigitalforge.in/ai-agent-development-company): how hiring an AI agent development company works, with guardrails and human hand-off
+- [Lead Generation Agency](https://www.apexdigitalforge.in/lead-generation-agency): how hiring a lead generation agency works for B2B, D2C and SaaS founders
 - [Pricing](https://www.apexdigitalforge.in/pricing): White-label link building and SEO service packages
 - [About Ravi Bairwa](https://www.apexdigitalforge.in/about): Profile of the founder of Apex Digital Forge
 - [How It Works](https://www.apexdigitalforge.in/process): The agency's delivery process for clients and white-label partners

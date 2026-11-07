@@ -78,6 +78,21 @@
       "permanent": true
     },
     {
+      "source": "/ai-automation-agency.html",
+      "destination": "/ai-automation-agency",
+      "permanent": true
+    },
+    {
+      "source": "/ai-agent-development-company.html",
+      "destination": "/ai-agent-development-company",
+      "permanent": true
+    },
+    {
+      "source": "/lead-generation-agency.html",
+      "destination": "/lead-generation-agency",
+      "permanent": true
+    },
+    {
       "source": "/pricing.html",
       "destination": "/pricing",
       "permanent": true
@@ -399,6 +414,18 @@
     {
       "source": "/lead-generation-systems",
       "destination": "/lead-generation-systems.html"
+    },
+    {
+      "source": "/ai-automation-agency",
+      "destination": "/ai-automation-agency.html"
+    },
+    {
+      "source": "/ai-agent-development-company",
+      "destination": "/ai-agent-development-company.html"
+    },
+    {
+      "source": "/lead-generation-agency",
+      "destination": "/lead-generation-agency.html"
     },
     {
       "source": "/pricing",
