@@ -300,6 +300,36 @@
 .hero-services .hs-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .hero-services a{display:inline-flex;padding:7px 14px;border:1px solid var(--border2);border-radius:999px;font-size:13px;font-weight:600;color:var(--white);background:color-mix(in srgb,var(--accent) 6%,transparent);transition:border-color .2s ease,transform .2s ease}
 .hero-services a:hover{border-color:var(--accent);transform:translateY(-2px)}
+/* Founders service cards */
+.fx-section{position:relative;isolation:isolate}
+.fx-section::before{content:"";position:absolute;left:50%;top:38%;width:min(900px,92%);height:420px;transform:translateX(-50%);background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 14%,transparent),transparent);filter:blur(46px);z-index:-1;pointer-events:none}
+.fx-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:36px}
+@media(max-width:1100px){.fx-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.fx-grid{grid-template-columns:1fr}}
+.fx-item{display:flex;transition-delay:calc(var(--i,0)*90ms)}
+.fx-card{position:relative;display:flex;flex-direction:column;flex:1;padding:30px 26px 26px;border-radius:20px;text-decoration:none;color:inherit;overflow:hidden;isolation:isolate;background:linear-gradient(165deg,color-mix(in srgb,var(--accent) 9%,var(--dark2)),var(--dark2) 70%);border:1px solid var(--border2);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s ease,border-color .4s ease;will-change:transform}
+.fx-card.is-moving{transition:transform .1s linear,box-shadow .4s ease,border-color .4s ease}
+.fx-card::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .4s ease;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent) 26%,transparent),transparent 62%)}
+.fx-card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;background:linear-gradient(135deg,var(--accent),var(--accent2),transparent 62%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s ease}
+.fx-line{position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.fx-num{position:absolute;top:22px;right:24px;font-family:var(--font-heading);font-weight:800;font-size:13px;letter-spacing:.14em;color:color-mix(in srgb,var(--white) 30%,transparent)}
+.fx-icon{position:relative;width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 24px -8px color-mix(in srgb,var(--accent) 70%,transparent);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.fx-icon::after{content:"";position:absolute;inset:0;border-radius:inherit;animation:fxPulse 3.6s ease-out infinite;animation-delay:calc(var(--i,0)*.6s)}
+@keyframes fxPulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 38%,transparent)}70%,100%{box-shadow:0 0 0 16px transparent}}
+.fx-title{font-family:var(--font-heading);font-size:21px;font-weight:800;color:var(--white);margin:0 0 10px;line-height:1.25}
+.fx-desc{color:var(--muted2);font-size:14.5px;line-height:1.7;margin:0 0 22px;flex:1}
+.fx-cta{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--accent)}
+.fx-arrow{display:inline-block;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+@media (hover:hover){
+.fx-card:hover{--ty:-8px;border-color:transparent;box-shadow:0 26px 60px -18px color-mix(in srgb,var(--accent) 48%,transparent),0 8px 24px rgba(0,0,0,.35)}
+.fx-card:hover::before,.fx-card:hover::after{opacity:1}
+.fx-card:hover .fx-line{transform:scaleX(1)}
+.fx-card:hover .fx-icon{transform:translateY(-3px) rotate(-6deg) scale(1.08)}
+.fx-card:hover .fx-arrow{transform:translateX(7px)}
+}
+.fx-card:active{--ty:-2px}
+.fx-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.fx-item,.fx-card,.fx-icon,.fx-arrow,.fx-line{transition:none}.fx-icon::after{animation:none}}
 </style>
 </head>
 <body>
@@ -458,16 +488,52 @@
   </section>
 
   <!-- HOME: SERVICES FOR FOUNDERS -->
-<section class="section" style="padding-top:56px;padding-bottom:0;" aria-labelledby="founders-title">
+<section class="section fx-section" style="padding-top:56px;padding-bottom:0;" aria-labelledby="founders-title">
     <div>
       <div class="sec-eyebrow">For Founders</div>
       <h2 id="founders-title" class="sec-title" style="font-size:clamp(24px,3vw,40px);">Beyond SEO: websites, AI automation and lead systems for founders.</h2>
       <p class="sec-sub">One partner for search visibility, the website that converts it, and the automation and lead systems behind it. Built around your process and quoted to your requirements.</p>
-      <div class="svc-grid">
-        <div class="svc-card"><div class="svc-num">01</div><div class="svc-title">Web Development</div><p>Fast, SEO-ready websites and landing pages built around your offer, so traffic has somewhere good to land.</p><a href="/web-development" onclick="showPage('web-development',event)" style="color:var(--accent);font-weight:600;text-decoration:none;">Explore Web Development &rarr;</a></div>
-        <div class="svc-card"><div class="svc-num">02</div><div class="svc-title">AI Automation</div><p>Lead routing, CRM workflows, follow-ups and reporting that run without you babysitting them.</p><a href="/ai-automation" onclick="showPage('ai-automation',event)" style="color:var(--accent);font-weight:600;text-decoration:none;">Explore AI Automation &rarr;</a></div>
-        <div class="svc-card"><div class="svc-num">03</div><div class="svc-title">AI Agents</div><p>Custom agents for lead qualification, support and research, with guardrails and human hand-off.</p><a href="/ai-agents" onclick="showPage('ai-agents',event)" style="color:var(--accent);font-weight:600;text-decoration:none;">Explore AI Agents &rarr;</a></div>
-        <div class="svc-card"><div class="svc-num">04</div><div class="svc-title">Lead Generation Systems</div><p>Outbound and inbound systems for B2B, D2C and SaaS founders, from target customer to booked call.</p><a href="/lead-generation-systems" onclick="showPage('lead-generation-systems',event)" style="color:var(--accent);font-weight:600;text-decoration:none;">Explore Lead Generation Systems &rarr;</a></div>
+      <div class="fx-grid">
+        <div class="fx-item reveal-on-scroll" style="--i:0">
+          <a class="fx-card" href="/web-development" onclick="showPage('web-development',event)">
+            <span class="fx-line" aria-hidden="true"></span>
+            <span class="fx-num" aria-hidden="true">01</span>
+            <span class="fx-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5z"/><path d="M3 9h18"/><path d="m9.5 13.5-1.5 1.5 1.5 1.5M14.5 13.5l1.5 1.5-1.5 1.5"/></svg></span>
+            <h3 class="fx-title">Web Development</h3>
+            <p class="fx-desc">Fast, SEO-ready websites and landing pages built around your offer, so traffic has somewhere good to land.</p>
+            <span class="fx-cta">Explore Web Development <span class="fx-arrow" aria-hidden="true">&rarr;</span></span>
+          </a>
+        </div>
+        <div class="fx-item reveal-on-scroll" style="--i:1">
+          <a class="fx-card" href="/ai-automation" onclick="showPage('ai-automation',event)">
+            <span class="fx-line" aria-hidden="true"></span>
+            <span class="fx-num" aria-hidden="true">02</span>
+            <span class="fx-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
+            <h3 class="fx-title">AI Automation</h3>
+            <p class="fx-desc">Lead routing, CRM workflows, follow-ups and reporting that run without you babysitting them.</p>
+            <span class="fx-cta">Explore AI Automation <span class="fx-arrow" aria-hidden="true">&rarr;</span></span>
+          </a>
+        </div>
+        <div class="fx-item reveal-on-scroll" style="--i:2">
+          <a class="fx-card" href="/ai-agents" onclick="showPage('ai-agents',event)">
+            <span class="fx-line" aria-hidden="true"></span>
+            <span class="fx-num" aria-hidden="true">03</span>
+            <span class="fx-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V5"/><circle cx="12" cy="4" r="1"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M9.5 16.5h5M2 12v3M22 12v3"/></svg></span>
+            <h3 class="fx-title">AI Agents</h3>
+            <p class="fx-desc">Custom agents for lead qualification, support and research, with guardrails and human hand-off.</p>
+            <span class="fx-cta">Explore AI Agents <span class="fx-arrow" aria-hidden="true">&rarr;</span></span>
+          </a>
+        </div>
+        <div class="fx-item reveal-on-scroll" style="--i:3">
+          <a class="fx-card" href="/lead-generation-systems" onclick="showPage('lead-generation-systems',event)">
+            <span class="fx-line" aria-hidden="true"></span>
+            <span class="fx-num" aria-hidden="true">04</span>
+            <span class="fx-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v6l-4-2v-4z"/></svg></span>
+            <h3 class="fx-title">Lead Generation Systems</h3>
+            <p class="fx-desc">Outbound and inbound systems for B2B, D2C and SaaS founders, from target customer to booked call.</p>
+            <span class="fx-cta">Explore Lead Generation Systems <span class="fx-arrow" aria-hidden="true">&rarr;</span></span>
+          </a>
+        </div>
       </div>
     </div>
 </section>
@@ -940,5 +1006,25 @@
 
 
 <script defer src="/js/main.js?v=22"></script>
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  document.querySelectorAll('.fx-card').forEach(function(c){
+    c.addEventListener('pointermove',function(e){
+      var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+      c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+      if(reduce||!fine)return;
+      c.classList.add('is-moving');
+      c.style.setProperty('--ry',((x/r.width-.5)*8).toFixed(2)+'deg');
+      c.style.setProperty('--rx',((.5-y/r.height)*6).toFixed(2)+'deg');
+    },{passive:true});
+    c.addEventListener('pointerleave',function(){
+      c.classList.remove('is-moving');
+      c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg');
+    });
+  });
+})();
+</script>
 </body>
 </html>
