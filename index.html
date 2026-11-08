@@ -297,7 +297,7 @@
 .tm-wide .tm-mark{display:none}
 @media (max-width:900px){.tm-feature,.tm-b,.tm-c,.tm-d,.tm-e,.tm-wide{grid-column:span 12}.tm-e{margin-top:0}.tm-feature{padding:28px}.tm-feature blockquote{font-size:19px}.tm-wide{flex-direction:column;align-items:flex-start;gap:20px}.tm-wide figcaption{padding-left:0;border-left:0}}
 .hero-services{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 22px}
-.hero-services a{display:inline-flex;padding:7px 14px;border:1px solid var(--border2);border-radius:999px;font-size:13px;font-weight:600;color:var(--white);background:color-mix(in srgb,var(--accent) 6%,transparent);transition:border-color .2s ease,transform .2s ease}
+.hero-services a{display:inline-flex;align-items:center;justify-content:center;flex:1 1 auto;text-align:center;white-space:nowrap;padding:8px 12px;border:1px solid var(--border2);border-radius:999px;font-size:13px;font-weight:600;color:var(--white);background:color-mix(in srgb,var(--accent) 6%,transparent);transition:border-color .2s ease,transform .2s ease}
 .hero-services a:hover{border-color:var(--accent);transform:translateY(-2px)}
 /* Founders service cards */
 .fx-section{position:relative;isolation:isolate}
@@ -329,6 +329,10 @@
 .fx-card:active{--ty:-2px}
 .fx-card:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){.fx-item,.fx-card,.fx-icon,.fx-arrow,.fx-line{transition:none}.fx-icon::after{animation:none}}
+.ae-node.ae-edge .ae-tooltip{left:0;transform:translateY(6px)}
+.ae-node.ae-edge:hover .ae-tooltip{transform:translateY(0)}
+.ae-node.ae-graph .ae-tooltip{left:auto;right:0;transform:translateY(6px)}
+.ae-node.ae-graph:hover .ae-tooltip{transform:translateY(0)}
 </style>
 <!-- diwali-2026 --><link rel="stylesheet" href="/css/diwali.css?v=1"><script src="/js/diwali.js?v=1" defer></script><!-- /diwali-2026 -->
 </head>
@@ -455,7 +459,7 @@
       <div class="ae-stage" id="aeStage">
         <canvas class="ae-canvas" id="aeCanvas"></canvas>
 
-        <div class="ae-node" style="left:2%;top:46%;">
+        <div class="ae-node ae-edge" style="left:2%;top:46%;">
           <div class="ae-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z"/></svg></div>
           <div class="ae-label">Client site</div>
           <div class="ae-tooltip"><b>Starting point</b>Low DA, buried on page 4 for the keywords that matter.</div>
