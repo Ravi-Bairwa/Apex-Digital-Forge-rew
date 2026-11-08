@@ -1106,6 +1106,10 @@
     {
       "source": "/about",
       "destination": "/about.html"
+    },
+    {
+      "source": "/blog/answer-engine-optimization-aeo-guide",
+      "destination": "/blog/answer-engine-optimization-aeo-guide.html"
     }
   ]
 }
