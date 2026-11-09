@@ -338,6 +338,7 @@
 .step div{font-weight:700;color:var(--white);margin-bottom:4px}
 .step p{font-size:14px;color:var(--muted2);margin:0;line-height:1.55}
 .apply-wrap{max-width:760px;margin-top:64px}
+.form-group input[type=file]{padding:10px 12px;cursor:pointer}.form-group input[type=file]::file-selector-button{background:var(--accent);color:#fff;border:0;border-radius:var(--radius);padding:8px 14px;margin-right:12px;font-weight:700;font-family:var(--font-body);cursor:pointer}
 .hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 @media(max-width:640px){.role-card{padding:24px}.contact-form{padding:24px}}
 </style>
@@ -444,6 +445,10 @@
             </div>
             <div class="form-group"><label>LinkedIn or Portfolio Link</label><input type="text" id="clink" placeholder="https://linkedin.com/in/yourname"></div>
           </div>
+          <div class="form-group"><label>Resume / CV</label>
+            <input type="file" id="cresume" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            <p id="cresumeHint" style="font-size:12px;color:var(--muted);margin:6px 0 0;">PDF, DOC or DOCX, up to 3 MB. Optional, but it helps us review you faster.</p>
+          </div>
           <div class="form-group"><label>Why would you be a good fit?</label><textarea id="cmessage" placeholder="Tell us about your experience, the clients or markets you have worked with, and why you want to join us."></textarea></div>
           <button type="submit" class="form-submit" id="careerBtn">Submit Application</button>
           <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:12px;">You can also email us at <a href="mailto:apexdigitalforge@gmail.com" style="color:var(--accent);">apexdigitalforge@gmail.com</a>.</p>
@@ -466,15 +471,30 @@ async function submitCareerForm(e){
   var warn=function(m){if(typeof showAlert==='function'){showAlert(m);}else{alert(m);}};
   if(!name||!email||!role){warn('Please fill in your name, email and the role you are applying for.');return;}
   if(typeof isValidEmail==='function'&&!isValidEmail(email)){warn('Please enter a valid email address.');return;}
+  var resume=null,file=document.getElementById('cresume').files[0];
+  if(file){
+    var okExt=/\.(pdf|doc|docx)$/i.test(file.name);
+    if(!okExt){warn('Please upload your resume as a PDF, DOC or DOCX file.');return;}
+    if(file.size>3*1024*1024){warn('Your resume is larger than 3 MB. Please upload a smaller file, or email it to apexdigitalforge@gmail.com.');return;}
+  }
   btn.textContent='Sending...';btn.disabled=true;
   try{
+    if(file){
+      resume=await new Promise(function(resolve,reject){
+        var fr=new FileReader();
+        fr.onload=function(){resolve({name:file.name,type:file.type||'',data:String(fr.result).split(',')[1]||''});};
+        fr.onerror=function(){reject(new Error('read'));};
+        fr.readAsDataURL(file);
+      });
+    }
     var res=await fetch('/api/careers-apply',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({
       name:name,email:email,role:role,
       phone:document.getElementById('cphone').value.trim(),
       experience:document.getElementById('cexp').value,
       link:document.getElementById('clink').value.trim(),
       message:document.getElementById('cmessage').value.trim(),
-      website:document.getElementById('cwebsite').value
+      website:document.getElementById('cwebsite').value,
+      resume:resume
     })});
     if(res.ok){form.style.display='none';ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'});}
     else{warn('Something went wrong. Please email apexdigitalforge@gmail.com directly.');btn.textContent='Submit Application';btn.disabled=false;}
