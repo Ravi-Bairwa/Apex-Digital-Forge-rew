@@ -23,6 +23,16 @@
   ],
   "redirects": [
     {
+      "source": "/career",
+      "destination": "/careers",
+      "permanent": true
+    },
+    {
+      "source": "/careers.html",
+      "destination": "/careers",
+      "permanent": true
+    },
+    {
       "source": "/home",
       "destination": "/",
       "permanent": true
@@ -1106,6 +1116,10 @@
     {
       "source": "/about",
       "destination": "/about.html"
+    },
+    {
+      "source": "/careers",
+      "destination": "/careers.html"
     },
     {
       "source": "/blog/answer-engine-optimization-aeo-guide",
