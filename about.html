@@ -206,7 +206,7 @@
   ]
 }
 </script>
-<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
+<script type="speculationrules">{"prefetch":[{"where":{"selector_matches":"a[href^='/']:not([href^='//']):not([href^='/api/'])"},"eagerness":"moderate"}]}</script>
 <!-- diwali-2026 --><link rel="stylesheet" href="/css/diwali.css?v=1"><script src="/js/diwali.js?v=1" defer></script><!-- /diwali-2026 -->
 </head>
 <body>
