@@ -258,7 +258,7 @@
   ]
 }
 </script>
-<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
+<script type="speculationrules">{"prefetch":[{"where":{"selector_matches":"a[href^='/']:not([href^='//']):not([href^='/api/'])"},"eagerness":"moderate"}]}</script>
 <style>
 /* Client feedback: varied card shapes so no two testimonials look alike */
 .tm-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;margin-top:32px}

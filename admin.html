@@ -28,7 +28,7 @@
   .admin-status a { color:inherit; text-decoration:underline; }
   #genView { display:none; }
 </style>
-<script type="speculationrules">{"prefetch":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/api/*"}}]},"eagerness":"moderate"}]}</script>
+<script type="speculationrules">{"prefetch":[{"where":{"selector_matches":"a[href^='/']:not([href^='//']):not([href^='/api/'])"},"eagerness":"moderate"}]}</script>
 </head>
 <body>
 
