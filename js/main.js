@@ -105,10 +105,28 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Mobile menu
+// Keep the mobile menu directly under the header, wherever the header sits (banner / top bar above it, or scrolled)
+function positionMobileMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var nav = document.querySelector('nav');
+  if (!menu || !nav) return;
+  var top = Math.max(0, Math.round(nav.getBoundingClientRect().bottom));
+  var unit = (window.CSS && CSS.supports && CSS.supports('height', '100dvh')) ? '100dvh' : '100vh';
+  menu.style.top = top + 'px';
+  menu.style.maxHeight = 'calc(' + unit + ' - ' + top + 'px)';
+}
 function toggleMenu() {
   var menu = document.getElementById('mobileMenu');
-  if (menu) menu.classList.toggle('open');
+  if (!menu) return;
+  menu.classList.toggle('open');
+  if (menu.classList.contains('open')) positionMobileMenu();
 }
+['scroll', 'resize'].forEach(function (ev) {
+  window.addEventListener(ev, function () {
+    var m = document.getElementById('mobileMenu');
+    if (m && m.classList.contains('open')) positionMobileMenu();
+  }, { passive: true });
+});
 
 // Close mobile menu on outside click
 document.addEventListener('click', function(e) {
