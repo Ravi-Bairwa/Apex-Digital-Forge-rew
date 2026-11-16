@@ -1112,3 +1112,34 @@ nav { gap: clamp(12px, 1.6vw, 28px); }
 .article-body .article-cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
 @media (min-width: 720px) { .article-body .toc ol { columns: 2; column-gap: 32px; } }
 @media (prefers-reduced-motion: reduce) { .ai-page .svc-card .svc-num { transition: none; } }
+
+/* ═══════════════════════════════════════════
+   Mobile fixes (Nov 11): header fits every phone, compact banners, smaller hero headline
+═══════════════════════════════════════════ */
+html, body { max-width: 100%; overflow-x: clip; }
+@media (max-width: 1100px) {
+  .nav-logo { flex-shrink: 1; min-width: 0; }
+}
+@media (max-width: 480px) {
+  nav { padding: 0 4%; gap: 8px; }
+  .nav-logo { gap: 8px; }
+  .nav-logo img { width: 30px; height: 30px; flex-shrink: 0; }
+  .nav-brand { font-size: clamp(11px, 3.5vw, 16px); white-space: nowrap; }
+  .theme-toggle { margin-right: 2px; }
+  .hero h1, .hero .hero-heading { font-size: clamp(26px, 7.8vw, 36px); line-height: 1.12; }
+}
+@media (max-width: 1100px) {
+  .mobile-menu { max-height: calc(100vh - 68px); max-height: calc(100dvh - 68px); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
+}
+@media (max-width: 520px) {
+  .topbar-short { display: none; }
+  .role-pay { font-size: clamp(19px, 5.6vw, 24px); }
+}
+/* Festive banner: one compact banner on phones instead of two stacked ones */
+@media (max-width: 640px) {
+  html.diwali .topbar { display: none; }
+  html .diwali-banner { padding: 6px 30px 12px 10px; }
+  html .diwali-banner .dw-diya { display: none; }
+  html .diwali-banner .dw-inner { gap: 6px 10px; }
+  html .diwali-banner .dw-cta { padding: 4px 12px; font-size: 11px; }
+}
