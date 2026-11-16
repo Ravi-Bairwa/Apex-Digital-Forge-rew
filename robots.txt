@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /api/
 
 # AI crawlers explicitly allowed (also covered by the wildcard above,
 # listed explicitly so intent is unambiguous if the wildcard rule
@@ -22,5 +23,6 @@ User-agent: CCBot
 User-agent: Amazonbot
 Allow: /
 Disallow: /admin
+Disallow: /api/
 
 Sitemap: https://www.apexdigitalforge.in/sitemap.xml
