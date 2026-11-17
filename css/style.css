@@ -1143,3 +1143,9 @@ html, body { max-width: 100%; overflow-x: clip; }
   html .diwali-banner .dw-inner { gap: 6px 10px; }
   html .diwali-banner .dw-cta { padding: 4px 12px; font-size: 11px; }
 }
+
+/* Layout polish (Nov 16): four-card rows sit in one row, list boxes use the full width */
+@media (min-width: 1101px) {
+  .ai-page .svc-grid:has(> :nth-child(4):last-child) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.ai-page .pkg-grid[style*="640px"] { grid-template-columns: minmax(0, 100%) !important; }
