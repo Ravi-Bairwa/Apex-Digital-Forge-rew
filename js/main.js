@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var path = window.location.pathname.replace(/^\/+|\/+$/g, '');
   var page = path === '' ? 'home' : path;
   if (page.indexOf('blog/') === 0) page = 'blog';
+  if (page.indexOf('case-studies/') === 0) page = 'case-studies';
   var navLinks = document.querySelectorAll('[data-page="' + page + '"]');
   navLinks.forEach(function(a) { a.classList.add('active-nav'); });
   // Service sub-pages keep the top-level "Services" item highlighted

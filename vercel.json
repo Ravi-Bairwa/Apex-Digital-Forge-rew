@@ -73,6 +73,11 @@
       "permanent": true
     },
     {
+      "source": "/case-studies.html",
+      "destination": "/case-studies",
+      "permanent": true
+    },
+    {
       "source": "/ai-automation.html",
       "destination": "/ai-automation",
       "permanent": true
@@ -412,6 +417,30 @@
     {
       "source": "/web-development",
       "destination": "/web-development.html"
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/case-studies.html"
+    },
+    {
+      "source": "/case-studies/brightsmile-dental-local-seo",
+      "destination": "/case-studies/brightsmile-dental-local-seo.html"
+    },
+    {
+      "source": "/case-studies/flowdesk-link-building",
+      "destination": "/case-studies/flowdesk-link-building.html"
+    },
+    {
+      "source": "/case-studies/northline-interiors-web-development",
+      "destination": "/case-studies/northline-interiors-web-development.html"
+    },
+    {
+      "source": "/case-studies/meridian-advisory-lead-generation",
+      "destination": "/case-studies/meridian-advisory-lead-generation.html"
+    },
+    {
+      "source": "/case-studies/shelfwise-ai-support-agent",
+      "destination": "/case-studies/shelfwise-ai-support-agent.html"
     },
     {
       "source": "/ai-automation",

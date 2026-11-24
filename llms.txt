@@ -51,3 +51,11 @@ This file is a reference summary for AI systems and assistants, not a crawling-c
 - [AI Automation for SaaS Founders: Workflows Worth Building](https://www.apexdigitalforge.in/blog/ai-automation-for-saas-founders)
 - [AI Automation for D2C Brands: Practical Workflows That Pay Off](https://www.apexdigitalforge.in/blog/ai-automation-for-d2c-brands)
 - [What a Startup Website Needs Before You Spend on Ads or Outreach](https://www.apexdigitalforge.in/blog/website-for-startup-founders)
+
+## Case studies
+- [Case studies hub](https://www.apexdigitalforge.in/case-studies): real, client-approved results across SEO, link building, web development, lead generation and AI agents
+- [How a local dental clinic tripled organic appointment requests in 6 months](https://www.apexdigitalforge.in/case-studies/brightsmile-dental-local-seo)
+- [How a SaaS blog earned 24 relevant backlinks and moved 5 pages onto page one](https://www.apexdigitalforge.in/case-studies/flowdesk-link-building)
+- [How a rebuilt site cut load time by more than 60% and lifted monthly enquiries from 14 to 20](https://www.apexdigitalforge.in/case-studies/northline-interiors-web-development)
+- [How a B2B consultancy booked 22 qualified calls in 90 days](https://www.apexdigitalforge.in/case-studies/meridian-advisory-lead-generation)
+- [How an AI support agent cut first-response time from 4 hours to under 2 minutes](https://www.apexdigitalforge.in/case-studies/shelfwise-ai-support-agent)

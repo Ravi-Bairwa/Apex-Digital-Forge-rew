@@ -46,7 +46,7 @@
   .search-ai-visibility-grid { grid-template-columns: 1fr !important; }
 }
 </style>
-<link rel="stylesheet" href="/css/style.css?v=27">
+<link rel="stylesheet" href="/css/style.css?v=28">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="shortcut icon" href="/assets/favicon-32.png">
@@ -399,6 +399,7 @@
     <li><a href="/process" data-page="process" onclick="showPage('process', event)">How It Works</a></li>
     <li><a href="/learn-seo" data-page="learn-seo" onclick="showPage('learn-seo', event)">Learn SEO</a></li>
     <li><a href="/blog" data-page="blog" onclick="showPage('blog', event)">Blog</a></li>
+    <li><a href="/case-studies" data-page="case-studies" onclick="showPage('case-studies', event)">Case Studies</a></li>
     <li><a href="/careers" data-page="careers" onclick="showPage('careers', event)">Careers</a></li>
     <li><a href="/contact" data-page="contact" onclick="showPage('contact', event)">Contact</a></li>
   </ul>
@@ -424,6 +425,7 @@
   <a href="/process" data-page="process" onclick="showPage('process', event);toggleMenu()">How It Works</a>
   <a href="/learn-seo" data-page="learn-seo" onclick="showPage('learn-seo', event);toggleMenu()">Learn SEO</a>
   <a href="/blog" data-page="blog" onclick="showPage('blog', event);toggleMenu()">Blog</a>
+  <a href="/case-studies" data-page="case-studies" onclick="showPage('case-studies', event);toggleMenu()">Case Studies</a>
   <a href="/careers" data-page="careers" onclick="showPage('careers', event);toggleMenu()">Careers</a>
   <a href="/contact" data-page="contact" onclick="showPage('contact', event);toggleMenu()">Contact</a>
   <a href="/seo-audit" class="btn btn-primary" style="text-align:center;color:#fff;" onclick="showPage('seo-audit', event);toggleMenu()">Free SEO Audit</a>
@@ -844,6 +846,36 @@
   </section>
 
   <!-- HOME: CONTACT PREVIEW -->
+  <section class="section" id="home-case-studies" style="padding-bottom:0;" aria-labelledby="home-cs-title">
+    <div class="sec-eyebrow">Case Studies</div>
+    <h2 id="home-cs-title" class="sec-title" style="font-size:clamp(24px,3vw,40px);">Results from real client work.</h2>
+    <p class="sec-sub">A closer look at what we did, what changed and what actually drove it, with the starting numbers and the limits.</p>
+    <div class="cs-grid">
+        <div class="reveal-on-scroll"><a class="cs-card" href="/case-studies/brightsmile-dental-local-seo" onclick="showPage('case-studies/brightsmile-dental-local-seo', event)">
+          <span class="cs-tag">SEO</span>
+          <h3 class="cs-title">How a local dental clinic tripled organic appointment requests in 6 months</h3>
+          <p class="cs-client"><strong>Brightsmile Dental</strong>, a 3-dentist clinic in a mid-sized city</p>
+          <div class="cs-metrics"><span class="cs-metric"><span class="cs-metric-num">420 → 1,350</span><span class="cs-metric-label">Organic clicks per month</span></span><span class="cs-metric"><span class="cs-metric-num">6 → 31</span><span class="cs-metric-label">Keywords in the top 10</span></span></div>
+          <span class="cs-link">Read the case study <span class="cs-arrow" aria-hidden="true">&rarr;</span></span>
+        </a></div>
+        <div class="reveal-on-scroll"><a class="cs-card" href="/case-studies/meridian-advisory-lead-generation" onclick="showPage('case-studies/meridian-advisory-lead-generation', event)">
+          <span class="cs-tag">Lead Generation</span>
+          <h3 class="cs-title">How a B2B consultancy booked 22 qualified calls in 90 days</h3>
+          <p class="cs-client"><strong>Meridian Advisory</strong>, a 12-person operations consultancy targeting mid-size manufacturers</p>
+          <div class="cs-metrics"><span class="cs-metric"><span class="cs-metric-num">22</span><span class="cs-metric-label">Qualified calls booked</span></span><span class="cs-metric"><span class="cs-metric-num">11%</span><span class="cs-metric-label">Reply rate</span></span></div>
+          <span class="cs-link">Read the case study <span class="cs-arrow" aria-hidden="true">&rarr;</span></span>
+        </a></div>
+        <div class="reveal-on-scroll"><a class="cs-card" href="/case-studies/shelfwise-ai-support-agent" onclick="showPage('case-studies/shelfwise-ai-support-agent', event)">
+          <span class="cs-tag">AI Agents</span>
+          <h3 class="cs-title">How an AI support agent cut first-response time from 4 hours to under 2 minutes</h3>
+          <p class="cs-client"><strong>ShelfWise</strong>, a 15-person e-commerce brand handling ~600 support tickets/month</p>
+          <div class="cs-metrics"><span class="cs-metric"><span class="cs-metric-num">58%</span><span class="cs-metric-label">Tickets resolved without a human</span></span><span class="cs-metric"><span class="cs-metric-num">4 hrs → &lt;2 min</span><span class="cs-metric-label">First-response time (approx.)</span></span></div>
+          <span class="cs-link">Read the case study <span class="cs-arrow" aria-hidden="true">&rarr;</span></span>
+        </a></div>
+    </div>
+    <p style="margin-top:22px;"><a href="/case-studies" class="btn btn-dark" onclick="showPage('case-studies', event)">See all case studies</a></p>
+  </section>
+
   <section class="section" style="padding-top:0;" id="client-feedback">
   <div class="reveal-on-scroll">
     <div class="sec-eyebrow">Client Feedback</div>
@@ -995,6 +1027,7 @@
       <a href="/process" onclick="showPage('process', event)">How It Works</a>
       <a href="/learn-seo" onclick="showPage('learn-seo', event)">Learn SEO</a>
       <a href="/blog" onclick="showPage('blog', event)">Blog</a>
+      <a href="/case-studies" onclick="showPage('case-studies', event)">Case Studies</a>
       <a href="/careers" onclick="showPage('careers', event)">Careers</a>
       <a href="/contact" onclick="showPage('contact', event)">Contact</a>
     </div>
@@ -1007,7 +1040,7 @@
 </footer>
 
 
-<script defer src="/js/main.js?v=23"></script>
+<script defer src="/js/main.js?v=24"></script>
 <script>
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
