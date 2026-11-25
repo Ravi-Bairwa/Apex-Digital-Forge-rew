@@ -22,6 +22,7 @@ module.exports = async function handler(req, res) {
   res.status(200).json({
     title: letter.title || 'Offer Letter',
     candidateName: letter.candidateName || '',
+    expires: letter.expires || '',
     html: letter.html
   });
 };

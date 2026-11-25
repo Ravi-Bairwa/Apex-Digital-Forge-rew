@@ -51,6 +51,16 @@ input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--green);bo
 .state{text-align:center;padding:70px 20px}
 .state h2{font-family:"Syne","DM Sans",sans-serif;font-size:26px;margin:0 0 10px}
 .tick{width:72px;height:72px;border-radius:50%;background:var(--green);color:#fff;font-size:40px;line-height:72px;margin:0 auto 18px}
+.company-sig{height:58px;width:auto;display:block;margin:0 0 2px}
+.sig-note{font-size:12px;color:var(--muted);margin:2px 0 0}
+.cbox{margin-top:28px;background:#fff;border:2px solid #0f172a;border-radius:18px;padding:30px 36px;box-shadow:0 10px 40px rgba(15,23,42,.12)}
+.cbox h2{font-family:"Syne","DM Sans",sans-serif;font-size:22px;margin:0 0 6px}
+.cbox .lead{color:var(--muted);margin:0 0 18px;font-size:15px}
+.cbox textarea{width:100%;height:130px;font:12px/1.4 ui-monospace,Menlo,Consolas,monospace;border:1px solid #d1d5db;border-radius:10px;padding:10px;margin-top:10px}
+.cbox ol{margin:0 0 14px;padding-left:20px;font-size:15px}
+.btn2{display:inline-block;margin:10px 10px 0 0;background:#0f172a;color:#fff;border:0;border-radius:10px;padding:12px 18px;font:inherit;font-weight:700;cursor:pointer}
+.btn2.alt{background:#fff;color:#0f172a;border:1px solid #0f172a}
+@media(max-width:640px){.cbox{padding:22px 18px}}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .hide{display:none!important}
 @media(max-width:640px){.paper{padding:26px 20px}.sign{padding:22px 18px}.row{grid-template-columns:1fr}.letterhead .brand{font-size:21px}}
@@ -72,6 +82,26 @@ input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--green);bo
       <div id="letter"></div>
     </div>
 
+    <div class="cbox hide" id="companyBox">
+      <h2>Company signature &mdash; for Rew only</h2>
+      <p class="lead">Sign as <b>Rew, Project Manager, Apex Digital Forge</b>. This puts your signature on the letter before Prateek opens it.</p>
+      <div class="pad" id="cpad"><canvas id="ccanvas"></canvas><div class="baseline"></div><div class="hint" id="chint">Sign here with your finger or mouse</div></div>
+      <div class="padbar"><span>Draw your signature inside the box.</span><button type="button" class="linkbtn" id="cclear">Clear</button></div>
+      <button type="button" class="btn2" id="cgen">Add my signature to the letter</button>
+      <div class="err" id="cerr" role="alert"></div>
+      <div id="cout" class="hide">
+        <p style="margin:16px 0 6px;font-weight:700">Your signature is on the letter above. Now put it live:</p>
+        <ol>
+          <li>Click <b>Copy new value</b>.</li>
+          <li>In Vercel &rarr; Settings &rarr; Environment Variables, edit <b>OFFER_LETTERS</b> and paste this as the new value. Save.</li>
+          <li>Redeploy, then open this link again without <code>&amp;company=1</code> to check your signature shows.</li>
+        </ol>
+        <textarea id="cvalue" readonly></textarea>
+        <button type="button" class="btn2" id="ccopy">Copy new value</button>
+        <button type="button" class="btn2 alt" id="cdl">Download as file</button>
+        <p class="legal" id="cmsg"></p>
+      </div>
+    </div>
     <form class="sign" id="signForm" novalidate>
       <h2>Accept and sign</h2>
       <p class="lead">Read the letter above, then tick the box, confirm your details and sign in the box below.</p>
@@ -101,42 +131,83 @@ input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--green);bo
 <script>
 (function(){
   var $=function(id){return document.getElementById(id)};
-  var token=new URLSearchParams(location.search).get('t')||'';
-  var candidate='';
+  var qs=new URLSearchParams(location.search);
+  var token=qs.get('t')||'', companyMode=qs.get('company')==='1';
+  var meta={};
   function show(id){['loading','invalid','doc','done'].forEach(function(x){$(x).classList.toggle('hide',x!==id)});window.scrollTo(0,0)}
+
+  // ---- signature pad factory ----
+  function Pad(cv,hint,clearBtn){
+    var ctx=cv.getContext('2d'),drawing=false,ink=0,last=null;
+    function size(){var r=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1;if(!r.width)return;
+      var keep=ink?cv.toDataURL():null;cv.width=Math.round(r.width*dpr);cv.height=Math.round(r.height*dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineWidth=2.4;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#111827';
+      if(keep){var im=new Image();im.onload=function(){ctx.drawImage(im,0,0,r.width,r.height)};im.src=keep}}
+    window.addEventListener('resize',size);
+    function pos(e){var r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+    cv.addEventListener('pointerdown',function(e){e.preventDefault();cv.setPointerCapture(e.pointerId);drawing=true;last=pos(e);
+      ctx.beginPath();ctx.arc(last.x,last.y,1.2,0,6.283);ctx.fillStyle='#111827';ctx.fill();ink+=1;hint.style.display='none'});
+    cv.addEventListener('pointermove',function(e){if(!drawing)return;e.preventDefault();var p=pos(e);
+      ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();ink+=1;last=p});
+    ['pointerup','pointercancel','pointerleave'].forEach(function(ev){cv.addEventListener(ev,function(){drawing=false})});
+    clearBtn.addEventListener('click',function(){var r=cv.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);ink=0;hint.style.display=''});
+    // transparent PNG cropped to the ink, so it sits cleanly on the letter
+    function cropped(maxW){
+      var w=cv.width,h=cv.height,d=ctx.getImageData?cv.getContext('2d').getImageData(0,0,w,h).data:null,minX=w,minY=h,maxX=0,maxY=0;
+      for(var y=0;y<h;y++)for(var x=0;x<w;x++){if(d[(y*w+x)*4+3]>10){if(x<minX)minX=x;if(x>maxX)maxX=x;if(y<minY)minY=y;if(y>maxY)maxY=y}}
+      var pad=8;minX=Math.max(0,minX-pad);minY=Math.max(0,minY-pad);maxX=Math.min(w-1,maxX+pad);maxY=Math.min(h-1,maxY+pad);
+      var cw=maxX-minX+1,ch=maxY-minY+1,sc=Math.min(1,maxW/cw),o=document.createElement('canvas');o.width=Math.round(cw*sc);o.height=Math.round(ch*sc);
+      o.getContext('2d').drawImage(cv,minX,minY,cw,ch,0,0,o.width,o.height);return o.toDataURL('image/png')}
+    return{size:size,ink:function(){return ink},png:function(){return cv.toDataURL('image/png')},cropped:cropped};
+  }
+  var cpad=null,pad=new Pad($('canvas'),$('hint'),$('clear'));
 
   fetch('/api/offer?t='+encodeURIComponent(token),{headers:{'Accept':'application/json'}})
     .then(function(r){if(!r.ok)throw 0;return r.json()})
-    .then(function(d){$('letter').innerHTML=d.html;candidate=d.candidateName||'';document.title=(d.title||'Offer Letter')+' | Apex Digital Forge';
-      if(candidate)$('name').placeholder='Type your full name: '+candidate;show('doc');sizeCanvas()})
+    .then(function(d){meta=d;$('letter').innerHTML=d.html;document.title=(d.title||'Offer Letter')+' | Apex Digital Forge';
+      if(d.candidateName)$('name').placeholder='Type your full name: '+d.candidateName;
+      if(companyMode){$('signForm').classList.add('hide');$('companyBox').classList.remove('hide');
+        cpad=new Pad($('ccanvas'),$('chint'),$('cclear'))}
+      show('doc');pad.size();if(cpad)cpad.size()})
     .catch(function(){show('invalid')});
 
-  // ---- signature pad ----
-  var cv=$('canvas'),ctx=cv.getContext('2d'),drawing=false,ink=0,last=null;
-  function sizeCanvas(){var r=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1;if(!r.width)return;
-    var keep=ink?cv.toDataURL():null;cv.width=Math.round(r.width*dpr);cv.height=Math.round(r.height*dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineWidth=2.4;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#111827';
-    if(keep){var im=new Image();im.onload=function(){ctx.drawImage(im,0,0,r.width,r.height)};im.src=keep}}
-  window.addEventListener('resize',sizeCanvas);
-  function pos(e){var r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
-  cv.addEventListener('pointerdown',function(e){e.preventDefault();cv.setPointerCapture(e.pointerId);drawing=true;last=pos(e);
-    ctx.beginPath();ctx.arc(last.x,last.y,1.2,0,6.283);ctx.fillStyle='#111827';ctx.fill();ink+=1;$('hint').style.display='none'});
-  cv.addEventListener('pointermove',function(e){if(!drawing)return;e.preventDefault();var p=pos(e);
-    ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();ink+=1;last=p});
-  ['pointerup','pointercancel','pointerleave'].forEach(function(ev){cv.addEventListener(ev,function(){drawing=false})});
-  $('clear').addEventListener('click',function(){var r=cv.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);ink=0;$('hint').style.display=''});
+  // ---- company signing (generates a new OFFER_LETTERS value; nothing is stored by the server) ----
+  $('cgen').addEventListener('click',function(){
+    var err=$('cerr');err.textContent='';
+    if(!cpad||cpad.ink()<12){err.textContent='Please sign in the box first.';return}
+    var png=cpad.cropped(380);
+    var tmp=document.createElement('div');tmp.innerHTML=meta.html;
+    var line=tmp.querySelector('.sig-name .sigline');
+    if(!line){err.textContent='The letter has no signature line to fill.';return}
+    var img=document.createElement('img');img.className='company-sig';img.alt='Signature of Rew, Project Manager';img.src=png;
+    line.parentNode.replaceChild(img,line);
+    var old=tmp.querySelector('.sig-note');if(old)old.remove();
+    var when=new Intl.DateTimeFormat('en-IN',{timeZone:'Asia/Kolkata',dateStyle:'long',timeStyle:'short'}).format(new Date());
+    var note=document.createElement('p');note.className='sig-note';note.textContent='Signed electronically on '+when+' IST';
+    var holder=tmp.querySelector('.sig-name');holder.parentNode.insertBefore(note,holder.nextSibling);
+    var html=tmp.innerHTML,o={};
+    o[token]={title:meta.title,candidateName:meta.candidateName,expires:meta.expires||'',html:html};
+    var value=JSON.stringify(o);
+    $('letter').innerHTML=html;meta.html=html;
+    $('cvalue').value=value;$('cout').classList.remove('hide');
+    $('cmsg').textContent='Value size: '+Math.round(value.length/1024)+' KB. Replace the whole existing OFFER_LETTERS value with this one.';
+    $('cout').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  $('ccopy').addEventListener('click',function(){var t=$('cvalue');t.select();
+    (navigator.clipboard?navigator.clipboard.writeText(t.value):Promise.reject()).then(function(){$('cmsg').textContent='Copied. Paste it into Vercel as the new OFFER_LETTERS value.'},function(){document.execCommand('copy');$('cmsg').textContent='Copied.'})});
+  $('cdl').addEventListener('click',function(){var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([$('cvalue').value],{type:'application/json'}));a.download='OFFER_LETTERS-signed-value.json';a.click()});
 
-  // ---- submit ----
+  // ---- candidate acceptance ----
   $('signForm').addEventListener('submit',function(e){
     e.preventDefault();var err=$('err'),btn=$('submit');err.textContent='';
     var name=$('name').value.trim(),email=$('email').value.trim();
     if(!$('accept').checked){err.textContent='Please tick the box to accept the offer.';return}
     if(!name){err.textContent='Please type your full name.';return}
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){err.textContent='Please enter a valid email address.';return}
-    if(ink<12){err.textContent='Please sign in the box before submitting.';return}
+    if(pad.ink()<12){err.textContent='Please sign in the box before submitting.';return}
     btn.disabled=true;btn.textContent='Submitting...';
     fetch('/api/offer-accept',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({t:token,accepted:true,name:name,email:email,signature:cv.toDataURL('image/png'),website:$('website').value})})
+      body:JSON.stringify({t:token,accepted:true,name:name,email:email,signature:pad.png(),website:$('website').value})})
     .then(function(r){return r.json().catch(function(){return{}}).then(function(j){return{ok:r.ok,j:j}})})
     .then(function(x){if(x.ok){show('done')}else{err.textContent=(x.j&&x.j.error)||'Something went wrong. Please try again.';btn.disabled=false;btn.textContent='Accept offer and sign'}})
     .catch(function(){err.textContent='Connection problem. Please try again.';btn.disabled=false;btn.textContent='Accept offer and sign'});
