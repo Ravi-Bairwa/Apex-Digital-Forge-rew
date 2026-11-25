@@ -3,6 +3,10 @@
   "framework": null,
   "headers": [
     {
+      "source": "/offer(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }]
+    },
+    {
       "source": "/:path((?!css/|js/|assets/).*)",
       "headers": [
         {
@@ -1149,6 +1153,10 @@
     {
       "source": "/careers",
       "destination": "/careers.html"
+    },
+    {
+      "source": "/offer",
+      "destination": "/offer.html"
     },
     {
       "source": "/blog/answer-engine-optimization-aeo-guide",

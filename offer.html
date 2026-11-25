@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Offer Letter | Apex Digital Forge</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<style>
+@font-face{font-family:"Syne";src:url("/assets/fonts/syne-latin-wght-normal.woff2") format("woff2");font-weight:400 800;font-display:swap}
+@font-face{font-family:"DM Sans";src:url("/assets/fonts/dm-sans-latin-wght-normal.woff2") format("woff2");font-weight:100 1000;font-display:swap}
+:root{--green:#16a34a;--green-d:#15803d;--tint:#f0fdf4;--ink:#111827;--muted:#6b7280;--border:#e5e7eb}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);line-height:1.65;font-size:16px;
+  background:#f3f5f7;background-image:radial-gradient(900px 400px at 0% 0%,#fee8e4 0,transparent 60%),radial-gradient(900px 500px at 100% 20%,#e2faeb 0,transparent 60%);min-height:100vh}
+.wrap{max-width:860px;margin:0 auto;padding:28px 16px 64px}
+.paper{background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 40px rgba(17,24,39,.08);padding:44px 52px}
+.letterhead{display:flex;align-items:center;gap:16px;padding-bottom:18px;margin-bottom:26px;border-bottom:3px solid var(--green)}
+.letterhead img{width:64px;height:auto;display:block}
+.letterhead .brand{font-family:"Syne","DM Sans",sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;line-height:1.1}
+.letterhead .sub{font-size:13px;color:var(--muted);margin-top:4px}
+h1.doc-title{font-family:"Syne","DM Sans",sans-serif;font-size:20px;letter-spacing:.14em;text-transform:uppercase;color:var(--green-d);margin:0 0 20px}
+#letter p{margin:0 0 12px}#letter p.meta{margin:0 0 4px}#letter p.meta + p:not(.meta){margin-top:18px}
+#letter h3{font-family:"Syne","DM Sans",sans-serif;font-size:16px;margin:26px 0 8px;color:#14532d}
+#letter h3 span{color:var(--green);margin-right:8px}
+#letter ul{margin:0 0 12px;padding-left:22px}#letter li{margin-bottom:4px}
+#letter table{border-collapse:collapse;width:100%;margin:12px 0 14px;font-size:15px}
+#letter th,#letter td{border:1px solid var(--border);padding:9px 12px;text-align:left}#letter th{background:var(--tint)}
+#letter .closing{margin-top:26px}#letter .sigline{display:inline-block;width:220px;border-bottom:1px solid var(--ink);height:34px}
+.sign{margin-top:28px;background:#fff;border:2px solid var(--green);border-radius:18px;padding:30px 36px;box-shadow:0 10px 40px rgba(22,163,74,.12)}
+.sign h2{font-family:"Syne","DM Sans",sans-serif;font-size:22px;margin:0 0 6px;letter-spacing:-.01em}
+.sign .lead{color:var(--muted);margin:0 0 20px;font-size:15px}
+.check{display:flex;gap:12px;align-items:flex-start;background:var(--tint);border:1px solid #bbf7d0;border-radius:12px;padding:14px 16px;cursor:pointer;font-size:15px}
+.check input{width:22px;height:22px;margin-top:2px;accent-color:var(--green);flex-shrink:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+label.f{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:6px}
+input[type=text],input[type=email]{width:100%;padding:13px 14px;font:inherit;border:1px solid #d1d5db;border-radius:10px;background:#fff;color:var(--ink)}
+input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--green);border-color:var(--green)}
+.padwrap{margin-top:18px}
+.pad{position:relative;border:2px dashed #9ca3af;border-radius:12px;background:#fafafa;height:190px;touch-action:none}
+.pad canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:10px;cursor:crosshair}
+.pad .hint{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;color:#9ca3af;pointer-events:none;font-size:15px}
+.pad .baseline{position:absolute;left:24px;right:24px;bottom:42px;border-bottom:1px solid #d1d5db;pointer-events:none}
+.padbar{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)}
+.linkbtn{background:none;border:0;color:var(--green-d);font:inherit;font-weight:700;cursor:pointer;padding:4px 0}
+.submit{margin-top:22px;width:100%;background:var(--green);color:#fff;border:0;border-radius:12px;padding:16px 20px;font:inherit;font-weight:800;font-size:17px;cursor:pointer}
+.submit:disabled{opacity:.55;cursor:not-allowed}
+.err{margin-top:14px;color:#b91c1c;font-weight:600;font-size:15px;min-height:1.2em}
+.legal{margin-top:14px;font-size:12px;color:var(--muted)}
+.state{text-align:center;padding:70px 20px}
+.state h2{font-family:"Syne","DM Sans",sans-serif;font-size:26px;margin:0 0 10px}
+.tick{width:72px;height:72px;border-radius:50%;background:var(--green);color:#fff;font-size:40px;line-height:72px;margin:0 auto 18px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.hide{display:none!important}
+@media(max-width:640px){.paper{padding:26px 20px}.sign{padding:22px 18px}.row{grid-template-columns:1fr}.letterhead .brand{font-size:21px}}
+@media print{body{background:#fff}.sign{display:none}.paper{box-shadow:none;border:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="loading" class="paper state"><p>Loading your offer letter&hellip;</p></div>
+  <div id="invalid" class="paper state hide"><h2>This link is not valid</h2><p>It may have expired or been mistyped. Please contact Apex Digital Forge at <a href="mailto:apexdigitalforge@gmail.com">apexdigitalforge@gmail.com</a>.</p></div>
+
+  <div id="doc" class="hide">
+    <div class="paper">
+      <div class="letterhead">
+        <img src="/assets/logo_apex.png" alt="Apex Digital Forge logo" width="64" height="69">
+        <div><div class="brand">Apex Digital Forge</div><div class="sub">apexdigitalforge.in &middot; apexdigitalforge@gmail.com</div></div>
+      </div>
+      <h1 class="doc-title">Offer of Employment</h1>
+      <div id="letter"></div>
+    </div>
+
+    <form class="sign" id="signForm" novalidate>
+      <h2>Accept and sign</h2>
+      <p class="lead">Read the letter above, then tick the box, confirm your details and sign in the box below.</p>
+      <div class="hp" aria-hidden="true"><label>Website <input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="check"><input type="checkbox" id="accept"><span>I have read and understood this offer letter and I accept the terms of employment set out in it.</span></label>
+      <div class="row">
+        <div><label class="f" for="name">Full name</label><input type="text" id="name" autocomplete="name" placeholder="Type your full name"></div>
+        <div><label class="f" for="email">Your email</label><input type="email" id="email" autocomplete="email" placeholder="you@example.com"></div>
+      </div>
+      <div class="padwrap">
+        <label class="f">Your signature</label>
+        <div class="pad" id="pad"><canvas id="canvas"></canvas><div class="baseline"></div><div class="hint" id="hint">Sign here with your finger or mouse</div></div>
+        <div class="padbar"><span>Draw your signature inside the box.</span><button type="button" class="linkbtn" id="clear">Clear</button></div>
+      </div>
+      <button type="submit" class="submit" id="submit">Accept offer and sign</button>
+      <div class="err" id="err" role="alert"></div>
+      <p class="legal">By submitting, you confirm that this on-screen signature is yours and that you intend it to be your signature on this letter. Your acceptance is recorded with the date, time and your device details.</p>
+    </form>
+  </div>
+
+  <div id="done" class="paper state hide">
+    <div class="tick">&#10003;</div>
+    <h2>Offer accepted. Thank you!</h2>
+    <p>Your signed copy is on its way to your email. Welcome to Apex Digital Forge.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var token=new URLSearchParams(location.search).get('t')||'';
+  var candidate='';
+  function show(id){['loading','invalid','doc','done'].forEach(function(x){$(x).classList.toggle('hide',x!==id)});window.scrollTo(0,0)}
+
+  fetch('/api/offer?t='+encodeURIComponent(token),{headers:{'Accept':'application/json'}})
+    .then(function(r){if(!r.ok)throw 0;return r.json()})
+    .then(function(d){$('letter').innerHTML=d.html;candidate=d.candidateName||'';document.title=(d.title||'Offer Letter')+' | Apex Digital Forge';
+      if(candidate)$('name').placeholder='Type your full name: '+candidate;show('doc');sizeCanvas()})
+    .catch(function(){show('invalid')});
+
+  // ---- signature pad ----
+  var cv=$('canvas'),ctx=cv.getContext('2d'),drawing=false,ink=0,last=null;
+  function sizeCanvas(){var r=cv.getBoundingClientRect(),dpr=window.devicePixelRatio||1;if(!r.width)return;
+    var keep=ink?cv.toDataURL():null;cv.width=Math.round(r.width*dpr);cv.height=Math.round(r.height*dpr);
+    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineWidth=2.4;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#111827';
+    if(keep){var im=new Image();im.onload=function(){ctx.drawImage(im,0,0,r.width,r.height)};im.src=keep}}
+  window.addEventListener('resize',sizeCanvas);
+  function pos(e){var r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+  cv.addEventListener('pointerdown',function(e){e.preventDefault();cv.setPointerCapture(e.pointerId);drawing=true;last=pos(e);
+    ctx.beginPath();ctx.arc(last.x,last.y,1.2,0,6.283);ctx.fillStyle='#111827';ctx.fill();ink+=1;$('hint').style.display='none'});
+  cv.addEventListener('pointermove',function(e){if(!drawing)return;e.preventDefault();var p=pos(e);
+    ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();ink+=1;last=p});
+  ['pointerup','pointercancel','pointerleave'].forEach(function(ev){cv.addEventListener(ev,function(){drawing=false})});
+  $('clear').addEventListener('click',function(){var r=cv.getBoundingClientRect();ctx.clearRect(0,0,r.width,r.height);ink=0;$('hint').style.display=''});
+
+  // ---- submit ----
+  $('signForm').addEventListener('submit',function(e){
+    e.preventDefault();var err=$('err'),btn=$('submit');err.textContent='';
+    var name=$('name').value.trim(),email=$('email').value.trim();
+    if(!$('accept').checked){err.textContent='Please tick the box to accept the offer.';return}
+    if(!name){err.textContent='Please type your full name.';return}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){err.textContent='Please enter a valid email address.';return}
+    if(ink<12){err.textContent='Please sign in the box before submitting.';return}
+    btn.disabled=true;btn.textContent='Submitting...';
+    fetch('/api/offer-accept',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({t:token,accepted:true,name:name,email:email,signature:cv.toDataURL('image/png'),website:$('website').value})})
+    .then(function(r){return r.json().catch(function(){return{}}).then(function(j){return{ok:r.ok,j:j}})})
+    .then(function(x){if(x.ok){show('done')}else{err.textContent=(x.j&&x.j.error)||'Something went wrong. Please try again.';btn.disabled=false;btn.textContent='Accept offer and sign'}})
+    .catch(function(){err.textContent='Connection problem. Please try again.';btn.disabled=false;btn.textContent='Accept offer and sign'});
+  });
+})();
+</script>
+</body>
+</html>
