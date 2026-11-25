@@ -164,7 +164,7 @@ input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--green);bo
 
   fetch('/api/offer?t='+encodeURIComponent(token),{headers:{'Accept':'application/json'}})
     .then(function(r){if(!r.ok)throw 0;return r.json()})
-    .then(function(d){meta=d;$('letter').innerHTML=d.html;document.title=(d.title||'Offer Letter')+' | Apex Digital Forge';
+    .then(function(d){meta=d;meta.orig=d.html;$('letter').innerHTML=d.html;document.title=(d.title||'Offer Letter')+' | Apex Digital Forge';
       if(d.candidateName)$('name').placeholder='Type your full name: '+d.candidateName;
       if(companyMode){$('signForm').classList.add('hide');$('companyBox').classList.remove('hide');
         cpad=new Pad($('ccanvas'),$('chint'),$('cclear'))}
@@ -176,7 +176,7 @@ input[type=text]:focus,input[type=email]:focus{outline:2px solid var(--green);bo
     var err=$('cerr');err.textContent='';
     if(!cpad||cpad.ink()<12){err.textContent='Please sign in the box first.';return}
     var png=cpad.cropped(380);
-    var tmp=document.createElement('div');tmp.innerHTML=meta.html;
+    var tmp=document.createElement('div');tmp.innerHTML=meta.orig||meta.html;
     var line=tmp.querySelector('.sig-name .sigline');
     if(!line){err.textContent='The letter has no signature line to fill.';return}
     var img=document.createElement('img');img.className='company-sig';img.alt='Signature of Rew, Project Manager';img.src=png;
